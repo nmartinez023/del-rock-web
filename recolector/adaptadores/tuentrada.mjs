@@ -106,7 +106,8 @@ export function extraer(cuerpo) {
         region: /^buenos aires$/i.test(f.city ?? '') ? 'CABA' : '', // las ciudades del conurbano vienen con su nombre
         direccion: '',
         url: WEB + encodeURIComponent(evento.slug ?? ''),
-        imagen: evento.imageMainNew?.src ?? '',
+        // La original, sin el redimensionador de Cloudflare (desde un Worker no se puede pedir).
+        imagen: (evento.imageMainNew?.src ?? '').replace(/\/cdn-cgi\/image\/[^/]+\//, '/'),
         precioDesde: null,
         descripcion: '',
         artistas: [],

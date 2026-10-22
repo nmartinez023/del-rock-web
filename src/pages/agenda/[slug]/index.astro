@@ -1,5 +1,6 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import FotoCompleta from '../../../components/FotoCompleta.astro';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import SeccionTitulo from '../../../components/SeccionTitulo.astro';
@@ -100,11 +101,14 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
         {
           imagen ? (
             <div class="foto marco">
-              {imagen.tipo === 'local' ? (
-                <Image src={imagen.src} alt={`Flyer de ${titulo.texto}, ${diaYMes(data.fecha)}`} width={800} widths={[400, 800]} sizes="(max-width: 900px) 100vw, 520px" loading="eager" />
-              ) : (
-                <img src={imagen.src} alt={`Flyer de ${titulo.texto}, ${diaYMes(data.fecha)}`} width="800" height="800" loading="eager" decoding="async" />
-              )}
+              <FotoCompleta
+                imagen={imagen}
+                alt={`Flyer de ${titulo.texto}, ${diaYMes(data.fecha)}`}
+                ancho={800}
+                anchos={[400, 800]}
+                sizes="(max-width: 900px) 100vw, 520px"
+                eager
+              />
             </div>
           ) : (
             <div class="sin-foto" aria-hidden="true">

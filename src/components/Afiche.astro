@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import FotoCompleta from './FotoCompleta.astro';
 import { bandasDe, diaMes, imagenDeFecha, precioTexto, rutaDeFecha, slugTag, tituloConCiudad, type Fecha } from '../lib/util';
 
 interface Props {
@@ -37,11 +37,7 @@ const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : no
   {
     imagen && (
       <span class="foto foto-afiche">
-        {imagen.tipo === 'local' ? (
-          <Image src={imagen.src} alt="" width={480} height={480} fit="cover" />
-        ) : (
-          <img src={imagen.src} alt="" width="480" height="480" loading="lazy" decoding="async" />
-        )}
+        <FotoCompleta imagen={imagen} alt="" ancho={480} />
       </span>
     )
   }

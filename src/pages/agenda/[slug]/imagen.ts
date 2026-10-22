@@ -15,8 +15,11 @@ export const GET: APIRoute = async ({ params, request }) => {
   const slugs = await slugsDeAgenda();
   const id = [...slugs].find(([, s]) => s === params.slug)?.[0] ?? params.slug;
   const fecha = id ? await getEntry('agenda', id) : undefined;
-  const origen = fecha?.data.estado === 'publicado' ? fecha.data.imagen : undefined;
-  if (!origen) return new Response('Sin imagen', { status: 404 });
+  const imagen = fecha?.data.estado === 'publicado' ? fecha.data.imagen : undefined;
+  if (!imagen) return new Response('Sin imagen', { status: 404 });
+  // Las fotos que pasan por el redimensionador de Cloudflare de otro sitio ("/cdn-cgi/image/<opciones>/…",
+  // como las de TuEntrada) no se pueden pedir desde un Worker: se pide la original.
+  const origen = imagen.replace(/\/cdn-cgi\/image\/[^/]+\//, '/');
 
   // Caché de Cloudflare (Cache API). En workers.dev puede no estar disponible: si falla, seguimos sin ella.
   const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
