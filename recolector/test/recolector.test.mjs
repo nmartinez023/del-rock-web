@@ -482,6 +482,30 @@ test('reubicar: un show sin artistas que pasa a rock usa el título como banda',
   }
 });
 
+test('más de 3 artistas: es un festival, sin bandas vinculadas ni bandas nuevas (aunque sea rock por una banda conocida)', () => {
+  const cinco = ['Kapanga', 'Turf', 'Banda Uno', 'Banda Dos', 'Banda Tres'];
+  const ev = aplicarClasificacion(evento('ROCK EN EL RÍO'), respuesta({ titulo: 'Rock en el Río', artistas: cinco, rockNacional: false }), bandas, fuente);
+  assert.deepEqual([ev.destino, ev.tipo, ev.rockNacional, ev.bandas, ev.bandasNuevas], ['agenda', 'festival', true, [], []]);
+  const tres = aplicarClasificacion(evento('TRES'), respuesta({ titulo: 'Tres', artistas: cinco.slice(0, 3) }), bandas, fuente);
+  assert.deepEqual([tres.tipo, tres.bandas], ['show', ['kapanga', 'turf', 'banda-uno']], 'hasta 3 sigue siendo un show con sus bandas');
+});
+
+test('reubicar: un evento de Otros con más de 3 artistas pasa a Agenda como festival, sin crear bandas', () => {
+  const { dirs, dirBandas, borrar } = carpetas();
+  try {
+    const ia = respuesta({ rockNacional: false, genero: 'cumbia', titulo: 'Fiesta', artistas: ['A Uno', 'B Dos', 'C Tres', 'D Cuatro'] });
+    mezclar([aplicarClasificacion(evento('FIESTA', { id: 'f' }), ia, bandas, rosario)], rosario, { hoy: HOY, dirs });
+    const [archivo] = archivos(dirs.otros);
+    writeFileSync(join(dirs.otros, archivo), stringify({ ...leer(dirs.otros, archivo), rockNacional: true }));
+    reubicar({ fuentesRosario: new Set(['rosario']), bandas, dirs, dirBandas });
+    const movido = leer(dirs.agenda, archivo);
+    assert.deepEqual([movido.tipo, movido.bandas], ['festival', []]);
+    assert.equal(existsSync(dirBandas) ? readdirSync(dirBandas).length : 0, 0);
+  } finally {
+    borrar();
+  }
+});
+
 test('estados: normaliza los viejos sin emoji', () => {
   assert.deepEqual(['publicado', 'pendiente', 'descartado', undefined].map(normalizarEstado), ['✅ Publicado', '⏳ Pendiente', '❌ Descartado', '⏳ Pendiente']);
 });

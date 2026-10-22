@@ -36,7 +36,9 @@ const { dia: numDia, mes } = diaMes(data.fecha);
 const visibles = new Set((await bandasVisibles()).map((b) => b.id));
 const bandas = await bandasDe(fecha);
 // Si la única banda es el título ("2 MINUTOS"), el sticker sobra.
-const mostrarBandas = bandas.length > 1 || (bandas.length === 1 && slugTag(bandas[0].data.nombre) !== slugTag(data.titulo));
+// Más de 3 bandas es un festival: no se listan (mismo criterio que el recolector).
+const mostrarBandas =
+  bandas.length <= 3 && (bandas.length > 1 || (bandas.length === 1 && slugTag(bandas[0].data.nombre) !== slugTag(data.titulo)));
 const precio = precioTexto(data.precioDesde);
 const ruta = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const imagen = imagenDeFecha(fecha, ruta);

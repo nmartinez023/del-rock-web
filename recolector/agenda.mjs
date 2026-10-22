@@ -5,6 +5,7 @@ import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync, mkdir
 import { join } from 'node:path';
 import { parse, stringify } from 'yaml';
 import { hash, plano, slug } from './texto.mjs';
+import { MAX_ARTISTAS } from './clasificar.mjs';
 
 // Los estados llevan emoji porque el listado del panel muestra el valor tal cual (ver keystatic.config.ts).
 export const PUBLICADO = '✅ Publicado';
@@ -268,8 +269,10 @@ export function reubicar({ fuentesRosario, bandas, dirs = DIRS, dirBandas, seco 
   for (const e of leerYaml(dirs.otros)) {
     if (e.datos.rockNacional !== true) continue;
     const { artistas = [], ...resto } = e.datos;
-    // Si la IA no supo quiénes tocan, en un show la banda es el título ("Cruzando el Charco").
-    const nombres = artistas.length ? artistas : resto.tipo === 'festival' ? [] : [resto.titulo];
+    // Muchos artistas: es un festival, sin bandas. Si la IA no supo quiénes tocan, en un show
+    // la banda es el título ("Cruzando el Charco").
+    if (artistas.length > MAX_ARTISTAS) resto.tipo = 'festival';
+    const nombres = artistas.length > MAX_ARTISTAS ? [] : artistas.length ? artistas : resto.tipo === 'festival' ? [] : [resto.titulo];
     const slugs = [];
     for (const nombre of nombres) {
       const s = slug(nombre);

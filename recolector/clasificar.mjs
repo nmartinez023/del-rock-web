@@ -3,12 +3,15 @@
 // 2. Si no, decide la IA (ver ia.mjs).
 // Y después:
 // - rock nacional → Agenda, con sus bandas vinculadas a la colección Bandas (se crean las que falten);
+//   con más de MAX_ARTISTAS artistas es un festival: sin bandas vinculadas ni bandas nuevas;
 // - no rock y fuente de Rosario → "Otros eventos de Rosario", con los artistas como texto;
 // - no rock y fuente de otro lado → no se guarda.
 import { plano, slug, limpiar } from './texto.mjs';
 
 const MAX_BANDAS = 8;
 const MAX_NUEVAS = 6;
+/** Hasta 3 artistas es un show (con sus bandas); más, es un festival y no se listan. */
+export const MAX_ARTISTAS = 3;
 
 const sinArticulo = (s) => plano(s).replace(/^(los|las|la|el) /, '');
 // En un tributo el nombre de la banda aparece pero no toca ella: decide la IA.
@@ -102,6 +105,9 @@ export function aplicarClasificacion(ev, iaOriginal, bandas, fuente) {
     if (!fuente.rosario || !enGranRosario(ev.ciudad)) return null;
     return { ...base, destino: 'otros', artistas: ia.artistas, bandas: [], bandasNuevas: [] };
   }
+
+  // Muchos artistas: es un festival. Sigue siendo rock (si corresponde), pero no se crean ni vinculan bandas.
+  if (ia.artistas.length > MAX_ARTISTAS) return { ...base, tipo: 'festival', destino: 'agenda', artistas: [], bandas: [], bandasNuevas: [] };
 
   const slugs = [];
   const nuevas = [];

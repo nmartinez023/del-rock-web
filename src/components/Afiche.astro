@@ -19,7 +19,8 @@ const precio = precioTexto(data.precioDesde);
 // Lineup: en un festival, todas las bandas; en un show, las que no figuran ya en el título.
 const nombres = (await bandasDe(fecha)).map((b) => b.data.nombre);
 const enTitulo = slugTag(data.titulo);
-const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
+// Más de 3 bandas es un festival: el afiche no las lista.
+const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
 ---
 
 <a
