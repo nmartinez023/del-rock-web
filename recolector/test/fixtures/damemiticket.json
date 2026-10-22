@@ -1,0 +1,53 @@
+[
+ {
+  "id_Evento": 687,
+  "nombre_Evento": "CONT. NETO + CONTRAVIENTOS + LOS MONONOS PUNK",
+  "fecha_Evento": "2026-10-30T00:00:00",
+  "hora_Evento": "20:30",
+  "imagen": "687_imagen.jpg",
+  "valor_Ticket": 0,
+  "valor_Ticket2": 0,
+  "valor_Ticket3": 5000,
+  "descripcion": "Tres bandas punk.",
+  "estado": "activo",
+  "slug": "cont-neto-contravientos-los-mononos-punk",
+  "nombre": "CAPITAN",
+  "direccion": "Mendoza 930",
+  "ciudad": "Rosario",
+  "provincia": "Santa Fe"
+ },
+ {
+  "id_Evento": 681,
+  "nombre_Evento": "DESORDEN PÚBLICO EN ROSARIO",
+  "fecha_Evento": "2026-12-19T00:00:00",
+  "hora_Evento": "20:00",
+  "imagen": "edit_edit_681_imagen.jpg",
+  "valor_Ticket": 25000,
+  "valor_Ticket2": 0,
+  "valor_Ticket3": 30000,
+  "descripcion": "",
+  "estado": "activo",
+  "slug": "desorden-publico-en-rosario",
+  "nombre": "JAGUAR HAÜS",
+  "direccion": "Rodriguez 198 bis",
+  "ciudad": "Rosario",
+  "provincia": "Santa Fe"
+ },
+ {
+  "id_Evento": 714,
+  "nombre_Evento": "Konducta Zero - 20 años de \"ESE ARBOL TIENE CARA CONOCIDA\"",
+  "fecha_Evento": "2026-11-22T00:00:00",
+  "hora_Evento": "20:30",
+  "imagen": "714_imagen.jpg",
+  "valor_Ticket": 7000,
+  "valor_Ticket2": 10000,
+  "valor_Ticket3": 0,
+  "descripcion": "Aniversario del disco.",
+  "estado": "activo",
+  "slug": "konducta-zero-20-anos-de-ese-arbol-tiene-cara-conocida",
+  "nombre": "CAPITAN",
+  "direccion": "Mendoza 930",
+  "ciudad": "Rosario",
+  "provincia": "Santa Fe"
+ }
+]

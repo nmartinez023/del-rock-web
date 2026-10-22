@@ -48,6 +48,17 @@ for (const m of movidos) log(`- reubicado a mano: ${m}`);
 for (const b of limpiarBandas({ dirBandas: DIR_BANDAS, seco })) log(`- banda borrada (sin fechas de rock): ${b}`);
 bandas.splice(0, bandas.length, ...leerBandas(DIR_BANDAS));
 
+/** Descarga los datos de la fuente: con el método propio del adaptador o con un GET común. */
+async function descargar(adaptador, url) {
+  if (adaptador.descargar) return adaptador.descargar(url, { agente: AGENTE });
+  const res = await fetch(url, {
+    headers: { 'user-agent': AGENTE, 'accept-language': 'es-AR,es;q=0.9' },
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.text();
+}
+
 /** Lee la página propia de un evento (descripción, dirección, aviso) solo cuando hace falta. */
 async function leerDetalles(items, adaptador, fuente) {
   const guardados = indicePorOrigen();
@@ -109,12 +120,7 @@ for (const fuente of fuentes) {
       log(`- **${fuente.slug}**: robots.txt no permite leer ${url}, la salteo.`);
       continue;
     }
-    const res = await fetch(url, {
-      headers: { 'user-agent': AGENTE, 'accept-language': 'es-AR,es;q=0.9' },
-      signal: AbortSignal.timeout(20_000),
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const crudos = adaptador.extraer(await res.text(), url);
+    const crudos = adaptador.extraer(await descargar(adaptador, url), url);
     const guardados = indicePorOrigen();
 
     // 2. Eventos futuros, con su respuesta de IA si ya está en caché.

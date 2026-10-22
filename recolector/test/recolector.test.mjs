@@ -93,6 +93,51 @@ test('Entrada Play: listado (precio, imagen, link) y página del evento (descrip
   assert.equal(adaptadorPara('https://otra.ejemplo/x').extraer, extraer, 'el resto usa JSON-LD');
 });
 
+test('Dame mi Ticket: lee la API (POST), arma fecha, lugar, precio, imagen y link', async () => {
+  const ad = adaptadorPara('https://damemiticket.com/');
+  const url = ad.urlDeDatos('https://damemiticket.com/');
+  let pedido;
+  const cuerpo = readFileSync(new URL('./fixtures/damemiticket.json', import.meta.url), 'utf8');
+  const texto = await ad.descargar(url, { agente: 'X', pedir: async (u, init) => ((pedido = { u, init }), { ok: true, text: async () => cuerpo }) });
+  assert.equal(pedido.init.method, 'POST');
+  assert.match(pedido.u, /EventosHome$/);
+
+  const [punk, desorden, konducta] = ad.extraer(texto).map((c) => normalizar(c, { url: 'https://damemiticket.com/', provincia: 'Santa Fe' }));
+  assert.deepEqual(
+    [desorden.titulo, desorden.fecha, desorden.hora, desorden.venue, desorden.direccion, desorden.ciudad, desorden.provincia],
+    ['DESORDEN PÚBLICO EN ROSARIO', '2026-12-19', '20:00', 'JAGUAR HAÜS', 'Rodriguez 198 bis', 'Rosario', 'Santa Fe'],
+  );
+  assert.equal(desorden.entradas, 'https://damemiticket.com/evento/desorden-publico-en-rosario');
+  assert.match(desorden.imagen, /^https:\/\/patagonia-chain\.com\/img_ticket\/.+\.jpg$/);
+  assert.deepEqual([punk.precioDesde, desorden.precioDesde, konducta.precioDesde], [5000, 25000, 7000], 'el precio más bajo mayor a cero');
+  assert.equal(konducta.descripcion, 'Aniversario del disco.');
+});
+
+test('Turbo Entrada: una función = un evento, con lugar, ciudad e imagen; descripción decodificada', () => {
+  const ad = adaptadorPara('https://turboentrada.com/');
+  assert.match(ad.urlDeDatos('https://turboentrada.com/'), /entradauno\.com\/v1\/api\/v2\/Cartelera$/);
+  const cuerpo = readFileSync(new URL('./fixtures/turboentrada.json', import.meta.url), 'utf8');
+  const f = { url: 'https://turboentrada.com/', provincia: 'Santa Fe' };
+  const ev = ad.extraer(cuerpo).map((c) => normalizar(c, f));
+  const ruido = ev.find((e) => e.titulo === 'Un Poco de Ruido');
+  assert.deepEqual(
+    [ruido.fecha, ruido.hora, ruido.venue, ruido.ciudad, ruido.provincia, ruido.descripcion, ruido.precioDesde],
+    ['2026-10-31', '21:00', 'Metropolitano Rosario', 'Rosario', 'Santa Fe', 'Vuelve a Rosario', null],
+  );
+  assert.match(ruido.entradas, /^https:\/\/(www\.)?turboentrada\.com\/landing\//);
+  assert.match(ruido.imagen, /^https:\/\/contenidos\.entradauno\.com\//);
+  const seru = ev.find((e) => e.titulo.startsWith('Seru Giran'));
+  assert.deepEqual([seru.ciudad, seru.provincia], ['Bahia Blanca', 'Buenos Aires']);
+});
+
+test('"Otros eventos de Rosario": solo de Rosario y alrededores, aunque la fuente venda en otras ciudades', () => {
+  const noRock = respuesta({ rockNacional: false, titulo: 'Camilo', artistas: ['Camilo'] });
+  assert.equal(aplicarClasificacion(evento('CAMILO', { ciudad: 'Funes' }), noRock, bandas, rosario).destino, 'otros');
+  assert.equal(aplicarClasificacion(evento('CAMILO', { ciudad: 'Neuquén' }), noRock, bandas, rosario), null);
+  // El rock de cualquier ciudad sí va a la Agenda.
+  assert.equal(aplicarClasificacion(evento('KAPANGA', { ciudad: 'Neuquén' }), respuesta(), bandas, rosario).destino, 'agenda');
+});
+
 // --- Clasificación ------------------------------------------------------------
 
 test('rock nacional: va a la Agenda, con bandas cargadas o nuevas', () => {

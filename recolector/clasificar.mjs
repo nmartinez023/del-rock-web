@@ -14,6 +14,12 @@ const sinArticulo = (s) => plano(s).replace(/^(los|las|la|el) /, '');
 // En un tributo el nombre de la banda aparece pero no toca ella: decide la IA.
 const ES_TRIBUTO = /\b(tributo|homenaje|tribute)\b/;
 const ES_FESTIVAL = /\b(festival|fest)\b/;
+// "Otros eventos de Rosario" son solo de Rosario y alrededores, aunque la fuente venda en otras ciudades.
+const GRAN_ROSARIO = new Set([
+  'rosario', 'funes', 'roldan', 'granadero baigorria', 'villa gobernador galvez', 'perez', 'capitan bermudez',
+  'fray luis beltran', 'san lorenzo', 'puerto general san martin', 'soldini', 'zavalla', 'ibarlucea', 'alvear',
+]);
+export const enGranRosario = (ciudad) => GRAN_ROSARIO.has(plano(ciudad ?? ''));
 
 /**
  * Título de la IA, salvo que no comparta ninguna palabra con el original (la IA a veces
@@ -93,7 +99,7 @@ export function aplicarClasificacion(ev, iaOriginal, bandas, fuente) {
   const base = { ...ev, titulo: tituloSeguro(ia.titulo, ev.titulo), tipo: ia.tipo, genero: ia.genero ?? '', rockNacional: ia.rockNacional };
 
   if (!ia.rockNacional) {
-    if (!fuente.rosario) return null;
+    if (!fuente.rosario || !enGranRosario(ev.ciudad)) return null;
     return { ...base, destino: 'otros', artistas: ia.artistas, bandas: [], bandasNuevas: [] };
   }
 

@@ -1,0 +1,110 @@
+{
+ "nCode": 200,
+ "oData": {
+  "oCartelera": {
+   "listaEstablecimiento": [
+    {
+     "idEstablecimiento": 537,
+     "cNombre": "Club Estudiantes",
+     "cDomicilio": "Santa Fe 51",
+     "cZona": "Bahia Blanca"
+    },
+    {
+     "idEstablecimiento": 145,
+     "cNombre": "Metropolitano Rosario",
+     "cDomicilio": "Central Argentino 610 - Rosario",
+     "cZona": "Rosario"
+    },
+    {
+     "idEstablecimiento": 186,
+     "cNombre": "Union F. Club",
+     "cDomicilio": "Ruta Pcial. 91 y Belgrano- Totoras, Santa Fe",
+     "cZona": ""
+    }
+   ],
+   "listaEspectaculoCartel": [
+    {
+     "idEspectaculoCartel": 17259,
+     "cNombre": "Un Poco de Ruido",
+     "cDescripcion": "%3Cp%3EVuelve%20a%20Rosario%3C/p%3E",
+     "cWebUri": "https://www.turboentrada.com/landing/un-poco-de-ruido?idEspectaculoCartel=17259&cHashValidacion=705fa88aa2bea8d5c9a2b4e9018ab8c5b0e7329c",
+     "fPrecioDesde": 0,
+     "listaImagen": [
+      {
+       "cUri": "https://contenidos.entradauno.com/cache/imagenes/productos/updr_rosario_1440x500-(2)_e7fda26c-eecf-4efe-bdf7-db7f6201a4c6.jpg",
+       "cUriLink": null,
+       "listaIdEtiqueta": [
+        "WEB_CARRUSEL_GRANDE"
+       ]
+      }
+     ],
+     "listaIdEstablecimiento": [
+      145
+     ],
+     "oFuncionLista": [
+      {
+       "idFuncion": 60311,
+       "idEstablecimiento": 145,
+       "dFuncion": "2026-10-31T21:00:00",
+       "dFuncionHasta": "2026-10-31T21:00:00"
+      }
+     ]
+    },
+    {
+     "idEspectaculoCartel": 17024,
+     "cNombre": "Seru Giran Por Lebón y Aznar",
+     "cDescripcion": "",
+     "cWebUri": "https://www.turboentrada.com/landing/17024-seru-giran?idEspectaculoCartel=17024&cHashValidacion=ef0a23e40ab55db2b02105f386d7a9fc2ce9a343",
+     "fPrecioDesde": 0,
+     "listaImagen": [
+      {
+       "cUri": "https://contenidos.entradauno.com/Venues/TurboEntrada/seru_giran_BB/SeruGiran_BahiaBlanca_1440x500%20%281%29.jpg",
+       "cUriLink": null,
+       "listaIdEtiqueta": [
+        "WEB_CARRUSEL_GRANDE"
+       ]
+      }
+     ],
+     "listaIdEstablecimiento": [
+      537
+     ],
+     "oFuncionLista": [
+      {
+       "idFuncion": 59301,
+       "idEstablecimiento": 537,
+       "dFuncion": "2026-10-25T21:00:00",
+       "dFuncionHasta": "2026-10-25T21:00:00"
+      }
+     ]
+    },
+    {
+     "idEspectaculoCartel": 13872,
+     "cNombre": "Fiesta Nacional de la Leche - Sábado",
+     "cDescripcion": "",
+     "cWebUri": "https://turboentrada.com/landing/13872-fiesta-nacional-de-la-leche---sabado?idEspectaculoCartel=13872&cHashValidacion=5d844610e08ca05370a7d1d49d4d34af18275481",
+     "fPrecioDesde": 0,
+     "listaImagen": [
+      {
+       "cUri": "https://contenidos.entradauno.com/cache/imagenes/productos/landing-v1-sab-(1)-(1)_a741f23a-32e9-42e3-afd5-2898bde7cf5a.jpg",
+       "cUriLink": null,
+       "listaIdEtiqueta": [
+        "WEB_CARRUSEL_GRANDE"
+       ]
+      }
+     ],
+     "listaIdEstablecimiento": [
+      186
+     ],
+     "oFuncionLista": [
+      {
+       "idFuncion": 61649,
+       "idEstablecimiento": 186,
+       "dFuncion": "2026-12-05T20:00:00",
+       "dFuncionHasta": "2026-12-05T20:00:00"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
