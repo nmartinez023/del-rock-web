@@ -3,8 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: indie rock
-bandas:
-  - isla-mujeres
 fecha: 2026-10-31
 hora: "20:30"
 venue: CAPITAN
@@ -19,3 +17,5 @@ origen:
   fuente: dame-mi-ticket
   id: "702"
   huella: 40f7339a08853703
+artistas:
+  - Isla Mujeres

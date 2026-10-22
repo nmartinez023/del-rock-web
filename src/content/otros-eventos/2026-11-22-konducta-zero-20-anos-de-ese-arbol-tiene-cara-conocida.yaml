@@ -3,10 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: rock alternativo
-bandas:
-  - konducta-zero
-  - secuestro-express
-  - instintos-makabros
 fecha: 2026-11-22
 hora: "20:30"
 venue: CAPITAN
@@ -24,3 +20,7 @@ origen:
   fuente: dame-mi-ticket
   id: "714"
   huella: 911fb71e24bd51b3
+artistas:
+  - Konducta Zero
+  - Secuestro Express
+  - Instintos Makabros

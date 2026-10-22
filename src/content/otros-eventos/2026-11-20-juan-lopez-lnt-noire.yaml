@@ -3,9 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: indie rock
-bandas:
-  - juan-lopez
-  - lnt-noire
 fecha: 2026-11-20
 hora: "21:00"
 venue: CAPITAN
@@ -20,3 +17,6 @@ origen:
   fuente: dame-mi-ticket
   id: "682"
   huella: 6ccbacc70504274e
+artistas:
+  - Juan Lopez
+  - LNT. Noire

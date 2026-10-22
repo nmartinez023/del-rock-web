@@ -3,9 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: rock alternativo
-bandas:
-  - antes-de-morir
-  - tonga-suin
 fecha: 2026-11-07
 hora: "21:00"
 venue: CAPITAN
@@ -20,3 +17,6 @@ origen:
   fuente: dame-mi-ticket
   id: "708"
   huella: eb51386d13ca7ec0
+artistas:
+  - Antes de Morir
+  - Tonga Suin

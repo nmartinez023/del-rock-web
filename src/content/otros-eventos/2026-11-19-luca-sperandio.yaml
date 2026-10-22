@@ -3,8 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: folk indie
-bandas:
-  - luca-sperandio
 fecha: 2026-11-19
 hora: "20:30"
 venue: CAPITAN
@@ -32,3 +30,5 @@ origen:
   fuente: dame-mi-ticket
   id: "696"
   huella: 8229e77d5210db97
+artistas:
+  - Luca Sperandio

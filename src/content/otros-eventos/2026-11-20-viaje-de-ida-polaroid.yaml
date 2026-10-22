@@ -3,9 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: indie rock
-bandas:
-  - viaje-de-ida
-  - polaroid
 fecha: 2026-11-20
 hora: "20:30"
 venue: CAPITAN
@@ -20,3 +17,6 @@ origen:
   fuente: dame-mi-ticket
   id: "707"
   huella: 33cbc46ae166bba7
+artistas:
+  - Viaje de Ida
+  - Polaroid

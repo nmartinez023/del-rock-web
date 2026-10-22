@@ -3,10 +3,6 @@ estado: ⏳ Pendiente
 tipo: show
 rockNacional: false
 genero: rock
-bandas:
-  - toribio-los-paranamas
-  - hora-de-los-abrazos
-  - los-que-vuelven
 fecha: 2026-11-13
 hora: "22:00"
 venue: CAPITAN
@@ -35,3 +31,7 @@ origen:
   fuente: dame-mi-ticket
   id: "706"
   huella: ebf1b731d9eda3d9
+artistas:
+  - Toribio & Los Paranamas
+  - Hora de los Abrazos
+  - Los que vuelven
