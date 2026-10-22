@@ -4,6 +4,7 @@
   "eventos": [
     {
       "imagen_home": "/media/eventos/banda.jpg",
+      "entradas_online_desde": "25000.00",
       "nombre": "LOS PIOJOS PRESENTA GIRA 2026",
       "unica_fecha": true,
       "desde_fecha": "7/11/2026, 21:00",

@@ -128,6 +128,7 @@ export default config({
         fecha: fields.date({ label: 'Fecha', validation: { isRequired: true } }),
         hora: fields.text({ label: 'Hora', description: 'Ej: 21:00' }),
         venue: fields.text({ label: 'Lugar', validation: { length: { min: 1 } } }),
+        direccion: fields.text({ label: 'Dirección', description: 'Calle y número, para el link "Cómo llegar".' }),
         ciudad: fields.text({ label: 'Ciudad', validation: { length: { min: 1 } } }),
         provincia: fields.select({
           label: 'Provincia',
@@ -135,8 +136,16 @@ export default config({
           defaultValue: 'CABA',
         }),
         entradas: fields.url({ label: 'Link de entradas' }),
+        precioDesde: fields.integer({ label: 'Precio desde (en pesos)', description: 'Vacío si no se sabe; 0 si es gratis.' }),
+        imagen: fields.url({
+          label: 'Imagen (URL)',
+          description: 'La trae el recolector desde la ticketera. La web la muestra a través de su propio servidor, sin guardarla en el repo.',
+        }),
+        aviso: fields.text({ label: 'Aviso', description: 'Ej: "Apto +18 años".' }),
+        descripcion: fields.text({ label: 'Descripción', multiline: true }),
         flyer: fields.image({
-          label: 'Flyer',
+          label: 'Flyer propio',
+          description: 'Opcional. Si lo subís, se usa en lugar de la imagen de la ticketera.',
           directory: 'src/assets/agenda',
           publicPath: '../../assets/agenda/',
         }),

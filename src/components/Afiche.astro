@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { getEntries } from 'astro:content';
-import { diaMes, slugTag, type Fecha } from '../lib/util';
+import { diaMes, imagenDeFecha, precioTexto, slugTag, type Fecha } from '../lib/util';
 
 interface Props {
   fecha: Fecha;
@@ -11,8 +12,9 @@ const { fecha, i = 0 } = Astro.props;
 const { data } = fecha;
 const { dia, mes } = diaMes(data.fecha);
 const rot = [-1.6, 1.2, -0.8, 1.8, -1.2, 0.9][i % 6];
-const href = data.entradas ?? (data.bandas[0] ? `/bandas/${data.bandas[0].id}/` : undefined);
-const Tag = href ? 'a' : 'div';
+const href = `/agenda/${fecha.id}/`;
+const imagen = imagenDeFecha(fecha);
+const precio = precioTexto(data.precioDesde);
 
 // Lineup: en un festival, todas las bandas; en un show, las que no figuran ya en el título.
 const nombres = (await getEntries(data.bandas)).filter(Boolean).map((b) => b.data.nombre);
@@ -20,15 +22,25 @@ const enTitulo = slugTag(data.titulo);
 const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
 ---
 
-<Tag
+<a
   href={href}
-  rel={data.entradas ? 'noopener' : undefined}
   class="afiche"
   style={`--rot:${rot}deg`}
   data-provincia={data.provincia}
   data-fecha={data.fecha.toISOString().slice(0, 10)}
 >
   <span class="cinta-adhesiva" aria-hidden="true"></span>
+  {
+    imagen && (
+      <span class="foto foto-afiche">
+        {imagen.tipo === 'local' ? (
+          <Image src={imagen.src} alt="" width={480} height={480} fit="cover" />
+        ) : (
+          <img src={imagen.src} alt="" width="480" height="480" loading="lazy" decoding="async" />
+        )}
+      </span>
+    )
+  }
   <time datetime={data.fecha.toISOString().slice(0, 10)} class="cuando">
     <span class="d dia">{dia}</span>
     <span class="d mes">{mes}</span>
@@ -37,17 +49,13 @@ const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTit
   <span class="d quien">{data.titulo}</span>
   {lineup.length > 0 && <span class="lineup">{data.tipo === 'festival' ? '' : 'Con '}{lineup.join(' · ')}</span>}
   <span class="donde">{data.venue}, {data.ciudad}{data.hora && ` · ${data.hora} h`}</span>
-  {
-    data.entradas && (
-      <span class="entradas">
-        <span>Entradas</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      </span>
-    )
-  }
-</Tag>
+  <span class="entradas">
+    <span>{precio ?? 'Ver detalle'}</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  </span>
+</a>
 
 <style>
   .afiche {
@@ -74,6 +82,13 @@ const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTit
     margin-left: -48px;
     background: rgb(222 212 182 / 0.8);
     transform: rotate(-4deg);
+  }
+  /* La foto del evento, pegada en el afiche */
+  .foto-afiche {
+    display: block;
+    aspect-ratio: 1;
+    margin: -6px -6px 16px;
+    background: #d9d3c6;
   }
   .cuando {
     display: flex;

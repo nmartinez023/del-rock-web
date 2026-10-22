@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-11-06
 hora: '20:00'
 venue: Centro Cultural Güemes
+direccion: Güemes 2808
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/NEPAL-EN-ROSARIO/
+precioDesde: 25000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/nepal2.jpg
+aviso: EVENTO APTO PARA +18 AÑOS
 origen:
   fuente: entrada-play
   id: NEPAL-EN-ROSARIO
-  huella: 6c9e2cac51442de1
+  huella: b492358d3c9d45c1
+  detalle: 2026-10-22

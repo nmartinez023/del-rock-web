@@ -4,7 +4,11 @@ import { join } from 'node:path';
 import { parse, stringify } from 'yaml';
 import { hash, plano, slug } from './texto.mjs';
 
-const CAMPOS_AUTO = ['titulo', 'tipo', 'bandas', 'fecha', 'hora', 'venue', 'ciudad', 'provincia', 'entradas'];
+// Campos que completa el recolector. Si alguno cambia a mano, la fecha queda como "editada" y no se pisa.
+export const CAMPOS_AUTO = [
+  'titulo', 'tipo', 'bandas', 'fecha', 'hora', 'venue', 'direccion', 'ciudad', 'provincia',
+  'entradas', 'precioDesde', 'imagen', 'aviso', 'descripcion',
+];
 
 export function leerYaml(dir) {
   if (!existsSync(dir)) return [];
@@ -14,13 +18,14 @@ export function leerYaml(dir) {
 }
 
 const listaBandas = (d) => [...(d.bandas ?? [])].map(String).sort();
+const vacio = (v) => v === undefined || v === null || v === '';
 
 const camposAuto = (d) =>
   Object.fromEntries(
     CAMPOS_AUTO.map((c) => {
       if (c === 'bandas') return [c, listaBandas(d).join(',')];
       if (c === 'tipo') return [c, d.tipo || 'show'];
-      return [c, d[c] ? String(d[c]) : ''];
+      return [c, vacio(d[c]) ? '' : String(d[c]).trim()];
     }),
   );
 export const huellaDe = (d) => hash(camposAuto(d));
@@ -31,11 +36,14 @@ export function claveDe(d) {
   return [String(d.fecha), plano(d.venue), quien].join('|');
 }
 
-function aYaml(d, estado, origen) {
+/** Arma el YAML en el orden de los campos del panel. Los vacíos no se escriben. */
+export function aYaml(d, estado, origen) {
   const salida = { titulo: d.titulo, estado, tipo: d.tipo || 'show' };
   if (d.bandas?.length) salida.bandas = d.bandas;
-  Object.assign(salida, { fecha: d.fecha, hora: d.hora, venue: d.venue, ciudad: d.ciudad, provincia: d.provincia });
-  if (d.entradas) salida.entradas = d.entradas;
+  for (const c of ['fecha', 'hora', 'venue', 'direccion', 'ciudad', 'provincia', 'entradas', 'precioDesde', 'imagen', 'aviso', 'descripcion']) {
+    if (!vacio(d[c]) || c === 'hora') salida[c] = d[c] ?? '';
+  }
+  if (d.flyer) salida.flyer = d.flyer;
   salida.origen = origen;
   // La hora va entre comillas, como la guarda el panel ("21:00" sin comillas es ambiguo en YAML).
   return stringify(salida, { lineWidth: 0 }).replace(/^hora: (\d{1,2}:\d{2})$/m, "hora: '$1'");
@@ -50,11 +58,19 @@ function asegurarBanda(dirBandas, banda, seco) {
   return true;
 }
 
+/** Índice de la agenda por origen ("fuente|id"), para saber qué ya existe. */
+export function indicePorOrigen(dir) {
+  const indice = new Map();
+  for (const e of leerYaml(dir)) if (e.datos.origen?.id) indice.set(`${e.datos.origen.fuente}|${e.datos.origen.id}`, e);
+  return indice;
+}
+
 /**
  * Mezcla los eventos recolectados con la agenda existente.
  * - Nuevo: se crea como "pendiente" (y sus bandas, si no existían).
  * - Ya traído antes y sin tocar a mano: se actualiza si cambió algo (mantiene su estado).
  * - Editado a mano, o cargado a mano / por otra fuente (mismo evento): no se toca.
+ * `ev.detalle` es la fecha en que se leyó la página del evento; si no se leyó, se conserva la anterior.
  */
 export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } = {}) {
   const existentes = leerYaml(dir);
@@ -74,6 +90,12 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
       creadas.add(b.slug);
     }
   };
+  const origenDe = (ev, previo) => {
+    const o = { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) };
+    const detalle = ev.detalle ?? previo?.origen?.detalle;
+    if (detalle) o.detalle = detalle;
+    return o;
+  };
 
   for (const ev of eventos) {
     if (ev.fecha < hoy) continue;
@@ -83,12 +105,18 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
     if (previo) {
       const d = previo.datos;
       const editadoAMano = d.origen.huella !== huellaDe(d);
-      if (editadoAMano || huellaDe(ev) === d.origen.huella) {
+      if (editadoAMano) {
         resumen.sinCambios++;
         continue;
       }
-      conBandas(ev);
-      if (!seco) writeFileSync(join(dir, previo.archivo), aYaml(ev, d.estado ?? 'pendiente', { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) }));
+      // Si esta vez no se leyó la página del evento, se conservan los datos que vinieron de ahí.
+      const completo = ev.detalle ? ev : { ...ev, direccion: ev.direccion || d.direccion, aviso: ev.aviso || d.aviso, descripcion: ev.descripcion || d.descripcion };
+      if (huellaDe(completo) === d.origen.huella && (!ev.detalle || ev.detalle === d.origen.detalle)) {
+        resumen.sinCambios++;
+        continue;
+      }
+      conBandas(completo);
+      if (!seco) writeFileSync(join(dir, previo.archivo), aYaml({ ...completo, flyer: d.flyer }, d.estado ?? 'pendiente', origenDe(completo, d)));
       resumen.actualizados.push(previo.archivo);
       continue;
     }
@@ -103,7 +131,7 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
     for (let n = 2; ocupados.has(archivo); n++) archivo = `${base}-${n}.yaml`;
     ocupados.add(archivo);
 
-    const origen = { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) };
+    const origen = origenDe(ev);
     conBandas(ev);
     if (!seco) writeFileSync(join(dir, archivo), aYaml(ev, 'pendiente', origen));
     const nuevo = { archivo, datos: { ...ev, origen } };

@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-10-31
 hora: '23:59'
 venue: La Sala De Las Artes
+direccion: Suipacha Bis 98
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE/
+precioDesde: 6667
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/TICKETERA_4.jpg
+aviso: EVENTO APTO +18 AÑOS
 origen:
   fuente: entrada-play
   id: CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE
-  huella: a8c28b21e0af81d0
+  huella: c532ddf2d84157e2
+  detalle: 2026-10-22

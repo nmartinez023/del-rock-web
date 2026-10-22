@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-12-19
 hora: '21:00'
 venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/DIOS-SALVE-A-LA-REINA/
+precioDesde: 40000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/54137522-3606-4982-b57c-37baec904ea0.jpg
+aviso: EVENTO APTO PARA +12 AÑOS ACOMPAÑADOS POR UN MAYOR
 origen:
   fuente: entrada-play
   id: DIOS-SALVE-A-LA-REINA
-  huella: df3aa8ad08d66bb3
+  huella: b6fd9d8b06ade705
+  detalle: 2026-10-22

@@ -51,6 +51,17 @@ function texto(v) {
   return limpiar(String(v));
 }
 
+/** El precio más bajo de las ofertas, en pesos enteros (null si no hay). */
+function precioMinimo(offers) {
+  const precios = [offers]
+    .flat()
+    .filter(Boolean)
+    .flatMap((o) => [o.price, o.lowPrice])
+    .map((p) => parseFloat(String(p ?? '').replace(',', '.')))
+    .filter((p) => Number.isFinite(p) && p >= 0);
+  return precios.length ? Math.round(Math.min(...precios)) : null;
+}
+
 function aCrudo(nodo) {
   const lugar = primero(nodo.location);
   const dir = lugar && typeof lugar === 'object' ? primero(lugar.address) : undefined;
@@ -68,7 +79,21 @@ function aCrudo(nodo) {
     direccion: typeof dir === 'string' ? limpiar(dir) : dir ? texto(dir.streetAddress) : '',
     url: texto(oferta?.url) || texto(nodo.url),
     imagen: typeof imagen === 'string' ? imagen : (imagen?.url ?? ''),
+    precioDesde: precioMinimo(nodo.offers),
+    descripcion: texto(nodo.description),
     artistas,
     id: texto(nodo.identifier) || texto(nodo['@id']) || '',
+  };
+}
+
+/** Datos extra desde la página propia del evento: se usa el primer Event que publique. */
+export function detalle(crudo, html) {
+  const [ev] = extraer(html);
+  if (!ev) return {};
+  return {
+    direccion: ev.direccion,
+    imagen: ev.imagen,
+    precioDesde: ev.precioDesde,
+    descripcion: ev.descripcion,
   };
 }

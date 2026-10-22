@@ -6,10 +6,19 @@ bandas:
 fecha: 2026-11-13
 hora: '20:00'
 venue: Centro Cultural Güemes
+direccion: Güemes 2808
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/CHARLY-DAY-EN-CCG/
+precioDesde: 8000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/696ac4c6-966f-4792-9ed0-02545bb6efb3_1.jpg
+aviso: EVENTO APTO +18 AÑOS
+descripcion: |-
+  El VIERNES 13 de noviembre se llevará a cabo un homenaje de EXCELENCIA al maestro Charly García, con más de 30 artistas invitados que representarán a la música rosarina y argentina.
+
+  Dos horas y media de pura nostalgia, música histórica, con memoria y reversiones de las canciones que marcaron varias generaciones de todo un continente.
 origen:
   fuente: entrada-play
   id: CHARLY-DAY-EN-CCG
-  huella: b2a4b9eeb362326f
+  huella: 59b438b4acba41a3
+  detalle: 2026-10-22

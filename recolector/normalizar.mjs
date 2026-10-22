@@ -14,9 +14,15 @@ const PROVINCIAS = [
   [/\b(buenos aires|la plata|mar del plata|bahia blanca|quilmes|moron|lanus|avellaneda)\b/, 'Buenos Aires'],
 ];
 
+/**
+ * Provincia a partir de (en orden de confianza) región, localidad y dirección.
+ * Se mira cada texto por separado: en Rosario hay una calle Córdoba, y eso no la hace de Córdoba.
+ */
 export function provinciaDe(...textos) {
-  const t = plano(textos.filter(Boolean).join(' '));
-  for (const [re, p] of PROVINCIAS) if (re.test(t)) return p;
+  for (const texto of textos.filter(Boolean)) {
+    const t = plano(texto);
+    for (const [re, p] of PROVINCIAS) if (re.test(t)) return p;
+  }
   return null;
 }
 
@@ -64,10 +70,25 @@ export function normalizar(crudo, fuente) {
     fecha: fh.fecha,
     hora: fh.hora,
     venue: crudo.lugar || 'A confirmar',
+    direccion: crudo.direccion || '',
     ciudad,
     provincia,
     entradas: crudo.url || fuente.url,
+    precioDesde: crudo.precioDesde ?? null,
+    imagen: /^https?:\/\//.test(crudo.imagen ?? '') ? crudo.imagen : '',
+    aviso: crudo.aviso || '',
+    descripcion: crudo.descripcion || '',
     artistas: crudo.artistas,
     id: crudo.id || crudo.url || `${fh.fecha}|${plano(crudo.nombre)}`,
+    ...(crudo.detalle ? { detalle: crudo.detalle } : {}),
   };
+}
+
+/** Suma al evento crudo lo que trae su página de detalle (sin pisar lo que ya tenía). */
+export function completar(crudo, extra) {
+  const salida = { ...crudo };
+  for (const [k, v] of Object.entries(extra ?? {})) {
+    if (v !== undefined && v !== null && v !== '' && (salida[k] === undefined || salida[k] === null || salida[k] === '')) salida[k] = v;
+  }
+  return salida;
 }

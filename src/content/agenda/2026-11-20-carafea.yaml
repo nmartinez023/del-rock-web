@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-11-20
 hora: '20:00'
 venue: La Sala De Las Artes
+direccion: Suipacha Bis 98
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/CARAFEA/
+precioDesde: 20000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/f7098637-841e-4f1b-96eb-c363b992ca6e.jpg
+aviso: EVENTO APTO +18 AÑOS
 origen:
   fuente: entrada-play
   id: CARAFEA
-  huella: ceba7135ae0b9145
+  huella: 8b2cb2e831de0b18
+  detalle: 2026-10-22

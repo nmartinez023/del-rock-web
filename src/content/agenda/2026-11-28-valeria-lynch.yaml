@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-11-28
 hora: '21:00'
 venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/VALERIA-LYNCH/
+precioDesde: 55000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/06/7c5f7245-f514-4f84-bb04-0d230c25ef41.jpg
+aviso: Pueden ingresar mayores de 12 años con su respectiva entrada y acompañados de un adulto responsable MENORES DE 12 AÑOS NO PUEDEN INGRESAR
 origen:
   fuente: entrada-play
   id: VALERIA-LYNCH
-  huella: 3c94ad9b2dced159
+  huella: 40fb22593b70b516
+  detalle: 2026-10-22

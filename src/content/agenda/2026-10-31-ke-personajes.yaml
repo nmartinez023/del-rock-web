@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-10-31
 hora: '21:00'
 venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/KE-PERSONAJES---CORAZON-AUSENTE-TOUR/
+precioDesde: 90000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/07/800_x_800.JPG
+aviso: EVENTO APTO PARA MAYORES DE 5 AÑOS ACOMPAÑADOS POR UN MAYOR DE EDAD
 origen:
   fuente: entrada-play
   id: KE-PERSONAJES---CORAZON-AUSENTE-TOUR
-  huella: 3bcc119044018d4c
+  huella: 1b25f5acd7af25bc
+  detalle: 2026-10-22

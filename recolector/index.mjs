@@ -4,9 +4,9 @@
 // Uso: npm run recolectar            (escribe los archivos)
 //      npm run recolectar -- --seco  (solo muestra qué haría)
 import { appendFileSync } from 'node:fs';
-import { leerYaml, mezclar } from './agenda.mjs';
+import { leerYaml, mezclar, indicePorOrigen } from './agenda.mjs';
 import { adaptadorPara } from './adaptadores/index.mjs';
-import { normalizar, hoyEnArgentina } from './normalizar.mjs';
+import { normalizar, hoyEnArgentina, completar, fechaHora } from './normalizar.mjs';
 import { clasificar } from './clasificar.mjs';
 import { puedeLeer } from './robots.mjs';
 
@@ -28,6 +28,41 @@ const log = (l) => {
   lineas.push(l);
 };
 
+const pausa = (ms) => new Promise((r) => setTimeout(r, ms));
+const DIAS_DETALLE = 7; // cada cuánto se vuelve a leer la página de un evento ya cargado
+const MAX_DETALLES = 80; // tope de páginas de evento por fuente y por corrida
+
+/**
+ * Lee la página propia de cada evento (descripción, dirección, aviso) solo cuando hace falta:
+ * eventos nuevos, o ya cargados cuya página no se leyó en los últimos días.
+ */
+async function leerDetalles(crudos, adaptador, fuente) {
+  const existentes = indicePorOrigen(DIR_AGENDA);
+  const limite = new Date(Date.now() - DIAS_DETALLE * 86_400_000).toISOString().slice(0, 10);
+  const host = new URL(fuente.url).hostname;
+  let leidas = 0;
+
+  for (const [i, crudo] of crudos.entries()) {
+    if (leidas >= MAX_DETALLES || !crudo.url || crudo.cancelado) continue;
+    if ((fechaHora(crudo.inicio)?.fecha ?? '') < hoy) continue; // ya pasó
+    if (new URL(crudo.url).hostname !== host) continue; // links a otra ticketera: no
+    const previo = existentes.get(`${fuente.slug}|${crudo.id || crudo.url}`);
+    if (previo && (previo.datos.origen?.detalle ?? '') >= limite) continue;
+    if (!(await puedeLeer(crudo.url, AGENTE))) continue;
+    try {
+      const res = await fetch(crudo.url, { headers: { 'user-agent': AGENTE }, signal: AbortSignal.timeout(20_000) });
+      if (res.ok) {
+        crudos[i] = { ...completar(crudo, adaptador.detalle(crudo, await res.text())), detalle: hoy };
+        leidas++;
+      }
+    } catch {
+      // Si falla una página de evento, seguimos con los datos del listado.
+    }
+    await pausa(1000);
+  }
+  return leidas;
+}
+
 if (fuentes.length === 0) log('No hay fuentes activas. Cargalas en el panel: Fuentes de agenda.');
 
 for (const fuente of fuentes) {
@@ -46,6 +81,7 @@ for (const fuente of fuentes) {
     const cuerpo = await res.text();
 
     const crudos = adaptador.extraer(cuerpo, url);
+    const detalles = adaptador.detalle ? await leerDetalles(crudos, adaptador, fuente) : 0;
     const eventos = crudos
       .map((c) => normalizar(c, fuente))
       .filter(Boolean)
@@ -57,7 +93,8 @@ for (const fuente of fuentes) {
     bandas.push(...r.bandasNuevas);
     log(
       `- **${fuente.slug}**: ${crudos.length} eventos en la página, ${eventos.length} pasan el filtro → ` +
-        `${r.nuevos.length} nuevos, ${r.actualizados.length} actualizados, ${r.sinCambios} sin cambios, ${r.omitidos} ya cargados por otra vía.`,
+        `${r.nuevos.length} nuevos, ${r.actualizados.length} actualizados, ${r.sinCambios} sin cambios, ${r.omitidos} ya cargados por otra vía. ` +
+        `Páginas de evento leídas: ${detalles}.`,
     );
     for (const a of r.nuevos) log(`  - nuevo: ${a}`);
     for (const b of r.bandasNuevas) log(`  - banda nueva: ${b.nombre}`);
@@ -67,7 +104,7 @@ for (const fuente of fuentes) {
     errores.push(fuente.slug);
     log(`- **${fuente.slug}**: ❌ ${err.message}`);
   }
-  await new Promise((r) => setTimeout(r, 1500)); // no saturar a nadie
+  await pausa(1500); // no saturar a nadie
 }
 
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, lineas.join('\n') + '\n');

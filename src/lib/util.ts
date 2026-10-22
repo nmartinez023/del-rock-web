@@ -74,7 +74,25 @@ export async function bandasVisibles() {
     .sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
 }
 
-export const tocaEn = (fecha: Fecha, bandaId: string) => fecha.data.bandas.some((b) => b.id === bandaId);
+/** "sábado 28 de noviembre de 2026" */
+export function fechaCompleta(d: Date) {
+  return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
+export function precioTexto(precio: number | null | undefined) {
+  if (precio === null || precio === undefined) return null;
+  if (precio === 0) return 'Gratis';
+  return `Desde ${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(precio)}`;
+}
+
+/** Imagen del evento: flyer propio (optimizado por Astro) o la de la ticketera, servida por nuestro Worker. */
+export function imagenDeFecha(fecha: Fecha) {
+  if (fecha.data.flyer) return { tipo: 'local' as const, src: fecha.data.flyer };
+  if (fecha.data.imagen) return { tipo: 'remota' as const, src: `/agenda/${fecha.id}/imagen` };
+  return null;
+}
+
+export const tocaEn =(fecha: Fecha, bandaId: string) => fecha.data.bandas.some((b) => b.id === bandaId);
 
 export async function noticiasOrdenadas() {
   const todas = await getCollection('noticias');

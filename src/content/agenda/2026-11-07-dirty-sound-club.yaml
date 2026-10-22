@@ -3,13 +3,19 @@ estado: pendiente
 tipo: show
 bandas:
   - dirty-sound-club
+  - ccg
 fecha: 2026-11-07
 hora: '23:59'
 venue: Centro Cultural Güemes
+direccion: Güemes 2808
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/DIRTY-SOUND-CLUB-x-CCG/
+precioDesde: 8000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/69c48996-3ce5-4135-9114-3f3ec334267d.jpg
+aviso: EVENTO APTO PARA +18 AÑOS
 origen:
   fuente: entrada-play
   id: DIRTY-SOUND-CLUB-x-CCG
-  huella: aae75ef282e90629
+  huella: 537156de7b159c39
+  detalle: 2026-10-22

@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-11-28
 hora: '20:00'
 venue: La Sala De Las Artes
+direccion: Suipacha Bis 98
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/2-MINUTOS/
+precioDesde: 30000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/1080x1080_2minutos.jpg
+aviso: EVENTO APTO +18 AÑOS
 origen:
   fuente: entrada-play
   id: 2-MINUTOS
-  huella: 91189c9c35eb5d98
+  huella: 83b7c40f8e3c228d
+  detalle: 2026-10-22

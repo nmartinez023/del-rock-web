@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-12-07
 hora: '20:00'
 venue: Centro Cultural Güemes
+direccion: Güemes 2808
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/CHAMAME-CLUB-y-PENA-LUNERA/
+precioDesde: 15000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/TICKETERA_1.jpg
+aviso: EVENTO APTO +18 AÑOS
 origen:
   fuente: entrada-play
   id: CHAMAME-CLUB-y-PENA-LUNERA
-  huella: 0aef55b781b0a6e4
+  huella: cebe181e37c69c4e
+  detalle: 2026-10-22

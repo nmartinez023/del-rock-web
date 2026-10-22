@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-12-05
 hora: '23:59'
 venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/OID-MORTALES---PIPO-CIPOLATTI---BAHIANO/
+precioDesde: 10000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/6fdab32e-2a4d-488f-872a-54e89f40d454.jpg
+aviso: EVENTO APTO +18 AÑOS
 origen:
   fuente: entrada-play
   id: OID-MORTALES---PIPO-CIPOLATTI---BAHIANO
-  huella: e421d5b151ebe3e8
+  huella: 136a12e3b3737fb5
+  detalle: 2026-10-22

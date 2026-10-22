@@ -6,10 +6,15 @@ bandas:
 fecha: 2026-10-24
 hora: '21:00'
 venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/LOS-NOCHEROS/
+precioDesde: 50000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/07/iyqm13UA.jpeg
+aviso: EVENTO APTO PARA +12 AÑOS ACOMPAÑADOS POR UN MAYOR
 origen:
   fuente: entrada-play
   id: LOS-NOCHEROS
-  huella: 55d28f88331c7f7b
+  huella: fe7bcb4525e8d209
+  detalle: 2026-10-22

@@ -103,7 +103,10 @@ export function clasificar(evento, bandas, fuente) {
   const titulo = plano(evento.titulo);
   const tipo = ES_FESTIVAL.test(titulo) ? 'festival' : 'show';
 
-  const conocidas = buscarBandas([evento.titulo, ...(evento.artistas ?? [])].join(' | '), bandas);
+  // En un show, las bandas conocidas se buscan solo en la parte del título que nombra artistas
+  // ("Charly Day en CCG": CCG es el lugar). En un festival, en todo el título (el lineup suele ir después).
+  const zona = tipo === 'festival' ? evento.titulo : evento.titulo.split(FIN_ARTISTAS)[0];
+  const conocidas = buscarBandas([zona, ...(evento.artistas ?? [])].join(' | '), bandas);
   const slugs = conocidas.map((b) => b.slug);
 
   const candidatos = evento.artistas?.length

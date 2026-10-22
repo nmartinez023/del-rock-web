@@ -31,6 +31,11 @@ En la web solo aparecen las fechas **Publicada**: las revisás en *Agenda* y les
 - **Varias bandas:** una fecha puede tener varias (`bandas`). Se reconocen las ya cargadas y, con "Todos", se crean las
   que faltan separando el título ("A + B", "A & B", "A / B", "A ft B"). Las bandas creadas quedan ocultas hasta que tengan algo publicado.
 - **Festivales:** `tipo: festival`. No se inventan bandas desde el título: solo se asocian las cargadas que aparezcan o el lineup que informe la ticketera.
+- **Detalle de cada evento:** del listado salen precio e imagen; de la página de cada evento, dirección, aviso (+18, etc.)
+  y descripción. Esa página se lee al cargar el evento y después como mucho una vez por semana.
+- **Imágenes:** se guarda solo la URL. La web las muestra en `/agenda/<fecha>/imagen`, un endpoint del Worker que la pide
+  a la ticketera y la deja en caché (7 días en el navegador, 30 en Cloudflare). Solo sirve imágenes de fechas publicadas.
+  Si subís un *Flyer propio* en el panel, se usa ese.
 - **Duplicados:** el mismo evento (fecha + lugar + bandas) no se carga dos veces, aunque venga de otra fuente o ya lo hayas cargado a mano.
 - **Ediciones a mano:** si corregís una fecha que trajo el recolector, no la vuelve a pisar.
 - **Respeta `robots.txt`** y se identifica como `DelRockBot`.

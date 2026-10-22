@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
 import { adaptadorPara } from '../adaptadores/index.mjs';
-import { normalizar, fechaHora, provinciaDe } from '../normalizar.mjs';
+import { normalizar, fechaHora, provinciaDe, completar } from '../normalizar.mjs';
 import { clasificar, nombresDelTitulo } from '../clasificar.mjs';
 import { mezclar } from '../agenda.mjs';
 import { parsearRobots, rutaPermitida } from '../robots.mjs';
@@ -62,6 +62,8 @@ test('deduce la provincia desde la dirección', () => {
   assert.equal(provinciaDe('Av. Siempreviva 123, Rosario, Santa Fe'), 'Santa Fe');
   assert.equal(provinciaDe('La Plata'), 'Buenos Aires');
   assert.equal(provinciaDe('Montevideo'), null);
+  // La región manda sobre la dirección (calle Córdoba en Rosario).
+  assert.equal(provinciaDe('Santa Fe', 'Rosario', 'Córdoba 1650'), 'Santa Fe');
 });
 
 test('con filtro "bandas" deja solo eventos con bandas cargadas y descarta cancelados', () => {
@@ -105,6 +107,9 @@ test('dos bandas: matchea las cargadas y crea las que faltan', () => {
   assert.deepEqual(mixto.bandasNuevas, [{ slug: 'los-gardelitos', nombre: 'Los Gardelitos' }]);
   // Con "y": la conocida se reconoce y el resto queda como banda nueva.
   assert.deepEqual(clasificar(evento('Los Espíritus y Él Mató'), bandas, f).bandas, ['los-espiritus', 'el-mato']);
+  // Una banda conocida que en realidad es el lugar no se asocia: "Charly Day en CCG".
+  const conLugar = clasificar(evento('Charly Day en CCG'), [...bandas, { slug: 'ccg', nombre: 'CCG' }], f);
+  assert.deepEqual(conLugar.bandas, ['charly-day']);
   // Artistas informados por la ticketera: se usan tal cual.
   const informados = clasificar(evento('Noche de rock', { artistas: ['Kapanga', 'Los Tabaleros'] }), bandas, f);
   assert.deepEqual(informados.bandas, ['kapanga', 'los-tabaleros']);
@@ -217,6 +222,50 @@ test('adaptador de Entrada Play: lee su JSON y arma fecha, lugar, link y bandas'
     ['2026-11-15', '', 'Santa Fe', 'https://otra-ticketera.ejemplo/evento', ['banda-invitada', 'otro-artista']],
   );
   assert.equal(adaptadorPara('https://otra.ejemplo/x').extraer, extraer, 'el resto usa JSON-LD');
+});
+
+test('Entrada Play: precio e imagen del listado; descripción, aviso y dirección de la página del evento', () => {
+  const ad = adaptadorPara('https://entradaplay.com');
+  const lista = ad.extraer(readFileSync(new URL('./fixtures/entradaplay.json', import.meta.url), 'utf8'), 'https://entradaplay.com/obtener_eventos/');
+  assert.equal(lista[0].imagen, 'https://entradaplay.com/media/eventos/banda.jpg');
+  assert.equal(lista[0].precioDesde, 25000);
+
+  const html = readFileSync(new URL('./fixtures/entradaplay-evento.html', import.meta.url), 'utf8');
+  const extra = ad.detalle(lista[0], html);
+  assert.deepEqual(extra, {
+    direccion: 'Calle Falsa 123',
+    descripcion: 'La banda vuelve a Rosario con un show único.\n\nApertura de puertas: 20 hs.\n\nInvitados especiales.',
+    aviso: 'EVENTO APTO +18 AÑOS',
+  });
+  const ev = normalizar(completar(lista[0], extra), { url: 'https://entradaplay.com', provincia: 'Santa Fe' });
+  assert.deepEqual(
+    [ev.direccion, ev.precioDesde, ev.imagen, ev.aviso],
+    ['Calle Falsa 123', 25000, 'https://entradaplay.com/media/eventos/banda.jpg', 'EVENTO APTO +18 AÑOS'],
+  );
+});
+
+test('JSON-LD genérico: precio más bajo de las ofertas y descripción', () => {
+  const [ev] = extraer(`<script type="application/ld+json">{"@type":"MusicEvent","name":"X","startDate":"2026-11-01",
+    "description":"Show acústico","offers":[{"price":"20000"},{"price":"15000.50"},{"lowPrice":"18000"}]}</script>`);
+  assert.deepEqual([ev.precioDesde, ev.descripcion], [15001, 'Show acústico']);
+});
+
+test('mezclar: si esta vez no se leyó la página del evento, conserva la descripción guardada', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'agenda-'));
+  try {
+    const base = evento('Turf', { bandas: ['turf'], tipo: 'show', precioDesde: 20000, imagen: 'https://t/img.jpg' });
+    mezclar(dir, [{ ...base, descripcion: 'Texto largo', aviso: '+18', direccion: 'Calle 1', detalle: '2026-10-25' }], fuente, { hoy: HOY });
+    const [archivo] = readdirSync(dir);
+    // Corrida siguiente: cambia el precio y no se leyó la página (no hay descripción en el evento).
+    const r = mezclar(dir, [{ ...base, precioDesde: 25000 }], fuente, { hoy: HOY });
+    assert.deepEqual(r.actualizados, [archivo]);
+    const d = parse(readFileSync(join(dir, archivo), 'utf8'));
+    assert.deepEqual([d.precioDesde, d.descripcion, d.aviso, d.direccion, d.origen.detalle], [25000, 'Texto largo', '+18', 'Calle 1', '2026-10-25']);
+    // Y una tercera corrida igual no cambia nada.
+    assert.equal(mezclar(dir, [{ ...base, precioDesde: 25000 }], fuente, { hoy: HOY }).actualizados.length, 0);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
 
 test('robots.txt: respeta Disallow y la regla más específica', () => {
