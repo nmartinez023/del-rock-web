@@ -1,0 +1,20 @@
+titulo: K4OS
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: no determinado
+bandas:
+  - k4os
+fecha: 2026-12-15
+hora: "21:00"
+venue: Movistar Arena
+direccion: Humboldt 450
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.movistararena.com.ar/show/48a4362e-0a04-4d67-a19b-d6298f7dd79c
+precioDesde: 40000
+imagen: https://www.movistararena.com.ar/static/artistas/8FE6D_K4OS_FileFotoFichaDesktop
+origen:
+  fuente: movistar-arena
+  id: 48a4362e-0a04-4d67-a19b-d6298f7dd79c-2026-12-15
+  huella: 81786f4fc2a44613

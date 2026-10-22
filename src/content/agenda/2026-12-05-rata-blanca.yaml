@@ -6,16 +6,16 @@ genero: hard rock y heavy metal
 bandas:
   - rata-blanca
 fecha: 2026-12-05
-hora: ""
+hora: "21:00"
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/4c068796-cba5-4014-a1f4-45232800782c
 precioDesde: 68000
-imagen: https://www.movistararena.com.ar/static/artistas/E217C_RATABLANCA_FileFotoFichaListado
+imagen: https://www.movistararena.com.ar/static/artistas/8F5CD_RATABLANCA_FileFotoFichaDesktop
 descripcion: El show de Rata Blanca, originalmente previsto para el 2 de diciembre, ha sido reprogramado para el sábado 5 de diciembre en el Movistar Arena. La legendaria banda reafirma su lugar como una de las más influyentes del hard rock y heavy en español. Liderados por Walter Giardino, prometen una noche cargada de clásicos y potencia en vivo. Con una carrera que despegó en los ‘90 y un hito como Magos, Espadas y Rosas —que superó los 5 millones de copias vendidas—, Rata Blanca consolidó un sonido único que fusiona riffs pesados con influencias de la música clásica. Con múltiples discos de oro y platino, y una química inconfundible entre la guitarra de Giardino y la voz de Adrián Barilari, la banda sigue haciendo historia en cada escenario.
 origen:
   fuente: movistar-arena
   id: 4c068796-cba5-4014-a1f4-45232800782c-2026-12-05
-  huella: 74afc5bc32a90a64
+  huella: 597a0c8a61c97c67

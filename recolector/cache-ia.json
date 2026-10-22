@@ -64,6 +64,17 @@
    "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "0670d5716a0d56e9": {
+   "r": {
+    "genero": "no determinado",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cine Italia Embrujado",
+    "artistas": []
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "06853f5b6aa3c320": {
    "r": {
     "genero": "pop italiano",
@@ -859,6 +870,17 @@
     ]
    },
    "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "4fbdaa63a04b5270": {
+   "r": {
+    "genero": "visita guiada",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Visita guiada AMIA",
+    "artistas": []
+   },
+   "fecha": "2026-10-26",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "4fd22f99827f4d65": {
@@ -2290,6 +2312,17 @@
     ]
    },
    "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "b3e302d3f1204ea8": {
+   "r": {
+    "genero": "visita guiada",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Visita guiada AMIA",
+    "artistas": []
+   },
+   "fecha": "2026-10-27",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "b4b97ebeb100c4d1": {
