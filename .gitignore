@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# secrets locales de Wrangler
+.dev.vars*
+
+# estado local de Wrangler
+.wrangler/

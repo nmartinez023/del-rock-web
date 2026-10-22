@@ -1,10 +1,9 @@
-// Worker de Cloudflare que sirve el sitio estático compilado en dist/.
+// Worker de Cloudflare: sirve el sitio prerenderizado de dist/ y corre el panel de Keystatic.
+// Secrets del panel (cargalos en el Worker, no acá): KEYSTATIC_GITHUB_CLIENT_ID,
+// KEYSTATIC_GITHUB_CLIENT_SECRET y KEYSTATIC_SECRET.
 {
   "name": "del-rock-web",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-06-01",
-  "assets": {
-    "directory": "./dist",
-    // Las rutas que no existen muestran src/pages/404.astro con estado 404.
-    "not_found_handling": "404-page"
-  }
+  "compatibility_flags": ["nodejs_compat"]
 }

@@ -12,7 +12,8 @@ const PROVINCIAS = [
 ] as const;
 
 export default config({
-  storage: { kind: 'local' },
+  // El contenido vive en GitHub: cada "Save" del panel es un commit en main.
+  storage: { kind: 'github', repo: 'nmartinez023/del-rock-web' },
   ui: {
     brand: { name: 'Del Rock Arg' },
   },
