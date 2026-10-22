@@ -8,16 +8,16 @@ bandas:
   - aznar
   - lebon
 fecha: 2026-11-22
-hora: ""
+hora: "21:00"
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/b2661cf1-3b4b-4100-aabb-59a73e7d315f
 precioDesde: 65000
-imagen: https://www.movistararena.com.ar/static/artistas/DC413_SERUGIRANPORLEB%C3%93NYAZNAR_FileFotoFichaListado
+imagen: https://www.movistararena.com.ar/static/artistas/2B323_SERUGIRANPORLEB%C3%93NYAZNAR_FileFotoFichaDesktop
 descripcion: "NOCHE HISTÓRICA – SERÚ GIRÁN POR LEBÓN Y AZNAR David Lebón y Pedro Aznar se reúnen para revivir los clásicos de Serú Girán, la banda que definió el alma del rock argentino. En una celebración única, dos de sus creadores interpretarán en vivo canciones que marcaron generaciones y dejaron una huella imborrable en la historia de la música. No será un simple homenaje, sino el reencuentro con un repertorio que sigue latiendo con la misma intensidad que el primer día. La vigencia de Serú Girán se reafirmó en 2025 con su presentación ante 150 mil personas en el Quilmes Rock y con su paso por el Festival Cordillera de Bogotá. Ahora, en el Movistar Arena, volverán a sonar clásicos eternos como “Canción de Alicia en el país”, “Seminare”, “Esperando nacer”, “Perro Andaluz” y muchos más. Será una noche emotiva y poderosa, un encuentro entre generaciones para celebrar canciones que siguen vivas en la memoria del público. No es solo un concierto: es una cita con la historia grande del rock argentino."
 origen:
   fuente: movistar-arena
   id: b2661cf1-3b4b-4100-aabb-59a73e7d315f-2026-11-22
-  huella: de50af2826ac7a4f
+  huella: b0ca0f1cd441db22

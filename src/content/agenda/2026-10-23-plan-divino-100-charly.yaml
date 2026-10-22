@@ -1,16 +1,8 @@
 titulo: Plan Divino — 100% Charly
 estado: ✅ Publicado
-tipo: show
+tipo: festival
 rockNacional: true
 genero: tributo rock
-bandas:
-  - plan-divino
-  - tiago-galindez
-  - mery-san-damaso
-  - tato-zeballos
-  - yago-varas
-  - agustin-borsini
-  - pato-massini
 fecha: 2026-10-23
 hora: "21:00"
 venue: JAGUAR HAÜS
@@ -46,4 +38,4 @@ descripcion: |-
 origen:
   fuente: dame-mi-ticket
   id: "673"
-  huella: c79d425092f8257b
+  huella: 8bfbab93647bee9a

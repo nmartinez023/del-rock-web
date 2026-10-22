@@ -6,16 +6,16 @@ genero: rock
 bandas:
   - las-pastillas-del-abuelo
 fecha: 2026-11-20
-hora: ""
+hora: "21:00"
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/0b8cc73b-3690-45fd-abf5-e5bb578aa8f1
 precioDesde: 90000
-imagen: https://www.movistararena.com.ar/static/artistas/49FBB_LASPASTILLASDELABUELO_FileFotoFichaListado
+imagen: https://www.movistararena.com.ar/static/artistas/3B230_LASPASTILLASDELABUELO_FileFotoFichaDesktop
 descripcion: "LAS PASTILLAS DEL ABUELO VUELVEN AL MOVISTAR ARENA CON DOS SHOWS 360° Las Pastillas del Abuelo, una de las bandas más queridas del rock argentino, vuelven al Movistar Arena con una propuesta inédita: dos shows 360° el viernes 20 y sábado 21 de noviembre. Liderada por Juan Germán “Piti” Fernández, la banda se reencontrará con su público en un formato especialmente diseñado para disfrutar sus canciones desde todos los ángulos y convertir el estadio en un espacio de encuentro, celebración y rock. Con más de 20 años de trayectoria, grandes escenarios agotados y una conexión inquebrantable con sus seguidores, Las Pastillas del Abuelo apuestan a una experiencia diferente para cerrar el año a lo grande. Además, la banda continúa adelantando su nuevo material con “Tarot”, una canción inspirada en los Arcanos Mayores del Tarot de Marsella y dedicada por Piti Fernández a su compañera de vida. El tema abre un nuevo capítulo en el camino hacia su próximo disco, que traerá más novedades durante 2026."
 origen:
   fuente: movistar-arena
   id: 0b8cc73b-3690-45fd-abf5-e5bb578aa8f1-2026-11-20
-  huella: dd782c98fd704281
+  huella: 01353d2354f02575
