@@ -1,22 +1,23 @@
 titulo: Silvestre y la Naranja
-estado: ⏳ Pendiente
-tipo: show
+estado: ✅ Publicado
 rockNacional: true
 genero: indie rock
+tipo: show
 bandas:
   - silvestre-y-la-naranja
 fecha: 2026-11-07
-hora: "20:00"
+hora: '20:00'
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/SILVESTRE-Y-LA-NARANJA/
 precioDesde: 45000
-imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/08/fbd6bfde-8214-4299-91c3-9542908ddce5.jpeg
+imagen: >-
+  https://entradaplay.com/media/imagenes_eventos/home/2026/08/fbd6bfde-8214-4299-91c3-9542908ddce5.jpeg
 aviso: EVENTO APTO PARA +18 AÑOS
 origen:
   fuente: entrada-play
   id: SILVESTRE-Y-LA-NARANJA
   huella: 16c26ebd0e9988df
-  detalle: "2026-10-22"
+  detalle: '2026-10-22'
