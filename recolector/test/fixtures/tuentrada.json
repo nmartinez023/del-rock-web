@@ -1,0 +1,64 @@
+[
+ {
+  "evento": {
+   "id": 883,
+   "slug": "dyango-tco",
+   "name": "Dyango",
+   "model": "event",
+   "imageMainNew": {
+    "src": "https://bucket.tuentrada.com/cdn-cgi/image/width=700,fit=scale-down,format=auto,quality=85/bucket/events/dyango/dyango-image-main-1776975023.jpeg"
+   }
+  },
+  "funciones": [
+   {
+    "id": 5693,
+    "date": "2026-11-06T21:00:00-03:00",
+    "status": "READY",
+    "venue": "Teatro Colonial",
+    "city": "Avellaneda",
+    "name": "Dyango",
+    "type": "SESSION"
+   }
+  ]
+ },
+ {
+  "evento": {
+   "id": 1,
+   "slug": "ntvg-gira",
+   "name": "NO TE VA GUSTAR",
+   "model": "eventGroup",
+   "imageMainNew": {
+    "src": "https://bucket.tuentrada.com/cdn-cgi/image/width=700,fit=scale-down,format=auto,quality=85/bucket/event-groups/no-te-va-gustar/no-te-va-gustar-image-main-1772451812.jpg"
+   }
+  },
+  "funciones": [
+   {
+    "id": 7784,
+    "date": "2026-11-20T20:00:00-03:00",
+    "status": "READY",
+    "venue": "Complejo Aeropuerto De San Andres De Giles",
+    "city": "San Andres De Giles",
+    "name": "No Te Va Gustar",
+    "type": "SESSION"
+   },
+   {
+    "id": 6035,
+    "date": "2026-11-21T20:00:00-03:00",
+    "status": "READY",
+    "venue": "Club Aleman",
+    "city": "Villa Ballester",
+    "name": "No Te Va Gustar",
+    "type": "SESSION"
+   },
+   {
+    "id": 6037,
+    "date": "2026-11-22T20:00:00-03:00",
+    "status": "READY",
+    "venue": "Qac Estacionamiento",
+    "city": "Quilmes",
+    "name": "No Te Va Gustar",
+    "type": "SESSION"
+   }
+  ]
+ }
+]

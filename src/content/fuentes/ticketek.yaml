@@ -1,0 +1,6 @@
+nombre: Ticketek
+url: https://www.ticketek.com.ar/
+activa: true
+rosario: false
+provincia: Otra
+notas: Nacional. Se leen los eventos de música de la portada (unos 60). Nunca se pide /websource/ (la compra), que robots.txt prohíbe.

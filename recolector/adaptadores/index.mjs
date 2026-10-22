@@ -2,6 +2,9 @@ import * as jsonld from './jsonld.mjs';
 import * as entradaplay from './entradaplay.mjs';
 import * as damemiticket from './damemiticket.mjs';
 import * as turboentrada from './turboentrada.mjs';
+import * as ticketek from './ticketek.mjs';
+import * as allaccess from './allaccess.mjs';
+import * as tuentrada from './tuentrada.mjs';
 
 // Adaptadores específicos por dominio, para ticketeras que no publican JSON-LD.
 // Cada uno exporta extraer(cuerpo, url) y devuelve eventos con la misma forma que jsonld.mjs.
@@ -14,6 +17,12 @@ const PORSITIO = {
   'www.damemiticket.com': damemiticket,
   'turboentrada.com': turboentrada,
   'www.turboentrada.com': turboentrada,
+  'ticketek.com.ar': ticketek,
+  'www.ticketek.com.ar': ticketek,
+  'allaccess.com.ar': allaccess,
+  'www.allaccess.com.ar': allaccess,
+  'tuentrada.com': tuentrada,
+  'www.tuentrada.com': tuentrada,
 };
 
 export function adaptadorPara(url) {

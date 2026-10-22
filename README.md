@@ -61,7 +61,7 @@ salen, junto con los de rock, por `/api/eventos.json` para usarlos desde otra ap
   a la ticketera y las deja en caché. Si subís un *Flyer propio* en el panel, se usa ese.
 - **Duplicados:** el mismo evento (fecha + lugar + título) no se carga dos veces.
 - **Ediciones a mano:** si editás un evento que trajo el recolector, no lo vuelve a pisar (cambiar el estado no cuenta como edición).
-- **Respeta `robots.txt`** y se identifica como `DelRockBot`. Para sitios sin JSON-LD hay adaptadores en `recolector/adaptadores/`.
+- **Respeta `robots.txt`** y se identifica como `DelRockBot`. Para sitios sin JSON-LD hay adaptadores en `recolector/adaptadores/` (Entrada Play, Dame mi Ticket, Turbo Entrada, Ticketek, AllAccess, TuEntrada). Passline y Movistar Arena no se leen: Passline bloquea bots con Cloudflare y Movistar Arena arma la página en el navegador (sus shows se venden por las otras ticketeras).
 
 ```bash
 npm run recolectar -- --seco

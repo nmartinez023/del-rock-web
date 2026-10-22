@@ -130,6 +130,75 @@ test('Turbo Entrada: una función = un evento, con lugar, ciudad e imagen; descr
   assert.deepEqual([seru.ciudad, seru.provincia], ['Bahia Blanca', 'Buenos Aires']);
 });
 
+const nacional = (url, provincia = 'Otra') => ({ url, provincia });
+const fixture = (nombre) => readFileSync(new URL(`./fixtures/${nombre}`, import.meta.url), 'utf8');
+
+test('Ticketek: nodo del CMS → fecha, lugar, provincia (CABA aunque diga el barrio), precio y link a la página', () => {
+  const ad = adaptadorPara('https://www.ticketek.com.ar/');
+  assert.equal(ad.urlDeDatos(), 'https://prod-cms-api.ticketek.com.ar/api/1.0/node%3Fpath%3Dhome');
+  assert.equal(ad.urlDeNodo('seru-giran/arena-maipu'), 'https://prod-cms-api.ticketek.com.ar/api/1.0/node%3Fpath%3Dseru-giran--arena-maipu');
+  const [seru, tipitos] = ad.extraer(fixture('ticketek.json')).map((c) => normalizar(c, nacional('https://www.ticketek.com.ar/')));
+  assert.deepEqual(
+    [seru.titulo, seru.fecha, seru.hora, seru.venue, seru.ciudad, seru.provincia, seru.precioDesde],
+    ['Serú Girán', '2026-11-12', '22:00', 'Arena Maipu', 'Maipu', 'Mendoza', 67800],
+  );
+  assert.deepEqual([tipitos.ciudad, tipitos.provincia, tipitos.direccion], ['Buenos Aires', 'CABA', 'Marcelo T. de Alvear 1125']);
+  assert.equal(tipitos.entradas, 'https://www.ticketek.com.ar/los-tipitos/teatro-coliseo');
+  assert.doesNotMatch(tipitos.entradas, /websource/, 'la compra está prohibida en robots.txt');
+  assert.match(tipitos.imagen, /^https:\/\/prod-cms-static\.ticketek\.com\.ar\//);
+  assert.deepEqual(tipitos.artistas, ['Los Tipitos']);
+});
+
+test('Ticketek: de la portada solo los eventos de música, sin repetir', () => {
+  const musica = [{ tid: '5', title: 'Musica' }];
+  const portada = {
+    widgets: {
+      a: [{ type: 'tkt-artist-list', artists: [{ url: 'a/x', categories: musica }, { url: 'b/y', categories: [{ tid: '7', title: 'Teatro' }] }] }],
+      b: [{ type: 'tkt-artist-list', artists: [{ url: 'a/x', categories: musica }] }, { type: 'tkt-custom-image' }],
+    },
+  };
+  assert.deepEqual(adaptadorPara('https://www.ticketek.com.ar/').eventosDePortada(portada).map((a) => a.url), ['a/x']);
+});
+
+test('AllAccess: portada → página de cada evento (JSON-LD), con og:image y sin la "descripción" que es la fecha', async () => {
+  const ad = adaptadorPara('https://www.allaccess.com.ar/');
+  const paginas = JSON.parse(fixture('allaccess.json'));
+  const portada = `<a href='../event/foo-fighters'>x</a><a href="https://www.allaccess.com.ar/event/syderama">y</a><a href='../event/foo-fighters'>x</a>`;
+  const pedidos = [];
+  const pedir = async (u) => {
+    pedidos.push(u);
+    const p = paginas.find((x) => x.url === u);
+    const html = p ? `<html><head><meta property="og:image" content="${p.imagen}">${p.jsonld}</head><body>app</body></html>` : portada;
+    return { ok: true, text: async () => html };
+  };
+  const cuerpo = await ad.descargar(ad.urlDeDatos(), { agente: 'X', pedir, espera: 0 });
+  assert.deepEqual(pedidos, ['https://www.allaccess.com.ar/', 'https://www.allaccess.com.ar/event/foo-fighters', 'https://www.allaccess.com.ar/event/syderama']);
+
+  const [foo, syd] = ad.extraer(cuerpo).map((c) => normalizar(c, nacional('https://www.allaccess.com.ar/')));
+  assert.deepEqual(
+    [syd.titulo, syd.fecha, syd.hora, syd.venue, syd.ciudad, syd.provincia, syd.precioDesde, syd.descripcion],
+    ['SYDERAMA', '2026-10-24', '20:30', 'The Roxy Bar & Grill', 'CABA', 'CABA', 20000, ''],
+  );
+  assert.equal(syd.entradas, 'https://www.allaccess.com.ar/event/syderama');
+  assert.match(syd.imagen, /^https:\/\/cdn\.getcrowder\.com\//);
+  assert.equal(foo.id, 'foo-fighters');
+});
+
+test('TuEntrada: datos de Next en el HTML; una gira da un evento por ciudad', async () => {
+  const ad = adaptadorPara('https://tuentrada.com/');
+  const empaquetar = (obj) => `<script>self.__next_f.push([1,${JSON.stringify(JSON.stringify(obj))}])</script>`;
+  const portada = empaquetar({ banners: [{ model: 'event', id: 883, slug: 'dyango-tco', name: 'Dyango' }, { model: 'eventGroup', id: 1, slug: 'ntvg-gira' }] })
+    + empaquetar({ items: [{ model: 'event', id: 883, slug: 'dyango-tco' }, { data: { url: 'x' }, type: 'link' }] });
+  assert.deepEqual(ad.eventosDePortada(portada).map((e) => e.slug), ['dyango-tco', 'ntvg-gira']);
+
+  const evs = ad.extraer(fixture('tuentrada.json')).map((c) => normalizar(c, nacional('https://tuentrada.com/', 'Buenos Aires')));
+  const ntvg = evs.filter((e) => e.titulo === 'NO TE VA GUSTAR');
+  assert.deepEqual(ntvg.map((e) => [e.fecha, e.ciudad]), [['2026-11-20', 'San Andres De Giles'], ['2026-11-21', 'Villa Ballester'], ['2026-11-22', 'Quilmes']]);
+  assert.equal(new Set(evs.map((e) => e.id)).size, evs.length, 'cada función tiene su id');
+  const dyango = evs.find((e) => e.titulo === 'Dyango');
+  assert.deepEqual([dyango.hora, dyango.venue, dyango.entradas, dyango.precioDesde], ['21:00', 'Teatro Colonial', 'https://tuentrada.com/dyango-tco', null]);
+});
+
 test('"Otros eventos de Rosario": solo de Rosario y alrededores, aunque la fuente venda en otras ciudades', () => {
   const noRock = respuesta({ rockNacional: false, titulo: 'Camilo', artistas: ['Camilo'] });
   assert.equal(aplicarClasificacion(evento('CAMILO', { ciudad: 'Funes' }), noRock, bandas, rosario).destino, 'otros');

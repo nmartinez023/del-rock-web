@@ -1,0 +1,156 @@
+[
+ {
+  "item": {
+   "url": "seru-giran/arena-maipu",
+   "image": "//prod-cms-static.ticketek.com.ar/sites/default/files/styles/artists_list_featured/public/images/show-header/seru_giran_s26_0.png"
+  },
+  "nodo": {
+   "title": "Serú Girán",
+   "nid": "26772",
+   "showcode": "SGIRAN26AM",
+   "lowerPrice": "67800",
+   "venue": {
+    "nid": "1863",
+    "title": "Arena Maipu",
+    "code": "AMM",
+    "address": "Maza y Emilio Civit",
+    "state": "Mendoza",
+    "city": "Maipu",
+    "country": "Argentina"
+   },
+   "artist": {
+    "nid": "26771",
+    "title": "Serú Girán"
+   },
+   "metatags": {
+    "canonical": "https://www.ticketek.com.ar/seru-giran/arena-maipu",
+    "property": {
+     "og:image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/seru_giran_s26_0.png"
+    }
+   },
+   "google_structured_data": [
+    {
+     "@context": "http://schema.org",
+     "@type": "MusicEvent",
+     "name": "Serú Girán",
+     "image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/artist/seru_giran_a26.png",
+     "description": "Serú Girán se presentará en Arena Maipu el día 12/11/2026 a las 22:00hs.",
+     "startDate": "2026-11-12T22:00:00-03:00",
+     "endDate": "2026-11-12T22:00:00-03:00",
+     "eventStatus": "http://schema.org/EventScheduled",
+     "location": {
+      "@type": "Place",
+      "name": "Arena Maipu",
+      "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "Maza y Emilio Civit",
+       "addressRegion": "Mendoza"
+      }
+     },
+     "offers": {
+      "@type": "Offer",
+      "url": "https://www.ticketek.com.ar/seru-giran/arena-maipu",
+      "availability": "http://schema.org/InStock",
+      "price": "67800",
+      "priceCurrency": "ARS"
+     },
+     "performer": {
+      "@type": "PerformingGroup",
+      "name": "Serú Girán"
+     }
+    }
+   ],
+   "widgets": {
+    "left": [
+     {
+      "type": "tkt-show-ticket",
+      "state": "buy"
+     }
+    ],
+    "center": [
+     {
+      "type": "tkt-content",
+      "content": "<p>Luego de 4 años, <b>LOS TIPITOS</b> presentan su show.</p>"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "item": {
+   "url": "los-tipitos/teatro-coliseo",
+   "image": "//prod-cms-static.ticketek.com.ar/sites/default/files/styles/artists_list_featured/public/images/show-header/tipitos_coliseo_960x400.png"
+  },
+  "nodo": {
+   "title": "Los Tipitos",
+   "nid": "25542",
+   "showcode": "TIPITOS26CO",
+   "lowerPrice": "27900",
+   "venue": {
+    "nid": "259",
+    "title": "Teatro Coliseo",
+    "code": "TCO",
+    "address": "Marcelo T. de Alvear 1125",
+    "state": "Capital Federal",
+    "city": "Centro",
+    "country": "Argentina"
+   },
+   "artist": {
+    "nid": "271",
+    "title": "Los Tipitos"
+   },
+   "metatags": {
+    "canonical": "https://www.ticketek.com.ar/los-tipitos/teatro-coliseo",
+    "property": {
+     "og:image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/tipitos_coliseo_960x400.png"
+    }
+   },
+   "google_structured_data": [
+    {
+     "@context": "http://schema.org",
+     "@type": "MusicEvent",
+     "name": "Los Tipitos",
+     "image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/artist/tipitos_coliseo_440x600.jpg",
+     "description": "Los Tipitos se presentará en Teatro Coliseo el día 14/11/2026 a las 21:00hs.",
+     "startDate": "2026-11-14T21:00:00-03:00",
+     "endDate": "2026-11-14T21:00:00-03:00",
+     "eventStatus": "http://schema.org/EventScheduled",
+     "location": {
+      "@type": "Place",
+      "name": "Teatro Coliseo",
+      "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "Marcelo T. de Alvear 1125",
+       "addressRegion": "Capital Federal"
+      }
+     },
+     "offers": {
+      "@type": "Offer",
+      "url": "https://www.ticketek.com.ar/los-tipitos/teatro-coliseo",
+      "availability": "http://schema.org/InStock",
+      "price": "27900",
+      "priceCurrency": "ARS"
+     },
+     "performer": {
+      "@type": "PerformingGroup",
+      "name": "Los Tipitos"
+     }
+    }
+   ],
+   "widgets": {
+    "left": [
+     {
+      "type": "tkt-show-ticket",
+      "state": "buy"
+     }
+    ],
+    "center": [
+     {
+      "type": "tkt-content",
+      "content": "<p>Luego de 4 años, <b>LOS TIPITOS</b> presentan su show.</p>"
+     }
+    ]
+   }
+  }
+ }
+]
