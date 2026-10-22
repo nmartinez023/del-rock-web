@@ -6,15 +6,15 @@ genero: rock alternativo
 bandas:
   - cuarteto-de-nos
 fecha: 2027-05-22
-hora: "21:00"
+hora: ""
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/17e0a8cb-489a-402c-8e08-75c7414e045c
 precioDesde: 55000
-imagen: https://www.movistararena.com.ar/static/artistas/61730_CUARTETODENOS_FileFotoFichaDesktop
+imagen: https://www.movistararena.com.ar/static/artistas/B88B4_CUARTETODENOS_FileFotoFichaListado
 origen:
   fuente: movistar-arena
   id: 17e0a8cb-489a-402c-8e08-75c7414e045c-2027-05-22
-  huella: db16c00d06a8936a
+  huella: d4655a2853bc9013

@@ -257,6 +257,19 @@
    "fecha": "2026-10-30",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "1eb32b99a6ccdf21": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "K4OS",
+    "artistas": [
+     "K4OS"
+    ]
+   },
+   "fecha": "2026-12-16",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "221dbf4cb24f536c": {
    "r": {
     "genero": "trap y reggaetón",

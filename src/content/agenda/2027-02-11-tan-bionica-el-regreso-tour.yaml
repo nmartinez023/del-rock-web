@@ -6,16 +6,16 @@ genero: rock
 bandas:
   - tan-bionica
 fecha: 2027-02-11
-hora: "21:00"
+hora: ""
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/148a7bae-bb0a-4efa-b4f8-aca6f46beb26
 precioDesde: 60000
-imagen: https://www.movistararena.com.ar/static/artistas/39469_TanBionica_FileFotoFichaDesktop
+imagen: https://www.movistararena.com.ar/static/artistas/100F5_TanBionica_FileFotoFichaListado
 descripcion: TAN BIÓNICA VUELVE AL MOVISTAR ARENA Tan Biónica regresa al Movistar Arena para reencontrarse con su público en una noche que combinará los grandes clásicos de la banda con las canciones de El Regreso. Luego de su histórico regreso, la banda agotó entradas y convocó a más de 500.000 personas con su gira La Última Noche Mágica, incluyendo diez shows sold out en el Movistar Arena. Más recientemente, agotó tres Vélez con El Regreso Tour. Chano, Bambi, Diega y Seby vuelven a Buenos Aires para celebrar junto a varias generaciones de fans la música que marcó una época y las nuevas canciones que ya se convirtieron en parte de su historia. Una noche para cantar, emocionarse y volver a vivir la magia de Tan Biónica.
 origen:
   fuente: movistar-arena
   id: 148a7bae-bb0a-4efa-b4f8-aca6f46beb26-2027-02-11
-  huella: c25d70d0841a27e7
+  huella: ee92d0ef4c8a9219
