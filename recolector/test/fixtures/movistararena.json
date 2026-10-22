@@ -1,0 +1,159 @@
+{
+ "leido": "2026-10-22",
+ "shows": [
+  {
+   "nombre": "EL PLAN DE LA MARIPOSA",
+   "fecha": "31 octubre 2026",
+   "precio": "Desde $75.000",
+   "imagen": "https://www.movistararena.com.ar/static/artistas/B2B94_ELPLANDELAMARIPOSA_FileFotoFichaListado",
+   "url": "https://www.movistararena.com.ar/show/e8d9be02-d7f6-4354-92cc-ba7d7413a4fd",
+   "ficha": {
+    "descripcion": "Después de un 2025 en el que se presentaron ante más de 20 mil personas en el Estadio Diego Armando Maradona, agotaron d",
+    "imagen": "https://www.movistararena.com.ar/static/artistas/3E3CF_ELPLANDELAMARIPOSA_FileFotoFichaDesktop",
+    "precio": "$ 75.000",
+    "funciones": [
+     {
+      "dia": "31",
+      "mes": "Octubre",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Comprar"
+     }
+    ]
+   }
+  },
+  {
+   "nombre": "RATA BLANCA",
+   "fecha": "05 diciembre 2026",
+   "precio": "Desde $68.000",
+   "imagen": "https://www.movistararena.com.ar/static/artistas/E217C_RATABLANCA_FileFotoFichaListado",
+   "url": "https://www.movistararena.com.ar/show/4c068796-cba5-4014-a1f4-45232800782c"
+  },
+  {
+   "nombre": "Alejo Igoa",
+   "fecha": "12 diciembre 2026 y 1 fecha más",
+   "precio": "Desde $60.000",
+   "imagen": "https://www.movistararena.com.ar/static/artistas/0DE4D_AlejoIgoa_FileFotoFichaListado",
+   "url": "https://www.movistararena.com.ar/show/5ced2568-3ac8-45a8-b3e0-0579ee8630d7",
+   "ficha": {
+    "descripcion": "\n",
+    "imagen": "https://www.movistararena.com.ar/static/artistas/6D29B_AlejoIgoa_FileFotoFichaDesktop",
+    "precio": "$ 60.000",
+    "funciones": [
+     {
+      "dia": "12",
+      "mes": "Diciembre",
+      "horas": [
+       {
+        "hora": "14:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "16:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Comprar"
+     },
+     {
+      "dia": "12",
+      "mes": "Diciembre",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Comprar"
+     }
+    ]
+   }
+  },
+  {
+   "nombre": "María Becerra",
+   "fecha": "13 noviembre 2026 y 8 fechas más",
+   "precio": "Desde $60.000",
+   "imagen": "https://www.movistararena.com.ar/static/artistas/4DB29_Mar%C3%ADaBecerra_FileFotoFichaListado",
+   "url": "https://www.movistararena.com.ar/show/993a2d46-39d7-4455-b199-87a5a2dc9b83",
+   "ficha": {
+    "descripcion": "Maria Becerra regresa al Movistar Arena con una propuesta inédita: un impactante show 360° donde presentará en vivo QUIM",
+    "imagen": "https://www.movistararena.com.ar/static/artistas/B30C6_Mar%C3%ADaBecerra_FileFotoFichaDesktop",
+    "precio": "$ 60.000",
+    "funciones": [
+     {
+      "dia": "06",
+      "mes": "Febrero",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Comprar"
+     },
+     {
+      "dia": "13",
+      "mes": "Noviembre",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Agotado"
+     },
+     {
+      "dia": "14",
+      "mes": "Noviembre",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Agotado"
+     },
+     {
+      "dia": "15",
+      "mes": "Noviembre",
+      "horas": [
+       {
+        "hora": "19:00 hs",
+        "tipo": "Puertas"
+       },
+       {
+        "hora": "21:00 hs",
+        "tipo": "Show"
+       }
+      ],
+      "estado": "Agotado"
+     }
+    ]
+   }
+  }
+ ]
+}

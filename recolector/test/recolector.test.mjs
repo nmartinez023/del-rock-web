@@ -184,6 +184,25 @@ test('AllAccess: portada → página de cada evento (JSON-LD), con og:image y si
   assert.equal(foo.id, 'foo-fighters');
 });
 
+test('Movistar Arena: funciones de la ficha (año deducido), matiné y noche, y la fecha del listado si la ficha no cargó', () => {
+  const ad = adaptadorPara('https://www.movistararena.com.ar/shows');
+  assert.equal(ad.urlDeDatos(), 'https://www.movistararena.com.ar/shows');
+  const evs = ad.extraer(fixture('movistararena.json')).map((c) => normalizar(c, nacional('https://www.movistararena.com.ar/shows', 'CABA')));
+  const de = (t) => evs.filter((e) => e.titulo.includes(t));
+
+  const [plan] = de('MARIPOSA');
+  assert.deepEqual(
+    [plan.fecha, plan.hora, plan.venue, plan.direccion, plan.ciudad, plan.provincia, plan.precioDesde],
+    ['2026-10-31', '21:00', 'Movistar Arena', 'Humboldt 450', 'Buenos Aires', 'CABA', 75000],
+  );
+  assert.match(plan.entradas, /^https:\/\/www\.movistararena\.com\.ar\/show\/[\w-]+$/);
+  assert.deepEqual(de('Becerra').map((e) => e.fecha), ['2027-02-06', '2026-11-13', '2026-11-14', '2026-11-15'], 'febrero ya es del año que viene');
+  assert.deepEqual(de('Alejo').map((e) => e.hora), ['16:00', '21:00']);
+  assert.equal(new Set(de('Alejo').map((e) => e.id)).size, 2);
+  const [rata] = de('RATA BLANCA');
+  assert.deepEqual([rata.fecha, rata.hora, rata.precioDesde], ['2026-12-05', '', 68000]);
+});
+
 test('TuEntrada: datos de Next en el HTML; una gira da un evento por ciudad', async () => {
   const ad = adaptadorPara('https://tuentrada.com/');
   const empaquetar = (obj) => `<script>self.__next_f.push([1,${JSON.stringify(JSON.stringify(obj))}])</script>`;

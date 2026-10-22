@@ -38,6 +38,14 @@ jobs:
 
       - run: npm run test:recolector
 
+      # Movistar Arena solo se puede leer con un navegador (Chromium sin pantalla, vía Playwright).
+      - name: Caché de Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - run: npx playwright install --with-deps --only-shell chromium
+
       - name: Recolectar
         id: recolectar
         run: npm run recolectar
@@ -51,19 +59,22 @@ jobs:
 
       - name: Guardar cambios
         run: |
-          RUTAS="src/content/agenda src/content/otros-eventos src/content/bandas recolector/cache-ia.json"
+          CONTENIDO="src/content/agenda src/content/otros-eventos src/content/bandas"
+          RUTAS="$CONTENIDO recolector/cache-ia.json recolector/ultimo-resumen.md"
           if [ -z "$(git status --porcelain $RUTAS)" ]; then
             echo "Sin cambios."
             exit 0
           fi
           git config user.name "Recolector Del Rock"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          HAY_EVENTOS="$(git status --porcelain $CONTENIDO)"
           git add -A $RUTAS
           git commit -m "Agenda: eventos del recolector"
           # Si mientras tanto guardaste algo desde el panel, nos ponemos al día antes de subir.
           git pull --rebase
           git push
-          gh workflow run deploy.yml --ref main
+          # Solo se publica si cambió algún evento o banda (no por el resumen o la caché).
+          if [ -n "$HAY_EVENTOS" ]; then gh workflow run deploy.yml --ref main; fi
         env:
           GH_TOKEN: ${{ github.token }}
 

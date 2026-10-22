@@ -5,7 +5,7 @@
 //
 // Uso: npm run recolectar            (escribe los archivos; necesita OPENROUTER_API_KEY)
 //      npm run recolectar -- --seco  (solo muestra qué haría)
-import { appendFileSync } from 'node:fs';
+import { appendFileSync, writeFileSync } from 'node:fs';
 import { leerYaml, leerBandas, mezclar, indicePorOrigen, reubicar, limpiarBandas } from './agenda.mjs';
 import { adaptadorPara } from './adaptadores/index.mjs';
 import { normalizar, hoyEnArgentina, completar, fechaHora } from './normalizar.mjs';
@@ -187,6 +187,8 @@ log(`IA: ${ia.consultas} consultas, costo USD ${ia.costo.toFixed(4)}.`);
 if (ia.sinCredito) log(`❌ La IA dejó de responder (¿sin crédito o key inválida?): ${ia.sinCredito}`);
 
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, lineas.join('\n') + '\n');
+// El resumen de la última corrida también queda en el repo, para verlo sin entrar a GitHub Actions.
+if (!seco) writeFileSync('recolector/ultimo-resumen.md', lineas.join('\n') + '\n');
 // Falla si alguna fuente dio error o la IA no está disponible, así GitHub avisa por mail
 // (lo que sí se recolectó queda guardado).
 if (errores.length || ia.sinCredito || (!apiKey && !seco)) process.exitCode = 1;

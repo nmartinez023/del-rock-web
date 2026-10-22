@@ -1,0 +1,6 @@
+nombre: Movistar Arena
+url: https://www.movistararena.com.ar/shows
+activa: true
+rosario: false
+provincia: CABA
+notas: Boletería propia (sus shows no están en otras ticketeras). Se lee con un navegador sin pantalla (Playwright) porque la página se arma en el navegador.
