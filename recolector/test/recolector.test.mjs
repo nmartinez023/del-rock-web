@@ -1,14 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, mkdtempSync, writeFileSync, readdirSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, mkdtempSync, writeFileSync, readdirSync, rmSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
 import { adaptadorPara } from '../adaptadores/index.mjs';
 import { normalizar, fechaHora, provinciaDe, completar } from '../normalizar.mjs';
-import { aplicarClasificacion, bandaPara, bandasConfirmadas } from '../clasificar.mjs';
-import { mezclar, reubicar, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado, yamlPanel } from '../agenda.mjs';
+import { aplicarClasificacion, bandaPara, bandasEnEvento, clasificacionPorBanda } from '../clasificar.mjs';
+import { mezclar, reubicar, limpiarBandas, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado, yamlPanel } from '../agenda.mjs';
 import jsyaml from 'js-yaml';
 import { crearClasificador, cargarCache, claveIA, SinCredito } from '../ia.mjs';
 import { parsearRobots, rutaPermitida } from '../robots.mjs';
@@ -117,22 +117,52 @@ test('título: si la IA devuelve algo que no se parece al original, queda el ori
   assert.equal(aplicarClasificacion(evento('CARAS EXTRAÑAS DESPIDE EL AÑO EN ROSARIO'), respuesta({ titulo: 'Caras Extrañas despide el año' }), bandas, fuente).titulo, 'Caras Extrañas despide el año');
 });
 
-test('banda confirmada ⇒ rock nacional, aunque la IA diga que no o no la conozca', () => {
-  const lista = [
-    ...bandas, // cargadas a mano: cuentan
-    { slug: 'cruzando-el-charco', nombre: 'Cruzando el Charco', automatica: true, rockConfirmado: true },
-    { slug: 'angela-torres', nombre: 'Ángela Torres', automatica: true }, // la creó la IA y nadie la confirmó: no cuenta
-  ];
-  const noSabe = respuesta({ rockNacional: false, genero: 'sin datos', titulo: 'Cruzando el Charco — Desactivar el Drama Tour', artistas: [] });
-  const ev = aplicarClasificacion(evento('CRUZANDO EL CHARCO - DESACTIVAR EL DRAMA TOUR', { id: 'c' }), noSabe, lista, rosario);
-  assert.deepEqual([ev.destino, ev.rockNacional, ev.bandas], ['agenda', true, ['cruzando-el-charco']]);
+test('banda del listado ⇒ rock nacional sin consultar a la IA', () => {
+  const lista = [...bandas, { slug: 'cruzando-el-charco', nombre: 'Cruzando el Charco', automatica: true }];
+  const ev = evento('CRUZANDO EL CHARCO - DESACTIVAR EL DRAMA TOUR EN ROSARIO');
+  const conocidas = bandasEnEvento(ev, lista);
+  assert.deepEqual(conocidas.map((b) => b.slug), ['cruzando-el-charco']);
+  const ia = clasificacionPorBanda(ev, conocidas);
+  assert.deepEqual(ia, {
+    genero: 'rock', rockNacional: true, tipo: 'show',
+    titulo: 'Cruzando el Charco - Desactivar el Drama Tour', artistas: ['Cruzando el Charco'],
+  });
+  const final = aplicarClasificacion(ev, ia, lista, fuente);
+  assert.deepEqual([final.destino, final.bandas], ['agenda', ['cruzando-el-charco']]);
 
-  const conManual = aplicarClasificacion(evento('Kapanga + Los Lirios'), respuesta({ rockNacional: false, artistas: ['Kapanga', 'Los Lirios'] }), lista, fuente);
-  assert.deepEqual([conManual.destino, conManual.bandas], ['agenda', ['kapanga', 'los-lirios']]);
+  // Varias bandas, palabras completas y sin artículo: "Piojos" = "Los Piojos".
+  assert.deepEqual(bandasEnEvento(evento('PIOJOS + KAPANGA EN EL HIPÓDROMO'), lista).map((b) => b.slug).sort(), ['kapanga', 'los-piojos']);
+  // Sin coincidencias parciales: "Turfa" no es "Turf".
+  assert.deepEqual(bandasEnEvento(evento('TURFA EN VIVO'), lista), []);
+  // Tributos: decide la IA (en "Tributo a Los Piojos" no tocan Los Piojos).
+  assert.deepEqual(bandasEnEvento(evento('TRIBUTO A LOS PIOJOS'), lista), []);
+  // Festival con una banda conocida.
+  assert.equal(clasificacionPorBanda(evento('FESTIVAL BANDERA CON KAPANGA'), [bandas[0]]).tipo, 'festival');
+});
 
-  const sinConfirmar = aplicarClasificacion(evento('ÁNGELA TORRES'), respuesta({ rockNacional: false, titulo: 'Ángela Torres', artistas: ['Ángela Torres'] }), lista, rosario);
-  assert.equal(sinConfirmar.destino, 'otros');
-  assert.deepEqual(bandasConfirmadas(evento('X'), respuesta({ artistas: [] , titulo: 'X' }), lista), []);
+test('si la IA nombra una banda del listado, es rock aunque la IA diga que no', () => {
+  const ev = aplicarClasificacion(evento('Kapanga + Los Lirios'), respuesta({ rockNacional: false, artistas: ['Kapanga', 'Los Lirios'] }), bandas, fuente);
+  assert.deepEqual([ev.destino, ev.bandas], ['agenda', ['kapanga', 'los-lirios']]);
+});
+
+test('limpiarBandas: borra las automáticas sin fechas de rock ni notas; respeta las demás', () => {
+  const { raiz, dirs, dirBandas, borrar } = carpetas();
+  try {
+    const dirNoticias = join(raiz, 'noticias');
+    for (const d of [dirs.agenda, dirBandas, dirNoticias]) mkdirSync(d, { recursive: true });
+    const banda = (s, d) => writeFileSync(join(dirBandas, s + '.yaml'), stringify(d));
+    banda('a-mano', { nombre: 'A mano' });
+    banda('confirmada', { nombre: 'Confirmada', automatica: true, rockConfirmado: true });
+    banda('con-fecha', { nombre: 'Con fecha', automatica: true });
+    banda('con-nota', { nombre: 'Con nota', automatica: true });
+    banda('huerfana', { nombre: 'Huérfana', automatica: true });
+    writeFileSync(join(dirs.agenda, 'x.yaml'), stringify({ titulo: 'X', bandas: ['con-fecha'] }));
+    writeFileSync(join(dirNoticias, 'n.mdoc'), ['---', 'titulo: N', 'banda: con-nota', '---', 'Texto'].join('\n'));
+    assert.deepEqual(limpiarBandas({ dirs, dirBandas, dirNoticias }), ['Huérfana']);
+    assert.deepEqual(archivos(dirBandas), ['a-mano.yaml', 'con-fecha.yaml', 'con-nota.yaml', 'confirmada.yaml']);
+  } finally {
+    borrar();
+  }
 });
 
 test('festival de rock sin lineup: va a la Agenda sin bandas', () => {

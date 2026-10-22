@@ -148,7 +148,7 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
             <dd>
               <span class="primera">{data.venue}</span>
               <span>{[data.direccion, data.ciudad, data.provincia].filter(Boolean).join(', ')}</span>
-              <a href={mapa} rel="noopener" class="mapa">Cómo llegar</a>
+              <a href={mapa} target="_blank" rel="noopener" class="mapa">Cómo llegar<span class="sr-only"> (abre Google Maps en otra pestaña)</span></a>
             </dd>
           </div>
           {

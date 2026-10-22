@@ -103,6 +103,29 @@ function asegurarBanda(dirBandas, banda, seco, { confirmar = false } = {}) {
   return true;
 }
 
+/**
+ * Borra las bandas que creó el recolector y ya no se usan: sin fechas en la Agenda, sin notas y sin
+ * confirmar. Pasa cuando destildás o borrás un evento mal clasificado: si su banda quedara, como
+ * "toda banda del listado es rock nacional", el error se repetiría con cada fecha nueva.
+ */
+export function limpiarBandas({ dirs = DIRS, dirBandas, dirNoticias = 'src/content/noticias', seco = false }) {
+  const enUso = new Set(leerYaml(dirs.agenda).flatMap((e) => e.datos.bandas ?? []));
+  if (existsSync(dirNoticias)) {
+    for (const f of readdirSync(dirNoticias)) {
+      const banda = /^banda:\s*["']?([^"'\s]+)/m.exec(readFileSync(join(dirNoticias, f), 'utf8'))?.[1];
+      if (banda) enUso.add(banda);
+    }
+  }
+  const borradas = [];
+  for (const b of leerYaml(dirBandas)) {
+    const s = b.archivo.replace(/\.yaml$/, '');
+    if (b.datos.automatica !== true || b.datos.rockConfirmado === true || enUso.has(s)) continue;
+    if (!seco) unlinkSync(join(dirBandas, b.archivo));
+    borradas.push(b.datos.nombre ?? s);
+  }
+  return borradas;
+}
+
 /** Marca una banda creada por el recolector como "Siempre es rock nacional" (la elegiste vos). */
 function confirmarBanda(dirBandas, slugBanda, seco) {
   const ruta = join(dirBandas, `${slugBanda}.yaml`);

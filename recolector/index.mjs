@@ -6,10 +6,10 @@
 // Uso: npm run recolectar            (escribe los archivos; necesita OPENROUTER_API_KEY)
 //      npm run recolectar -- --seco  (solo muestra qué haría)
 import { appendFileSync } from 'node:fs';
-import { leerYaml, leerBandas, mezclar, indicePorOrigen, reubicar } from './agenda.mjs';
+import { leerYaml, leerBandas, mezclar, indicePorOrigen, reubicar, limpiarBandas } from './agenda.mjs';
 import { adaptadorPara } from './adaptadores/index.mjs';
 import { normalizar, hoyEnArgentina, completar, fechaHora } from './normalizar.mjs';
-import { aplicarClasificacion } from './clasificar.mjs';
+import { aplicarClasificacion, bandasEnEvento, clasificacionPorBanda } from './clasificar.mjs';
 import { crearClasificador, cargarCache, claveIA, MODELO, SinCredito } from './ia.mjs';
 import { puedeLeer } from './robots.mjs';
 
@@ -44,6 +44,9 @@ if (fuentes.length === 0) log('No hay fuentes activas. Cargalas en el panel: Fue
 // 1. Lo que marcaste a mano en "Rock nacional" manda: se mueve de lista antes de recolectar.
 const movidos = reubicar({ fuentesRosario: new Set(fuentes.filter((f) => f.rosario).map((f) => f.slug)), bandas, dirBandas: DIR_BANDAS, seco });
 for (const m of movidos) log(`- reubicado a mano: ${m}`);
+// 2. Bandas automáticas que quedaron sin eventos de rock: afuera (si no, forzarían "rock" para siempre).
+for (const b of limpiarBandas({ dirBandas: DIR_BANDAS, seco })) log(`- banda borrada (sin fechas de rock): ${b}`);
+bandas.splice(0, bandas.length, ...leerBandas(DIR_BANDAS));
 
 /** Lee la página propia de un evento (descripción, dirección, aviso) solo cuando hace falta. */
 async function leerDetalles(items, adaptador, fuente) {
@@ -122,7 +125,19 @@ for (const fuente of fuentes) {
         return ev && { crudo, ev, clave: claveIA(ev), ia: undefined };
       })
       .filter(Boolean);
-    for (const item of items) item.ia = cache.get(item.clave);
+    // Primero, banda conocida: si toca una banda de la colección, es rock nacional y no se consulta la IA.
+    // Si la IA ya lo había clasificado, se usa esa respuesta (título limpio, género) y la banda solo
+    // la corrige a rock si hace falta.
+    let porBanda = 0;
+    for (const item of items) {
+      const conocidas = bandasEnEvento(item.ev, bandas);
+      const cacheada = cache.get(item.clave);
+      if (conocidas.length) porBanda++;
+      if (cacheada && conocidas.length && !cacheada.rockNacional) {
+        item.ia = { ...cacheada, rockNacional: true, artistas: cacheada.artistas.length ? cacheada.artistas : conocidas.map((b) => b.nombre) };
+      } else if (cacheada) item.ia = cacheada;
+      else if (conocidas.length) item.ia = clasificacionPorBanda(item.ev, conocidas);
+    }
     // Lo que ya sabemos que no es rock, de una fuente que no es de Rosario, ni se mira (salvo que esté guardado).
     items = items.filter((i) => fuente.rosario || i.ia?.rockNacional !== false || guardados.has(`${fuente.slug}|${i.ev.id}`));
 
@@ -144,7 +159,7 @@ for (const fuente of fuentes) {
     const otros = eventos.filter((e) => e.destino === 'otros').length;
     log(
       `- **${fuente.slug}**${fuente.rosario ? ' (Rosario)' : ''}: ${crudos.length} eventos en la página → ` +
-        `${rock} de rock nacional, ${otros} otros${fuente.rosario ? '' : ' (no se guardan)'}, ${sinClasificar} sin clasificar. ` +
+        `${rock} de rock nacional (${porBanda} con banda conocida), ${otros} otros${fuente.rosario ? '' : ' (no se guardan)'}, ${sinClasificar} sin clasificar. ` +
         `${r.nuevos.length} nuevos, ${r.actualizados.length} actualizados, ${r.movidos.length} cambiados de lista, ` +
         `${r.borrados.length} borrados, ${r.sinCambios} sin cambios, ${r.omitidos} ya cargados por otra vía. Páginas de evento leídas: ${detalles}.`,
     );

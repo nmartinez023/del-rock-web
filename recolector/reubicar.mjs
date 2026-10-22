@@ -3,7 +3,7 @@
 // la fuente no es de Rosario). No consulta ticketeras ni IA: corre al guardar desde el panel.
 // Uso: node recolector/reubicar.mjs
 import { appendFileSync } from 'node:fs';
-import { leerYaml, leerBandas, reubicar } from './agenda.mjs';
+import { leerYaml, leerBandas, reubicar, limpiarBandas } from './agenda.mjs';
 
 const DIR_BANDAS = 'src/content/bandas';
 const fuentesRosario = new Set(
@@ -14,6 +14,8 @@ const fuentesRosario = new Set(
 const bandas = leerBandas(DIR_BANDAS);
 
 const movidos = reubicar({ fuentesRosario, bandas, dirBandas: DIR_BANDAS });
+// Si destildaste un evento, su banda automática (sin otras fechas de rock) se va con él.
+for (const b of limpiarBandas({ dirBandas: DIR_BANDAS })) movidos.push(`banda borrada (sin fechas de rock): ${b}`);
 const resumen = movidos.length ? movidos.map((m) => `- ${m}`).join('\n') : 'Nada para mover.';
 console.log(resumen);
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Reubicar eventos\n\n${resumen}\n`);

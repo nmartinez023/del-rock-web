@@ -36,8 +36,12 @@ salen, junto con los de rock, por `/api/eventos.json` para usarlos desde otra ap
   variable `RECOLECTOR_MODELO`). Para cada evento nuevo decide si es rock nacional, si es festival, el título limpio y quiénes tocan.
   Las respuestas se guardan en `recolector/cache-ia.json`: un evento no se vuelve a consultar mientras no cambie. El costo de cada
   corrida figura en el resumen del Action. Si la IA no responde, esos eventos se reintentan en la corrida siguiente.
+- **Primero, la banda:** si en el título o entre los artistas aparece una banda de la colección Bandas, el evento
+  es rock nacional y no se consulta a la IA (salvo tributos y homenajes, que decide la IA).
 - **Bandas:** las de los eventos de rock se vinculan a la colección Bandas; las que no existen se crean ocultas
-  (aparecen en la web cuando tienen una fecha publicada o una nota).
+  (aparecen en la web cuando tienen una fecha publicada o una nota). Las bandas que creó el recolector y quedaron sin
+  fechas de rock ni notas (por ejemplo, porque destildaste el evento) se borran solas, salvo que tengan tildado
+  "Siempre es rock nacional".
 - **Corregir a la IA:** destildá o tildá **Rock nacional** en el evento y el recolector lo pasa a la otra lista en la corrida siguiente.
 - **Detalle de cada evento:** del listado salen precio e imagen; de la página de cada evento, dirección, aviso y descripción
   (se lee al cargar el evento y después como mucho una vez por semana).

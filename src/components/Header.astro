@@ -27,23 +27,25 @@ const actual = Astro.url.pathname;
       }
     </nav>
 
-    <a href="https://www.instagram.com/del.rock.arg/" class="btn ig" rel="noopener">
+    <a href="https://www.instagram.com/del.rock.arg/" class="ig" target="_blank" rel="noopener" aria-label="Del Rock en Instagram">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
         <rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
       </svg>
-      <span>142 mil</span>
     </a>
   </div>
 
   <div class="cinta-wrap" aria-hidden="true">
-    <div class="cinta d">
-      {
-        Array.from({ length: 6 }, () => (
-          <>
-            <span>Rock nacional, todos los días</span><span>/</span><span>Noticias</span><span>/</span><span>Agenda</span><span>/</span><span>Coberturas</span><span>/</span>
-          </>
-        ))
-      }
+    <div class="cinta-banda">
+      <div class="cinta d">
+        {
+          Array.from({ length: 6 }, () => (
+            <>
+              <span>Rock nacional, todos los días</span><span>/</span><span>Noticias</span><span>/</span><span>Agenda</span><span>/</span>
+              <span>Coberturas</span><span>/</span><span>Difusión</span><span>/</span>
+            </>
+          ))
+        }
+      </div>
     </div>
   </div>
 </header>
@@ -85,26 +87,46 @@ const actual = Astro.url.pathname;
     border-bottom-color: var(--azul);
   }
   .ig {
-    min-height: 40px;
-    font-size: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--azul);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ig:hover {
+    color: var(--bg);
+    filter: brightness(1.1);
+  }
+  .ig svg {
+    width: 20px;
+    height: 20px;
   }
 
-  /* Cinta inclinada que corre */
+  /* Cinta inclinada que corre. Se inclina la banda (del ancho de la pantalla), no el texto que
+     corre: inclinar una tira de miles de píxeles la sacaba del recuadro y se veía cortada. */
   .cinta-wrap {
     overflow: hidden;
-    padding: 12px 0;
+    /* espacio para la inclinación: medio ancho de pantalla × sen(1,2°) ≈ 1,05vw */
+    padding: calc(1.1vw + 8px) 0;
     border-top: 1px solid var(--line);
+  }
+  .cinta-banda {
+    margin-inline: -40px;
+    background: var(--azul);
+    transform: rotate(-1.2deg);
+    overflow: hidden;
   }
   .cinta {
     display: flex;
     gap: 18px;
     width: max-content;
-    background: var(--azul);
     color: var(--bg);
     font-size: 19px;
     letter-spacing: 0.04em;
     padding: 7px 0;
-    transform: rotate(-1.2deg);
     white-space: nowrap;
     animation: correr 60s linear infinite;
   }
