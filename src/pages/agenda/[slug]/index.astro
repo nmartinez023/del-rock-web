@@ -1,11 +1,11 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import { getCollection, getEntries } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import SeccionTitulo from '../../../components/SeccionTitulo.astro';
 import AgendaGrid from '../../../components/AgendaGrid.astro';
 import Sticker from '../../../components/Sticker.astro';
-import { bandasVisibles, diaMes, fechaCompleta, imagenDeFecha, precioTexto, proximasFechas, slugTag, type Fecha } from '../../../lib/util';
+import { bandasDe, bandasVisibles, diaMes, fechaCompleta, imagenDeFecha, precioTexto, proximasFechas, slugTag, type Fecha } from '../../../lib/util';
 
 export async function getStaticPaths() {
   const fechas = await getCollection('agenda', (f) => f.data.estado === 'publicado');
@@ -22,7 +22,7 @@ const dia = data.fecha.toISOString().slice(0, 10);
 const { dia: numDia, mes } = diaMes(data.fecha);
 
 const visibles = new Set((await bandasVisibles()).map((b) => b.id));
-const bandas = (await getEntries(data.bandas)).filter(Boolean);
+const bandas = await bandasDe(fecha);
 // Si la única banda es el título ("2 MINUTOS"), el sticker sobra.
 const mostrarBandas = bandas.length > 1 || (bandas.length === 1 && slugTag(bandas[0].data.nombre) !== slugTag(data.titulo));
 const precio = precioTexto(data.precioDesde);
@@ -36,10 +36,10 @@ const vendedor = data.entradas ? new URL(data.entradas).hostname.replace(/^www\.
 
 // Otras fechas: primero las de las mismas bandas, después las más próximas.
 const proximas = (await proximasFechas()).filter((f) => f.id !== fecha.id);
-const ids = new Set(data.bandas.map((b) => b.id));
+const ids = new Set(data.bandas);
 const relacionadas = [
-  ...proximas.filter((f) => f.data.bandas.some((b) => ids.has(b.id))),
-  ...proximas.filter((f) => !f.data.bandas.some((b) => ids.has(b.id))),
+  ...proximas.filter((f) => f.data.bandas.some((b) => ids.has(b))),
+  ...proximas.filter((f) => !f.data.bandas.some((b) => ids.has(b))),
 ].slice(0, 4);
 
 // Imagen para compartir y para Google.

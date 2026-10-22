@@ -43,7 +43,9 @@ const agenda = defineCollection({
       titulo: z.string(),
       estado: z.enum(['publicado', 'pendiente', 'descartado']).default('publicado'),
       tipo: z.enum(['show', 'festival']).default('show'),
-      bandas: z.array(reference('bandas')).default([]),
+      // Lista de slugs de bandas. No se valida con reference(): si borrás una banda desde el panel,
+      // las fechas que la nombraban siguen compilando y esa banda simplemente no se muestra.
+      bandas: z.array(z.string()).default([]),
       fecha: z.coerce.date(),
       hora: z.string().optional(),
       venue: z.string(),

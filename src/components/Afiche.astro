@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { getEntries } from 'astro:content';
-import { diaMes, imagenDeFecha, precioTexto, slugTag, type Fecha } from '../lib/util';
+import { bandasDe, diaMes, imagenDeFecha, precioTexto, slugTag, type Fecha } from '../lib/util';
 
 interface Props {
   fecha: Fecha;
@@ -17,7 +16,7 @@ const imagen = imagenDeFecha(fecha);
 const precio = precioTexto(data.precioDesde);
 
 // Lineup: en un festival, todas las bandas; en un show, las que no figuran ya en el título.
-const nombres = (await getEntries(data.bandas)).filter(Boolean).map((b) => b.data.nombre);
+const nombres = (await bandasDe(fecha)).map((b) => b.data.nombre);
 const enTitulo = slugTag(data.titulo);
 const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
 ---

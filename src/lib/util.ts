@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 
 export type Noticia = CollectionEntry<'noticias'>;
 export type Fecha = CollectionEntry<'agenda'>;
@@ -67,7 +67,7 @@ export async function bandasVisibles() {
   ]);
   const conContenido = new Set([
     ...noticias.map((n) => n.data.banda?.id),
-    ...agenda.filter((f) => f.data.estado === 'publicado').flatMap((f) => f.data.bandas.map((b) => b.id)),
+    ...agenda.filter((f) => f.data.estado === 'publicado').flatMap((f) => f.data.bandas),
   ]);
   return bandas
     .filter((b) => !b.data.automatica || conContenido.has(b.id))
@@ -92,7 +92,13 @@ export function imagenDeFecha(fecha: Fecha) {
   return null;
 }
 
-export const tocaEn =(fecha: Fecha, bandaId: string) => fecha.data.bandas.some((b) => b.id === bandaId);
+export const tocaEn = (fecha: Fecha, bandaId: string) => fecha.data.bandas.includes(bandaId);
+
+/** Bandas de una fecha que existen en la colección (las borradas se ignoran). */
+export async function bandasDe(fecha: Fecha) {
+  const entradas = await Promise.all(fecha.data.bandas.map((id) => getEntry('bandas', id)));
+  return entradas.filter((b) => b !== undefined);
+}
 
 export async function noticiasOrdenadas() {
   const todas = await getCollection('noticias');
