@@ -5,18 +5,30 @@ import Base from '../../../layouts/Base.astro';
 import SeccionTitulo from '../../../components/SeccionTitulo.astro';
 import AgendaGrid from '../../../components/AgendaGrid.astro';
 import Sticker from '../../../components/Sticker.astro';
-import { bandasDe, bandasVisibles, diaMes, fechaCompleta, imagenDeFecha, precioTexto, proximasFechas, slugTag, type Fecha } from '../../../lib/util';
+import {
+  bandasDe, bandasVisibles, diaMes, diaYMes, fechaCompleta, imagenDeFecha, precioTexto, proximasFechas,
+  slugsDeAgenda, slugTag, tituloConCiudad, type Fecha,
+} from '../../../lib/util';
 
 export async function getStaticPaths() {
   const fechas = await getCollection('agenda', (f) => f.data.estado === 'publicado');
-  return fechas.map((fecha) => ({ params: { slug: fecha.id }, props: { fecha } }));
+  const slugs = await slugsDeAgenda();
+  return fechas.flatMap((fecha) => {
+    const slug = slugs.get(fecha.id)!;
+    const paginas = [{ params: { slug }, props: { fecha } }];
+    // La URL vieja (nombre del archivo, "2026-11-21-cruzando-el-charco") redirige a la nueva.
+    if (fecha.id !== slug) paginas.push({ params: { slug: fecha.id }, props: { fecha, redirigir: `/agenda/${slug}/` } });
+    return paginas;
+  });
 }
 
 interface Props {
   fecha: Fecha;
+  redirigir?: string;
 }
 
-const { fecha } = Astro.props;
+const { fecha, redirigir } = Astro.props;
+if (redirigir) return Astro.redirect(redirigir, 301);
 const { data } = fecha;
 const dia = data.fecha.toISOString().slice(0, 10);
 const { dia: numDia, mes } = diaMes(data.fecha);
@@ -26,7 +38,9 @@ const bandas = await bandasDe(fecha);
 // Si la única banda es el título ("2 MINUTOS"), el sticker sobra.
 const mostrarBandas = bandas.length > 1 || (bandas.length === 1 && slugTag(bandas[0].data.nombre) !== slugTag(data.titulo));
 const precio = precioTexto(data.precioDesde);
-const imagen = imagenDeFecha(fecha);
+const ruta = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const imagen = imagenDeFecha(fecha, ruta);
+const titulo = tituloConCiudad(fecha);
 const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
 const yaPaso = dia < hoy;
 
@@ -45,7 +59,11 @@ const relacionadas = [
 // Imagen para compartir y para Google.
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 const og = imagen?.tipo === 'local' ? (await getImage({ src: imagen.src, width: 1200, height: 630, fit: 'cover', format: 'jpg' })).src : imagen?.src;
-const descripcionCorta = `${data.titulo} · ${fechaCompleta(data.fecha)}${data.hora ? `, ${data.hora} h` : ''} · ${data.venue}, ${data.ciudad}.${precio ? ` ${precio}.` : ''}`;
+// Título y descripción para buscadores: qué, dónde y cuándo.
+const tituloPagina = `${titulo.texto} · ${diaYMes(data.fecha)}`;
+const descripcionCorta =
+  `${titulo.texto}: ${fechaCompleta(data.fecha)}${data.hora ? `, ${data.hora} h` : ''}, en ${data.venue} (${data.ciudad}, ${data.provincia}).` +
+  `${precio ? ` Entradas ${precio.toLowerCase()}.` : ''}`;
 const inicio = data.hora ? `${dia}T${data.hora}:00-03:00` : dia;
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -66,14 +84,14 @@ const jsonLd = {
     ? { offers: { '@type': 'Offer', url: data.entradas, ...(data.precioDesde != null ? { price: data.precioDesde, priceCurrency: 'ARS' } : {}) } }
     : {}),
 };
-const compartirTexto = encodeURIComponent(`${data.titulo} · ${fechaCompleta(data.fecha)} ${url}`);
+const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(data.fecha)} ${url}`);
 ---
 
-<Base titulo={data.titulo} descripcion={descripcionCorta} imagen={og ?? undefined} tipo="article">
+<Base titulo={tituloPagina} descripcion={descripcionCorta} imagen={og ?? undefined} tipo="article">
   <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <article class="container evento">
-    <nav aria-label="Ruta" class="ruta"><a href="/agenda/">Agenda</a> / <span>{data.titulo}</span></nav>
+    <nav aria-label="Ruta" class="ruta"><a href="/agenda/">Agenda</a> / <span>{titulo.texto}</span></nav>
 
     <div class="cabecera">
       <div class="visual">
@@ -81,9 +99,9 @@ const compartirTexto = encodeURIComponent(`${data.titulo} · ${fechaCompleta(dat
           imagen ? (
             <div class="foto marco">
               {imagen.tipo === 'local' ? (
-                <Image src={imagen.src} alt={`Flyer de ${data.titulo}`} width={800} widths={[400, 800]} sizes="(max-width: 900px) 100vw, 520px" loading="eager" />
+                <Image src={imagen.src} alt={`Flyer de ${titulo.texto}, ${diaYMes(data.fecha)}`} width={800} widths={[400, 800]} sizes="(max-width: 900px) 100vw, 520px" loading="eager" />
               ) : (
-                <img src={imagen.src} alt={`Flyer de ${data.titulo}`} width="800" height="800" loading="eager" decoding="async" />
+                <img src={imagen.src} alt={`Flyer de ${titulo.texto}, ${diaYMes(data.fecha)}`} width="800" height="800" loading="eager" decoding="async" />
               )}
             </div>
           ) : (
@@ -97,7 +115,7 @@ const compartirTexto = encodeURIComponent(`${data.titulo} · ${fechaCompleta(dat
 
       <div class="datos">
         {data.tipo === 'festival' && <span class="chip chip--azul">Festival</span>}
-        <h1 class="d titulo">{data.titulo}</h1>
+        <h1 class="d titulo">{titulo.partes.map((p) => (p.azul ? <span class="azul">{p.texto}</span> : p.texto))}</h1>
 
         {
           mostrarBandas && (

@@ -3,6 +3,7 @@
 // la pide a la ticketera una vez y la deja en caché (navegador + Cloudflare).
 import type { APIRoute } from 'astro';
 import { getEntry } from 'astro:content';
+import { slugsDeAgenda } from '../../../lib/util';
 
 export const prerender = false;
 
@@ -10,7 +11,10 @@ const MAX_BYTES = 8 * 1024 * 1024;
 const CACHE = 'public, max-age=604800, s-maxage=2592000'; // 7 días en el navegador, 30 en Cloudflare
 
 export const GET: APIRoute = async ({ params, request }) => {
-  const fecha = params.slug ? await getEntry('agenda', params.slug) : undefined;
+  // Acepta la URL pública ("cruzando-el-charco-rosario-21-noviembre") y la vieja (nombre del archivo).
+  const slugs = await slugsDeAgenda();
+  const id = [...slugs].find(([, s]) => s === params.slug)?.[0] ?? params.slug;
+  const fecha = id ? await getEntry('agenda', id) : undefined;
   const origen = fecha?.data.estado === 'publicado' ? fecha.data.imagen : undefined;
   if (!origen) return new Response('Sin imagen', { status: 404 });
 

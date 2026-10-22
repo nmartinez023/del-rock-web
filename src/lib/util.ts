@@ -74,6 +74,119 @@ export async function bandasVisibles() {
     .sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
 }
 
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
+/** "21 de noviembre" */
+export function diaYMes(d: Date) {
+  return `${d.getUTCDate()} de ${MESES[d.getUTCMonth()]}`;
+}
+
+const sinAcentos = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+/** Posición de `buscado` en `texto` como palabra completa, sin importar acentos ni mayúsculas. */
+function buscarPalabra(texto: string, buscado: string): [number, number] | null {
+  const mapa: number[] = [];
+  let plano = '';
+  for (let i = 0; i < texto.length; i++) {
+    for (const c of sinAcentos(texto[i])) {
+      plano += c;
+      mapa.push(i);
+    }
+  }
+  const b = sinAcentos(buscado).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = new RegExp(`(^|[^a-z0-9])(${b})(?=[^a-z0-9]|$)`).exec(plano);
+  if (!m || !b) return null;
+  const inicio = m.index + m[1].length;
+  return [mapa[inicio], mapa[inicio + m[2].length - 1] + 1];
+}
+
+const CONECTORES = new Set(['y', 'e', 'de', 'del', 'la', 'las', 'el', 'los', 'a', 'al', 'con', 'en', 'o', 'x', 'ft']);
+
+/**
+ * "CRUZANDO EL CHARCO" → "Cruzando el Charco". Los títulos que ya vienen con mayúsculas y minúsculas
+ * se respetan, y las siglas sin vocales ("LBC") quedan como están.
+ */
+export function legible(texto: string) {
+  const letras = texto.replace(/[^\p{L}]/gu, '');
+  const mayus = letras.replace(/[^\p{Lu}]/gu, '').length;
+  if (!letras || mayus / letras.length < 0.7) return texto;
+  return texto
+    .split(' ')
+    .map((p, i) => {
+      if (!/[aeiouyáéíóúü]/i.test(p)) return p;
+      const min = p.toLowerCase();
+      if (i > 0 && CONECTORES.has(min)) return min;
+      return min.replace(/^(\P{L}*)(\p{L})/u, (_, pre, l) => pre + l.toUpperCase());
+    })
+    .join(' ');
+}
+
+/**
+ * Título del evento con la ciudad destacada: "Cruzando el Charco en Rosario".
+ * - Si el título ya nombra la ciudad, solo se destaca ("Nepal en ROSARIO").
+ * - Si ya tiene un "en" ("Alex Ubago en La Segunda Arena"), se agrega "· Rosario".
+ * - Los festivales quedan como están.
+ */
+export function tituloConCiudad(fecha: Fecha) {
+  const { ciudad, tipo } = fecha.data;
+  const titulo = legible(fecha.data.titulo);
+  const plano = { partes: [{ texto: titulo, azul: false }], texto: titulo };
+  if (tipo === 'festival' || !ciudad) return plano;
+
+  const pos = buscarPalabra(titulo, ciudad);
+  if (pos) {
+    const [a, b] = pos;
+    const partes = [
+      { texto: titulo.slice(0, a), azul: false },
+      { texto: titulo.slice(a, b), azul: true },
+      { texto: titulo.slice(b), azul: false },
+    ].filter((p) => p.texto);
+    return { partes, texto: titulo };
+  }
+  const conector = /(^|\s)en\s/i.test(titulo) ? ' · ' : ' en ';
+  return {
+    partes: [
+      { texto: titulo + conector, azul: false },
+      { texto: ciudad, azul: true },
+    ],
+    texto: `${titulo}${conector}${ciudad}`,
+  };
+}
+
+/** Slug para buscadores: "cruzando-el-charco-rosario-21-noviembre". */
+function slugDeFecha(fecha: Fecha) {
+  const { titulo, ciudad } = fecha.data;
+  const c = slugTag(ciudad ?? '');
+  let t = slugTag(titulo);
+  if (c) t = t.replace(new RegExp(`(^|-)(en-)?${c}(?=-|$)`, 'g'), '').replace(/^-+|-+$/g, '');
+  if (t.length > 60) t = t.slice(0, 60).replace(/-[^-]*$/, '');
+  const d = fecha.data.fecha;
+  return [t, c, String(d.getUTCDate()), MESES[d.getUTCMonth()]].filter(Boolean).join('-');
+}
+
+let rutas: Promise<Map<string, string>> | undefined;
+
+/** Slug público de cada fecha (id del archivo → slug), sin repetidos. */
+export function slugsDeAgenda() {
+  rutas ??= getCollection('agenda').then((todas) => {
+    const mapa = new Map<string, string>();
+    const usados = new Set<string>();
+    for (const f of todas.sort((a, b) => a.id.localeCompare(b.id))) {
+      const base = slugDeFecha(f);
+      let s = base;
+      for (let n = 2; usados.has(s); n++) s = `${base}-${n}`;
+      usados.add(s);
+      mapa.set(f.id, s);
+    }
+    return mapa;
+  });
+  return rutas;
+}
+
+export async function rutaDeFecha(fecha: Fecha) {
+  return `/agenda/${(await slugsDeAgenda()).get(fecha.id)}/`;
+}
+
 /** "sábado 28 de noviembre de 2026" */
 export function fechaCompleta(d: Date) {
   return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -86,9 +199,9 @@ export function precioTexto(precio: number | null | undefined) {
 }
 
 /** Imagen del evento: flyer propio (optimizado por Astro) o la de la ticketera, servida por nuestro Worker. */
-export function imagenDeFecha(fecha: Fecha) {
+export function imagenDeFecha(fecha: Fecha, ruta: string) {
   if (fecha.data.flyer) return { tipo: 'local' as const, src: fecha.data.flyer };
-  if (fecha.data.imagen) return { tipo: 'remota' as const, src: `/agenda/${fecha.id}/imagen` };
+  if (fecha.data.imagen) return { tipo: 'remota' as const, src: `${ruta}imagen` };
   return null;
 }
 

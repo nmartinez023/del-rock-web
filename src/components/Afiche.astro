@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { bandasDe, diaMes, imagenDeFecha, precioTexto, slugTag, type Fecha } from '../lib/util';
+import { bandasDe, diaMes, imagenDeFecha, precioTexto, rutaDeFecha, slugTag, tituloConCiudad, type Fecha } from '../lib/util';
 
 interface Props {
   fecha: Fecha;
@@ -11,8 +11,9 @@ const { fecha, i = 0 } = Astro.props;
 const { data } = fecha;
 const { dia, mes } = diaMes(data.fecha);
 const rot = [-1.6, 1.2, -0.8, 1.8, -1.2, 0.9][i % 6];
-const href = `/agenda/${fecha.id}/`;
-const imagen = imagenDeFecha(fecha);
+const href = await rutaDeFecha(fecha);
+const imagen = imagenDeFecha(fecha, href);
+const titulo = tituloConCiudad(fecha);
 const precio = precioTexto(data.precioDesde);
 
 // Lineup: en un festival, todas las bandas; en un show, las que no figuran ya en el título.
@@ -45,9 +46,10 @@ const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTit
     <span class="d mes">{mes}</span>
   </time>
   {data.tipo === 'festival' && <span class="festival">Festival</span>}
-  <span class="d quien">{data.titulo}</span>
+  <span class="d quien">{titulo.partes.map((p) => (p.azul ? <span class="ciudad">{p.texto}</span> : p.texto))}</span>
   {lineup.length > 0 && <span class="lineup">{data.tipo === 'festival' ? '' : 'Con '}{lineup.join(' · ')}</span>}
-  <span class="donde">{data.venue}, {data.ciudad}{data.hora && ` · ${data.hora} h`}</span>
+  {/* La ciudad ya va en el título, salvo en los festivales. */}
+  <span class="donde">{data.venue}{data.tipo === 'festival' && `, ${data.ciudad}`}{data.hora && ` · ${data.hora} h`}</span>
   <span class="entradas">
     <span>{precio ?? 'Ver detalle'}</span>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
@@ -85,8 +87,8 @@ const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTit
   /* La foto del evento, pegada en el afiche */
   .foto-afiche {
     display: block;
-    aspect-ratio: 1;
-    margin: -6px -6px 16px;
+    aspect-ratio: 4 / 3;
+    margin: -6px -6px 14px;
     background: #d9d3c6;
   }
   .cuando {
@@ -95,17 +97,20 @@ const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTit
     gap: 8px;
   }
   .dia {
-    font-size: 76px;
+    font-size: 56px;
     line-height: 0.9;
   }
   .mes {
-    font-size: 26px;
+    font-size: 22px;
     color: #2f6ea6; /* azul de marca oscurecido para contraste sobre papel */
   }
   .quien {
-    font-size: 30px;
+    font-size: 27px;
     line-height: 1.05;
-    margin-top: 14px;
+    margin-top: 10px;
+  }
+  .ciudad {
+    color: #2f6ea6; /* azul de marca oscurecido para contraste sobre papel */
   }
   .festival {
     align-self: flex-start;

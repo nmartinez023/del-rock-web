@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 // URL pública para links canónicos y previews al compartir. Cuando tengas dominio
 // propio, cargá SITE_URL en las variables de build del Worker en Cloudflare.
@@ -18,7 +19,13 @@ export default defineConfig({
     // Las imágenes se optimizan con sharp al compilar: no hace falta Cloudflare Images.
     imageService: 'compile',
   }),
-  integrations: [react(), markdoc(), keystatic()],
+  integrations: [
+    react(),
+    markdoc(),
+    keystatic(),
+    // Sitemap para buscadores. Afuera: el panel y las URLs viejas de la agenda (que redirigen).
+    sitemap({ filter: (pagina) => !/\/keystatic|\/api\/|\/agenda\/\d{4}-\d{2}-\d{2}-/.test(pagina) }),
+  ],
   // Sin sesiones de Astro: así el adapter no crea un KV en Cloudflare.
   session: false,
   image: {

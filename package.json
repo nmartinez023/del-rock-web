@@ -19,6 +19,7 @@
     "@astrojs/cloudflare": "^14.4.2",
     "@astrojs/markdoc": "^2.1.0",
     "@astrojs/react": "^7.1.0",
+    "@astrojs/sitemap": "^3.7.4",
     "@keystatic/astro": "^6.0.0",
     "@keystatic/core": "^0.6.9",
     "astro": "^7.4.1",
