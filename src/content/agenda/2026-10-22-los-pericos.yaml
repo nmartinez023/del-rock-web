@@ -11,8 +11,8 @@ venue: Teatro Gran Rex
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://tuentrada.com/los-pericos-tgr
-imagen: https://bucket.tuentrada.com/cdn-cgi/image/width=590,height=548,format=auto,quality=85/bucket/events/los-pericos/los-pericos-image-main-1783530956.jpg
+imagen: https://bucket.tuentrada.com/bucket/events/los-pericos/los-pericos-image-main-1783530956.jpg
 origen:
   fuente: tuentrada
   id: 764-5085
-  huella: a547d5d5d5f584ae
+  huella: cdf168601f7e3e97

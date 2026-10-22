@@ -11,8 +11,8 @@ venue: Complejo Aeropuerto De San Andres De Giles
 ciudad: San Andres De Giles
 provincia: Buenos Aires
 entradas: https://tuentrada.com/ntvg-gira
-imagen: https://bucket.tuentrada.com/cdn-cgi/image/width=700,fit=scale-down,format=auto,quality=85/bucket/event-groups/no-te-va-gustar/no-te-va-gustar-image-main-1772451812.jpg
+imagen: https://bucket.tuentrada.com/bucket/event-groups/no-te-va-gustar/no-te-va-gustar-image-main-1772451812.jpg
 origen:
   fuente: tuentrada
   id: 1-7784
-  huella: c3a2e6e61e7653ba
+  huella: 9bb4b4f78a189d6f
