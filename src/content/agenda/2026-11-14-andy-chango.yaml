@@ -1,12 +1,12 @@
 titulo: Andy Chango
-estado: ⏳ Pendiente
-tipo: show
+estado: ✅ Publicado
 rockNacional: true
 genero: rock
+tipo: show
 bandas:
   - andy-chango
 fecha: 2026-11-14
-hora: "20:00"
+hora: '20:00'
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: ANDY-CHANGO
   huella: a0f07ff2cba6e0a4
-  detalle: "2026-10-22"
+  detalle: '2026-10-22'
