@@ -1,0 +1,13 @@
+titulo: CARAFEA
+estado: pendiente
+banda: carafea
+fecha: 2026-11-20
+hora: 20:00
+venue: La Sala De Las Artes
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/CARAFEA/
+origen:
+  fuente: entrada-play
+  id: CARAFEA
+  huella: fd846ac035f367e1
