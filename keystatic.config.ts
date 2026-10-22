@@ -84,6 +84,11 @@ export default config({
         descripcion: fields.text({ label: 'Descripción corta', multiline: true }),
         instagram: fields.url({ label: 'Instagram de la banda' }),
         spotify: fields.url({ label: 'Spotify' }),
+        automatica: fields.checkbox({
+          label: 'Creada por el recolector',
+          description:
+            'Aparece en la web recién cuando tenga una fecha publicada o una nota. Destildala para mostrarla siempre.',
+        }),
       },
     }),
 

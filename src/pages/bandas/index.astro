@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { bandasVisibles } from '../../lib/util';
 import Base from '../../layouts/Base.astro';
 import SeccionTitulo from '../../components/SeccionTitulo.astro';
 
-const bandas = (await getCollection('bandas')).sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
+const bandas = await bandasVisibles();
 ---
 
 <Base titulo="Bandas" descripcion="Las bandas del rock nacional: noticias, fechas y coberturas de cada una.">

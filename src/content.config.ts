@@ -32,6 +32,7 @@ const bandas = defineCollection({
       descripcion: z.string().optional(),
       instagram: z.string().url().nullable().optional(),
       spotify: z.string().url().nullable().optional(),
+      automatica: z.boolean().default(false),
     }),
 });
 

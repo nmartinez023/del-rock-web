@@ -12,12 +12,13 @@ import { puedeLeer } from './robots.mjs';
 
 const AGENTE = 'DelRockBot/1.0 (+https://del-rock-web.delrockarg.workers.dev)';
 const DIR_AGENDA = 'src/content/agenda';
+const DIR_BANDAS = 'src/content/bandas';
 const seco = process.argv.includes('--seco');
 
 const fuentes = leerYaml('src/content/fuentes')
   .map((f) => ({ ...f.datos, slug: f.archivo.replace(/\.yaml$/, '') }))
   .filter((f) => f.activa !== false && f.url);
-const bandas = leerYaml('src/content/bandas').map((b) => ({ slug: b.archivo.replace(/\.yaml$/, ''), nombre: b.datos.nombre }));
+const bandas = leerYaml(DIR_BANDAS).map((b) => ({ slug: b.archivo.replace(/\.yaml$/, ''), nombre: b.datos.nombre }));
 const hoy = hoyEnArgentina();
 
 const lineas = [`## Recolector de agenda (${new Date().toISOString()})${seco ? ' — modo seco' : ''}`, ''];
@@ -49,12 +50,15 @@ for (const fuente of fuentes) {
       .map((e) => clasificar(e, bandas, fuente))
       .filter(Boolean);
 
-    const r = mezclar(DIR_AGENDA, eventos, fuente, { hoy, seco });
+    const r = mezclar(DIR_AGENDA, eventos, fuente, { hoy, seco, dirBandas: DIR_BANDAS });
+    // Las bandas creadas en esta fuente ya cuentan para las siguientes (evita duplicarlas).
+    bandas.push(...r.bandasNuevas);
     log(
       `- **${fuente.slug}**: ${crudos.length} eventos en la página, ${eventos.length} pasan el filtro → ` +
         `${r.nuevos.length} nuevos, ${r.actualizados.length} actualizados, ${r.sinCambios} sin cambios, ${r.omitidos} ya cargados por otra vía.`,
     );
     for (const a of r.nuevos) log(`  - nuevo: ${a}`);
+    for (const b of r.bandasNuevas) log(`  - banda nueva: ${b.nombre}`);
     for (const a of r.actualizados) log(`  - actualizado: ${a}`);
     if (crudos.length === 0) log(`  - ⚠️ No encontré eventos: puede que la página no publique JSON-LD y necesite un adaptador propio.`);
   } catch (err) {

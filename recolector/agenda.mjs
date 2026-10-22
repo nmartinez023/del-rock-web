@@ -30,13 +30,22 @@ function aYaml(d, estado, origen) {
   return stringify(salida, { lineWidth: 0 });
 }
 
+/** Crea la banda (oculta en la web hasta que tenga algo publicado) si todavía no existe. */
+function asegurarBanda(dirBandas, banda, seco) {
+  if (!dirBandas || !banda) return false;
+  const ruta = join(dirBandas, `${banda.slug}.yaml`);
+  if (existsSync(ruta)) return false;
+  if (!seco) writeFileSync(ruta, stringify({ nombre: banda.nombre, automatica: true }, { lineWidth: 0 }));
+  return true;
+}
+
 /**
  * Mezcla los eventos recolectados con la agenda existente.
- * - Nuevo: se crea como "pendiente".
+ * - Nuevo: se crea como "pendiente" (y su banda, si no existía).
  * - Ya traído antes y sin tocar a mano: se actualiza si cambió algo (mantiene su estado).
  * - Editado a mano, o cargado a mano / por otra fuente (mismo show): no se toca.
  */
-export function mezclar(dir, eventos, fuente, { hoy, seco = false } = {}) {
+export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } = {}) {
   const existentes = leerYaml(dir);
   const porId = new Map();
   const porClave = new Map();
@@ -45,7 +54,10 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false } = {}) {
     porClave.set(claveDe(e.datos), e);
   }
   const ocupados = new Set(existentes.map((e) => e.archivo));
-  const resumen = { nuevos: [], actualizados: [], sinCambios: 0, omitidos: 0 };
+  const resumen = { nuevos: [], actualizados: [], bandasNuevas: [], sinCambios: 0, omitidos: 0 };
+  const conBanda = (ev) => {
+    if (asegurarBanda(dirBandas, ev.bandaNueva, seco)) resumen.bandasNuevas.push(ev.bandaNueva);
+  };
 
   for (const ev of eventos) {
     if (ev.fecha < hoy) continue;
@@ -59,6 +71,7 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false } = {}) {
         resumen.sinCambios++;
         continue;
       }
+      conBanda(ev);
       if (!seco) writeFileSync(join(dir, previo.archivo), aYaml(ev, d.estado ?? 'pendiente', { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) }));
       resumen.actualizados.push(previo.archivo);
       continue;
@@ -75,6 +88,7 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false } = {}) {
     ocupados.add(archivo);
 
     const origen = { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) };
+    conBanda(ev);
     if (!seco) writeFileSync(join(dir, archivo), aYaml(ev, 'pendiente', origen));
     const nuevo = { archivo, datos: { ...ev, origen } };
     porId.set(idOrigen, nuevo);

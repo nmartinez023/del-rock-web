@@ -55,6 +55,25 @@ export function slugTag(tag: string) {
     .replace(/^-|-$/g, '');
 }
 
+/**
+ * Bandas que se muestran en la web, ordenadas por nombre. Las que creó el recolector
+ * quedan ocultas hasta que tengan una fecha publicada o una nota.
+ */
+export async function bandasVisibles() {
+  const [bandas, noticias, agenda] = await Promise.all([
+    getCollection('bandas'),
+    getCollection('noticias'),
+    getCollection('agenda'),
+  ]);
+  const conContenido = new Set([
+    ...noticias.map((n) => n.data.banda?.id),
+    ...agenda.filter((f) => f.data.estado === 'publicado').map((f) => f.data.banda?.id),
+  ]);
+  return bandas
+    .filter((b) => !b.data.automatica || conContenido.has(b.id))
+    .sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
+}
+
 export async function noticiasOrdenadas() {
   const todas = await getCollection('noticias');
   return todas.sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());

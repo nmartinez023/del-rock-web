@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
 import { normalizar, fechaHora, provinciaDe } from '../normalizar.mjs';
-import { clasificar } from '../clasificar.mjs';
+import { clasificar, nombreDeBanda } from '../clasificar.mjs';
 import { mezclar } from '../agenda.mjs';
 import { parsearRobots, rutaPermitida } from '../robots.mjs';
 
@@ -106,6 +106,47 @@ test('mezclar: crea pendientes, actualiza los no editados y respeta los editados
     assert.equal(readdirSync(dir).length, 3);
   } finally {
     rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('nombreDeBanda: limpia el título y no inventa bandas para festivales u obras', () => {
+  const n = (titulo, artistas = []) => nombreDeBanda({ titulo, artistas });
+  assert.equal(n('LOS PIOJOS - Gira 2026'), 'Los Piojos');
+  assert.equal(n('Ciro y los Persas en el Estadio Único'), 'Ciro y los Persas');
+  assert.equal(n('El Mató a un Policía Motorizado + invitados'), 'El Mató a un Policía Motorizado');
+  assert.equal(n('Cualquier título largo', ['Los Espíritus']), 'Los Espíritus');
+  assert.equal(n('Pez (presentación nuevo disco)'), 'Pez');
+  assert.equal(n('Festival Bandera'), null);
+  assert.equal(n('Obra de teatro infantil'), null);
+});
+
+test('con filtro "todos" crea la banda que falta, una sola vez y solo si se guarda la fecha', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'agenda-'));
+  const dirBandas = mkdtempSync(join(tmpdir(), 'bandas-'));
+  try {
+    const f = { ...fuente, filtro: 'todos' };
+    const eventos = [
+      { titulo: 'LOS PIOJOS - Gira 2026', fecha: '2026-11-01', hora: '21:00', venue: 'River', ciudad: 'Buenos Aires', provincia: 'CABA', entradas: 'https://t/1', artistas: [], id: '1' },
+      { titulo: 'Los Piojos - segunda fecha', fecha: '2026-11-02', hora: '21:00', venue: 'River', ciudad: 'Buenos Aires', provincia: 'CABA', entradas: 'https://t/2', artistas: [], id: '2' },
+      { titulo: 'Los Pericos - ya pasó', fecha: '2026-10-01', hora: '', venue: 'Club', ciudad: 'Buenos Aires', provincia: 'CABA', entradas: 'https://t/3', artistas: [], id: '3' },
+    ];
+    const lista = [...bandas];
+    const clasificados = [];
+    for (const e of eventos) {
+      const c = clasificar(e, lista, f);
+      clasificados.push(c);
+      if (c.bandaNueva && !lista.some((b) => b.slug === c.bandaNueva.slug)) lista.push(c.bandaNueva);
+    }
+    assert.deepEqual(clasificados.map((c) => c.banda), ['los-piojos', 'los-piojos', 'los-pericos']);
+
+    const r = mezclar(dir, clasificados, f, { hoy: HOY, dirBandas });
+    assert.deepEqual(r.bandasNuevas.map((b) => b.nombre), ['Los Piojos'], 'Los Pericos no: su fecha ya pasó');
+    assert.deepEqual(readdirSync(dirBandas), ['los-piojos.yaml']);
+    assert.deepEqual(parse(readFileSync(join(dirBandas, 'los-piojos.yaml'), 'utf8')), { nombre: 'Los Piojos', automatica: true });
+    assert.equal(parse(readFileSync(join(dir, r.nuevos[0]), 'utf8')).banda, 'los-piojos');
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+    rmSync(dirBandas, { recursive: true, force: true });
   }
 });
 

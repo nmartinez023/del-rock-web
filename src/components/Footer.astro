@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { bandasVisibles } from '../lib/util';
 import Sticker from './Sticker.astro';
 
-const bandas = (await getCollection('bandas')).sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
+const bandas = await bandasVisibles();
 const anio = new Date().getFullYear();
 ---
 

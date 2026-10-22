@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+
 import Base from '../../layouts/Base.astro';
 import SeccionTitulo from '../../components/SeccionTitulo.astro';
 import NoticiaCard from '../../components/NoticiaCard.astro';
 import AgendaGrid from '../../components/AgendaGrid.astro';
-import { noticiasOrdenadas, proximasFechas } from '../../lib/util';
+import { bandasVisibles, noticiasOrdenadas, proximasFechas } from '../../lib/util';
 
 export async function getStaticPaths() {
-  const bandas = await getCollection('bandas');
+  const bandas = await bandasVisibles();
   return bandas.map((banda) => ({ params: { slug: banda.id }, props: { banda } }));
 }
 
