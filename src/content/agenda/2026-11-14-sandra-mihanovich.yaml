@@ -1,0 +1,21 @@
+titulo: Sandra Mihanovich
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - sandra-mihanovich
+fecha: 2026-11-14
+hora: "21:00"
+venue: Auditorio de Belgrano
+direccion: Virrey Loreto 2348
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/sandra-mihanovich/auditorio-de-belgrano
+precioDesde: 67200
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/mihaparaiso960.png
+descripcion: Sandra Mihanovich se presentará el día sábado 14 de noviembre a las 21 h en el Auditorio de Belgrano.
+origen:
+  fuente: ticketek
+  id: SANDRABEL26-2026-11-14T21:00
+  huella: 009e94c29c273987

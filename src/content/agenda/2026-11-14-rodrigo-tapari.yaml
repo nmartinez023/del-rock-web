@@ -1,0 +1,21 @@
+titulo: Rodrigo Tapari
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - rodrigo-tapari
+fecha: 2026-11-14
+hora: "21:00"
+venue: Teatro Opera On
+direccion: Av. Corrientes 860
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/rodrigo-tapari/teatro-opera
+precioDesde: 39550
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/rtapari960.png
+descripcion: Rodrigo Tapari se presentará el día sábado 14 de noviembre en el Teatro Opera.
+origen:
+  fuente: ticketek
+  id: TAPARI26OP-2026-11-14T21:00
+  huella: 9a5c30460ada0322

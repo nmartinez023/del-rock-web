@@ -1,0 +1,21 @@
+titulo: Manso Retro
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - manso-retro
+fecha: 2026-11-28
+hora: "22:00"
+venue: Arena Maipu
+direccion: Maza y Emilio Civit
+ciudad: Maipu
+provincia: Mendoza
+entradas: https://www.ticketek.com.ar/manso-retro/arena-maipu
+precioDesde: 22600
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/vpev_s26.png
+descripcion: Manso Retro se presentará el día Sábado 28 de Noviembre a las 22hs en Arena Maipu Mendoza.
+origen:
+  fuente: ticketek
+  id: MANSOR26AM-2026-11-28T22:00
+  huella: 1d5bda87c19302cf

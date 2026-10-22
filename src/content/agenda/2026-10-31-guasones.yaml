@@ -1,0 +1,21 @@
+titulo: Guasones
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - guasones
+fecha: 2026-10-31
+hora: "22:00"
+venue: CLUB A. MARIANO MORENO
+direccion: Av. Rivadavia 1902
+ciudad: Bragado
+provincia: Buenos Aires
+entradas: https://www.ticketek.com.ar/guasones/club-mariano-moreno
+precioDesde: 67800
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/guasones_960x400_narana_en_negro.jpg_2.png
+descripcion: Con más de 30 años de trayectoria, los platenses se han hecho camino con un estilo rockero directo, con predominio de guitarras y con letras que reflejan, sin pretensiones, la vida en años de lucha. Guasones cuenta con más tres décadas de rock sobre sus espaldas y miles de kilómetros recorridos tocando en escenarios tanto de Latinoamérica como en Europa.
+origen:
+  fuente: ticketek
+  id: GUASONE26MM-2026-10-31T22:00
+  huella: 49475b23a8034901

@@ -1,0 +1,18 @@
+titulo: No Te Va Gustar
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ntvg
+fecha: 2026-11-21
+hora: "20:00"
+venue: Club Aleman
+ciudad: Villa Ballester
+provincia: Buenos Aires
+entradas: https://tuentrada.com/ntvg-gira
+imagen: https://bucket.tuentrada.com/cdn-cgi/image/width=700,fit=scale-down,format=auto,quality=85/bucket/event-groups/no-te-va-gustar/no-te-va-gustar-image-main-1772451812.jpg
+origen:
+  fuente: tuentrada
+  id: 1-6035
+  huella: bde7cdad7e685a60

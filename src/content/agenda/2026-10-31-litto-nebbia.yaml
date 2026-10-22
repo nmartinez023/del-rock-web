@@ -1,0 +1,20 @@
+titulo: Litto Nebbia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - litto-nebbia
+fecha: 2026-10-31
+hora: "21:00"
+venue: Teatro Santa María
+direccion: Montevideo 842
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/litto-nebbia/teatro-santa-maria
+precioDesde: 63250
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/litto_ns.png
+origen:
+  fuente: ticketek
+  id: LITTO26TSM-2026-10-31T21:00
+  huella: 20f790021426d528

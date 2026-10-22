@@ -1,0 +1,46 @@
+titulo: Sueño de Pescado
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - sueno-de-pescado
+fecha: 2026-11-26
+hora: "21:00"
+venue: Teatro Opera On
+direccion: Av. Corrientes 860
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/sueno-de-pescado/teatro-opera
+precioDesde: 39550
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/sdp960.png
+descripcion: |-
+  LA BANDA PLATENSE LLEGA POR PRIMERA VEZ AL MÍTICO TEATRO OPERA ON, PARA LA GRABACIÓN DE UN NUEVO DISCO EN VIVO CON UN SHOW A PURO ROCK C ROLL!
+
+  Sueño de Pescado es una banda nacida en la ciudad de La Plata en 2013, fundada por Manuel Rodríguez (voz y líder) y Juan Manuel Calabró, conocido como “Guachi”.
+
+  Con un sonido crudo, melodías directas, bases contundentes, guitarras filosas y letras honestas, la banda logró consolidar una identidad propia dentro del rock argentino contemporáneo.
+
+  A lo largo de sus 13 años de trayectoria, Sueño de Pescado recorrió gran parte del país, realizando giras por el interior argentino, el conurbano bonaerense y participando en algunos de los festivales más importantes de la escena nacional como Cosquín Rock, Rock en Baradero, Panic Rock Festival y La Falda Rock.
+
+  Entre sus presentaciones más destacadas se encuentran shows en escenarios emblemáticos como Estadio Obras Sanitarias, Microestadio Ferro Carril Oeste, Estadio Atenas, Estadio Único Diego Armando Maradona junto a La Renga, además de Teatro Flores, Groove y Estadio Cubierto Malvinas Argentinas, entre muchos otros.
+
+  Discografía
+
+  Venganza Primavera (2014)
+
+  Siglo Pánico (2016)
+
+  Sangre en tus Luces (2017)
+
+  La Palabra (2019)
+
+  Motor Animal (2022)
+
+  Ladrones del Silencio (2025)
+
+  Con una conexión genuina con su público y un crecimiento sostenido e independiente, Sueño de Pescado continúa consolidándose como una de las bandas de rock con mayor proyección y convocatoria de su generación.
+origen:
+  fuente: ticketek
+  id: PESCADO26OP-2026-11-26T21:00
+  huella: 5927c1f19871f7fc

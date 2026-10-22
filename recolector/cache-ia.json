@@ -27,6 +27,30 @@
    "fecha": "2027-03-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "063a1734207cd17d": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "06853f5b6aa3c320": {
+   "r": {
+    "genero": "pop italiano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jovanotti",
+    "artistas": [
+     "Jovanotti"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "078ea29e31be5849": {
    "r": {
     "genero": "rock",
@@ -38,6 +62,43 @@
     ]
    },
    "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "0a0ebfdc45955127": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Alejandro Lerner — Cara a Cara",
+    "artistas": [
+     "Alejandro Lerner"
+    ]
+   },
+   "fecha": "2026-12-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "0ccc08803f1525d5": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "César Banana Pueyrredón",
+    "artistas": [
+     "César Banana Pueyrredón"
+    ]
+   },
+   "fecha": "2027-02-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "0ee5f8e73b47b0b4": {
+   "r": {
+    "genero": "sin especificar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Héroe",
+    "artistas": []
+   },
+   "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "10fb2c9fcff5239b": {
@@ -92,6 +153,19 @@
    "fecha": "2026-11-07",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "1b6d60a03d4c3555": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Manso Retro",
+    "artistas": [
+     "Manso Retro"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "1bfce675482c8c57": {
    "r": {
     "genero": "cumbia pop",
@@ -131,6 +205,19 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "2416146ffff97fbe": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Litto Nebbia",
+    "artistas": [
+     "Litto Nebbia"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "279268826d94cafe": {
    "r": {
     "genero": "no determinado",
@@ -142,6 +229,17 @@
     ]
    },
    "fecha": "2026-12-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "29a399e88e0e5539": {
+   "r": {
+    "genero": "espectáculo temático",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cine Italia Embrujado",
+    "artistas": []
+   },
+   "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "2ad5ed55f2bdab61": {
@@ -157,6 +255,69 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "2b794037195e9069": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Los Ángeles de Charly",
+    "artistas": [
+     "Los Ángeles de Charly"
+    ]
+   },
+   "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "2d1005a69d457595": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Festi Power Cumbia",
+    "artistas": []
+   },
+   "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "2ea638526bc24012": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Dillom",
+    "artistas": [
+     "Dillom"
+    ]
+   },
+   "fecha": "2027-01-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "30e81d430ac25bb2": {
+   "r": {
+    "genero": "balada pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Palito Ortega — Por Siempre",
+    "artistas": [
+     "Palito Ortega"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "310ec42004c0affb": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ricky Maravilla",
+    "artistas": [
+     "Ricky Maravilla"
+    ]
+   },
+   "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "3200f64861e99e26": {
    "r": {
     "genero": "pop",
@@ -168,6 +329,75 @@
     ]
    },
    "fecha": "2026-12-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3233b27d05b67231": {
+   "r": {
+    "genero": "ópera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Traviata",
+    "artistas": []
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3251862cdb16ff91": {
+   "r": {
+    "genero": "no especificado",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Banda de Carlitos",
+    "artistas": [
+     "La Banda de Carlitos"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "33194f9fe00364b4": {
+   "r": {
+    "genero": "música infantil sinfónica",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Elena Walsh Sinfónico",
+    "artistas": [
+     "Katie Viqueira",
+     "Norbi Córdoba",
+     "Federico Mizrahi",
+     "Fabián Miodownik",
+     "Orquesta Aeropuertos Argentina",
+     "Maia Reficco",
+     "Joaquín Reficco",
+     "Agustín Espíndola Viqueira",
+     "Andrés Espinel"
+    ]
+   },
+   "fecha": "2026-12-02",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "357815e00a050c61": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Reik",
+    "artistas": [
+     "Reik"
+    ]
+   },
+   "fecha": "2027-02-16",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "35d3e5d8349e0600": {
+   "r": {
+    "genero": "ópera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Traviata",
+    "artistas": []
+   },
+   "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "35d84210e48cf892": {
@@ -192,6 +422,76 @@
     ]
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "37c6f90c7f02e135": {
+   "r": {
+    "genero": "no especificado",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Noche de Brujas",
+    "artistas": [
+     "Noche de Brujas"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "398c4684ba34868c": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jairo — 50 años de música",
+    "artistas": [
+     "Jairo",
+     "Eruca Sativa",
+     "Abel Pintos",
+     "Luciano Pereyra",
+     "Lisandro Aristimuño",
+     "Juan Carlos Baglietto",
+     "Víctor Heredia",
+     "León Gieco",
+     "Pedro Aznar",
+     "Nahuel Penissi",
+     "Raly Barrionuevo",
+     "Elena Roger",
+     "Escalandrum",
+     "Marcela Morelo",
+     "Iván González",
+     "Yaco González",
+     "Mario González",
+     "Lucía González"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3ae055e2debe800d": {
+   "r": {
+    "genero": "jazz",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Django Sessions + Ornella Contreras",
+    "artistas": [
+     "Django Sessions",
+     "Ornella Contreras"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3b66fe25f782860c": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Virus",
+    "artistas": [
+     "Virus"
+    ]
+   },
+   "fecha": "2026-12-18",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "3b906a053acaf5a9": {
@@ -222,6 +522,17 @@
    "fecha": "2026-11-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "3c81684ec1476f90": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "3d833edce71a9c60": {
    "r": {
     "genero": "indie pop",
@@ -233,6 +544,17 @@
     ]
    },
    "fecha": "2026-11-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "42d3103e961f6769": {
+   "r": {
+    "genero": "folklore",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Festival La Porteña",
+    "artistas": []
+   },
+   "fecha": "2026-12-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "4432063cf6022d8d": {
@@ -248,6 +570,32 @@
     ]
    },
    "fecha": "2026-12-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "44f55ba88584dd04": {
+   "r": {
+    "genero": "rock sinfónico (tributo)",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "The Beatles Symphonic Fantasy",
+    "artistas": [
+     "The Beatles Symphonic Fantasy"
+    ]
+   },
+   "fecha": "2026-11-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "4a81ad61e7af2945": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Zoe Gotusso — Un Día de Verano",
+    "artistas": [
+     "Zoe Gotusso"
+    ]
+   },
+   "fecha": "2026-12-18",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "4ce28b686f00e338": {
@@ -293,6 +641,19 @@
    "fecha": "2026-11-20",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "5077c983121420b7": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Alex Ubago",
+    "artistas": [
+     "Alex Ubago"
+    ]
+   },
+   "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "5117349fbb8d47dc": {
    "r": {
     "genero": "pop latino",
@@ -304,6 +665,30 @@
     ]
    },
    "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "51197244bf0d5a35": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "526b746527bdb797": {
+   "r": {
+    "genero": "chamamé",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Santiago Bocha Sheridan",
+    "artistas": [
+     "Santiago Bocha Sheridan"
+    ]
+   },
+   "fecha": "2026-12-05",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "559d233f68e818f9": {
@@ -347,6 +732,67 @@
    "fecha": "2026-11-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "57df60797c561eb0": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Zoe Gotusso — Un Día de Verano",
+    "artistas": [
+     "Zoe Gotusso"
+    ]
+   },
+   "fecha": "2026-12-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "57f8ce0dc5c9c819": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Emanero",
+    "artistas": [
+     "Emanero"
+    ]
+   },
+   "fecha": "2026-12-04",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "58a2badc8e11399b": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Camilo",
+    "artistas": [
+     "Camilo"
+    ]
+   },
+   "fecha": "2026-11-02",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "58b805b512217755": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "DC Studios: Clayface",
+    "artistas": []
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5995c2c4c78a263d": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "DC Studios: Clayface",
+    "artistas": []
+   },
+   "fecha": "2026-10-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "5ba300b50ad0a24a": {
    "r": {
     "genero": "desconocido",
@@ -358,6 +804,71 @@
     ]
    },
    "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5d04be08b357f3b7": {
+   "r": {
+    "genero": "cuarteto",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La K'onga y La Delio Valdez + Candu Domínguez",
+    "artistas": [
+     "La K'onga",
+     "La Delio Valdez",
+     "Candu Domínguez"
+    ]
+   },
+   "fecha": "2027-01-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5dbeed8c08a012c8": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Sandra Mihanovich",
+    "artistas": [
+     "Sandra Mihanovich"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5ed860fdf9f36252": {
+   "r": {
+    "genero": "stand-up",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "61042645be76c855": {
+   "r": {
+    "genero": "canción de autor",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Víctor Heredia — Desde Paso del Rey",
+    "artistas": [
+     "Víctor Heredia"
+    ]
+   },
+   "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "639ac54aebe4af9a": {
+   "r": {
+    "genero": "folklore andino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Los Kjarkas",
+    "artistas": [
+     "Los Kjarkas"
+    ]
+   },
+   "fecha": "2026-11-11",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "63aa5f72e1f7e1d9": {
@@ -437,6 +948,43 @@
    "fecha": "2026-12-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "6a95cc32634dbdab": {
+   "r": {
+    "genero": "música de videojuegos sinfónica",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Undertale: The Determination Symphony",
+    "artistas": [
+     "Undertale"
+    ]
+   },
+   "fecha": "2027-03-09",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "6e3da5f02ad5b90b": {
+   "r": {
+    "genero": "música tropical",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Daniel Agostini",
+    "artistas": [
+     "Daniel Agostini"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "6e48594d033ab1a4": {
+   "r": {
+    "genero": "música sinfónica",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Gala Sinfónica Fundación Fleming",
+    "artistas": []
+   },
+   "fecha": "2026-11-02",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "6f3853706c5470d4": {
    "r": {
     "genero": "rock alternativo",
@@ -488,6 +1036,19 @@
     ]
    },
    "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "765d7032a9854a6f": {
+   "r": {
+    "genero": "folklore",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Canto 4",
+    "artistas": [
+     "Canto 4"
+    ]
+   },
+   "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "772915a529e5d5be": {
@@ -559,6 +1120,30 @@
    "fecha": "2026-10-30",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "7f66a099280e7af9": {
+   "r": {
+    "genero": "fiesta bailable",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Fiesta Fa!",
+    "artistas": []
+   },
+   "fecha": "2027-01-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "80ffb770bb2fbba0": {
+   "r": {
+    "genero": "rock progresivo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Genetics — A Trick of the Tail 50° aniversario",
+    "artistas": [
+     "Genetics"
+    ]
+   },
+   "fecha": "2026-12-10",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "87ba3c2dd4928b5a": {
    "r": {
     "genero": "fiesta de dj",
@@ -581,6 +1166,19 @@
     ]
    },
    "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "89b2d802d69e697a": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Connie Ballarini",
+    "artistas": [
+     "Connie Ballarini"
+    ]
+   },
+   "fecha": "2026-10-31",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "89be1aa4b1c64b84": {
@@ -620,6 +1218,43 @@
     ]
    },
    "fecha": "2026-11-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8b3f7d85c1c1769d": {
+   "r": {
+    "genero": "reggaetón",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ñengo Flow",
+    "artistas": [
+     "Ñengo Flow"
+    ]
+   },
+   "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8b7ddb14802884de": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "San Luis — Aunque Sea Todo",
+    "artistas": [
+     "San Luis"
+    ]
+   },
+   "fecha": "2027-02-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8c25fc8e649eca98": {
+   "r": {
+    "genero": "película",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "8e9318eeb30c8c64": {
@@ -697,6 +1332,19 @@
    "fecha": "2026-11-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "956ba1f2c7855419": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Sueño de Pescado",
+    "artistas": [
+     "Sueño de Pescado"
+    ]
+   },
+   "fecha": "2026-11-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "98c717a31ac16649": {
    "r": {
     "genero": "trap pop",
@@ -708,6 +1356,33 @@
     ]
    },
    "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "9aa383a55d0c5cbf": {
+   "r": {
+    "genero": "pop experimental electrónico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "FKA twigs",
+    "artistas": [
+     "FKA twigs",
+     "EQ"
+    ]
+   },
+   "fecha": "2026-11-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "9c2080278e522351": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Diego Torres — Mi Norte & Mi Sur Tour 2026",
+    "artistas": [
+     "Diego Torres"
+    ]
+   },
+   "fecha": "2026-11-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "9d1dc8de16cc17eb": {
@@ -737,6 +1412,30 @@
    "fecha": "2026-11-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "9f5bd27d5887c6eb": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "DC Studios: Clayface",
+    "artistas": []
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "9ffe8d9ab1771384": {
+   "r": {
+    "genero": "ópera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Rigoletto",
+    "artistas": [
+     "Rigoletto"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "a59c91ffcddaf930": {
    "r": {
     "genero": "pop vocal",
@@ -749,6 +1448,19 @@
     ]
    },
    "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a5c933c459eaeb0a": {
+   "r": {
+    "genero": "piano contemporáneo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Gibran Alcocer",
+    "artistas": [
+     "Gibran Alcocer"
+    ]
+   },
+   "fecha": "2027-04-07",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "a5e7ca34719cf7b5": {
@@ -805,6 +1517,19 @@
    "fecha": "2026-11-27",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "a9d875216d2fa814": {
+   "r": {
+    "genero": "música de videojuegos (orquesta sinfónica)",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Undertale: The Determination Symphony",
+    "artistas": [
+     "Undertale"
+    ]
+   },
+   "fecha": "2027-03-10",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "aaa3c82aa2a9b75d": {
    "r": {
     "genero": "rock",
@@ -818,6 +1543,33 @@
     ]
    },
    "fecha": "2026-12-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ac5fdf72f3195ef8": {
+   "r": {
+    "genero": "stand-up",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Soy Dicky del Solar",
+    "artistas": [
+     "Dicky del Solar"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "acacbd73d1978198": {
+   "r": {
+    "genero": "hard rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Slash — Flying Blind World Tour 2027",
+    "artistas": [
+     "Slash",
+     "Myles Kennedy & The Conspirators"
+    ]
+   },
+   "fecha": "2027-04-04",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "adabb1e12e4b2e89": {
@@ -866,6 +1618,33 @@
    "fecha": "2026-12-04",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "b0413e86cbca8660": {
+   "r": {
+    "genero": "reggae",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Los Pericos",
+    "artistas": [
+     "Los Pericos"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "b365b79a754ee6e4": {
+   "r": {
+    "genero": "música popular",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jorge Rojas — Piano y Voz",
+    "artistas": [
+     "Jorge Rojas",
+     "Román Ramonda"
+    ]
+   },
+   "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "b4b97ebeb100c4d1": {
    "r": {
     "genero": "reggae",
@@ -878,6 +1657,19 @@
     ]
    },
    "fecha": "2026-11-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "b74d7c9cc56b923b": {
+   "r": {
+    "genero": "cumbia cuyana",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Vin",
+    "artistas": [
+     "Los Totora"
+    ]
+   },
+   "fecha": "2026-12-07",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "b847f7110d37008b": {
@@ -893,6 +1685,30 @@
    "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "b8869807ea673771": {
+   "r": {
+    "genero": "pop alternativo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "MICU",
+    "artistas": [
+     "MICU"
+    ]
+   },
+   "fecha": "2026-10-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bee410494b5f5e21": {
+   "r": {
+    "genero": "no musical (visita turística)",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Visitá el Museo del Agua",
+    "artistas": []
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "bfde9b46bd58666b": {
    "r": {
     "genero": "indie pop",
@@ -906,6 +1722,45 @@
    "fecha": "2026-12-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "c40ef665d0c96235": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Dios Salve a la Reina",
+    "artistas": [
+     "Dios Salve a la Reina"
+    ]
+   },
+   "fecha": "2026-12-04",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c5c0671b6c06dc44": {
+   "r": {
+    "genero": "reggaetón, pop y música urbana",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Fiesta Bresh — Halloween",
+    "artistas": [
+     "Bresh"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c7448bf3eec34ce3": {
+   "r": {
+    "genero": "música urbana",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jere Klein",
+    "artistas": [
+     "Jere Klein"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "c8887ca91a6dbd07": {
    "r": {
     "genero": "pop rock",
@@ -917,6 +1772,17 @@
     ]
    },
    "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "cc2f6ce3c4df3b86": {
+   "r": {
+    "genero": "ópera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Traviata",
+    "artistas": []
+   },
+   "fecha": "2026-10-26",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "d0f74fcbbcd36e0d": {
@@ -973,6 +1839,58 @@
    "fecha": "2026-10-31",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "d421d7a0d89e3794": {
+   "r": {
+    "genero": "chamamé",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Chango Spasiuk — Mundo Chango",
+    "artistas": [
+     "Chango Spasiuk"
+    ]
+   },
+   "fecha": "2026-11-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "d69d6df5fc4cff5f": {
+   "r": {
+    "genero": "jazz",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Brad Mehldau Trio",
+    "artistas": [
+     "Brad Mehldau",
+     "Larry Grenadier",
+     "Marcus Gilmore"
+    ]
+   },
+   "fecha": "2027-05-15",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "d83e4518f8c5d620": {
+   "r": {
+    "genero": "rock sinfónico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Tarja — The Spirit of Christmas",
+    "artistas": [
+     "Tarja"
+    ]
+   },
+   "fecha": "2026-12-01",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "dafc2394f5bdb34c": {
+   "r": {
+    "genero": "espectáculo temático",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cine Italia Embrujado",
+    "artistas": []
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "dd3cd1b3e5f7aae4": {
    "r": {
     "genero": "sin especificar",
@@ -984,6 +1902,21 @@
     ]
    },
    "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "dd9ab72b0bf1541c": {
+   "r": {
+    "genero": "folklore boliviano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Universo Tupay — 30 Años",
+    "artistas": [
+     "Tupay",
+     "Ayra Bolivia",
+     "100% Yara"
+    ]
+   },
+   "fecha": "2026-11-27",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "ddde59d99121895a": {
@@ -1014,6 +1947,19 @@
    "fecha": "2026-12-07",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "de8fa8bfee1370e9": {
+   "r": {
+    "genero": "reggae",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Los Pericos — Meet & Greet",
+    "artistas": [
+     "Los Pericos"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "df676a0998a33376": {
    "r": {
     "genero": "rock",
@@ -1029,6 +1975,71 @@
    "fecha": "2026-11-13",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "e20b57b9ffdb0fc6": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Dyango",
+    "artistas": [
+     "Dyango"
+    ]
+   },
+   "fecha": "2026-11-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e218d6405b2d0bf0": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Rodrigo Tapari",
+    "artistas": [
+     "Rodrigo Tapari"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e2269f0325a10b14": {
+   "r": {
+    "genero": "música clásica",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Filarmónica de Berlín",
+    "artistas": [
+     "Filarmónica de Berlín"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e44c964690c91965": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Luciano Pereyra — Te Sigo Amando Tour",
+    "artistas": [
+     "Luciano Pereyra"
+    ]
+   },
+   "fecha": "2026-11-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e46e6f3b01ea1c0e": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Guasones",
+    "artistas": [
+     "Guasones"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "e4743b02575ebfec": {
    "r": {
     "genero": "rock nacional",
@@ -1038,6 +2049,19 @@
     "artistas": []
    },
    "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e72e8477d06a734c": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Roze — Gira Federal",
+    "artistas": [
+     "Roze"
+    ]
+   },
+   "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "e7a2a7854650d3e5": {
@@ -1081,6 +2105,30 @@
     ]
    },
    "fecha": "2026-12-11",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "eaef0da95e747f5b": {
+   "r": {
+    "genero": "ópera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Rigoletto",
+    "artistas": [
+     "Rigoletto"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "eaf4e6db8cff364d": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "DC Studios: Clayface",
+    "artistas": []
+   },
+   "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "eb2868b6ff6f41a9": {
@@ -1131,6 +2179,30 @@
    "fecha": "2026-10-31",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "f0ec764b78d16d0c": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Street Fighter",
+    "artistas": []
+   },
+   "fecha": "2026-10-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f27c4126de224690": {
+   "r": {
+    "genero": "folklore",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Raly Barrionuevo",
+    "artistas": [
+     "Raly Barrionuevo"
+    ]
+   },
+   "fecha": "2026-11-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "f37887e357b60463": {
    "r": {
     "genero": "rock",
@@ -1172,6 +2244,19 @@
    "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "f94c07ddaa7c0b2a": {
+   "r": {
+    "genero": "música clásica",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Filarmónica de Berlín",
+    "artistas": [
+     "Filarmónica de Berlín"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "fb587b9a3392078d": {
    "r": {
     "genero": "rock",
@@ -1185,6 +2270,19 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "fbcf71263e8716f2": {
+   "r": {
+    "genero": "cuarteto",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Desakta2",
+    "artistas": [
+     "Desakta2"
+    ]
+   },
+   "fecha": "2026-11-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "fe64db484aa9c263": {
    "r": {
     "genero": "rock nacional",
@@ -1196,6 +2294,19 @@
     ]
    },
    "fecha": "2026-10-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "fecdd5d2ca3125e2": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Los Tipitos",
+    "artistas": [
+     "Los Tipitos"
+    ]
+   },
+   "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   }
  }

@@ -1,0 +1,21 @@
+titulo: César Banana Pueyrredón
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cesar-banana-pueyrredon
+fecha: 2027-02-13
+hora: "21:00"
+venue: Teatro Opera On
+direccion: Av. Corrientes 860
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/cesar-banana-pueyrredon/teatro-opera
+precioDesde: 45200
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/cesarbanana960.png
+descripcion: Cesar "Banana" Pueyrredon se presentará el día sábado 13 de febrero a las 21 h en el Teatro Opera On.
+origen:
+  fuente: ticketek
+  id: BANANA27OP-2027-02-13T21:00
+  huella: a75e69bd0324c685

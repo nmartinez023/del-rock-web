@@ -1,0 +1,21 @@
+titulo: Virus
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - virus
+fecha: 2026-12-18
+hora: "21:00"
+venue: Auditorio de Belgrano
+direccion: Virrey Loreto 2348
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/virus/auditorio-de-belgrano
+precioDesde: 50400
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/viru960.png
+descripcion: Virus se presentará el día viernes 18 de diciembre a las 21 h en el Auditorio de Belgrano.
+origen:
+  fuente: ticketek
+  id: VIRUSBEL26-2026-12-18T21:00
+  huella: fa1d5b88156e6c17

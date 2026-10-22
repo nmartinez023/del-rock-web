@@ -1,0 +1,24 @@
+titulo: Los Tipitos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-tipitos
+fecha: 2026-11-14
+hora: "21:00"
+venue: Teatro Coliseo
+direccion: Marcelo T. de Alvear 1125
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/los-tipitos/teatro-coliseo
+precioDesde: 27900
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/tipitos_coliseo_960x400.png
+descripcion: |-
+  Luego de 4 años, LOS TIPITOS presentarán su nuevo disco de estudio en el Teatro Coliseo. Este gran momento lo viviremos el día Sábado 14 de Noviembre para disfrutar de un concierto superador con todo lo nuevo y un recorrido por todo el cancionero popular que los caracteriza.
+
+  Unica fecha del año en la ciudad de Buenos Aires. No te lo podes perder.
+origen:
+  fuente: ticketek
+  id: TIPITOS26CO-2026-11-14T21:00
+  huella: 76cf3aec4a86696e
