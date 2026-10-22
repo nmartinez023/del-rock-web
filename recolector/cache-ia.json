@@ -1,0 +1,480 @@
+{
+ "version": 1,
+ "entradas": {
+  "078ea29e31be5849": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Caras Extrañas despide el año",
+    "artistas": [
+     "Caras Extrañas"
+    ]
+   },
+   "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "1aeec63a01193a41": {
+   "r": {
+    "genero": "indie rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Silvestre y la Naranja",
+    "artistas": [
+     "Silvestre y la Naranja"
+    ]
+   },
+   "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "1d2aa53b30f8597b": {
+   "r": {
+    "genero": "sin datos",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Swaggerboyz",
+    "artistas": [
+     "Swaggerboyz"
+    ]
+   },
+   "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "221dbf4cb24f536c": {
+   "r": {
+    "genero": "trap y reggaetón",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Fiesta Flash",
+    "artistas": [
+     "Suriz"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "2ad5ed55f2bdab61": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Alex Ubago",
+    "artistas": [
+     "Alex Ubago"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "35d84210e48cf892": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Dios Salve a la Reina",
+    "artistas": []
+   },
+   "fecha": "2026-12-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3b906a053acaf5a9": {
+   "r": {
+    "genero": "no especificado",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Carafea",
+    "artistas": [
+     "Carafea"
+    ]
+   },
+   "fecha": "2026-11-20",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3d833edce71a9c60": {
+   "r": {
+    "genero": "indie pop",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Zeballos — Amor Fiado",
+    "artistas": [
+     "Zeballos"
+    ]
+   },
+   "fecha": "2026-11-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "559d233f68e818f9": {
+   "r": {
+    "genero": "folklore",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Los Nocheros",
+    "artistas": [
+     "Los Nocheros"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "55fe142f0828b06f": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cumbión del Paraná - Los Lirios | Amar Azul",
+    "artistas": [
+     "Cumbión del Paraná",
+     "Los Lirios",
+     "Amar Azul"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5715323e7ba5709e": {
+   "r": {
+    "genero": "rock indie",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Mica Racciati — Set Eléctrico",
+    "artistas": [
+     "Mica Racciati"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "67d280f109399173": {
+   "r": {
+    "genero": "sin datos",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Benja Torres",
+    "artistas": [
+     "Benja Torres"
+    ]
+   },
+   "fecha": "2026-11-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "717ad972239e843c": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "O'Connor & Darlo Todo",
+    "artistas": [
+     "O'Connor"
+    ]
+   },
+   "fecha": "2026-12-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "74236f064cc12f97": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Valeria Lynch",
+    "artistas": [
+     "Valeria Lynch"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "772915a529e5d5be": {
+   "r": {
+    "genero": "reggaetón",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cúpula ft. Taichu",
+    "artistas": [
+     "Taichu",
+     "Gaba",
+     "JLucasB",
+     "Latina",
+     "Konstanza"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "77da7e3494f5c60c": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Mati RJ",
+    "artistas": [
+     "Mati RJ"
+    ]
+   },
+   "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "797bdc154582c48e": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Pan con Manteca",
+    "artistas": [
+     "Pan con Manteca"
+    ]
+   },
+   "fecha": "2026-12-04",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "7ea1a0ea9a98dd48": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Sergio Dalma",
+    "artistas": [
+     "Sergio Dalma"
+    ]
+   },
+   "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "893b17cf2ed03692": {
+   "r": {
+    "genero": "punk rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "2 Minutos",
+    "artistas": [
+     "2 Minutos"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8a70e5de03b403b0": {
+   "r": {
+    "genero": "indie pop",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "La Mesa — Manu Morán y Lula Solís",
+    "artistas": [
+     "La Mesa",
+     "Manu Morán",
+     "Lula Solís"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "91ef9dbb06418046": {
+   "r": {
+    "genero": "sin especificar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Cruzando el Charco",
+    "artistas": []
+   },
+   "fecha": "2026-11-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "9d1dc8de16cc17eb": {
+   "r": {
+    "genero": "chamamé",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Chamamé Club y Peña Lunera",
+    "artistas": [
+     "Chamamé Club",
+     "Peña Lunera"
+    ]
+   },
+   "fecha": "2026-12-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a5e7ca34719cf7b5": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Cumbión del Paraná",
+    "artistas": [
+     "Hernán y la Champions Liga",
+     "Naranja Dulce"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a8a482aba1de689c": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Facu Martínez presenta Canciones doradas de telenovelas II",
+    "artistas": [
+     "Facu Martínez"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a983174fa0fb0a23": {
+   "r": {
+    "genero": "cumbia pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "LBC & Euge Quevedo",
+    "artistas": [
+     "LBC",
+     "Euge Quevedo"
+    ]
+   },
+   "fecha": "2026-11-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "aaa3c82aa2a9b75d": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Oíd Mortales — Pipo Cipolatti",
+    "artistas": [
+     "Oíd Mortales",
+     "Pipo Cipolatti",
+     "Bahiano"
+    ]
+   },
+   "fecha": "2026-12-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "aefa53cf8335e641": {
+   "r": {
+    "genero": "sin datos",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Zell",
+    "artistas": [
+     "Zell"
+    ]
+   },
+   "fecha": "2026-11-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c8887ca91a6dbd07": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Ángela Torres",
+    "artistas": [
+     "Ángela Torres"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "d3413920893876df": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Los Pérez García",
+    "artistas": [
+     "Los Pérez García"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "dd3cd1b3e5f7aae4": {
+   "r": {
+    "genero": "sin especificar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Dirty Sound Club x CCG",
+    "artistas": [
+     "Dirty Sound Club"
+    ]
+   },
+   "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ddde59d99121895a": {
+   "r": {
+    "genero": "sin determinar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Homero Taisen presenta Triángulo Uno",
+    "artistas": [
+     "Homero Taisen"
+    ]
+   },
+   "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e4743b02575ebfec": {
+   "r": {
+    "genero": "rock nacional",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Charly Day",
+    "artistas": []
+   },
+   "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ef5b84ed8fa96192": {
+   "r": {
+    "genero": "cumbia",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ke Personajes — Corazón Ausente Tour",
+    "artistas": [
+     "Ke Personajes"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f0bd55d2565dee19": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Bresh — Edición Especial Halloween",
+    "artistas": [
+     "Bresh"
+    ]
+   },
+   "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f37887e357b60463": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Nepal",
+    "artistas": [
+     "Nepal"
+    ]
+   },
+   "fecha": "2026-11-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "fb587b9a3392078d": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Andy Chango",
+    "artistas": [
+     "Andy Chango"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  }
+ }
+}

@@ -1,0 +1,22 @@
+titulo: Benja Torres
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: sin datos
+artistas:
+  - Benja Torres
+fecha: 2026-11-23
+hora: '20:00'
+venue: Centro Cultural Güemes
+direccion: Güemes 2808
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/BENJA-TORRES/
+precioDesde: 30000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/495895bd-6f80-4fd3-95f8-4b554c0c25ee.jpg
+aviso: EVENTO APTO +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: BENJA-TORRES
+  huella: 0c2bb7677712cf60
+  detalle: 2026-10-22

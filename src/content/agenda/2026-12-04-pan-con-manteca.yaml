@@ -1,0 +1,22 @@
+titulo: Pan con Manteca
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - pan-con-manteca
+fecha: 2026-12-04
+hora: '21:00'
+venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/PAN-CON-MANTECA/
+precioDesde: 25000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/1100421d-52a3-46c9-98b9-2370b0f6d015.jpg
+aviso: EVENTO APTO +12 AÑOS ACOMPAÑADO POR UN MAYOR DE EDAD
+origen:
+  fuente: entrada-play
+  id: PAN-CON-MANTECA
+  huella: ea96da8a386f7d52
+  detalle: 2026-10-22

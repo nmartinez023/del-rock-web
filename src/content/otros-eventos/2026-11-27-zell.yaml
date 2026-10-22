@@ -1,0 +1,22 @@
+titulo: Zell
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: sin datos
+artistas:
+  - Zell
+fecha: 2026-11-27
+hora: '20:00'
+venue: La Sala De Las Artes
+direccion: Suipacha Bis 98
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/ZELL/
+precioDesde: 20000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/d3ee7ce3-7609-4afb-927c-5c8scc3b3f7d3.jpg
+aviso: EVENTO APTO +12 AÑOS ACOMPAÑADO POR UN MAYOR DE EDAD
+origen:
+  fuente: entrada-play
+  id: ZELL
+  huella: 691c17cbfbf4b5b4
+  detalle: 2026-10-22

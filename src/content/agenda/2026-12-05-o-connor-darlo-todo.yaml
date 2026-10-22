@@ -1,0 +1,22 @@
+titulo: O'Connor & Darlo Todo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - o-connor
+fecha: 2026-12-05
+hora: '20:00'
+venue: Centro Cultural Güemes
+direccion: Güemes 2808
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/OCONNOR---DARLO-TODO-EN-ROSARIO/
+precioDesde: 50000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/08/1080x1080-oconnor-entradaplay.jpg
+aviso: EVENTO APTO +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: OCONNOR---DARLO-TODO-EN-ROSARIO
+  huella: 790b99510745df28
+  detalle: 2026-10-22

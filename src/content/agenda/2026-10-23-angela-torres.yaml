@@ -1,0 +1,22 @@
+titulo: Ángela Torres
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - angela-torres
+fecha: 2026-10-23
+hora: '21:00'
+venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/ANGELA-TORRES/
+precioDesde: 120000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/06/ed6399d7-72eb-4118-9616-0e2d1bb57e33_H7yq9xb.jpg
+aviso: EVENTO APTO +12 AÑOS ACOMPAÑADO POR UN MAYOR DE EDAD
+origen:
+  fuente: entrada-play
+  id: ANGELA-TORRES
+  huella: 8cfb42fcf9cdaadb
+  detalle: 2026-10-22

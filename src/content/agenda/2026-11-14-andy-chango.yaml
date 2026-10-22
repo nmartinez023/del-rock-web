@@ -1,0 +1,22 @@
+titulo: Andy Chango
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - andy-chango
+fecha: 2026-11-14
+hora: '20:00'
+venue: Centro Cultural Güemes
+direccion: Güemes 2808
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/ANDY-CHANGO/
+precioDesde: 20000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/IMG_7031.JPG
+aviso: EVENTO APTO PARA +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: ANDY-CHANGO
+  huella: a0f07ff2cba6e0a4
+  detalle: 2026-10-22

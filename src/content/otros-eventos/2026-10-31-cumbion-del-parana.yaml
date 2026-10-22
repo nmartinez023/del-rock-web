@@ -1,0 +1,23 @@
+titulo: Cumbión del Paraná
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: false
+genero: cumbia
+artistas:
+  - Hernán y la Champions Liga
+  - Naranja Dulce
+fecha: 2026-10-31
+hora: '23:59'
+venue: La Sala De Las Artes
+direccion: Suipacha Bis 98
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE/
+precioDesde: 6667
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/TICKETERA_4.jpg
+aviso: EVENTO APTO +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE
+  huella: a99da38e1bd905bb
+  detalle: 2026-10-22

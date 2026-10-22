@@ -1,0 +1,22 @@
+titulo: Nepal
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nepal
+fecha: 2026-11-06
+hora: '20:00'
+venue: Centro Cultural Güemes
+direccion: Güemes 2808
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/NEPAL-EN-ROSARIO/
+precioDesde: 25000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/10/nepal2.jpg
+aviso: EVENTO APTO PARA +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: NEPAL-EN-ROSARIO
+  huella: c11264155d72d95e
+  detalle: 2026-10-22
