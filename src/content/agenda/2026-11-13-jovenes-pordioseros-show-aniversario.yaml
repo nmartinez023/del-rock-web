@@ -1,0 +1,32 @@
+titulo: Jóvenes Pordioseros — Show Aniversario
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - jovenes-pordioseros
+  - elias-pardal
+  - letargo
+fecha: 2026-11-13
+hora: "21:00"
+venue: JAGUAR HAÜS
+direccion: Rodriguez 198 bis
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/jovenes-pordioseros
+precioDesde: 25000
+imagen: https://patagonia-chain.com/img_ticket/677_imagen.jpg
+descripcion: |-
+  Jóvenes Pordioseros celebra su aniversario en Rosario
+
+  Jóvenes Pordioseros regresa a Rosario para presentarse el viernes 13 de noviembre en Jaguar Haüs , con un show aniversario que recorrerá todos los clásicos de su historia.
+
+  La banda liderada por Toti Iglesias vuelve a la ciudad con una noche cargada de rock, emoción y canciones que marcaron a distintas generaciones. El público podrá reencontrarse con grandes éxitos como Descontrolado, Nunca me enseñaste, Cuando me muera, Estás atrás y Todo no se puede.
+
+  Con más de tres décadas de trayectoria, Jóvenes Pordioseros mantiene intacta su conexión con el público y se prepara para celebrar junto a sus seguidores rosarinos en un concierto potente y especial.
+
+  La fecha contará además con la participación de Elías Pardal y Letargo, completando una verdadera noche de rock.
+origen:
+  fuente: dame-mi-ticket
+  id: "677"
+  huella: a97db561a86d8c42

@@ -1,0 +1,19 @@
+titulo: Abel Pintos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop melódico
+artistas:
+  - Abel Pintos
+fecha: 2026-11-28
+hora: "21:00"
+venue: Anfiteatro municipal
+direccion: Av. Diario La Capital 1750
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/abel-pintos?idEspectaculoCartel=17392&cHashValidacion=59e59eb37379c86d250b8899c402c0e2eb18a2b8
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/landing_1583x380_ea8fac7a-b68e-4d43-9bdd-55e402eec9bb.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 17392-61603
+  huella: 03eb9e2ec950fbe3

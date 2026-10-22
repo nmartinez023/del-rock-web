@@ -1,0 +1,26 @@
+titulo: Groovin' Bohemia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: groove
+artistas:
+  - Groovin' Bohemia
+fecha: 2026-10-31
+hora: "21:00"
+venue: JAGUAR HAÜS
+direccion: Rodriguez 198 bis
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/groovin-bohemia-en-jaguar
+precioDesde: 15000
+imagen: https://patagonia-chain.com/img_ticket/684_imagen.jpg
+descripcion: |-
+  Groovin' Bohemia en Jaguar
+
+  La banda que más hace bailar a Rosario al ritmo del groove presenta un show que no te podés perder 
+
+  🎧 Selector: @theroom.ros
+origen:
+  fuente: dame-mi-ticket
+  id: "684"
+  huella: b5b948f2a26d4572

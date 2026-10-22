@@ -1,0 +1,19 @@
+titulo: Ha*Ash
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop
+artistas:
+  - Ha*Ash
+fecha: 2027-03-12
+hora: "21:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/ha-ash?idEspectaculoCartel=17475&cHashValidacion=907f08d69da7331156a863d9f9fd006c3c031218
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/ha-ash_1583x380_fe7d54b7-1e5f-4f81-9fe0-013d06e82560.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 17475-61803
+  huella: bbce94177a7a186f

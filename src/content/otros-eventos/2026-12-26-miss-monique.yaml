@@ -1,0 +1,19 @@
+titulo: Miss Monique
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop
+artistas:
+  - Miss Monique
+fecha: 2026-12-26
+hora: "22:00"
+venue: Autódromo de Rosario
+direccion: Av. Jorge Newbery, S2000 Rosario, Santa Fe
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/miss-monique?idEspectaculoCartel=17548&cHashValidacion=8218989a4068724cc852b53621bb62a029a2a8ab
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/landing-1583x380.jpg-(1)_d56414fa-30ca-4393-9228-7b9e31481e9f.jpeg
+origen:
+  fuente: turbo-entrada-com
+  id: 17548-62263
+  huella: 0af5e99dd18c6a5f

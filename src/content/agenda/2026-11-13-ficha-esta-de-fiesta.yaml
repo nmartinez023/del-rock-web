@@ -1,0 +1,37 @@
+titulo: Ficha Esta de Fiesta
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - toribio-los-paranamas
+  - hora-de-los-abrazos
+  - los-que-vuelven
+fecha: 2026-11-13
+hora: "22:00"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/ficha-fiesta
+precioDesde: 5000
+imagen: https://patagonia-chain.com/img_ticket/706_imagen.jpg
+descripcion: |-
+  🧟‍♂️💀 VIERNES 13/11 a las 22hs — FICHA ESTA DE FIESTA!! 
+
+  Ficha cumple años y eso merece un gran festejo! Por una noche tomamos Capitán y tiramos la casa por la ventana!
+
+  🤙🏽 Dj & Shows en vivo
+  🔥 Toribio & Los Paranamas
+  🔥 Hora de los Abrazos
+  🔥 Los que vuelven
+  🎧 Dj Maxxo🤘🏾 (Nasty Rock)
+
+  🎁 Muchos regalos y sorpresas, cotillón, máscaras y disfraces. Vení como quieras, pero vení preparado para el desastre.
+
+  🕹️ Arcades y consolas para volver a los viejos tiempos… o perder las últimas vidas.
+  INSERT COIN. RESUCITÁ. 🧟‍♀️
+origen:
+  fuente: dame-mi-ticket
+  id: "706"
+  huella: ebf1b731d9eda3d9

@@ -1,0 +1,32 @@
+titulo: Bulldog en vivo + Lucho al Attaque
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - bulldog
+  - lucho-al-attaque
+fecha: 2026-12-11
+hora: "21:00"
+venue: Blue Velvet
+direccion: Av Carlos Colombres 1756
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/bulldog-en-vivo-lucho-al-attaque-y-nasty-rock-en-blue
+precioDesde: 20000
+imagen: https://patagonia-chain.com/img_ticket/711_imagen.jpg
+descripcion: |-
+  🔥 RADIO BOING, NASTY ROCK Y BLUE TE INVITAN a despedir el año 🔥
+
+  ¡BULLDOG en vivo en Rosario! 🤘 Una noche de punkrock y las mejores canciones del perro junto a LUCHO AL ATTAQUE, invitado especial desde BsAs.
+
+  🎧 Musicaliza la fiesta NASTY ROCK con DJ EX, DJ SLICE y DJ MAXXO.
+
+  🗓 Viernes 11 de diciembre · 21 hs
+  📍 Complejo Blue Velvet · Av. Colombres 1756
+
+  🔥 ¡El último pogo del año pide que estés.. Ahí nos vemos!!
+origen:
+  fuente: dame-mi-ticket
+  id: "711"
+  huella: 9fac3d8793582b12

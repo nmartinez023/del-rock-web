@@ -1,0 +1,19 @@
+titulo: Lagune
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: no determinado
+artistas:
+  - Lagune
+fecha: 2026-12-07
+hora: "17:00"
+venue: Ex Rural de Funes
+direccion: Ruta 9 y José Hernández
+ciudad: Funes
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/lagune?idEspectaculoCartel=17591&cHashValidacion=330af1766d94099a7d66d63f363d77f62a13c998
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/landing-(5)_a193a75c-4a30-423e-9c18-b03fb345428c.png
+origen:
+  fuente: turbo-entrada-com
+  id: 17591-62366
+  huella: d88e2f3736e6868f

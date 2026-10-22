@@ -1,0 +1,23 @@
+titulo: La Miel — Só en Rosario
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: funk soul
+artistas:
+  - La Miel
+fecha: 2026-11-28
+hora: "21:00"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/so-en-rosario
+precioDesde: 15000
+imagen: https://patagonia-chain.com/img_ticket/689_imagen.jpg
+descripcion: |-
+  Só derrama La Miel sobre Rosario!
+  La banda cordobesa presenta oficialmente su segundo álbum de estudio el sábado 28 de noviembre, en una noche de funk, soul, groove y música hecha por humanos y para humanos.
+origen:
+  fuente: dame-mi-ticket
+  id: "689"
+  huella: 57608b5392292981

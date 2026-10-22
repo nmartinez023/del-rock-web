@@ -1,0 +1,19 @@
+titulo: Diego Torres
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop
+artistas:
+  - Diego Torres
+fecha: 2026-11-12
+hora: "21:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/16559-diego-torres?idEspectaculoCartel=16559&cHashValidacion=60b65a218a44354e636983bfa0a11596dada2578
+imagen: https://contenidos.entradauno.com/Venues/TurboEntrada/metropolitano/diego_torres/DT_Rosario_1583x380_6cuotas.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 16559-56950
+  huella: 81530bf7a768ad53

@@ -1,0 +1,26 @@
+titulo: Konducta Zero — 20 años de "Ese árbol tiene cara conocida"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - konducta-zero
+  - secuestro-express
+  - instintos-makabros
+fecha: 2026-11-22
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/konducta-zero-20-anos-de-ese-arbol-tiene-cara-conocida
+precioDesde: 7000
+imagen: https://patagonia-chain.com/img_ticket/714_imagen.jpg
+descripcion: |-
+  Konducta Zero rememorando su primer disco
+  Tocando el disco completo + temas nuevos
+  Acompañaran las bandas amigas: Secuestro Express - Instintos Makabros
+origen:
+  fuente: dame-mi-ticket
+  id: "714"
+  huella: 911fb71e24bd51b3

@@ -1,0 +1,19 @@
+titulo: Camilo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop latino
+artistas:
+  - Camilo
+fecha: 2026-10-30
+hora: "21:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/16627-camilo?idEspectaculoCartel=16627&cHashValidacion=1bd8390caed96437e615ac95087e3c06082f3f5a
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/camilo_1583x380_144cef65-2b64-42cc-bcf0-b36a9080e634.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 16627-57964
+  huella: d1419a076d1ef6d1

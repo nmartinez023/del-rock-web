@@ -1,0 +1,36 @@
+titulo: Cont. Neto + Contravientos + Los Mononos Punk
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: punk rock
+bandas:
+  - cont-neto
+  - contravientos
+  - los-mononos-punk
+fecha: 2026-10-30
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/cont-neto-contravientos-los-mononos-punk
+precioDesde: 5000
+imagen: https://patagonia-chain.com/img_ticket/687_imagen.jpg
+descripcion: |-
+  CONT. NETO + CONTRAVIENTOS
+
+  El viernes 30 de octubre llega una nueva fecha del Ciclo Rosario Punk Rock.
+
+  🎸 Cont. Neto + Contravientos
+  🔥 Banda invitada: Los Mononos Punk
+
+  Los primeros 100 tickets son GRATIS. ¡No duermas que se agotan!
+
+  Una noche a puro punk rock.
+
+  📅 Viernes 30 de octubre
+  📍 Capi Club — Mendoza 930, Rosario
+origen:
+  fuente: dame-mi-ticket
+  id: "687"
+  huella: a402d7b385191935

@@ -1,0 +1,19 @@
+titulo: Coti
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: pop
+artistas:
+  - Coti
+fecha: 2026-11-21
+hora: "21:00"
+venue: Lotus Club
+direccion: Echeverría 175
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/coti?idEspectaculoCartel=17097&cHashValidacion=62772b3be030431b47ffc4c2d3b38d9dfc7dc4f8
+imagen: https://contenidos.entradauno.com/Venues/TurboEntrada/lotus/COTI/COTI_1583x380px.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 17097-59560
+  huella: e73de82949a76582

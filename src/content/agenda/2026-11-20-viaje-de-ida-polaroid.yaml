@@ -1,0 +1,22 @@
+titulo: Viaje de Ida + Polaroid
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - viaje-de-ida
+  - polaroid
+fecha: 2026-11-20
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/viaje-de-ida
+precioDesde: 10000
+imagen: https://patagonia-chain.com/img_ticket/707_imagen.jpg
+descripcion: Una noche a full Rock Indie de la mano de Viaje de Ida y Polaroid.
+origen:
+  fuente: dame-mi-ticket
+  id: "707"
+  huella: 33cbc46ae166bba7

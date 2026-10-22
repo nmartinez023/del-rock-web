@@ -1,0 +1,19 @@
+titulo: María Becerra
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: trap pop
+artistas:
+  - María Becerra
+fecha: 2026-12-12
+hora: "21:00"
+venue: Autódromo de Rosario
+direccion: Av. Jorge Newbery, S2000 Rosario, Santa Fe
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/maria-becerra?idEspectaculoCartel=17267&cHashValidacion=bf747f8f208fd4a4b9b3a449d84928ec3fce0111
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/mariabecerra_rosario_1583x380_6cuotas_eae3c21c-0949-4419-8453-6faf9c11f984.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 17267-60813
+  huella: c07ca3cdd18eb3cc

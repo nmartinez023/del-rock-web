@@ -1,0 +1,35 @@
+titulo: John Digweed
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: música electrónica
+artistas:
+  - John Digweed
+fecha: 2027-01-23
+hora: "22:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/john-digweed?idEspectaculoCartel=17517&cHashValidacion=479b70245cca6f2e0f50b3e193c85ddf063ec057
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/landingd_3656d2ec-8a8a-47fa-9ff5-9eaee6891af2.jpeg
+descripcion: |-
+  ¡ENTRADAS A LA VENTA PROXIMAMENTE!
+
+  John Digweed - 23/01/2027 - Salón Metropolitano
+
+  PREVENTA
+
+  CUPOS LIMITADOS
+
+  TICKETS DISPONIBLES A PARTIR DEL 30/09-13 HS
+
+  PREVENTA GENERAL: $45.000
+
+  PREVENTA VIP STANDING : $60.000
+
+  VENTA GENERAL A PARTIR DEL 01/10-13 HS
+origen:
+  fuente: turbo-entrada-com
+  id: 17517-62063
+  huella: f10cb2340a1fa2f3

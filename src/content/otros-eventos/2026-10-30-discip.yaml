@@ -1,0 +1,19 @@
+titulo: Discip
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: desconocido
+artistas:
+  - Discip
+fecha: 2026-10-30
+hora: "22:00"
+venue: Alto Shopping Rosario
+direccion: JUNIN 501
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/discip?idEspectaculoCartel=17493&cHashValidacion=bef8da3f26a1393e0b3d267e555eb8486ceabed7
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/landing-1583x380.jpg-(16)_6d0bc943-200b-42b4-b58e-4bb89d4952e6.jpeg
+origen:
+  fuente: turbo-entrada-com
+  id: 17493-61988
+  huella: 81acf9ce9cad0e39

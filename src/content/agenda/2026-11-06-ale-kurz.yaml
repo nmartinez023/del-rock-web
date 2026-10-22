@@ -1,0 +1,21 @@
+titulo: Ale Kurz
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ale-kurz
+fecha: 2026-11-06
+hora: "21:00"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/ale-kurz
+precioDesde: 20000
+imagen: https://patagonia-chain.com/img_ticket/655_imagen.jpg
+descripcion: ALE KURZ! CON SU NUEVO PROYECTO SOLISTA LLEGA A CAPITAN, PARA HACER UN SHOW EN FORMATO ROCKERO, CERCA DE LA GENTE Y CON EL PODER DE SUS CANCIONES
+origen:
+  fuente: dame-mi-ticket
+  id: "655"
+  huella: 40aaaa3913392852

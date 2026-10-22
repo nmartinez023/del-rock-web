@@ -1,0 +1,22 @@
+titulo: Juan Lopez & LNT. Noire
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - juan-lopez
+  - lnt-noire
+fecha: 2026-11-20
+hora: "21:00"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/juan-lopez-lnt-noire-en-capi-club
+precioDesde: 10000
+imagen: https://patagonia-chain.com/img_ticket/682_imagen.jpg
+descripcion: Luego de una extensa temporada de shows y giras en el exterior, Juan Lopez vuelve a Rosario junto a Lnt. Noire este 20 de Noviembre para despedir el año juntos.
+origen:
+  fuente: dame-mi-ticket
+  id: "682"
+  huella: 6ccbacc70504274e

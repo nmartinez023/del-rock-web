@@ -1,0 +1,21 @@
+titulo: Zona 84 — Presentación Disco Nuevo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - zona-84
+fecha: 2026-11-07
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/zona-84-presentacion-disco-nuevo
+precioDesde: 10000
+imagen: https://patagonia-chain.com/img_ticket/712_imagen.jpg
+descripcion: Zona 84 presenta su nuevo disco Contra Viento y Marea luego de su cuarta gira por Alemania y después de tocar en L2 Arena junto a Die Toten Hosen
+origen:
+  fuente: dame-mi-ticket
+  id: "712"
+  huella: 589d047ba59ecc8e

@@ -1,0 +1,19 @@
+titulo: Mathame
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: música urbana
+artistas:
+  - Mathame
+fecha: 2026-11-06
+hora: "22:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/mathame?idEspectaculoCartel=17460&cHashValidacion=f551e571fef286a11c0a1c12e5263fe7bc239abd
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/img_3909_21d4f5ee-54d5-4686-9819-b0079449870f.jpeg
+origen:
+  fuente: turbo-entrada-com
+  id: 17460-61781
+  huella: 2c06f93d0b413d3b

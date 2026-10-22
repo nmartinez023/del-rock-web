@@ -1,0 +1,21 @@
+titulo: Seru Giran por Lebón y Aznar
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - seru-giran
+  - lebon
+  - aznar
+fecha: 2026-12-07
+hora: "21:00"
+venue: Anfiteatro municipal
+direccion: Av. Diario La Capital 1750
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/17029-seru-giran?idEspectaculoCartel=17029&cHashValidacion=8bf6b672b78a151a1796b7b28b05b6c47820c52f
+imagen: https://contenidos.entradauno.com/Venues/UniversoTickets/SERU_GIRAN/SeruGiran_7DIC_1583x380.jpg
+origen:
+  fuente: turbo-entrada-com
+  id: 17029-59299
+  huella: 5a065d8d0ff9eba2

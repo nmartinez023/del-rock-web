@@ -1,0 +1,19 @@
+titulo: Massano
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: no determinado
+artistas:
+  - Massano
+fecha: 2026-11-27
+hora: "22:00"
+venue: Autódromo de Rosario
+direccion: Av. Jorge Newbery, S2000 Rosario, Santa Fe
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/17123-massano?idEspectaculoCartel=17123&cHashValidacion=25323cb01198b653e388e6221922537a2332c517
+imagen: https://contenidos.entradauno.com/Venues/TurboEntrada/autodromo-de-rosario/massano/LANDING-1583x380.jpg%20%2814%29.jpeg
+origen:
+  fuente: turbo-entrada-com
+  id: 17123-59684
+  huella: 4ba237c75087e5d9

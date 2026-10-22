@@ -1,0 +1,26 @@
+titulo: El Aguante Rock and Roll — Voltaje
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - voltaje
+  - tresmenos
+fecha: 2026-12-04
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/el-aguante-rockandoroll-voltaje
+precioDesde: 8000
+imagen: https://patagonia-chain.com/img_ticket/704_imagen.jpg
+descripcion: |-
+  Cierre del Ciclo El Aguante Rock and Roll con dos bandas rosarinas:
+  VOLTAJE + TRESMENOS
+  El Viernes 4 de Diciembre VOLATAJE cierra en este 2026 el Ciclo El Aguante Rock and Roll acompañado de TRESMENOS.
+  Los esperamos para cerrar este año increíble y vivir una noche única llena de música!
+origen:
+  fuente: dame-mi-ticket
+  id: "704"
+  huella: e9cb6ce688f2e9b5

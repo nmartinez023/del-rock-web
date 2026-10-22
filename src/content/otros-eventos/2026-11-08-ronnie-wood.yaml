@@ -1,0 +1,23 @@
+titulo: Ronnie Wood
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+genero: rock
+artistas:
+  - Ronnie Wood
+fecha: 2026-11-08
+hora: "21:00"
+venue: Metropolitano Rosario
+direccion: Central Argentino 610
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.turboentrada.com/landing/ronnie-wood?idEspectaculoCartel=17406&cHashValidacion=f73c48b51c3ecae800fa543c09dccb8d38361b6f
+imagen: https://contenidos.entradauno.com/cache/imagenes/productos/ronniewood_1583x380px_00ae2e6a-e2c5-4c5b-8226-f6a864c900a5.jpg
+descripcion: |-
+  Jueves 10/09- 12 hs PREVENTA Banco Santander Visa 6 cuotas sin interés
+
+  Viernes 11/09- 12 hs VENTA GENERAL
+origen:
+  fuente: turbo-entrada-com
+  id: 17406-61646
+  huella: bfcaae27e25ccf5e

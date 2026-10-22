@@ -1,0 +1,21 @@
+titulo: Isla Mujeres
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - isla-mujeres
+fecha: 2026-10-31
+hora: "20:30"
+venue: CAPITAN
+direccion: Mendoza 930
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://damemiticket.com/evento/isla-mujeres
+precioDesde: 10000
+imagen: https://patagonia-chain.com/img_ticket/702_imagen.jpg
+descripcion: Isla Mujeres Presenta su Nuevo disco Viaje inaugural
+origen:
+  fuente: dame-mi-ticket
+  id: "702"
+  huella: 40f7339a08853703
