@@ -1,0 +1,22 @@
+# Recompila el sitio todos los días para traer los posts nuevos de Instagram
+# y sacar de la agenda las fechas que ya pasaron.
+# Necesita el secret CF_DEPLOY_HOOK con la URL del Deploy Hook de Cloudflare Pages.
+name: Rebuild diario
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 06:00 en Argentina
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar deploy en Cloudflare Pages
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "Falta el secret CF_DEPLOY_HOOK"; exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$HOOK"

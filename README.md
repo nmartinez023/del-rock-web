@@ -42,7 +42,16 @@ Para mostrar un post dentro de una nota, pegá su link en el campo *Link al post
 
 ## Deploy (Cloudflare Pages)
 
-- Build command: `npm run build`
-- Output: `dist`
-- Variable: `INSTAGRAM_TOKEN`
-- Para que el feed de Instagram y la agenda se actualicen solos, programá un rebuild diario con un *Deploy Hook* de Cloudflare.
+Cada push a `main` publica el sitio. Configuración del proyecto en Cloudflare:
+
+| Campo | Valor |
+|---|---|
+| Framework preset | Astro |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Node | sale de `.node-version` (24) |
+| Variables | `INSTAGRAM_TOKEN` (opcional), `SITE_URL` cuando haya dominio propio |
+
+**Rebuild diario:** `.github/workflows/rebuild-diario.yml` llama todos los días a las 06:00 (hora argentina) a un
+*Deploy Hook* de Cloudflare, para traer los posts nuevos de Instagram y sacar las fechas pasadas de la agenda.
+Creá el hook en *Settings › Builds › Deploy hooks* y guardá su URL como secret `CF_DEPLOY_HOOK` en el repo de GitHub.

@@ -8,8 +8,12 @@ import keystatic from '@keystatic/astro';
 // commiteás y Cloudflare Pages publica el sitio estático.
 const isDev = process.argv.includes('dev');
 
+// URL pública para links canónicos y previews al compartir. Cuando tengas dominio
+// propio, cargá SITE_URL en las variables de Cloudflare Pages.
+const site = process.env.SITE_URL ?? 'https://del-rock-web.pages.dev';
+
 export default defineConfig({
-  site: 'https://delrock.com.ar',
+  site,
   integrations: [react(), markdoc(), ...(isDev ? [keystatic()] : [])],
   image: {
     // Imágenes del feed de Instagram: Astro las descarga y optimiza en el build.
