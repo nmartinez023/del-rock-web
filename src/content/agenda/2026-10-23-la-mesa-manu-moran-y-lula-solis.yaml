@@ -1,24 +1,25 @@
 titulo: La Mesa — Manu Morán y Lula Solís
 estado: ⏳ Pendiente
-tipo: show
-rockNacional: true
+rockNacional: false
 genero: indie pop
+tipo: show
 bandas:
   - la-mesa
   - manu-moran
   - lula-solis
 fecha: 2026-10-23
-hora: "22:00"
+hora: '22:00'
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/LA-MESA---MANU-MORAN-Y-LULA-SOLIS/
 precioDesde: 15000
-imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/80dc61e0-b26c-4726-a764-856c3281c36b.jpg
+imagen: >-
+  https://entradaplay.com/media/imagenes_eventos/home/2026/09/80dc61e0-b26c-4726-a764-856c3281c36b.jpg
 aviso: EVENTO APTO PARA +18 AÑOS
 origen:
   fuente: entrada-play
   id: LA-MESA---MANU-MORAN-Y-LULA-SOLIS
   huella: 15d722cd67a08161
-  detalle: "2026-10-22"
+  detalle: '2026-10-22'
