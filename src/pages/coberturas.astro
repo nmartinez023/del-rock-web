@@ -1,0 +1,8 @@
+---
+import Listado from '../components/Listado.astro';
+import { noticiasOrdenadas } from '../lib/util';
+
+const noticias = (await noticiasOrdenadas()).filter((n) => n.data.tipo === 'cobertura');
+---
+
+<Listado titulo="Coberturas" descripcion="Fotos y crónicas de los shows, desde adentro." noticias={noticias} />

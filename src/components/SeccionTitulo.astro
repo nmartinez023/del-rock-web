@@ -1,0 +1,34 @@
+---
+interface Props {
+  texto: string;
+  nivel?: 'h1' | 'h2';
+}
+const { texto, nivel: Tag = 'h2' } = Astro.props;
+---
+
+<div class="seccion-titulo">
+  <Tag class="d">{texto}</Tag>
+  <svg viewBox="0 0 220 16" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M3 9 C 55 3, 120 14, 216 6" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"></path>
+  </svg>
+  <slot />
+</div>
+
+<style>
+  .seccion-titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--azul);
+  }
+  .seccion-titulo :is(h1, h2) {
+    margin: 0;
+    font-size: clamp(40px, 6vw, 56px);
+    line-height: 1;
+    color: var(--fg);
+  }
+  svg {
+    width: min(220px, 60%);
+    height: 16px;
+  }
+</style>

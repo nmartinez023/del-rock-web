@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import NoticiaCard from './NoticiaCard.astro';
+import SeccionTitulo from './SeccionTitulo.astro';
+import type { Noticia } from '../lib/util';
+
+interface Props {
+  titulo: string;
+  descripcion?: string;
+  noticias: Noticia[];
+}
+
+const { titulo, descripcion, noticias } = Astro.props;
+---
+
+<Base titulo={titulo} descripcion={descripcion}>
+  <section class="container listado">
+    <SeccionTitulo texto={titulo} nivel="h1">
+      {descripcion && <p class="desc">{descripcion}</p>}
+    </SeccionTitulo>
+    {
+      noticias.length > 0 ? (
+        <div class="grilla">
+          {noticias.map((n, i) => (
+            <NoticiaCard noticia={n} prioridad={i < 3} />
+          ))}
+        </div>
+      ) : (
+        <p class="desc">Todavía no hay notas acá.</p>
+      )
+    }
+  </section>
+</Base>
+
+<style>
+  .listado {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding-block: 48px 80px;
+  }
+  .desc {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 44px 32px;
+  }
+</style>

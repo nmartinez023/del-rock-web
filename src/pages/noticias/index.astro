@@ -1,0 +1,8 @@
+---
+import Listado from '../../components/Listado.astro';
+import { noticiasOrdenadas } from '../../lib/util';
+
+const noticias = await noticiasOrdenadas();
+---
+
+<Listado titulo="Noticias" descripcion="Todo lo que pasa en el rock nacional." noticias={noticias} />

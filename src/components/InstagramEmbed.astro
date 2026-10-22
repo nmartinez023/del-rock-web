@@ -1,0 +1,57 @@
+---
+interface Props {
+  url: string;
+}
+const { url } = Astro.props;
+---
+
+<figure class="ig-embed">
+  <blockquote class="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14">
+    <a href={url} rel="noopener">Ver este post en Instagram</a>
+  </blockquote>
+</figure>
+
+<script>
+  // embed.js de Instagram es pesado: se carga recién cuando el post está por entrar en pantalla.
+  declare global {
+    interface Window {
+      instgrm?: { Embeds: { process(): void } };
+    }
+  }
+
+  const embeds = document.querySelectorAll('.ig-embed');
+  if (embeds.length) {
+    const cargar = () => {
+      if (window.instgrm) return window.instgrm.Embeds.process();
+      const s = document.createElement('script');
+      s.src = 'https://www.instagram.com/embed.js';
+      s.async = true;
+      document.body.append(s);
+    };
+    const obs = new IntersectionObserver(
+      (entradas) => {
+        if (entradas.some((e) => e.isIntersecting)) {
+          obs.disconnect();
+          cargar();
+        }
+      },
+      { rootMargin: '400px' },
+    );
+    embeds.forEach((e) => obs.observe(e));
+  }
+</script>
+
+<style>
+  .ig-embed {
+    margin: 0;
+    max-width: 540px;
+  }
+  .ig-embed :global(.instagram-media) {
+    margin: 0 !important;
+    min-width: 0 !important;
+  }
+  .ig-embed a {
+    color: var(--azul);
+    font-weight: 700;
+  }
+</style>

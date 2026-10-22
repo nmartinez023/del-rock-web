@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+import SeccionTitulo from './SeccionTitulo.astro';
+import { ultimosPosts } from '../lib/instagram';
+
+const posts = await ultimosPosts(6);
+const PERFIL = 'https://www.instagram.com/del.rock.arg/';
+---
+
+<section class="ig" aria-labelledby="ig-titulo">
+  <div class="container interior">
+    <div class="cabecera">
+      <div>
+        <SeccionTitulo texto="En Instagram" />
+        <p id="ig-titulo" class="sub">@del.rock.arg · 142 mil seguidores</p>
+      </div>
+      <a href={PERFIL} class="btn" rel="noopener">Seguinos en Instagram</a>
+    </div>
+
+    {
+      posts.length > 0 && (
+        <ul class="grilla">
+          {posts.map((p) => (
+            <li>
+              <a href={p.link} class="post foto" rel="noopener">
+                <Image src={p.imagen} alt={p.texto || 'Post de Del Rock en Instagram'} width={400} height={500} inferSize={false} />
+                {(p.esCarrusel || p.esVideo) && (
+                  <svg class="icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true">
+                    {p.esVideo ? <path d="M8 5v14l11-7z" fill="#fff" /> : <><rect x="7" y="7" width="13" height="13" rx="2" /><path d="M4 16V5a1 1 0 0 1 1-1h11" /></>}
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .ig {
+    border-top: 1px solid var(--line);
+  }
+  .interior {
+    padding-block: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .sub {
+    margin: 10px 0 0;
+    color: var(--muted);
+  }
+  .grilla {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(190px, 30%), 1fr));
+    gap: 8px;
+  }
+  .post {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+  }
+  .post img {
+    transition: opacity 0.2s ease;
+  }
+  .post:hover img {
+    opacity: 0.85;
+  }
+  .icono {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / 0.6));
+  }
+</style>

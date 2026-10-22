@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  texto: string;
+  /** Posición en la lista: define color, tamaño e inclinación sin que se repita el patrón. */
+  i: number;
+}
+
+const { href, texto, i } = Astro.props;
+
+const estilos = [
+  { bg: 'var(--fg)', fg: 'var(--bg)', borde: 'var(--fg)' },
+  { bg: 'var(--azul)', fg: 'var(--bg)', borde: 'var(--azul)' },
+  { bg: 'var(--bg)', fg: 'var(--fg)', borde: 'var(--fg)' },
+  { bg: 'var(--bg)', fg: 'var(--azul)', borde: 'var(--azul)' },
+];
+const rot = [-4, 3, -2, 5, -6, 2, -3, 4, -1, 6][i % 10];
+const tam = [22, 18, 26, 20, 18, 22][i % 6];
+const e = estilos[i % estilos.length];
+---
+
+<a
+  href={href}
+  class="sticker"
+  style={`background:${e.bg};color:${e.fg};border-color:${e.borde};font-size:${tam}px;transform:rotate(${rot}deg)`}
+>
+  {texto}
+</a>

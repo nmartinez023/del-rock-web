@@ -1,0 +1,12 @@
+---
+import { partesTitulo } from '../lib/util';
+
+interface Props {
+  titulo: string;
+  destacado?: string;
+}
+const { titulo, destacado } = Astro.props;
+const partes = partesTitulo(titulo, destacado);
+---
+
+{partes.map((p) => (p.azul ? <span class="azul">{p.texto}</span> : p.texto))}

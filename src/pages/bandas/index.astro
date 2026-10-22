@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SeccionTitulo from '../../components/SeccionTitulo.astro';
+
+const bandas = (await getCollection('bandas')).sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
+---
+
+<Base titulo="Bandas" descripcion="Las bandas del rock nacional: noticias, fechas y coberturas de cada una.">
+  <section class="container bandas">
+    <SeccionTitulo texto="Bandas" nivel="h1" />
+    <ul class="grilla">
+      {
+        bandas.map((b) => (
+          <li>
+            <a href={`/bandas/${b.id}/`} class="banda">
+              <div class="foto">{b.data.foto && <Image src={b.data.foto} alt="" width={400} height={400} />}</div>
+              <span class="d nombre">{b.data.nombre}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .bandas {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding-block: 48px 88px;
+  }
+  .grilla {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 45%), 1fr));
+    gap: 28px 20px;
+  }
+  .banda {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .foto {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+  }
+  .banda:hover .foto {
+    border-color: var(--azul);
+  }
+  .nombre {
+    font-size: 24px;
+    line-height: 1.05;
+    text-align: center;
+  }
+</style>

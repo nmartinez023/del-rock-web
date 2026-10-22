@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+const secciones = [
+  { href: '/noticias/', label: 'Noticias' },
+  { href: '/agenda/', label: 'Agenda' },
+  { href: '/coberturas/', label: 'Coberturas' },
+  { href: '/bandas/', label: 'Bandas' },
+];
+const actual = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container fila">
+    <a href="/" class="marca" aria-label="Del Rock Arg, inicio">
+      <Image src={logo} alt="" width={64} height={64} loading="eager" />
+    </a>
+
+    <nav aria-label="Secciones" class="nav">
+      {
+        secciones.map((s) => (
+          <a href={s.href} class="nav-link" aria-current={actual.startsWith(s.href) ? 'page' : undefined}>
+            {s.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a href="https://www.instagram.com/del.rock.arg/" class="btn ig" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+      </svg>
+      <span>142 mil</span>
+    </a>
+  </div>
+
+  <div class="cinta-wrap" aria-hidden="true">
+    <div class="cinta d">
+      {
+        Array.from({ length: 6 }, () => (
+          <>
+            <span>Rock nacional, todos los días</span><span>/</span><span>Noticias</span><span>/</span><span>Agenda</span><span>/</span><span>Coberturas</span><span>/</span>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--line);
+  }
+  .fila {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding-block: 12px;
+  }
+  .marca {
+    display: block;
+    width: 64px;
+    height: 64px;
+    flex: 0 0 auto;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 28px;
+  }
+  .nav-link {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 10px 0 7px;
+    border-bottom: 3px solid transparent;
+  }
+  .nav-link:hover,
+  .nav-link[aria-current='page'] {
+    color: var(--fg);
+    border-bottom-color: var(--azul);
+  }
+  .ig {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  /* Cinta inclinada que corre */
+  .cinta-wrap {
+    overflow: hidden;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .cinta {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    background: var(--azul);
+    color: var(--bg);
+    font-size: 19px;
+    letter-spacing: 0.04em;
+    padding: 7px 0;
+    transform: rotate(-1.2deg);
+    white-space: nowrap;
+    animation: correr 60s linear infinite;
+  }
+  /* 6 copias: correr 1/3 del ancho deja la cinta igual que al empezar */
+  @keyframes correr {
+    to {
+      translate: calc(-100% / 3) 0;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .fila {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+    .marca {
+      width: 52px;
+      height: 52px;
+    }
+    .ig {
+      justify-self: end;
+    }
+    .nav {
+      grid-column: 1 / -1;
+      order: 3;
+      gap: 0 12px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .nav-link {
+      font-size: 12.5px;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .cinta {
+      font-size: 15px;
+    }
+  }
+</style>

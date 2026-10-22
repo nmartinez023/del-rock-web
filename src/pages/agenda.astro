@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import SeccionTitulo from '../components/SeccionTitulo.astro';
+import AgendaGrid from '../components/AgendaGrid.astro';
+import { proximasFechas } from '../lib/util';
+
+const fechas = await proximasFechas();
+---
+
+<Base titulo="Agenda" descripcion="Próximos shows y festivales de rock nacional en todo el país.">
+  <section class="container agenda">
+    <SeccionTitulo texto="Agenda" nivel="h1">
+      <p class="desc">Próximos shows y festivales en todo el país.</p>
+    </SeccionTitulo>
+    {fechas.length > 0 ? <AgendaGrid fechas={fechas} /> : <p class="desc">No hay fechas cargadas por ahora.</p>}
+  </section>
+</Base>
+
+<style>
+  .agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding-block: 48px 88px;
+  }
+  .desc {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 18px;
+  }
+</style>

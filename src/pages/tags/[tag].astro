@@ -1,0 +1,18 @@
+---
+import Listado from '../../components/Listado.astro';
+import { noticiasOrdenadas, slugTag } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const noticias = await noticiasOrdenadas();
+  const tags = new Map<string, string>();
+  for (const n of noticias) for (const t of n.data.tags) tags.set(slugTag(t), t);
+  return [...tags].map(([tag, nombre]) => ({
+    params: { tag },
+    props: { nombre, noticias: noticias.filter((n) => n.data.tags.some((t) => slugTag(t) === tag)) },
+  }));
+}
+
+const { nombre, noticias } = Astro.props;
+---
+
+<Listado titulo={nombre} noticias={noticias} />

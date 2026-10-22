@@ -1,0 +1,114 @@
+---
+import Afiche from './Afiche.astro';
+import type { Fecha } from '../lib/util';
+
+interface Props {
+  fechas: Fecha[];
+  filtro?: boolean;
+}
+
+const { fechas, filtro = true } = Astro.props;
+const provincias = [...new Set(fechas.map((f) => f.data.provincia))].sort((a, b) => a.localeCompare(b, 'es'));
+---
+
+<div class="agenda" data-agenda>
+  {
+    filtro && provincias.length > 1 && (
+      <div role="group" aria-label="Filtrar por provincia" class="filtros">
+        <button type="button" aria-pressed="true" data-provincia="">
+          Todo el país
+        </button>
+        {provincias.map((p) => (
+          <button type="button" aria-pressed="false" data-provincia={p}>
+            {p}
+          </button>
+        ))}
+      </div>
+    )
+  }
+  <div class="grilla">
+    {fechas.map((f, i) => <Afiche fecha={f} i={i} />)}
+  </div>
+  <p class="vacio" hidden>No hay fechas cargadas para esa provincia.</p>
+</div>
+
+<script>
+  // El sitio es estático: ocultamos las fechas que ya pasaron aunque no se haya vuelto a compilar.
+  const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
+
+  for (const agenda of document.querySelectorAll<HTMLElement>('[data-agenda]')) {
+    const afiches = [...agenda.querySelectorAll<HTMLElement>('.afiche')];
+    const botones = [...agenda.querySelectorAll<HTMLButtonElement>('.filtros button')];
+    const vacio = agenda.querySelector<HTMLElement>('.vacio')!;
+
+    const aplicar = (provincia: string) => {
+      let visibles = 0;
+      for (const a of afiches) {
+        const ok = a.dataset.fecha! >= hoy && (!provincia || a.dataset.provincia === provincia);
+        a.hidden = !ok;
+        if (ok) visibles++;
+      }
+      vacio.hidden = visibles > 0;
+      for (const b of botones) b.setAttribute('aria-pressed', String(b.dataset.provincia === provincia));
+    };
+
+    for (const b of botones) b.addEventListener('click', () => aplicar(b.dataset.provincia ?? ''));
+    aplicar('');
+  }
+</script>
+
+<style>
+  .agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filtros button {
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 20px;
+    border: 1px solid #3a3a40;
+    background: transparent;
+    color: var(--fg);
+    font: 600 14px var(--f-body);
+    cursor: pointer;
+  }
+  .filtros button:hover {
+    border-color: var(--azul);
+  }
+  .filtros button[aria-pressed='true'] {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--bg);
+  }
+  .grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 44px 32px;
+    padding-top: 12px;
+  }
+  /* En el celular, los afiches pasan a un carrusel horizontal */
+  @media (max-width: 600px) {
+    .grilla {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      margin-inline: calc(-1 * var(--gutter));
+      padding: 24px var(--gutter) 28px;
+    }
+    .grilla > :global(.afiche) {
+      flex: 0 0 min(230px, 72vw);
+      scroll-snap-align: start;
+    }
+  }
+  .vacio {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

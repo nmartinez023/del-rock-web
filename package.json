@@ -1,0 +1,25 @@
+{
+  "name": "delrock-web",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "ig:renovar": "node scripts/renovar-token-instagram.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^2.1.0",
+    "@astrojs/react": "^7.1.0",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.9",
+    "astro": "^7.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sharp": "^0.35.5"
+  }
+}
