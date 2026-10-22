@@ -32,6 +32,8 @@ const imagenAbs = new URL(imagen, Astro.site);
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="theme-color" content="#0b0b0d" />
+    <!-- Cuándo se compiló esta versión: sirve para saber si ya se publicó un cambio. -->
+    <meta name="build" content={new Date().toISOString()} />
 
     <meta property="og:site_name" content="Del Rock Arg" />
     <meta property="og:locale" content="es_AR" />
