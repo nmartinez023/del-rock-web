@@ -1,0 +1,33 @@
+# Publica el sitio agrupando los cambios: espera 5 minutos sin guardados nuevos y recién ahí
+# dispara UN build en Cloudflare. Si en esos 5 minutos llega otro cambio, esta corrida se cancela
+# y la espera vuelve a empezar. Así, 100 eventos publicados seguidos son 1 deploy, no 100.
+# Requiere: secret CF_DEPLOY_HOOK, y en Cloudflare los builds automáticos por push desactivados
+# (Settings › Builds › Build watch paths › Exclude paths: *). Ver README.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  # Lo disparan el recolector y "Reubicar eventos" al subir cambios (sus pushes no activan "push").
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Esperar 5 minutos sin cambios nuevos
+        run: sleep 300
+
+      - name: Publicar en Cloudflare
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "Falta el secret CF_DEPLOY_HOOK"; exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$HOOK"

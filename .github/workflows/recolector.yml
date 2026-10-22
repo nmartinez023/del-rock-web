@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # para disparar el deploy agrupado
 
 concurrency:
   group: recolector
@@ -62,6 +63,9 @@ jobs:
           # Si mientras tanto guardaste algo desde el panel, nos ponemos al día antes de subir.
           git pull --rebase
           git push
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Avisar si algo falló
         if: steps.recolectar.outcome == 'failure'

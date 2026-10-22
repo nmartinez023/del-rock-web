@@ -101,7 +101,14 @@ Para mostrar un post dentro de una nota, pegá su link en el campo *Link al post
 ## Deploy (Cloudflare Workers)
 
 El sitio se publica en https://del-rock-web.delrockarg.workers.dev con el adapter `@astrojs/cloudflare`.
-Cada push a `main` dispara un build en Cloudflare (Workers Builds): `npm run build` y después `wrangler deploy`.
+Los deploys se agrupan: `.github/workflows/deploy.yml` corre con cada push a `main`, espera **5 minutos sin cambios
+nuevos** y recién ahí llama al *Deploy Hook* de Cloudflare (que hace `npm run build` y `wrangler deploy`). Si llega otro
+cambio en esos 5 minutos, la espera vuelve a empezar: publicar 100 eventos seguidos son 100 commits pero 1 deploy.
+El recolector y "Reubicar eventos" también lo disparan al subir cambios.
+
+Para que funcione, en Cloudflare los builds automáticos por push están apagados:
+*Workers & Pages › del-rock-web › Settings › Builds › Build watch paths › Exclude paths:* `*`.
+(Cloudflare igual compila un push con 20 commits o más.)
 
 - Node: sale de `.node-version` (24).
 - `SITE_URL` (variable de build): cargala cuando haya dominio propio.

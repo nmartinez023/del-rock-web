@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # para disparar el deploy agrupado
 
 # Misma fila que el recolector, para que no se pisen.
 concurrency:
@@ -48,3 +49,6 @@ jobs:
           git commit -m "Agenda: reubicar eventos marcados en el panel"
           git pull --rebase
           git push
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
