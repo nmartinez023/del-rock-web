@@ -6,7 +6,7 @@ genero: sin datos
 artistas:
   - Zell
 fecha: 2026-11-27
-hora: '20:00'
+hora: "20:00"
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: ZELL
   huella: 691c17cbfbf4b5b4
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

@@ -100,7 +100,7 @@ export default config({
       slugField: 'titulo',
       path: 'src/content/agenda/*',
       format: { data: 'yaml' },
-      columns: ['estado', 'titulo', 'fecha'],
+      columns: ['titulo', 'fecha', 'estado'],
       schema: camposEvento({ conBandas: true }),
     }),
 
@@ -109,7 +109,7 @@ export default config({
       slugField: 'titulo',
       path: 'src/content/otros-eventos/*',
       format: { data: 'yaml' },
-      columns: ['estado', 'titulo', 'fecha'],
+      columns: ['titulo', 'fecha', 'estado'],
       schema: camposEvento({ conBandas: false }),
     }),
 

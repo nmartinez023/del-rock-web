@@ -45,6 +45,9 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           RECOLECTOR_MODELO: ${{ vars.RECOLECTOR_MODELO }}
 
+      # Si el recolector escribió algo que el panel no puede abrir, no se sube.
+      - run: npm run validar-panel
+
       - name: Guardar cambios
         run: |
           RUTAS="src/content/agenda src/content/otros-eventos src/content/bandas recolector/cache-ia.json"

@@ -4,7 +4,7 @@ tipo: show
 rockNacional: false
 genero: sin especificar
 fecha: 2026-11-21
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -17,4 +17,4 @@ origen:
   fuente: entrada-play
   id: CRUZANDO-EL-CHARCO-
   huella: e5d23c71803c79eb
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

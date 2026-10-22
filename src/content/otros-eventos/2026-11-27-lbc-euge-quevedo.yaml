@@ -7,7 +7,7 @@ artistas:
   - LBC
   - Euge Quevedo
 fecha: 2026-11-27
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: LBC---EUGE-QUEVEDO
   huella: e7a82f6bcd98f8c9
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

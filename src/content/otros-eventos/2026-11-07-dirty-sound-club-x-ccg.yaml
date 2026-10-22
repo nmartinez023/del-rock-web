@@ -6,7 +6,7 @@ genero: sin especificar
 artistas:
   - Dirty Sound Club
 fecha: 2026-11-07
-hora: '23:59'
+hora: "23:59"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: DIRTY-SOUND-CLUB-x-CCG
   huella: e46ce56cf456869f
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

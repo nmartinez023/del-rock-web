@@ -6,7 +6,7 @@ genero: sin datos
 artistas:
   - Swaggerboyz
 fecha: 2026-10-30
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: SWAGGERBOYZ
   huella: 41eeb77989973af8
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

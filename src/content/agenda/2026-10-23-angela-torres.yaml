@@ -6,7 +6,7 @@ genero: pop rock
 bandas:
   - angela-torres
 fecha: 2026-10-23
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: ANGELA-TORRES
   huella: 8cfb42fcf9cdaadb
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

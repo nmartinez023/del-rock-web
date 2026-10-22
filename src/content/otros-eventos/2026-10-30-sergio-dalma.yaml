@@ -6,7 +6,7 @@ genero: pop melódico
 artistas:
   - Sergio Dalma
 fecha: 2026-10-30
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: SERGIO-DALMA
   huella: 3b831cc372f6e12a
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

@@ -6,7 +6,7 @@ genero: rock
 bandas:
   - o-connor
 fecha: 2026-12-05
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: OCONNOR---DARLO-TODO-EN-ROSARIO
   huella: 790b99510745df28
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

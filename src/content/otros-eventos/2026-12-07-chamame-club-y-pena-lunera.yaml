@@ -7,7 +7,7 @@ artistas:
   - Chamamé Club
   - Peña Lunera
 fecha: 2026-12-07
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: CHAMAME-CLUB-y-PENA-LUNERA
   huella: 923fd05e71b61663
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

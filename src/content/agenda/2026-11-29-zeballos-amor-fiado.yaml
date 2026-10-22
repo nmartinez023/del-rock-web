@@ -6,7 +6,7 @@ genero: indie pop
 bandas:
   - zeballos
 fecha: 2026-11-29
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: Zeballos---AMOR-FIADO
   huella: 6f5592cee35dcdc4
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

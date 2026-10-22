@@ -10,7 +10,7 @@ artistas:
   - Latina
   - Konstanza
 fecha: 2026-10-24
-hora: '23:59'
+hora: "23:59"
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
@@ -55,4 +55,4 @@ origen:
   fuente: entrada-play
   id: CUPULA---24-DE-OCTUBRE
   huella: e3c3960f6ab590be
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

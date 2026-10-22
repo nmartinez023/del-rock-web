@@ -6,7 +6,7 @@ genero: trap
 artistas:
   - Mati RJ
 fecha: 2026-10-24
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: MATI-RJ
   huella: 11078ffb6360d57f
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

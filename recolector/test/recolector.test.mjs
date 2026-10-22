@@ -8,7 +8,8 @@ import { extraer } from '../adaptadores/jsonld.mjs';
 import { adaptadorPara } from '../adaptadores/index.mjs';
 import { normalizar, fechaHora, provinciaDe, completar } from '../normalizar.mjs';
 import { aplicarClasificacion, bandaPara } from '../clasificar.mjs';
-import { mezclar, reubicar, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado } from '../agenda.mjs';
+import { mezclar, reubicar, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado, yamlPanel } from '../agenda.mjs';
+import jsyaml from 'js-yaml';
 import { crearClasificador, cargarCache, claveIA, SinCredito } from '../ia.mjs';
 import { parsearRobots, rutaPermitida } from '../robots.mjs';
 
@@ -186,7 +187,7 @@ test('mezclar: rock a Agenda y el resto a "otros", como Pendiente; crea las band
     assert.deepEqual(r.nuevos, ['2026-11-01-los-gardelitos.yaml', 'otros/2026-11-01-los-nocheros.yaml']);
     const a = leer(dirs.agenda, '2026-11-01-los-gardelitos.yaml');
     assert.deepEqual([a.estado, a.rockNacional, a.bandas, a.artistas], [PENDIENTE, true, ['los-gardelitos'], undefined]);
-    assert.match(readFileSync(join(dirs.agenda, '2026-11-01-los-gardelitos.yaml'), 'utf8'), /^hora: '21:00'$/m);
+    assert.match(readFileSync(join(dirs.agenda, '2026-11-01-los-gardelitos.yaml'), 'utf8'), /^hora: "21:00"$/m);
     const o = leer(dirs.otros, '2026-11-01-los-nocheros.yaml');
     assert.deepEqual([o.estado, o.rockNacional, o.artistas, o.bandas], [PENDIENTE, false, ['Los Nocheros'], undefined]);
     assert.deepEqual(archivos(dirBandas), ['los-gardelitos.yaml'], 'no se crean bandas para los que no son rock');
@@ -270,6 +271,16 @@ test('reubicar: respeta lo que marcás a mano en "Rock nacional"', () => {
   } finally {
     borrar();
   }
+});
+
+test('YAML: el lector del panel (js-yaml) ve como texto lo que es texto', () => {
+  const texto = yamlPanel({
+    titulo: 'Yes', fecha: '2026-11-28', hora: '21:00',
+    origen: { fuente: 'x', id: '12345', huella: '1234567890123456', detalle: '2026-10-22' },
+  });
+  assert.match(texto, /^fecha: 2026-11-28$/m, 'la fecha del evento va sin comillas, como la guarda el panel');
+  const d = jsyaml.load(texto);
+  for (const v of [d.titulo, d.hora, d.origen.id, d.origen.huella, d.origen.detalle]) assert.equal(typeof v, 'string');
 });
 
 test('estados: normaliza los viejos sin emoji', () => {

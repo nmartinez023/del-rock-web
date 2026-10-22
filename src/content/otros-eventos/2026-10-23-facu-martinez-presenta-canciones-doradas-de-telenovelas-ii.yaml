@@ -6,7 +6,7 @@ genero: pop melódico
 artistas:
   - Facu Martínez
 fecha: 2026-10-23
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: FACU-MARTINEZ-PRESENTA-CANCIONES-DORADAS-DE-TELENOVELAS-II
   huella: 7e88cb210634c706
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

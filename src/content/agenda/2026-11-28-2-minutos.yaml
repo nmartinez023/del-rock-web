@@ -6,7 +6,7 @@ genero: punk rock
 bandas:
   - 2-minutos
 fecha: 2026-11-28
-hora: '20:00'
+hora: "20:00"
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: 2-MINUTOS
   huella: 736eb151084c60f5
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

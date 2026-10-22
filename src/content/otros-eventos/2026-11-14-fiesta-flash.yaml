@@ -6,7 +6,7 @@ genero: trap y reggaetón
 artistas:
   - Suriz
 fecha: 2026-11-14
-hora: '23:59'
+hora: "23:59"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: FIESTA-FLASH---14-DE-NOVIEMBRE
   huella: ceb8e2687ef79286
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

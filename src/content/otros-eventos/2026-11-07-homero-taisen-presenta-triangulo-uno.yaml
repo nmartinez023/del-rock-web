@@ -6,7 +6,7 @@ genero: sin determinar
 artistas:
   - Homero Taisen
 fecha: 2026-11-07
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: HOMERO-TAISEN-PRESENTA-TRIANGULO
   huella: 65fca019fa493afb
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

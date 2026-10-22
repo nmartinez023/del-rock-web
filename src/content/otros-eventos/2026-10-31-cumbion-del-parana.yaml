@@ -7,7 +7,7 @@ artistas:
   - Hernán y la Champions Liga
   - Naranja Dulce
 fecha: 2026-10-31
-hora: '23:59'
+hora: "23:59"
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE
   huella: a99da38e1bd905bb
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

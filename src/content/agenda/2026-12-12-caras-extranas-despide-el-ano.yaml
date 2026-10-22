@@ -6,7 +6,7 @@ genero: rock
 bandas:
   - caras-extranas
 fecha: 2026-12-12
-hora: '23:55'
+hora: "23:55"
 venue: La Sala De Las Artes
 direccion: Suipacha Bis 98
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: CARAS-EXTRANAS-DESPIDE-EL-ANO-EN-ROSARIO
   huella: f5fcb0a6f85e1be6
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

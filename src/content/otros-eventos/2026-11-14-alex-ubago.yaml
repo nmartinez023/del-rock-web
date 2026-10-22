@@ -6,7 +6,7 @@ genero: pop melódico
 artistas:
   - Alex Ubago
 fecha: 2026-11-14
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: ALEX-UBAGO-EN-BIOCERES-ARENA
   huella: 10ad60bf033225ba
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

@@ -6,7 +6,7 @@ genero: cumbia
 artistas:
   - Ke Personajes
 fecha: 2026-10-31
-hora: '21:00'
+hora: "21:00"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: KE-PERSONAJES---CORAZON-AUSENTE-TOUR
   huella: f2f855c6f02ffc28
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

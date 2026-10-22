@@ -6,7 +6,7 @@ genero: pop urbano
 artistas:
   - Bresh
 fecha: 2026-10-31
-hora: '23:59'
+hora: "23:59"
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
@@ -19,4 +19,4 @@ origen:
   fuente: entrada-play
   id: BRESH---EDICION-ESPECIAL-HALLOWEEN
   huella: 0f0a05b5ba926c79
-  detalle: 2026-10-22
+  detalle: "2026-10-22"

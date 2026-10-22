@@ -58,8 +58,14 @@ export function guardable(ev, destino) {
   return d;
 }
 
-// La hora va entre comillas, como la guarda el panel ("21:00" sin comillas es ambiguo en YAML).
-const yamlConHora = (d) => stringify(d, { lineWidth: 0 }).replace(/^hora: (\d{1,2}:\d{2})$/m, "hora: '$1'");
+/**
+ * YAML que el panel lee igual que nosotros. El panel usa un lector de YAML "viejo" (1.1) que toma
+ * 2026-10-22 como fecha, 21:00 como número o "12345" como número: escribiendo en modo 1.1 esos
+ * valores quedan entre comillas y siguen siendo texto. La `fecha` del evento sí va sin comillas,
+ * como la guarda el propio panel en su campo de fecha.
+ */
+export const yamlPanel = (d) =>
+  stringify(d, { lineWidth: 0, version: '1.1' }).replace(/^fecha: "(\d{4}-\d{2}-\d{2})"$/m, 'fecha: $1');
 
 /** YAML en el orden de los campos del panel. */
 export function aYaml(d, estado, origen, flyer) {
@@ -67,7 +73,7 @@ export function aYaml(d, estado, origen, flyer) {
   const salida = { titulo, estado, ...resto };
   if (flyer) salida.flyer = flyer;
   salida.origen = origen;
-  return yamlConHora(salida);
+  return yamlPanel(salida);
 }
 
 /** Mismo evento = misma fecha, mismo lugar y mismo título (sin importar mayúsculas ni acentos). */
@@ -82,7 +88,7 @@ function asegurarBanda(dirBandas, banda, seco) {
   if (existsSync(ruta)) return false;
   if (!seco) {
     mkdirSync(dirBandas, { recursive: true });
-    writeFileSync(ruta, stringify({ nombre: banda.nombre, automatica: true }, { lineWidth: 0 }));
+    writeFileSync(ruta, yamlPanel({ nombre: banda.nombre, automatica: true }));
   }
   return true;
 }
@@ -210,7 +216,7 @@ export function reubicar({ fuentesRosario, bandas, dirs = DIRS, dirBandas, seco 
       const datos = { ...resto, artistas: slugs.map((s) => nombrePorSlug.get(s) ?? s) };
       if (!seco) {
         mkdirSync(dirs.otros, { recursive: true });
-        writeFileSync(join(dirs.otros, e.archivo), yamlConHora(datos));
+        writeFileSync(join(dirs.otros, e.archivo), yamlPanel(datos));
       }
       movidos.push(`${e.archivo} → otros`);
     } else movidos.push(`${e.archivo} → borrado (no es rock y la fuente no es de Rosario)`);
@@ -230,7 +236,7 @@ export function reubicar({ fuentesRosario, bandas, dirs = DIRS, dirBandas, seco 
       slugs.push(s);
     }
     if (!seco) {
-      writeFileSync(join(dirs.agenda, e.archivo), yamlConHora({ ...resto, bandas: slugs }));
+      writeFileSync(join(dirs.agenda, e.archivo), yamlPanel({ ...resto, bandas: slugs }));
       unlinkSync(join(dirs.otros, e.archivo));
     }
     movidos.push(`${e.archivo} → agenda`);

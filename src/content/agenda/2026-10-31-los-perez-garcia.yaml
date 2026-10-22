@@ -6,7 +6,7 @@ genero: rock
 bandas:
   - los-perez-garcia
 fecha: 2026-10-31
-hora: '20:00'
+hora: "20:00"
 venue: Centro Cultural Güemes
 direccion: Güemes 2808
 ciudad: Rosario
@@ -20,4 +20,4 @@ origen:
   fuente: entrada-play
   id: LOS-PEREZ-GARCIA
   huella: db4d202146164ded
-  detalle: 2026-10-22
+  detalle: "2026-10-22"
