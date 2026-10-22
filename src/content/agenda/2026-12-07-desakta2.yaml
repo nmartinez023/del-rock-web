@@ -1,0 +1,20 @@
+titulo: Desakta2
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - desakta
+fecha: 2026-12-07
+hora: "21:00"
+venue: Movistar Arena
+direccion: Humboldt 450
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.movistararena.com.ar/show/0a2c5d52-9784-4d3e-8a14-90e51ab02728
+precioDesde: 55000
+imagen: https://www.movistararena.com.ar/static/artistas/34F97_DESAKTA2_FileFotoFichaDesktop
+origen:
+  fuente: movistar-arena
+  id: 0a2c5d52-9784-4d3e-8a14-90e51ab02728-2026-12-07
+  huella: 94009e33a773753b

@@ -1,6 +1,32 @@
 {
  "version": 1,
  "entradas": {
+  "038bd1698f749a56": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Oreja de Van Gogh — Tantas cosas que contar",
+    "artistas": [
+     "La Oreja de Van Gogh"
+    ]
+   },
+   "fecha": "2027-03-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "03c859a27743692b": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Bersuit",
+    "artistas": [
+     "Bersuit"
+    ]
+   },
+   "fecha": "2026-11-03",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "045b5c61f396b6f5": {
    "r": {
     "genero": "indie rock",
@@ -77,6 +103,19 @@
    "fecha": "2026-12-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "0a9c921a326c0e57": {
+   "r": {
+    "genero": "hard rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Deep Purple",
+    "artistas": [
+     "Deep Purple"
+    ]
+   },
+   "fecha": "2026-12-10",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "0ccc08803f1525d5": {
    "r": {
     "genero": "rock",
@@ -112,6 +151,19 @@
     ]
    },
    "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "1188cef748575b6c": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Omar Courtz",
+    "artistas": [
+     "Omar Courtz"
+    ]
+   },
+   "fecha": "2026-12-02",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "1555bb2f833bb24a": {
@@ -151,6 +203,19 @@
     ]
    },
    "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "1b0d3c4f51b50942": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Aitana — Cuarto Azul World Tour",
+    "artistas": [
+     "Aitana"
+    ]
+   },
+   "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "1b6d60a03d4c3555": {
@@ -205,6 +270,19 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "22e6afee38261962": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "2416146ffff97fbe": {
    "r": {
     "genero": "rock",
@@ -216,6 +294,32 @@
     ]
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "2595e646bc3bf114": {
+   "r": {
+    "genero": "rock nacional",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Tan Biónica",
+    "artistas": [
+     "Tan Biónica"
+    ]
+   },
+   "fecha": "2027-04-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "26a08bb078ff9601": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-15",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "279268826d94cafe": {
@@ -255,6 +359,19 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "2b1f45410eaa0df3": {
+   "r": {
+    "genero": "rock progresivo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Rush",
+    "artistas": [
+     "Rush"
+    ]
+   },
+   "fecha": "2027-01-15",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "2b794037195e9069": {
    "r": {
     "genero": "cumbia",
@@ -268,6 +385,19 @@
    "fecha": "2026-11-13",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "2bbbe74212e75ec9": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Oreja de Van Gogh",
+    "artistas": [
+     "La Oreja de Van Gogh"
+    ]
+   },
+   "fecha": "2027-03-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "2d1005a69d457595": {
    "r": {
     "genero": "cumbia",
@@ -277,6 +407,19 @@
     "artistas": []
    },
    "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "2d82dfdeed0f0693": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Diego Torres — Mi Norte & Mi Sur",
+    "artistas": [
+     "Diego Torres"
+    ]
+   },
+   "fecha": "2026-12-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "2ea638526bc24012": {
@@ -411,6 +554,19 @@
    "fecha": "2026-12-19",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "35e03d4e2feb28af": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jesse & Joy",
+    "artistas": [
+     "Jesse & Joy"
+    ]
+   },
+   "fecha": "2026-11-01",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "36ec8da23e93b238": {
    "r": {
     "genero": "stand-up",
@@ -422,6 +578,19 @@
     ]
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "376a76da76f17021": {
+   "r": {
+    "genero": "música clásica contemporánea",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ludovico Einaudi",
+    "artistas": [
+     "Ludovico Einaudi"
+    ]
+   },
+   "fecha": "2027-03-03",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "37c6f90c7f02e135": {
@@ -465,6 +634,19 @@
     ]
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3a578c89503d7d68": {
+   "r": {
+    "genero": "teatro",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Gabriel Rolón — Palabra Plena",
+    "artistas": [
+     "Gabriel Rolón"
+    ]
+   },
+   "fecha": "2026-12-11",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "3ae055e2debe800d": {
@@ -585,6 +767,19 @@
    "fecha": "2026-11-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "482262ee0e0f4c1f": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Ulises Bueno",
+    "artistas": [
+     "Ulises Bueno"
+    ]
+   },
+   "fecha": "2026-11-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "4a81ad61e7af2945": {
    "r": {
     "genero": "pop",
@@ -596,6 +791,19 @@
     ]
    },
    "fecha": "2026-12-18",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "4c45f191e53f2da4": {
+   "r": {
+    "genero": "pop romántico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Luciano Pereyra",
+    "artistas": [
+     "Luciano Pereyra"
+    ]
+   },
+   "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "4ce28b686f00e338": {
@@ -610,6 +818,19 @@
     ]
    },
    "fecha": "2026-11-20",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "4cf4be2fd182734d": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Angela Torres",
+    "artistas": [
+     "Angela Torres"
+    ]
+   },
+   "fecha": "2026-12-08",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "4d2b738a652e196d": {
@@ -689,6 +910,32 @@
     ]
    },
    "fecha": "2026-12-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5381f375a691ec68": {
+   "r": {
+    "genero": "balada pop y ranchera",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ana Gabriel — Claro de Luna",
+    "artistas": [
+     "Ana Gabriel"
+    ]
+   },
+   "fecha": "2027-04-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "54affe735060f626": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Eros Ramazzotti",
+    "artistas": [
+     "Eros Ramazzotti"
+    ]
+   },
+   "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "559d233f68e818f9": {
@@ -793,6 +1040,43 @@
    "fecha": "2026-10-25",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "59ea93df2e840b02": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5af1654b58c603c4": {
+   "r": {
+    "genero": "rock alternativo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Pixies",
+    "artistas": [
+     "Pixies"
+    ]
+   },
+   "fecha": "2027-04-04",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5b0602d0af52d8cf": {
+   "r": {
+    "genero": "esports",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "FiReMAJOR Buenos Aires",
+    "artistas": []
+   },
+   "fecha": "2027-06-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "5ba300b50ad0a24a": {
    "r": {
     "genero": "desconocido",
@@ -804,6 +1088,32 @@
     ]
    },
    "fecha": "2026-10-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5baa55cd83cdfbe3": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ha*Ash",
+    "artistas": [
+     "Ha*Ash"
+    ]
+   },
+   "fecha": "2027-03-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "5c8842beb2f2d18d": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "David Bisbal",
+    "artistas": [
+     "David Bisbal"
+    ]
+   },
+   "fecha": "2027-08-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "5d04be08b357f3b7": {
@@ -900,6 +1210,33 @@
    "fecha": "2026-10-30",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "65a682020455056b": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ricardo Montaner — El Último Regreso World Tour",
+    "artistas": [
+     "Ricardo Montaner"
+    ]
+   },
+   "fecha": "2027-03-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "65dd3c57cbf02354": {
+   "r": {
+    "genero": "reggae y rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Paralamas — Nonpalidece",
+    "artistas": [
+     "Nonpalidece",
+     "Os Paralamas do Sucesso"
+    ]
+   },
+   "fecha": "2027-03-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "662011991301e5f5": {
    "r": {
     "genero": "fiesta temática",
@@ -909,6 +1246,19 @@
     "artistas": []
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "6626c68eec1d749b": {
+   "r": {
+    "genero": "pop rock en español",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Camila — ADIÓS World Tour",
+    "artistas": [
+     "Camila"
+    ]
+   },
+   "fecha": "2027-03-30",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "67d280f109399173": {
@@ -935,6 +1285,19 @@
     ]
    },
    "fecha": "2026-11-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "69284bfb74978978": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-18",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "69739149e0f35e62": {
@@ -998,6 +1361,19 @@
    "fecha": "2026-10-25",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "6f483068abf62f59": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Laura Pausini — Yo Canto World Tour",
+    "artistas": [
+     "Laura Pausini"
+    ]
+   },
+   "fecha": "2027-02-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "717ad972239e843c": {
    "r": {
     "genero": "rock",
@@ -1038,6 +1414,17 @@
    "fecha": "2026-11-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "74e590539b62a106": {
+   "r": {
+    "genero": "pop y dance de los 90",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Love the 90s",
+    "artistas": []
+   },
+   "fecha": "2027-03-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "765d7032a9854a6f": {
    "r": {
     "genero": "folklore",
@@ -1066,6 +1453,19 @@
     ]
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "77cb57436cecd3de": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Enrique Bunbury",
+    "artistas": [
+     "Enrique Bunbury"
+    ]
+   },
+   "fecha": "2026-11-04",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "77da7e3494f5c60c": {
@@ -1107,6 +1507,32 @@
    "fecha": "2026-12-04",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "798e3eff00248bb1": {
+   "r": {
+    "genero": "blues rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "ZZ Top — The Big One! Tour",
+    "artistas": [
+     "ZZ Top"
+    ]
+   },
+   "fecha": "2026-11-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "7e9e9c3647ab34ea": {
+   "r": {
+    "genero": "rock acústico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jack Johnson",
+    "artistas": [
+     "Jack Johnson"
+    ]
+   },
+   "fecha": "2027-02-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "7ea1a0ea9a98dd48": {
    "r": {
     "genero": "pop melódico",
@@ -1144,6 +1570,45 @@
    "fecha": "2026-12-10",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "8179cda3e457257a": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "La Oreja de Van Gogh — Tantas cosas que contar",
+    "artistas": [
+     "La Oreja de Van Gogh"
+    ]
+   },
+   "fecha": "2027-03-20",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "84736e6e5a921e52": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Luis Fonsi",
+    "artistas": [
+     "Luis Fonsi"
+    ]
+   },
+   "fecha": "2027-04-13",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "85052aee6903a0d2": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Hilary Duff — The Lucky Me Tour",
+    "artistas": [
+     "Hilary Duff"
+    ]
+   },
+   "fecha": "2027-08-16",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "87ba3c2dd4928b5a": {
    "r": {
     "genero": "fiesta de dj",
@@ -1168,6 +1633,19 @@
    "fecha": "2026-11-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "896fb3299b90fe94": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "89b2d802d69e697a": {
    "r": {
     "genero": "pop melódico",
@@ -1190,6 +1668,32 @@
     "artistas": []
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8a0815bc6dc6cf14": {
+   "r": {
+    "genero": "hard rock y heavy metal",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Rata Blanca",
+    "artistas": [
+     "Rata Blanca"
+    ]
+   },
+   "fecha": "2026-12-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8a56459d8df5f2c6": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Valeria Lynch",
+    "artistas": [
+     "Valeria Lynch"
+    ]
+   },
+   "fecha": "2027-03-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "8a70e5de03b403b0": {
@@ -1257,6 +1761,19 @@
    "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "8c6ab2c82f4089a2": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Camilo",
+    "artistas": [
+     "Camilo"
+    ]
+   },
+   "fecha": "2026-10-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "8e9318eeb30c8c64": {
    "r": {
     "genero": "rock nacional",
@@ -1268,6 +1785,19 @@
     ]
    },
    "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8f029562d483cb64": {
+   "r": {
+    "genero": "salsa",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Marc Anthony",
+    "artistas": [
+     "Marc Anthony"
+    ]
+   },
+   "fecha": "2026-10-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "90115b03643f3a0f": {
@@ -1319,6 +1849,19 @@
    "fecha": "2026-11-21",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "9300b062fe318ef5": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Camilo",
+    "artistas": [
+     "Camilo"
+    ]
+   },
+   "fecha": "2026-10-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "95155cddd705f128": {
    "r": {
     "genero": "funk soul",
@@ -1343,6 +1886,19 @@
     ]
    },
    "fecha": "2026-11-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "95f5df5d0aa91160": {
+   "r": {
+    "genero": "j-metal",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "BABYMETAL — World Tour 2026",
+    "artistas": [
+     "BABYMETAL"
+    ]
+   },
+   "fecha": "2026-12-01",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "98c717a31ac16649": {
@@ -1370,6 +1926,19 @@
     ]
    },
    "fecha": "2026-11-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "9ba7c2462b716c9d": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Las Pastillas del Abuelo — Shows 360°",
+    "artistas": [
+     "Las Pastillas del Abuelo"
+    ]
+   },
+   "fecha": "2026-11-21",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "9c2080278e522351": {
@@ -1412,6 +1981,19 @@
    "fecha": "2026-11-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "9e0d3d5fa018ab5e": {
+   "r": {
+    "genero": "pop latino",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Sin Bandera — Escenas Tour",
+    "artistas": [
+     "Sin Bandera"
+    ]
+   },
+   "fecha": "2027-02-27",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "9f5bd27d5887c6eb": {
    "r": {
     "genero": "cine",
@@ -1436,6 +2018,19 @@
    "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "a14cd67430cb4d14": {
+   "r": {
+    "genero": "hip hop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Kase.O",
+    "artistas": [
+     "Kase.O"
+    ]
+   },
+   "fecha": "2027-05-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "a59c91ffcddaf930": {
    "r": {
     "genero": "pop vocal",
@@ -1448,6 +2043,19 @@
     ]
    },
    "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a5a587632798bb3d": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Tan Biónica — El Regreso Tour",
+    "artistas": [
+     "Tan Biónica"
+    ]
+   },
+   "fecha": "2027-02-11",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "a5c933c459eaeb0a": {
@@ -1591,6 +2199,32 @@
    "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "ae22400a89ddf552": {
+   "r": {
+    "genero": "thrash metal",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Slayer",
+    "artistas": [
+     "Slayer"
+    ]
+   },
+   "fecha": "2026-12-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ae236347da82fe5e": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Paulo Londra",
+    "artistas": [
+     "Paulo Londra"
+    ]
+   },
+   "fecha": "2026-11-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "aefa53cf8335e641": {
    "r": {
     "genero": "sin datos",
@@ -1659,6 +2293,20 @@
    "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "b7093db504c4e278": {
+   "r": {
+    "genero": "musical infantil",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Disney Celebra: Una Navidad Inolvidable",
+    "artistas": [
+     "Diego Topa",
+     "Laurita Fernández"
+    ]
+   },
+   "fecha": "2026-12-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "b74d7c9cc56b923b": {
    "r": {
     "genero": "cumbia cuyana",
@@ -1685,6 +2333,19 @@
    "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "b87f3b74d7f52e47": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Omar Courtz",
+    "artistas": [
+     "Omar Courtz"
+    ]
+   },
+   "fecha": "2026-11-30",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "b8869807ea673771": {
    "r": {
     "genero": "pop alternativo",
@@ -1698,6 +2359,71 @@
    "fecha": "2026-10-29",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "ba07429754a9d1a0": {
+   "r": {
+    "genero": "rock alternativo",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Cuarteto de Nos",
+    "artistas": [
+     "Cuarteto de Nos"
+    ]
+   },
+   "fecha": "2027-05-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bb66abb8789f4274": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bc8e898f051efe2e": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ángela Torres",
+    "artistas": [
+     "Ángela Torres"
+    ]
+   },
+   "fecha": "2026-12-09",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bd4b6602a4779aa9": {
+   "r": {
+    "genero": "salsa",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Marc Anthony",
+    "artistas": [
+     "Marc Anthony"
+    ]
+   },
+   "fecha": "2026-10-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bd899ee620ff10fa": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Melendi — POP ROCK",
+    "artistas": [
+     "Melendi"
+    ]
+   },
+   "fecha": "2027-04-15",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "bee410494b5f5e21": {
    "r": {
     "genero": "no musical (visita turística)",
@@ -1707,6 +2433,17 @@
     "artistas": []
    },
    "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "bfd604ae97058701": {
+   "r": {
+    "genero": "sin determinar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Fiesta ¡FA!",
+    "artistas": []
+   },
+   "fecha": "2026-11-08",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "bfde9b46bd58666b": {
@@ -1735,6 +2472,19 @@
    "fecha": "2026-12-04",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "c53184198189a98b": {
+   "r": {
+    "genero": "pop alternativo",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jungle",
+    "artistas": [
+     "Jungle"
+    ]
+   },
+   "fecha": "2027-04-01",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "c5c0671b6c06dc44": {
    "r": {
     "genero": "reggaetón, pop y música urbana",
@@ -1761,6 +2511,32 @@
    "fecha": "2026-10-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "c795a265b9df2ade": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Omar Courtz",
+    "artistas": [
+     "Omar Courtz"
+    ]
+   },
+   "fecha": "2026-12-03",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c84e151920ca6cb2": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "c8887ca91a6dbd07": {
    "r": {
     "genero": "pop rock",
@@ -1772,6 +2548,58 @@
     ]
    },
    "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c936477e27e71595": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Hilary Duff — The Lucky Me Tour",
+    "artistas": [
+     "Hilary Duff"
+    ]
+   },
+   "fecha": "2027-08-17",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "c980c291a099290e": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Alejo Igoa",
+    "artistas": [
+     "Alejo Igoa"
+    ]
+   },
+   "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ca1fa37191c50f0b": {
+   "r": {
+    "genero": "hard rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Def Leppard",
+    "artistas": [
+     "Def Leppard"
+    ]
+   },
+   "fecha": "2026-11-05",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "cb5d40eb5b03a2b1": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Reik",
+    "artistas": [
+     "Reik"
+    ]
+   },
+   "fecha": "2027-02-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "cc2f6ce3c4df3b86": {
@@ -1826,6 +2654,19 @@
    "fecha": "2026-11-07",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "d2d7a151fba33a61": {
+   "r": {
+    "genero": "no determinado",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "K4OS",
+    "artistas": [
+     "K4OS"
+    ]
+   },
+   "fecha": "2026-12-15",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "d3413920893876df": {
    "r": {
     "genero": "rock",
@@ -1852,6 +2693,32 @@
    "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "d4c67f7bc5559945": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Tan Biónica — El Regreso Tour",
+    "artistas": [
+     "Tan Biónica"
+    ]
+   },
+   "fecha": "2027-02-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "d67e017e6d96d6f5": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2026-11-14",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "d69d6df5fc4cff5f": {
    "r": {
     "genero": "jazz",
@@ -1865,6 +2732,19 @@
     ]
    },
    "fecha": "2027-05-15",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "d727bcd6db31b4b2": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "El Plan de la Mariposa",
+    "artistas": [
+     "El Plan de la Mariposa"
+    ]
+   },
+   "fecha": "2026-10-31",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "d83e4518f8c5d620": {
@@ -1975,6 +2855,19 @@
    "fecha": "2026-11-13",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "e1dab6546ea738b5": {
+   "r": {
+    "genero": "hard rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Slash",
+    "artistas": [
+     "Slash"
+    ]
+   },
+   "fecha": "2027-04-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "e20b57b9ffdb0fc6": {
    "r": {
     "genero": "pop melódico",
@@ -2051,6 +2944,17 @@
    "fecha": "2026-11-13",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "e660c4d659dd400b": {
+   "r": {
+    "genero": "música orquestal",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Power Up Orchestra",
+    "artistas": []
+   },
+   "fecha": "2026-11-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "e72e8477d06a734c": {
    "r": {
     "genero": "cumbia",
@@ -2062,6 +2966,19 @@
     ]
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e78da8fd512629a5": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Louis Tomlinson",
+    "artistas": [
+     "Louis Tomlinson"
+    ]
+   },
+   "fecha": "2027-04-02",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "e7a2a7854650d3e5": {
@@ -2166,6 +3083,19 @@
    "fecha": "2026-10-31",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "efd564f6e76a8b63": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Tan Biónica",
+    "artistas": [
+     "Tan Biónica"
+    ]
+   },
+   "fecha": "2027-04-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "f0bd55d2565dee19": {
    "r": {
     "genero": "pop urbano",
@@ -2177,6 +3107,19 @@
     ]
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f0de3bc566641402": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ricardo Montaner — El Último Regreso World Tour",
+    "artistas": [
+     "Ricardo Montaner"
+    ]
+   },
+   "fecha": "2027-03-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "f0ec764b78d16d0c": {
@@ -2201,6 +3144,19 @@
     ]
    },
    "fecha": "2026-11-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f2b4e9010a6a5510": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Las Pastillas del Abuelo — Show 360°",
+    "artistas": [
+     "Las Pastillas del Abuelo"
+    ]
+   },
+   "fecha": "2026-11-20",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "f37887e357b60463": {
@@ -2244,6 +3200,32 @@
    "fecha": "2026-10-24",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "f6e00aaa81364394": {
+   "r": {
+    "genero": "rock alternativo",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Desakta2",
+    "artistas": [
+     "Desakta"
+    ]
+   },
+   "fecha": "2026-12-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f847b44cff453a5f": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Omar Courtz",
+    "artistas": [
+     "Omar Courtz"
+    ]
+   },
+   "fecha": "2026-12-04",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "f94c07ddaa7c0b2a": {
    "r": {
     "genero": "música clásica",
@@ -2270,6 +3252,19 @@
    "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "fb68f9dcfb0fee96": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Aitana — Cuarto Azul World Tour",
+    "artistas": [
+     "Aitana"
+    ]
+   },
+   "fecha": "2026-10-22",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "fbcf71263e8716f2": {
    "r": {
     "genero": "cuarteto",
@@ -2281,6 +3276,45 @@
     ]
    },
    "fecha": "2026-11-21",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "fc50952ddfaad65b": {
+   "r": {
+    "genero": "pop urbano",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "María Becerra — QUIMERA",
+    "artistas": [
+     "María Becerra"
+    ]
+   },
+   "fecha": "2027-02-06",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "fd408da849145ce1": {
+   "r": {
+    "genero": "reggaetón y música urbana",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jay Wheeler — La Voz Favorita",
+    "artistas": [
+     "Jay Wheeler"
+    ]
+   },
+   "fecha": "2027-05-19",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "fd8074c2d76968fb": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Ronnie Wood",
+    "artistas": [
+     "Ronnie Wood"
+    ]
+   },
+   "fecha": "2026-11-06",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "fe64db484aa9c263": {

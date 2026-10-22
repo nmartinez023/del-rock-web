@@ -1,0 +1,20 @@
+titulo: Alejo Igoa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - alejo-igoa
+fecha: 2026-12-12
+hora: "16:00"
+venue: Movistar Arena
+direccion: Humboldt 450
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.movistararena.com.ar/show/5ced2568-3ac8-45a8-b3e0-0579ee8630d7
+precioDesde: 60000
+imagen: https://www.movistararena.com.ar/static/artistas/6D29B_AlejoIgoa_FileFotoFichaDesktop
+origen:
+  fuente: movistar-arena
+  id: 5ced2568-3ac8-45a8-b3e0-0579ee8630d7-2026-12-12
+  huella: 7bd0b79b67a6a720

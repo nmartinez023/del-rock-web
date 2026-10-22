@@ -1,0 +1,20 @@
+titulo: Ulises Bueno
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ulises-bueno
+fecha: 2026-11-25
+hora: "21:00"
+venue: Movistar Arena
+direccion: Humboldt 450
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.movistararena.com.ar/show/73c90fde-8571-4071-973d-518f5e9e7784
+precioDesde: 45000
+imagen: https://www.movistararena.com.ar/static/artistas/5F0AC_ULISESBUENO_FileFotoFichaDesktop
+origen:
+  fuente: movistar-arena
+  id: 73c90fde-8571-4071-973d-518f5e9e7784-2026-11-25
+  huella: b75be6b82786faf1

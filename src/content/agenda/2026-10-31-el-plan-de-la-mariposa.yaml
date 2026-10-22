@@ -1,0 +1,21 @@
+titulo: El Plan de la Mariposa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-plan-de-la-mariposa
+fecha: 2026-10-31
+hora: "21:00"
+venue: Movistar Arena
+direccion: Humboldt 450
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.movistararena.com.ar/show/e8d9be02-d7f6-4354-92cc-ba7d7413a4fd
+precioDesde: 75000
+imagen: https://www.movistararena.com.ar/static/artistas/3E3CF_ELPLANDELAMARIPOSA_FileFotoFichaDesktop
+descripcion: Después de un 2025 en el que se presentaron ante más de 20 mil personas en el Estadio Diego Armando Maradona, agotaron dos Obras y giraron por toda Argentina, Latinoamérica y Europa, El Plan de la Mariposa regresa el 13 de junio al Movistar Arena Será el reencuentro de la banda de Necochea con su público en el mismo lugar donde en 2024 presentaron “Correntada” con entradas agotadas. Su último material, “Vivo y celebrando en Argentinos Juniors”, es el registro audiovisual del show del 11 de octubre de 2025 en el Estadio de La Paternal y está disponible en todas las plataformas digitales. Comenzaron este año con shows en Mar Del Plata, Pinamar, el Festival Isoca y Cosquín Rock de Córdoba. Por su show en el Bendu Arena de Mar del Plata fueron galardonados con el Premio Estrella de Mar en la categoría Rock.
+origen:
+  fuente: movistar-arena
+  id: e8d9be02-d7f6-4354-92cc-ba7d7413a4fd-2026-10-31
+  huella: c7a1496b0a11da58
