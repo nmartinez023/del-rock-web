@@ -55,8 +55,11 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
   }
   const ocupados = new Set(existentes.map((e) => e.archivo));
   const resumen = { nuevos: [], actualizados: [], bandasNuevas: [], sinCambios: 0, omitidos: 0 };
+  const creadas = new Set();
   const conBanda = (ev) => {
+    if (!ev.bandaNueva || creadas.has(ev.bandaNueva.slug)) return;
     if (asegurarBanda(dirBandas, ev.bandaNueva, seco)) resumen.bandasNuevas.push(ev.bandaNueva);
+    creadas.add(ev.bandaNueva.slug);
   };
 
   for (const ev of eventos) {

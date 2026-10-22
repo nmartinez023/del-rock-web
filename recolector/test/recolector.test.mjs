@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
+import { adaptadorPara } from '../adaptadores/index.mjs';
 import { normalizar, fechaHora, provinciaDe } from '../normalizar.mjs';
 import { clasificar, nombreDeBanda } from '../clasificar.mjs';
 import { mezclar } from '../agenda.mjs';
@@ -116,6 +117,9 @@ test('nombreDeBanda: limpia el título y no inventa bandas para festivales u obr
   assert.equal(n('El Mató a un Policía Motorizado + invitados'), 'El Mató a un Policía Motorizado');
   assert.equal(n('Cualquier título largo', ['Los Espíritus']), 'Los Espíritus');
   assert.equal(n('Pez (presentación nuevo disco)'), 'Pez');
+  assert.equal(n('SILVESTRE Y LA NARANJA'), 'Silvestre y la Naranja');
+  assert.equal(n('DIRTY SOUND CLUB x CCG'), 'Dirty Sound Club');
+  assert.equal(n('CARAS EXTRAÑAS DESPIDE EL AÑO'), 'Caras Extrañas');
   assert.equal(n('Festival Bandera'), null);
   assert.equal(n('Obra de teatro infantil'), null);
 });
@@ -148,6 +152,29 @@ test('con filtro "todos" crea la banda que falta, una sola vez y solo si se guar
     rmSync(dir, { recursive: true, force: true });
     rmSync(dirBandas, { recursive: true, force: true });
   }
+});
+
+test('adaptador de Entrada Play: lee su JSON y arma fecha, lugar y link', () => {
+  const ad = adaptadorPara('https://entradaplay.com');
+  assert.equal(ad.urlDeDatos('https://entradaplay.com'), 'https://entradaplay.com/obtener_eventos/?cantidad_eventos=200');
+  const cuerpo = readFileSync(new URL('./fixtures/entradaplay.json', import.meta.url), 'utf8');
+  const f = { ...fuente, url: 'https://entradaplay.com', provincia: 'Santa Fe', filtro: 'todos' };
+  const ev = ad
+    .extraer(cuerpo, ad.urlDeDatos(f.url))
+    .map((c) => normalizar(c, f))
+    .filter(Boolean)
+    .map((e) => clasificar(e, bandas, f));
+
+  assert.equal(ev.length, 2, 'el evento sin fecha se descarta');
+  assert.deepEqual(
+    [ev[0].fecha, ev[0].hora, ev[0].venue, ev[0].ciudad, ev[0].provincia, ev[0].entradas, ev[0].bandaNueva.nombre],
+    ['2026-11-07', '21:00', 'Teatro de Prueba', 'Rosario', 'Santa Fe', 'https://entradaplay.com/LOS-PIOJOS/', 'Los Piojos'],
+  );
+  assert.deepEqual(
+    [ev[1].fecha, ev[1].hora, ev[1].ciudad, ev[1].entradas, ev[1].bandaNueva.nombre],
+    ['2026-11-15', '', 'Santa Fe', 'https://otra-ticketera.ejemplo/evento', 'Banda Invitada'],
+  );
+  assert.equal(adaptadorPara('https://otra.ejemplo/x').extraer, extraer, 'el resto usa JSON-LD');
 });
 
 test('robots.txt: respeta Disallow y la regla más específica', () => {

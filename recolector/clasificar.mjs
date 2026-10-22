@@ -18,7 +18,20 @@ export function buscarBanda(evento, bandas) {
 const NO_ES_BANDA = /\b(festival|fest|obra|teatro|stand ?up|infantil|feria|fiesta|ciclo|tributo|homenaje|karaoke|jam)\b/;
 // Palabras que acompañan al nombre en el título y no son parte de él.
 const RUIDO = /\b(gira|tour|presenta[n]?|show|en vivo|concierto|recital|despedida|aniversario|nuevo disco|20\d\d|19\d\d)\b/g;
-const CORTES = /\s+(?:[-–—|:/+&]|y invitados|con invitados|en el|en la|en los|en las|en)\s+/i;
+const CORTES = /\s+(?:[-–—|:/+&]|y invitados|con invitados|presenta[n]?|despide[n]?|ft\.?|feat\.?|x|en el|en la|en los|en las|en)\s+/i;
+const CONECTORES = new Set(['y', 'e', 'de', 'del', 'la', 'las', 'el', 'los', 'a', 'al', 'con', 'en', 'o']);
+
+/** "LOS PIOJOS" → "Los Piojos", "SILVESTRE Y LA NARANJA" → "Silvestre y la Naranja". */
+function capitalizar(nombre) {
+  const letras = nombre.replace(/[^\p{L}]/gu, '');
+  const mayus = letras.replace(/[^\p{Lu}]/gu, '').length;
+  if (!letras || mayus / letras.length < 0.7) return nombre; // ya viene con mayúsculas y minúsculas
+  return nombre
+    .toLowerCase()
+    .split(' ')
+    .map((p, i) => (i > 0 && CONECTORES.has(p) ? p : p.replace(/^(\P{L}*)(\p{L})/u, (m, pre, l) => pre + l.toUpperCase())))
+    .join(' ');
+}
 
 /** Nombre probable de la banda: primero el "performer" del JSON-LD, si no, el comienzo del título. */
 export function nombreDeBanda(evento) {
@@ -34,11 +47,7 @@ export function nombreDeBanda(evento) {
   if (!nombre || nombre.length < 2 || nombre.length > 40 || nombre.split(' ').length > 7) return null;
   if (NO_ES_BANDA.test(plano(nombre))) return null;
 
-  // "LOS PIOJOS" → "Los Piojos"; si ya viene con mayúsculas y minúsculas, se respeta.
-  if (nombre === nombre.toUpperCase()) {
-    nombre = nombre.toLowerCase().replace(/(^|\s)(\p{L})/gu, (m, esp, letra) => esp + letra.toUpperCase());
-  }
-  return nombre;
+  return capitalizar(nombre);
 }
 
 /**

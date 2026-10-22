@@ -32,18 +32,20 @@ if (fuentes.length === 0) log('No hay fuentes activas. Cargalas en el panel: Fue
 
 for (const fuente of fuentes) {
   try {
-    if (!(await puedeLeer(fuente.url, AGENTE))) {
-      log(`- **${fuente.slug}**: robots.txt no permite leer ${fuente.url}, la salteo.`);
+    const adaptador = adaptadorPara(fuente.url);
+    const url = adaptador.urlDeDatos?.(fuente.url) ?? fuente.url;
+    if (!(await puedeLeer(url, AGENTE))) {
+      log(`- **${fuente.slug}**: robots.txt no permite leer ${url}, la salteo.`);
       continue;
     }
-    const res = await fetch(fuente.url, {
+    const res = await fetch(url, {
       headers: { 'user-agent': AGENTE, 'accept-language': 'es-AR,es;q=0.9' },
       signal: AbortSignal.timeout(20_000),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const html = await res.text();
+    const cuerpo = await res.text();
 
-    const crudos = adaptadorPara(fuente.url).extraer(html, fuente.url);
+    const crudos = adaptador.extraer(cuerpo, url);
     const eventos = crudos
       .map((c) => normalizar(c, fuente))
       .filter(Boolean)

@@ -1,0 +1,36 @@
+{
+  "tipo_box": 1,
+  "cantidad_total_fechas_activas": 3,
+  "eventos": [
+    {
+      "imagen_home": "/media/eventos/banda.jpg",
+      "nombre": "LOS PIOJOS PRESENTA GIRA 2026",
+      "unica_fecha": true,
+      "desde_fecha": "7/11/2026, 21:00",
+      "lugar": "Teatro de Prueba, Rosario, Santa Fe",
+      "lugar_responsive": "Rosario",
+      "url_externa": "",
+      "slug": "LOS-PIOJOS"
+    },
+    {
+      "imagen_home": "",
+      "nombre": "BANDA INVITADA FT OTRO ARTISTA",
+      "unica_fecha": false,
+      "desde_fecha": "15/11/2026",
+      "lugar": "Club de Prueba, Santa Fe",
+      "lugar_responsive": "Santa Fe",
+      "url_externa": "https://otra-ticketera.ejemplo/evento",
+      "slug": "BANDA-INVITADA"
+    },
+    {
+      "imagen_home": "",
+      "nombre": "Evento sin fecha",
+      "unica_fecha": true,
+      "desde_fecha": "",
+      "lugar": "",
+      "lugar_responsive": "",
+      "url_externa": "",
+      "slug": "SIN-FECHA"
+    }
+  ]
+}
