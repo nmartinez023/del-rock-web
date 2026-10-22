@@ -106,9 +106,10 @@ nuevos** y recién ahí llama al *Deploy Hook* de Cloudflare (que hace `npm run 
 cambio en esos 5 minutos, la espera vuelve a empezar: publicar 100 eventos seguidos son 100 commits pero 1 deploy.
 El recolector y "Reubicar eventos" también lo disparan al subir cambios.
 
-Para que funcione, en Cloudflare los builds automáticos por push están apagados:
-*Workers & Pages › del-rock-web › Settings › Builds › Build watch paths › Exclude paths:* `*`.
-(Cloudflare igual compila un push con 20 commits o más.)
+Para que funcione, en Cloudflare los builds automáticos por push están apagados con un truco:
+*Workers & Pages › del-rock-web › Settings › Builds › Build watch paths (Production) › Include paths:* `.solo-deploy-hook`,
+un archivo que no existe y nunca se crea, así que ningún push coincide (no sirve dejarlo vacío ni excluir `*`).
+El Deploy Hook compila igual. Cloudflare sí compila un push con 20 commits o más.
 
 - Node: sale de `.node-version` (24).
 - `SITE_URL` (variable de build): cargala cuando haya dominio propio.

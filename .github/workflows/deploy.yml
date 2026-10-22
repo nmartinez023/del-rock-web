@@ -2,7 +2,7 @@
 # dispara UN build en Cloudflare. Si en esos 5 minutos llega otro cambio, esta corrida se cancela
 # y la espera vuelve a empezar. Así, 100 eventos publicados seguidos son 1 deploy, no 100.
 # Requiere: secret CF_DEPLOY_HOOK, y en Cloudflare los builds automáticos por push desactivados
-# (Settings › Builds › Build watch paths › Exclude paths: *). Ver README.
+# (Settings › Builds › Build watch paths › Include paths: .solo-deploy-hook). Ver README.
 name: Deploy
 
 on:
