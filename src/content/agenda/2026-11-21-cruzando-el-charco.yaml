@@ -1,22 +1,27 @@
 titulo: Cruzando el Charco
-estado: ⏳ Pendiente
+estado: ✅ Publicado
 rockNacional: true
 genero: sin especificar
 tipo: show
+bandas:
+  - cruzando-el-charco
 fecha: 2026-11-21
-hora: "21:00"
+hora: '21:00'
 venue: La Segunda Seguros Arena
 direccion: Av. Córdoba 3475
 ciudad: Rosario
 provincia: Santa Fe
 entradas: https://entradaplay.com/CRUZANDO-EL-CHARCO-/
 precioDesde: 55000
-imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/06/37195358-05c8-45c3-ab58-36a6b9fa9e13.jpg
-aviso: Pueden ingresar mayores de 12 años con su respectiva entrada y acompañados de un adulto responsable MENORES DE 12 AÑOS NO PUEDEN INGRESAR - La producción del evento podrá disponer si lo requiere de un sector exclusivo para dichos casos
+imagen: >-
+  https://entradaplay.com/media/imagenes_eventos/home/2026/06/37195358-05c8-45c3-ab58-36a6b9fa9e13.jpg
+aviso: >-
+  Pueden ingresar mayores de 12 años con su respectiva entrada y acompañados de
+  un adulto responsable MENORES DE 12 AÑOS NO PUEDEN INGRESAR - La producción
+  del evento podrá disponer si lo requiere de un sector exclusivo para dichos
+  casos
 origen:
   fuente: entrada-play
   id: CRUZANDO-EL-CHARCO-
   huella: e5d23c71803c79eb
-  detalle: "2026-10-22"
-bandas:
-  - cruzando-el-charco
+  detalle: '2026-10-22'
