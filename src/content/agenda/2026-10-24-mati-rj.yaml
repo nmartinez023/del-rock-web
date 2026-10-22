@@ -1,8 +1,10 @@
 titulo: MATI RJ
 estado: pendiente
-banda: mati-rj
+tipo: show
+bandas:
+  - mati-rj
 fecha: 2026-10-24
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/MATI-RJ/
 origen:
   fuente: entrada-play
   id: MATI-RJ
-  huella: 6c9dc6fe3de0279c
+  huella: cc7d875d21792984

@@ -1,5 +1,6 @@
 ---
-import { diaMes, type Fecha } from '../lib/util';
+import { getEntries } from 'astro:content';
+import { diaMes, slugTag, type Fecha } from '../lib/util';
 
 interface Props {
   fecha: Fecha;
@@ -10,8 +11,13 @@ const { fecha, i = 0 } = Astro.props;
 const { data } = fecha;
 const { dia, mes } = diaMes(data.fecha);
 const rot = [-1.6, 1.2, -0.8, 1.8, -1.2, 0.9][i % 6];
-const href = data.entradas ?? (data.banda ? `/bandas/${data.banda.id}/` : undefined);
+const href = data.entradas ?? (data.bandas[0] ? `/bandas/${data.bandas[0].id}/` : undefined);
 const Tag = href ? 'a' : 'div';
+
+// Lineup: en un festival, todas las bandas; en un show, las que no figuran ya en el título.
+const nombres = (await getEntries(data.bandas)).filter(Boolean).map((b) => b.data.nombre);
+const enTitulo = slugTag(data.titulo);
+const lineup = data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
 ---
 
 <Tag
@@ -27,7 +33,9 @@ const Tag = href ? 'a' : 'div';
     <span class="d dia">{dia}</span>
     <span class="d mes">{mes}</span>
   </time>
+  {data.tipo === 'festival' && <span class="festival">Festival</span>}
   <span class="d quien">{data.titulo}</span>
+  {lineup.length > 0 && <span class="lineup">{data.tipo === 'festival' ? '' : 'Con '}{lineup.join(' · ')}</span>}
   <span class="donde">{data.venue}, {data.ciudad}{data.hora && ` · ${data.hora} h`}</span>
   {
     data.entradas && (
@@ -84,6 +92,28 @@ const Tag = href ? 'a' : 'div';
     font-size: 30px;
     line-height: 1.05;
     margin-top: 14px;
+  }
+  .festival {
+    align-self: flex-start;
+    margin-top: 12px;
+    padding: 3px 8px;
+    background: var(--tinta);
+    color: var(--papel);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+  }
+  .festival + .quien {
+    margin-top: 8px;
+  }
+  .lineup {
+    margin-top: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #2f6ea6;
   }
   .donde {
     font-size: 15px;

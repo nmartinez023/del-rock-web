@@ -1,8 +1,10 @@
 titulo: KE PERSONAJES - CORAZON AUSENTE TOUR
 estado: pendiente
-banda: ke-personajes
+tipo: show
+bandas:
+  - ke-personajes
 fecha: 2026-10-31
-hora: 21:00
+hora: '21:00'
 venue: La Segunda Seguros Arena
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/KE-PERSONAJES---CORAZON-AUSENTE-TOUR/
 origen:
   fuente: entrada-play
   id: KE-PERSONAJES---CORAZON-AUSENTE-TOUR
-  huella: 4d5215d37b397abd
+  huella: 3bcc119044018d4c

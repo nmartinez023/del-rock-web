@@ -1,8 +1,10 @@
 titulo: CUPULA FT TAICHU
 estado: pendiente
-banda: cupula
+tipo: show
+bandas:
+  - cupula
 fecha: 2026-10-24
-hora: 23:59
+hora: '23:59'
 venue: La Sala De Las Artes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/CUPULA---24-DE-OCTUBRE/
 origen:
   fuente: entrada-play
   id: CUPULA---24-DE-OCTUBRE
-  huella: ebfa3c1a1b1a24de
+  huella: f5c8a009d3cba294

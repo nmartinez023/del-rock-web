@@ -1,8 +1,10 @@
 titulo: SWAGGERBOYZ
 estado: pendiente
-banda: swaggerboyz
+tipo: show
+bandas:
+  - swaggerboyz
 fecha: 2026-10-30
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/SWAGGERBOYZ/
 origen:
   fuente: entrada-play
   id: SWAGGERBOYZ
-  huella: feb55a58c1165b15
+  huella: 94beebf3f8bd6412

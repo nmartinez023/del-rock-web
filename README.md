@@ -28,7 +28,10 @@ En la web solo aparecen las fechas **Publicada**: las revisás en *Agenda* y les
   nombres de la colección Bandas en el título) o "Todos" (para fuentes 100% rock).
 - **Extracción:** lee los eventos publicados como JSON-LD (`schema.org/Event`), que usan muchas ticketeras.
   Para un sitio que no lo tenga, se agrega un adaptador en `recolector/adaptadores/` y se registra por dominio en `index.mjs`.
-- **Duplicados:** el mismo show (fecha + lugar + banda) no se carga dos veces, aunque venga de otra fuente o ya lo hayas cargado a mano.
+- **Varias bandas:** una fecha puede tener varias (`bandas`). Se reconocen las ya cargadas y, con "Todos", se crean las
+  que faltan separando el título ("A + B", "A & B", "A / B", "A ft B"). Las bandas creadas quedan ocultas hasta que tengan algo publicado.
+- **Festivales:** `tipo: festival`. No se inventan bandas desde el título: solo se asocian las cargadas que aparezcan o el lineup que informe la ticketera.
+- **Duplicados:** el mismo evento (fecha + lugar + bandas) no se carga dos veces, aunque venga de otra fuente o ya lo hayas cargado a mano.
 - **Ediciones a mano:** si corregís una fecha que trajo el recolector, no la vuelve a pisar.
 - **Respeta `robots.txt`** y se identifica como `DelRockBot`.
 - Si una fuente da error, la ejecución falla y GitHub te avisa por mail. El resumen de cada corrida está en *Actions*.

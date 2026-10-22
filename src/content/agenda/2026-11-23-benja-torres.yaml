@@ -1,8 +1,10 @@
 titulo: BENJA TORRES
 estado: pendiente
-banda: benja-torres
+tipo: show
+bandas:
+  - benja-torres
 fecha: 2026-11-23
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/BENJA-TORRES/
 origen:
   fuente: entrada-play
   id: BENJA-TORRES
-  huella: 3eeae3e367e83ff4
+  huella: 937c8c65fba3fca4

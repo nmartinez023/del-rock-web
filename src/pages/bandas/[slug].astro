@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 import SeccionTitulo from '../../components/SeccionTitulo.astro';
 import NoticiaCard from '../../components/NoticiaCard.astro';
 import AgendaGrid from '../../components/AgendaGrid.astro';
-import { bandasVisibles, noticiasOrdenadas, proximasFechas } from '../../lib/util';
+import { bandasVisibles, noticiasOrdenadas, proximasFechas, tocaEn } from '../../lib/util';
 
 export async function getStaticPaths() {
   const bandas = await bandasVisibles();
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { banda } = Astro.props;
 const { data } = banda;
 const noticias = (await noticiasOrdenadas()).filter((n) => n.data.banda?.id === banda.id);
-const fechas = (await proximasFechas()).filter((f) => f.data.banda?.id === banda.id);
+const fechas = (await proximasFechas()).filter((f) => tocaEn(f, banda.id));
 ---
 
 <Base titulo={data.nombre} descripcion={data.descripcion ?? `Noticias, fechas y coberturas de ${data.nombre} en Del Rock.`}>

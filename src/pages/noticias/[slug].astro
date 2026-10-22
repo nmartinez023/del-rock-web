@@ -8,7 +8,7 @@ import SeccionTitulo from '../../components/SeccionTitulo.astro';
 import Afiche from '../../components/Afiche.astro';
 import Sticker from '../../components/Sticker.astro';
 import InstagramEmbed from '../../components/InstagramEmbed.astro';
-import { TIPOS, fechaLarga, minutosDeLectura, noticiasOrdenadas, proximasFechas, slugTag } from '../../lib/util';
+import { TIPOS, fechaLarga, minutosDeLectura, noticiasOrdenadas, proximasFechas, slugTag, tocaEn } from '../../lib/util';
 
 export async function getStaticPaths() {
   const noticias = await noticiasOrdenadas();
@@ -24,7 +24,7 @@ const todas = await noticiasOrdenadas();
 const otras = todas.filter((n) => n.id !== noticia.id);
 const deLaBanda = banda ? otras.filter((n) => n.data.banda?.id === banda.id).slice(0, 3) : [];
 const seguiLeyendo = otras.filter((n) => !deLaBanda.includes(n)).slice(0, 3);
-const proxima = banda ? (await proximasFechas()).find((f) => f.data.banda?.id === banda.id) : undefined;
+const proxima = banda ? (await proximasFechas()).find((f) => tocaEn(f, banda.id)) : undefined;
 
 const og = await getImage({ src: data.portada, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
 const url = new URL(Astro.url.pathname, Astro.site).toString();

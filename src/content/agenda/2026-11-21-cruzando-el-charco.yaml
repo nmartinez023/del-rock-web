@@ -1,6 +1,8 @@
 titulo: CRUZANDO EL CHARCO
 estado: publicado
-banda: cruzando-el-charco
+tipo: show
+bandas:
+  - cruzando-el-charco
 fecha: 2026-11-21
 hora: '21:00'
 venue: La Segunda Seguros Arena
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/CRUZANDO-EL-CHARCO-/
 origen:
   fuente: entrada-play
   id: CRUZANDO-EL-CHARCO-
-  huella: c2eebce5f5030716
+  huella: adc99ac0e1e9f7e3

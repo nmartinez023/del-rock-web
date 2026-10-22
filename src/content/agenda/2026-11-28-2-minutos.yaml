@@ -1,6 +1,8 @@
 titulo: 2 MINUTOS
 estado: publicado
-banda: 2-minutos
+tipo: show
+bandas:
+  - 2-minutos
 fecha: 2026-11-28
 hora: '20:00'
 venue: La Sala De Las Artes
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/2-MINUTOS/
 origen:
   fuente: entrada-play
   id: 2-MINUTOS
-  huella: 64f28abd9dc05243
+  huella: 91189c9c35eb5d98

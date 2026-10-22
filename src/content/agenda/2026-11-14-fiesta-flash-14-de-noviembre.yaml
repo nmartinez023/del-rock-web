@@ -1,7 +1,8 @@
 titulo: FIESTA FLASH - 14 DE NOVIEMBRE
 estado: pendiente
+tipo: show
 fecha: 2026-11-14
-hora: 23:59
+hora: '23:59'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -9,4 +10,4 @@ entradas: https://entradaplay.com/FIESTA-FLASH---14-DE-NOVIEMBRE/
 origen:
   fuente: entrada-play
   id: FIESTA-FLASH---14-DE-NOVIEMBRE
-  huella: de50055e692e297a
+  huella: 266bc2f0a0fb5149

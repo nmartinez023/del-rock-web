@@ -1,8 +1,10 @@
 titulo: CUMBIÓN DEL PARANÁ - LOS LIRIOS | AMAR AZUL
 estado: pendiente
-banda: cumbion-del-parana
+tipo: show
+bandas:
+  - cumbion-del-parana
 fecha: 2026-10-24
-hora: 23:59
+hora: '23:59'
 venue: La Segunda Seguros Arena
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/CUMBION-DEL-PARANA---LOS-LIRIOS---AMAR-AZUL/
 origen:
   fuente: entrada-play
   id: CUMBION-DEL-PARANA---LOS-LIRIOS---AMAR-AZUL
-  huella: 4cf92f69a169608b
+  huella: 594c4199cc49be66

@@ -1,8 +1,10 @@
 titulo: FACU MARTINEZ PRESENTA CANCIONES DORADAS DE TELENOVELAS II
 estado: pendiente
-banda: facu-martinez
+tipo: show
+bandas:
+  - facu-martinez
 fecha: 2026-10-23
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/FACU-MARTINEZ-PRESENTA-CANCIONES-DORADAS-DE-TE
 origen:
   fuente: entrada-play
   id: FACU-MARTINEZ-PRESENTA-CANCIONES-DORADAS-DE-TELENOVELAS-II
-  huella: 1397fbc108b3e42f
+  huella: 716ecaedf9746fb3

@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { parse, stringify } from 'yaml';
 import { hash, plano, slug } from './texto.mjs';
 
-const CAMPOS_AUTO = ['titulo', 'banda', 'fecha', 'hora', 'venue', 'ciudad', 'provincia', 'entradas'];
+const CAMPOS_AUTO = ['titulo', 'tipo', 'bandas', 'fecha', 'hora', 'venue', 'ciudad', 'provincia', 'entradas'];
 
 export function leerYaml(dir) {
   if (!existsSync(dir)) return [];
@@ -13,21 +13,32 @@ export function leerYaml(dir) {
     .map((f) => ({ archivo: f, datos: parse(readFileSync(join(dir, f), 'utf8')) ?? {} }));
 }
 
-const camposAuto = (d) => Object.fromEntries(CAMPOS_AUTO.map((c) => [c, d[c] ? String(d[c]) : '']));
+const listaBandas = (d) => [...(d.bandas ?? [])].map(String).sort();
+
+const camposAuto = (d) =>
+  Object.fromEntries(
+    CAMPOS_AUTO.map((c) => {
+      if (c === 'bandas') return [c, listaBandas(d).join(',')];
+      if (c === 'tipo') return [c, d.tipo || 'show'];
+      return [c, d[c] ? String(d[c]) : ''];
+    }),
+  );
 export const huellaDe = (d) => hash(camposAuto(d));
 
-/** Mismo show = misma fecha, mismo venue y misma banda (o mismo título si no hay banda). */
+/** Mismo evento = misma fecha, mismo venue y mismas bandas (o mismo título si no hay bandas). */
 export function claveDe(d) {
-  return [String(d.fecha), plano(d.venue), d.banda || plano(d.titulo)].join('|');
+  const quien = listaBandas(d).join('+') || plano(d.titulo);
+  return [String(d.fecha), plano(d.venue), quien].join('|');
 }
 
 function aYaml(d, estado, origen) {
-  const salida = { titulo: d.titulo, estado };
-  if (d.banda) salida.banda = d.banda;
+  const salida = { titulo: d.titulo, estado, tipo: d.tipo || 'show' };
+  if (d.bandas?.length) salida.bandas = d.bandas;
   Object.assign(salida, { fecha: d.fecha, hora: d.hora, venue: d.venue, ciudad: d.ciudad, provincia: d.provincia });
   if (d.entradas) salida.entradas = d.entradas;
   salida.origen = origen;
-  return stringify(salida, { lineWidth: 0 });
+  // La hora va entre comillas, como la guarda el panel ("21:00" sin comillas es ambiguo en YAML).
+  return stringify(salida, { lineWidth: 0 }).replace(/^hora: (\d{1,2}:\d{2})$/m, "hora: '$1'");
 }
 
 /** Crea la banda (oculta en la web hasta que tenga algo publicado) si todavía no existe. */
@@ -41,9 +52,9 @@ function asegurarBanda(dirBandas, banda, seco) {
 
 /**
  * Mezcla los eventos recolectados con la agenda existente.
- * - Nuevo: se crea como "pendiente" (y su banda, si no existía).
+ * - Nuevo: se crea como "pendiente" (y sus bandas, si no existían).
  * - Ya traído antes y sin tocar a mano: se actualiza si cambió algo (mantiene su estado).
- * - Editado a mano, o cargado a mano / por otra fuente (mismo show): no se toca.
+ * - Editado a mano, o cargado a mano / por otra fuente (mismo evento): no se toca.
  */
 export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } = {}) {
   const existentes = leerYaml(dir);
@@ -56,10 +67,12 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
   const ocupados = new Set(existentes.map((e) => e.archivo));
   const resumen = { nuevos: [], actualizados: [], bandasNuevas: [], sinCambios: 0, omitidos: 0 };
   const creadas = new Set();
-  const conBanda = (ev) => {
-    if (!ev.bandaNueva || creadas.has(ev.bandaNueva.slug)) return;
-    if (asegurarBanda(dirBandas, ev.bandaNueva, seco)) resumen.bandasNuevas.push(ev.bandaNueva);
-    creadas.add(ev.bandaNueva.slug);
+  const conBandas = (ev) => {
+    for (const b of ev.bandasNuevas ?? []) {
+      if (creadas.has(b.slug)) continue;
+      if (asegurarBanda(dirBandas, b, seco)) resumen.bandasNuevas.push(b);
+      creadas.add(b.slug);
+    }
   };
 
   for (const ev of eventos) {
@@ -74,7 +87,7 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
         resumen.sinCambios++;
         continue;
       }
-      conBanda(ev);
+      conBandas(ev);
       if (!seco) writeFileSync(join(dir, previo.archivo), aYaml(ev, d.estado ?? 'pendiente', { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) }));
       resumen.actualizados.push(previo.archivo);
       continue;
@@ -85,13 +98,13 @@ export function mezclar(dir, eventos, fuente, { hoy, seco = false, dirBandas } =
       continue;
     }
 
-    const base = `${ev.fecha}-${slug(ev.banda || ev.titulo)}`.slice(0, 80).replace(/-+$/, '');
+    const base = `${ev.fecha}-${slug(ev.bandas?.[0] || ev.titulo)}`.slice(0, 80).replace(/-+$/, '');
     let archivo = `${base}.yaml`;
     for (let n = 2; ocupados.has(archivo); n++) archivo = `${base}-${n}.yaml`;
     ocupados.add(archivo);
 
     const origen = { fuente: fuente.slug, id: ev.id, huella: huellaDe(ev) };
-    conBanda(ev);
+    conBandas(ev);
     if (!seco) writeFileSync(join(dir, archivo), aYaml(ev, 'pendiente', origen));
     const nuevo = { archivo, datos: { ...ev, origen } };
     porId.set(idOrigen, nuevo);

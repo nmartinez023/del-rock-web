@@ -1,8 +1,10 @@
 titulo: ZELL
 estado: pendiente
-banda: zell
+tipo: show
+bandas:
+  - zell
 fecha: 2026-11-27
-hora: 20:00
+hora: '20:00'
 venue: La Sala De Las Artes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/ZELL/
 origen:
   fuente: entrada-play
   id: ZELL
-  huella: 37ac795cb72467a3
+  huella: ec3f36c5d410bf3d

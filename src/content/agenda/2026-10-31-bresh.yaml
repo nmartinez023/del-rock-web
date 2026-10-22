@@ -1,8 +1,10 @@
 titulo: BRESH | EDICIÓN ESPECIAL HALLOWEEN
 estado: pendiente
-banda: bresh
+tipo: show
+bandas:
+  - bresh
 fecha: 2026-10-31
-hora: 23:59
+hora: '23:59'
 venue: La Segunda Seguros Arena
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/BRESH---EDICION-ESPECIAL-HALLOWEEN/
 origen:
   fuente: entrada-play
   id: BRESH---EDICION-ESPECIAL-HALLOWEEN
-  huella: 41db40252feb7724
+  huella: d76a6d15b9d2c400

@@ -1,8 +1,10 @@
 titulo: LBC & EUGE QUEVEDO
 estado: pendiente
-banda: lbc
+tipo: show
+bandas:
+  - lbc
 fecha: 2026-11-27
-hora: 21:00
+hora: '21:00'
 venue: La Segunda Seguros Arena
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/LBC---EUGE-QUEVEDO/
 origen:
   fuente: entrada-play
   id: LBC---EUGE-QUEVEDO
-  huella: 5178323ce57d4a49
+  huella: 48d895b052a800a9

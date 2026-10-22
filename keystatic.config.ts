@@ -112,7 +112,19 @@ export default config({
           ],
           defaultValue: 'publicado',
         }),
-        banda: fields.relationship({ label: 'Banda (si es un show de una banda)', collection: 'bandas' }),
+        tipo: fields.select({
+          label: 'Tipo',
+          options: [
+            { label: 'Show', value: 'show' },
+            { label: 'Festival', value: 'festival' },
+          ],
+          defaultValue: 'show',
+        }),
+        bandas: fields.multiRelationship({
+          label: 'Bandas',
+          description: 'Las que tocan. Un festival puede no tener ninguna o llevar su lineup.',
+          collection: 'bandas',
+        }),
         fecha: fields.date({ label: 'Fecha', validation: { isRequired: true } }),
         hora: fields.text({ label: 'Hora', description: 'Ej: 21:00' }),
         venue: fields.text({ label: 'Lugar', validation: { length: { min: 1 } } }),

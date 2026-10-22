@@ -42,7 +42,8 @@ const agenda = defineCollection({
     z.object({
       titulo: z.string(),
       estado: z.enum(['publicado', 'pendiente', 'descartado']).default('publicado'),
-      banda: reference('bandas').nullable().optional(),
+      tipo: z.enum(['show', 'festival']).default('show'),
+      bandas: z.array(reference('bandas')).default([]),
       fecha: z.coerce.date(),
       hora: z.string().optional(),
       venue: z.string(),

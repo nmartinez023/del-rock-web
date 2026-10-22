@@ -1,6 +1,8 @@
 titulo: LOS PEREZ GARCIA
 estado: publicado
-banda: los-perez-garcia
+tipo: show
+bandas:
+  - los-perez-garcia
 fecha: 2026-10-31
 hora: '20:00'
 venue: Centro Cultural Güemes
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/LOS-PEREZ-GARCIA/
 origen:
   fuente: entrada-play
   id: LOS-PEREZ-GARCIA
-  huella: 372b3bf7430fe039
+  huella: 4ca6c068e9de0407

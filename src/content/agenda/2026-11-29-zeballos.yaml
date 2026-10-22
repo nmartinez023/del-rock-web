@@ -1,8 +1,10 @@
 titulo: Zeballos - AMOR FIADO en ROSARIO
 estado: pendiente
-banda: zeballos
+tipo: show
+bandas:
+  - zeballos
 fecha: 2026-11-29
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/Zeballos---AMOR-FIADO/
 origen:
   fuente: entrada-play
   id: Zeballos---AMOR-FIADO
-  huella: fab6cc7ad589149e
+  huella: 0d981bf1e78eda74

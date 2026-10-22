@@ -1,8 +1,10 @@
 titulo: CUMBIÓN DEL PARANÁ - HERNÁN Y LA CHAMPIONS LIGA | NARANJA DULCE
 estado: pendiente
-banda: cumbion-del-parana
+tipo: show
+bandas:
+  - cumbion-del-parana
 fecha: 2026-10-31
-hora: 23:59
+hora: '23:59'
 venue: La Sala De Las Artes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIG
 origen:
   fuente: entrada-play
   id: CUMBION-DEL-PARANA---HERNAN-Y-LA-CHAMPIONS-LIGA---NARANJA-DULCE
-  huella: 23be2dff4e11e04c
+  huella: a8c28b21e0af81d0

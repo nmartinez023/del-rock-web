@@ -67,12 +67,14 @@ export async function bandasVisibles() {
   ]);
   const conContenido = new Set([
     ...noticias.map((n) => n.data.banda?.id),
-    ...agenda.filter((f) => f.data.estado === 'publicado').map((f) => f.data.banda?.id),
+    ...agenda.filter((f) => f.data.estado === 'publicado').flatMap((f) => f.data.bandas.map((b) => b.id)),
   ]);
   return bandas
     .filter((b) => !b.data.automatica || conContenido.has(b.id))
     .sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es'));
 }
+
+export const tocaEn = (fecha: Fecha, bandaId: string) => fecha.data.bandas.some((b) => b.id === bandaId);
 
 export async function noticiasOrdenadas() {
   const todas = await getCollection('noticias');

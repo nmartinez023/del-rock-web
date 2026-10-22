@@ -1,8 +1,10 @@
 titulo: ANDY CHANGO
 estado: pendiente
-banda: andy-chango
+tipo: show
+bandas:
+  - andy-chango
 fecha: 2026-11-14
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/ANDY-CHANGO/
 origen:
   fuente: entrada-play
   id: ANDY-CHANGO
-  huella: 0e315107ec2d2d4c
+  huella: fcea73ffb37e63a4

@@ -1,8 +1,10 @@
 titulo: CHARLY DAY EN CCG
 estado: pendiente
-banda: charly-day
+tipo: show
+bandas:
+  - charly-day
 fecha: 2026-11-13
-hora: 20:00
+hora: '20:00'
 venue: Centro Cultural Güemes
 ciudad: Rosario
 provincia: Santa Fe
@@ -10,4 +12,4 @@ entradas: https://entradaplay.com/CHARLY-DAY-EN-CCG/
 origen:
   fuente: entrada-play
   id: CHARLY-DAY-EN-CCG
-  huella: 0c3088b51bb38e09
+  huella: b2a4b9eeb362326f
