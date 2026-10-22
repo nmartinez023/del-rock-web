@@ -6,7 +6,7 @@
 // Uso: npm run recolectar            (escribe los archivos; necesita OPENROUTER_API_KEY)
 //      npm run recolectar -- --seco  (solo muestra qué haría)
 import { appendFileSync } from 'node:fs';
-import { leerYaml, mezclar, indicePorOrigen, reubicar } from './agenda.mjs';
+import { leerYaml, leerBandas, mezclar, indicePorOrigen, reubicar } from './agenda.mjs';
 import { adaptadorPara } from './adaptadores/index.mjs';
 import { normalizar, hoyEnArgentina, completar, fechaHora } from './normalizar.mjs';
 import { aplicarClasificacion } from './clasificar.mjs';
@@ -23,7 +23,7 @@ const seco = process.argv.includes('--seco');
 const fuentes = leerYaml('src/content/fuentes')
   .map((f) => ({ ...f.datos, slug: f.archivo.replace(/\.yaml$/, '') }))
   .filter((f) => f.activa !== false && f.url);
-const bandas = leerYaml(DIR_BANDAS).map((b) => ({ slug: b.archivo.replace(/\.yaml$/, ''), nombre: b.datos.nombre }));
+const bandas = leerBandas(DIR_BANDAS);
 const hoy = hoyEnArgentina();
 const cache = cargarCache();
 const apiKey = process.env.OPENROUTER_API_KEY;

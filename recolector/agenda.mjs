@@ -81,16 +81,35 @@ export function claveDe(d) {
   return [String(d.fecha), plano(d.venue), plano(d.titulo)].join('|');
 }
 
+/** Bandas de la colección, con lo que importa para clasificar: si la creó el recolector y si la confirmaste. */
+export function leerBandas(dir) {
+  return leerYaml(dir).map((b) => ({
+    slug: b.archivo.replace(/\.yaml$/, ''),
+    nombre: b.datos.nombre,
+    automatica: b.datos.automatica === true,
+    rockConfirmado: b.datos.rockConfirmado === true,
+  }));
+}
+
 /** Crea la banda (oculta en la web hasta que tenga algo publicado) si todavía no existe. */
-function asegurarBanda(dirBandas, banda, seco) {
+function asegurarBanda(dirBandas, banda, seco, { confirmar = false } = {}) {
   if (!dirBandas || !banda) return false;
   const ruta = join(dirBandas, `${banda.slug}.yaml`);
   if (existsSync(ruta)) return false;
   if (!seco) {
     mkdirSync(dirBandas, { recursive: true });
-    writeFileSync(ruta, yamlPanel({ nombre: banda.nombre, automatica: true }));
+    writeFileSync(ruta, yamlPanel({ nombre: banda.nombre, automatica: true, ...(confirmar ? { rockConfirmado: true } : {}) }));
   }
   return true;
+}
+
+/** Marca una banda creada por el recolector como "Siempre es rock nacional" (la elegiste vos). */
+function confirmarBanda(dirBandas, slugBanda, seco) {
+  const ruta = join(dirBandas, `${slugBanda}.yaml`);
+  if (!existsSync(ruta)) return;
+  const d = parse(readFileSync(ruta, 'utf8')) ?? {};
+  if (d.automatica !== true || d.rockConfirmado === true) return;
+  if (!seco) writeFileSync(ruta, yamlPanel({ ...d, rockConfirmado: true }));
 }
 
 /** Todos los eventos guardados, de las dos carpetas, indexados por origen ("fuente|id"). */
@@ -232,9 +251,10 @@ export function reubicar({ fuentesRosario, bandas, dirs = DIRS, dirBandas, seco 
     for (const nombre of nombres) {
       const s = slug(nombre);
       if (!s) continue;
+      // La pasaste a rock vos: la banda queda como "Siempre es rock nacional".
       if (!nombrePorSlug.has(s)) {
-        if (asegurarBanda(dirBandas, { slug: s, nombre }, seco)) nombrePorSlug.set(s, nombre);
-      }
+        if (asegurarBanda(dirBandas, { slug: s, nombre }, seco, { confirmar: true })) nombrePorSlug.set(s, nombre);
+      } else if (dirBandas) confirmarBanda(dirBandas, s, seco);
       slugs.push(s);
     }
     if (!seco) {

@@ -7,7 +7,7 @@ import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
 import { adaptadorPara } from '../adaptadores/index.mjs';
 import { normalizar, fechaHora, provinciaDe, completar } from '../normalizar.mjs';
-import { aplicarClasificacion, bandaPara } from '../clasificar.mjs';
+import { aplicarClasificacion, bandaPara, bandasConfirmadas } from '../clasificar.mjs';
 import { mezclar, reubicar, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado, yamlPanel } from '../agenda.mjs';
 import jsyaml from 'js-yaml';
 import { crearClasificador, cargarCache, claveIA, SinCredito } from '../ia.mjs';
@@ -100,7 +100,7 @@ test('rock nacional: va a la Agenda, con bandas cargadas o nuevas', () => {
   assert.equal(ev.destino, 'agenda');
   assert.equal(ev.titulo, 'Los Piojos + Los Gardelitos');
   assert.deepEqual(ev.bandas, ['los-piojos', 'los-gardelitos']);
-  assert.deepEqual(ev.bandasNuevas, [{ slug: 'los-gardelitos', nombre: 'Los Gardelitos' }]);
+  assert.deepEqual(ev.bandasNuevas, [{ slug: 'los-gardelitos', nombre: 'Los Gardelitos', automatica: true }]);
   assert.equal(bandaPara('Piojos', bandas)?.slug, 'los-piojos', 'sin importar el artículo');
 });
 
@@ -115,6 +115,24 @@ test('título: si la IA devuelve algo que no se parece al original, queda el ori
   const ev = aplicarClasificacion(evento('LOS NOCHEROS'), respuesta({ rockNacional: false, titulo: 'LosNgueros', artistas: ['Los Nocheros'] }), bandas, rosario);
   assert.equal(ev.titulo, 'LOS NOCHEROS');
   assert.equal(aplicarClasificacion(evento('CARAS EXTRAÑAS DESPIDE EL AÑO EN ROSARIO'), respuesta({ titulo: 'Caras Extrañas despide el año' }), bandas, fuente).titulo, 'Caras Extrañas despide el año');
+});
+
+test('banda confirmada ⇒ rock nacional, aunque la IA diga que no o no la conozca', () => {
+  const lista = [
+    ...bandas, // cargadas a mano: cuentan
+    { slug: 'cruzando-el-charco', nombre: 'Cruzando el Charco', automatica: true, rockConfirmado: true },
+    { slug: 'angela-torres', nombre: 'Ángela Torres', automatica: true }, // la creó la IA y nadie la confirmó: no cuenta
+  ];
+  const noSabe = respuesta({ rockNacional: false, genero: 'sin datos', titulo: 'Cruzando el Charco — Desactivar el Drama Tour', artistas: [] });
+  const ev = aplicarClasificacion(evento('CRUZANDO EL CHARCO - DESACTIVAR EL DRAMA TOUR', { id: 'c' }), noSabe, lista, rosario);
+  assert.deepEqual([ev.destino, ev.rockNacional, ev.bandas], ['agenda', true, ['cruzando-el-charco']]);
+
+  const conManual = aplicarClasificacion(evento('Kapanga + Los Lirios'), respuesta({ rockNacional: false, artistas: ['Kapanga', 'Los Lirios'] }), lista, fuente);
+  assert.deepEqual([conManual.destino, conManual.bandas], ['agenda', ['kapanga', 'los-lirios']]);
+
+  const sinConfirmar = aplicarClasificacion(evento('ÁNGELA TORRES'), respuesta({ rockNacional: false, titulo: 'Ángela Torres', artistas: ['Ángela Torres'] }), lista, rosario);
+  assert.equal(sinConfirmar.destino, 'otros');
+  assert.deepEqual(bandasConfirmadas(evento('X'), respuesta({ artistas: [] , titulo: 'X' }), lista), []);
 });
 
 test('festival de rock sin lineup: va a la Agenda sin bandas', () => {
@@ -291,7 +309,7 @@ test('reubicar: un show sin artistas que pasa a rock usa el título como banda',
     writeFileSync(join(dirs.otros, archivo), stringify({ ...leer(dirs.otros, archivo), rockNacional: true }));
     reubicar({ fuentesRosario: new Set(['rosario']), bandas, dirs, dirBandas });
     assert.deepEqual(leer(dirs.agenda, archivo).bandas, ['cruzando-el-charco']);
-    assert.deepEqual(leer(dirBandas, 'cruzando-el-charco.yaml'), { nombre: 'Cruzando el Charco', automatica: true });
+    assert.deepEqual(leer(dirBandas, 'cruzando-el-charco.yaml'), { nombre: 'Cruzando el Charco', automatica: true, rockConfirmado: true });
   } finally {
     borrar();
   }

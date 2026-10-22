@@ -92,6 +92,12 @@ export default config({
           description:
             'Aparece en la web recién cuando tenga una fecha publicada o una nota. Destildala para mostrarla siempre.',
         }),
+        rockConfirmado: fields.checkbox({
+          label: 'Siempre es rock nacional',
+          description:
+            'Sus eventos entran a la Agenda aunque la IA diga otra cosa. Se tilda solo cuando pasás un evento a rock a mano. ' +
+            'Las bandas que cargaste vos (no creadas por el recolector) ya cuentan como confirmadas.',
+        }),
       },
     }),
 

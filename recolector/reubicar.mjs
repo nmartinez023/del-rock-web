@@ -3,7 +3,7 @@
 // la fuente no es de Rosario). No consulta ticketeras ni IA: corre al guardar desde el panel.
 // Uso: node recolector/reubicar.mjs
 import { appendFileSync } from 'node:fs';
-import { leerYaml, reubicar } from './agenda.mjs';
+import { leerYaml, leerBandas, reubicar } from './agenda.mjs';
 
 const DIR_BANDAS = 'src/content/bandas';
 const fuentesRosario = new Set(
@@ -11,7 +11,7 @@ const fuentesRosario = new Set(
     .filter((f) => f.datos.rosario)
     .map((f) => f.archivo.replace(/\.yaml$/, '')),
 );
-const bandas = leerYaml(DIR_BANDAS).map((b) => ({ slug: b.archivo.replace(/\.yaml$/, ''), nombre: b.datos.nombre }));
+const bandas = leerBandas(DIR_BANDAS);
 
 const movidos = reubicar({ fuentesRosario, bandas, dirBandas: DIR_BANDAS });
 const resumen = movidos.length ? movidos.map((m) => `- ${m}`).join('\n') : 'Nada para mover.';

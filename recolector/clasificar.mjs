@@ -25,8 +25,30 @@ export function bandaPara(nombre, bandas) {
   return n.length >= 2 ? bandas.find((b) => sinArticulo(b.nombre) === n) : undefined;
 }
 
+/** Banda que vos confirmaste como rock: cargada a mano, o marcada "Siempre es rock nacional". */
+const confirmada = (b) => !b.automatica || b.rockConfirmado;
+
+/**
+ * Bandas confirmadas que tocan en el evento: entre los artistas de la IA o, si no los supo,
+ * el título ("Cruzando el Charco", "Cruzando el Charco — Gira 2026").
+ */
+export function bandasConfirmadas(ev, ia, bandas) {
+  const titulos = [ia.titulo, ev.titulo].filter(Boolean).map((t) => t.split(/\s+[—–|-]\s+/)[0]);
+  const encontradas = [];
+  for (const nombre of [...ia.artistas, ...titulos]) {
+    const b = bandaPara(nombre, bandas);
+    if (b && confirmada(b) && !encontradas.includes(b)) encontradas.push(b);
+  }
+  return encontradas;
+}
+
 /** Devuelve el evento listo para guardar (con `destino`), o null si no se guarda. */
-export function aplicarClasificacion(ev, ia, bandas, fuente) {
+export function aplicarClasificacion(ev, iaOriginal, bandas, fuente) {
+  // Si toca una banda que confirmaste, es rock nacional aunque la IA no la conozca.
+  const confirmadas = bandasConfirmadas(ev, iaOriginal, bandas);
+  const ia = confirmadas.length
+    ? { ...iaOriginal, rockNacional: true, artistas: iaOriginal.artistas.length ? iaOriginal.artistas : confirmadas.map((b) => b.nombre) }
+    : iaOriginal;
   const base = { ...ev, titulo: tituloSeguro(ia.titulo, ev.titulo), tipo: ia.tipo, genero: ia.genero ?? '', rockNacional: ia.rockNacional };
 
   if (!ia.rockNacional) {
@@ -41,7 +63,7 @@ export function aplicarClasificacion(ev, ia, bandas, fuente) {
     if (existente) {
       if (!slugs.includes(existente.slug)) slugs.push(existente.slug);
     } else if (nuevas.length < MAX_NUEVAS && slug(nombre)) {
-      const nueva = { slug: slug(nombre), nombre };
+      const nueva = { slug: slug(nombre), nombre, automatica: true };
       nuevas.push(nueva);
       slugs.push(nueva.slug);
     }
