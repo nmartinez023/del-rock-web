@@ -13,7 +13,7 @@
     "astro": "astro",
     "ig:renovar": "node scripts/renovar-token-instagram.mjs",
     "recolectar": "node recolector/index.mjs",
-    "test:recolector": "node --test \"recolector/test/*.test.mjs\"",
+    "test:recolector": "node --test --no-warnings \"recolector/test/*.test.mjs\"",
     "validar-panel": "node --experimental-strip-types --no-warnings scripts/validar-panel.mts"
   },
   "dependencies": {

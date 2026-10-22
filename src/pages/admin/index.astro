@@ -1,0 +1,526 @@
+---
+// Panel /admin: revisar la agenda de a muchos. Lista los eventos pendientes (en vivo desde el repo),
+// con checkbox por fila, y publica / descarta / cambia de lista lo seleccionado en un solo commit.
+// Usa la misma sesión de GitHub que Keystatic. A futuro: más herramientas en /admin.
+import '../../styles/global.css';
+import { COOKIE_TOKEN, ErrorGitHub, LISTAS, leerEventos, verificarAcceso, type EventoAdmin, type Lista } from '../../lib/admin/github';
+
+export const prerender = false;
+
+const lista: Lista = Astro.url.searchParams.get('lista') === 'otros' ? 'otros' : 'agenda';
+const ver = Astro.url.searchParams.get('ver') === 'todos' ? 'todos' : 'pendientes';
+const token = Astro.cookies.get(COOKIE_TOKEN)?.value;
+const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
+
+let estado: 'sin-sesion' | 'sin-permiso' | 'error' | 'ok' = 'sin-sesion';
+let login = '';
+let error = '';
+let eventos: EventoAdmin[] = [];
+let pendientes = { agenda: 0, otros: 0 };
+
+if (token) {
+  try {
+    const acceso = await verificarAcceso(token);
+    login = acceso.login;
+    if (!acceso.puede) estado = 'sin-permiso';
+    else {
+      const [agenda, otros] = await Promise.all([leerEventos(token, 'agenda'), leerEventos(token, 'otros')]);
+      const futuros = (l: EventoAdmin[]) => l.filter((e) => e.fecha >= hoy);
+      pendientes = {
+        agenda: futuros(agenda).filter((e) => e.estado === 'pendiente').length,
+        otros: futuros(otros).filter((e) => e.estado === 'pendiente').length,
+      };
+      eventos = futuros(lista === 'agenda' ? agenda : otros)
+        .filter((e) => ver === 'todos' || e.estado === 'pendiente')
+        .sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
+      estado = 'ok';
+    }
+  } catch (err) {
+    if (err instanceof ErrorGitHub && err.status === 401) estado = 'sin-sesion';
+    else {
+      estado = 'error';
+      error = (err as Error).message;
+    }
+  }
+}
+Astro.response.headers.set('cache-control', 'no-store');
+
+const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+const fechaCorta = (f: string) => {
+  const d = new Date(`${f}T12:00:00Z`);
+  return Number.isNaN(d.getTime()) ? f : `${DIAS[d.getUTCDay()]} ${d.getUTCDate()} ${MESES[d.getUTCMonth()]}`;
+};
+const precio = (p: string) => (p && Number(p) > 0 ? `$ ${Number(p).toLocaleString('es-AR')}` : '');
+const editar = (e: EventoAdmin) =>
+  `/keystatic/branch/main/collection/${lista}/item/${e.archivo.replace(/\.yaml$/, '')}`;
+const ETIQUETA_ESTADO = { publicado: '✅ Publicado', pendiente: '⏳ Pendiente', descartado: '❌ Descartado' };
+const mover = lista === 'agenda' ? 'No es rock → Otros' : 'Es rock → Agenda';
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin · Del Rock</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body>
+    <header class="barra-admin">
+      <div class="container fila">
+        <a href="/admin" class="d marca">Del Rock <span class="azul">Admin</span></a>
+        <nav class="links" aria-label="Admin">
+          <a href="/admin" aria-current="page">Revisar agenda</a>
+          <a href="/keystatic">Keystatic</a>
+          <a href="/">Ver el sitio</a>
+        </nav>
+        {login && <span class="usuario">@{login}</span>}
+      </div>
+    </header>
+
+    <main class="container principal">
+      {
+        estado === 'sin-sesion' && (
+          <section class="aviso" id="sin-sesion">
+            <h1 class="d">Iniciá sesión</h1>
+            <p id="renovando">Renovando tu sesión de GitHub…</p>
+            <p id="pedir-login" hidden>
+              El panel usa la misma sesión que Keystatic. <a class="btn" href="/api/keystatic/github/login">Iniciar sesión con GitHub</a>
+              <br />
+              <small>Después de iniciar sesión, volvé a <strong>/admin</strong>.</small>
+            </p>
+          </section>
+        )
+      }
+      {
+        estado === 'sin-permiso' && (
+          <section class="aviso">
+            <h1 class="d">Sin permiso</h1>
+            <p>@{login} no tiene permiso de escritura en el repo de Del Rock.</p>
+          </section>
+        )
+      }
+      {
+        estado === 'error' && (
+          <section class="aviso">
+            <h1 class="d">No se pudo leer el repo</h1>
+            <p>{error}</p>
+            <p><a class="btn" href={Astro.url.pathname + Astro.url.search}>Reintentar</a></p>
+          </section>
+        )
+      }
+      {
+        estado === 'ok' && (
+          <>
+            <div class="cabecera">
+              <h1 class="d">Revisar agenda</h1>
+              <div class="pestanas" role="tablist">
+                {(Object.keys(LISTAS) as Lista[]).map((l) => (
+                  <a role="tab" aria-selected={l === lista} href={`/admin?lista=${l}${ver === 'todos' ? '&ver=todos' : ''}`}>
+                    {LISTAS[l].titulo} <span class="cuenta">{pendientes[l]}</span>
+                  </a>
+                ))}
+              </div>
+              <label class="ver-todos">
+                <input type="checkbox" id="ver-todos" checked={ver === 'todos'} /> Mostrar también publicados y descartados
+              </label>
+            </div>
+
+            {eventos.length === 0 ? (
+              <p class="vacio">{ver === 'todos' ? 'No hay eventos próximos en esta lista.' : '🎉 No hay pendientes en esta lista.'}</p>
+            ) : (
+              <form id="lista" data-lista={lista}>
+                <div class="acciones" role="toolbar" aria-label="Acciones sobre lo seleccionado">
+                  <label class="todos">
+                    <input type="checkbox" id="todos" /> <span id="contador">0 seleccionados</span>
+                  </label>
+                  <div class="botones">
+                    <button type="button" class="btn" data-accion="publicar" disabled>✅ Publicar</button>
+                    <button type="button" class="btn btn--borde" data-accion="descartar" disabled>❌ Descartar</button>
+                    <button type="button" class="btn btn--borde" data-accion="mover" disabled>{mover}</button>
+                    {ver === 'todos' && (
+                      <button type="button" class="btn btn--borde" data-accion="pendiente" disabled>⏳ Pendiente</button>
+                    )}
+                  </div>
+                </div>
+                <p class="mensaje" id="mensaje" role="status" aria-live="polite" />
+
+                <ul class="eventos">
+                  {eventos.map((e) => (
+                    <li class="evento" data-archivo={e.archivo}>
+                      <label class="check">
+                        <input type="checkbox" name="archivo" value={e.archivo} aria-label={`Seleccionar ${e.titulo}`} />
+                      </label>
+                      <div class="foto-chica">
+                        {e.imagen && <img src={e.imagen} alt="" loading="lazy" referrerpolicy="no-referrer" />}
+                      </div>
+                      <div class="datos">
+                        <strong class="titulo">{e.titulo}</strong>
+                        <span class="detalle">
+                          {fechaCorta(e.fecha)}
+                          {e.hora && ` · ${e.hora}`} · {e.venue}, {e.ciudad}
+                          {precio(e.precioDesde) && ` · ${precio(e.precioDesde)}`}
+                        </span>
+                        <span class="etiquetas">
+                          {e.tipo === 'festival' && <span class="etiqueta">Festival</span>}
+                          {e.genero && <span class="etiqueta">{e.genero}</span>}
+                          <span class="etiqueta etiqueta--fuente">{e.fuente}</span>
+                          {ver === 'todos' && <span class="etiqueta">{ETIQUETA_ESTADO[e.estado]}</span>}
+                        </span>
+                      </div>
+                      <div class="enlaces">
+                        {e.entradas && (
+                          <a href={e.entradas} target="_blank" rel="noopener">
+                            Ticketera ↗
+                          </a>
+                        )}
+                        <a href={editar(e)} target="_blank" rel="noopener">
+                          Editar ↗
+                        </a>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </form>
+            )}
+          </>
+        )
+      }
+    </main>
+
+    <script>
+      // Sin sesión: intentar renovarla con la cookie de Keystatic; si no se puede, pedir login.
+      const sinSesion = document.getElementById('sin-sesion');
+      if (sinSesion) {
+        fetch('/api/keystatic/github/refresh-token', { method: 'POST', credentials: 'same-origin' })
+          .then((r) => {
+            if (r.ok) location.reload();
+            else throw new Error();
+          })
+          .catch(() => {
+            document.getElementById('renovando')!.hidden = true;
+            document.getElementById('pedir-login')!.hidden = false;
+          });
+      }
+
+      document.getElementById('ver-todos')?.addEventListener('change', (ev) => {
+        const url = new URL(location.href);
+        if ((ev.target as HTMLInputElement).checked) url.searchParams.set('ver', 'todos');
+        else url.searchParams.delete('ver');
+        location.href = url.toString();
+      });
+
+      const form = document.querySelector<HTMLFormElement>('#lista');
+      if (form) {
+        const lista = form.dataset.lista!;
+        const casillas = () => [...form.querySelectorAll<HTMLInputElement>('input[name="archivo"]')];
+        const todos = form.querySelector<HTMLInputElement>('#todos')!;
+        const botones = [...form.querySelectorAll<HTMLButtonElement>('[data-accion]')];
+        const contador = form.querySelector('#contador')!;
+        const mensaje = form.querySelector('#mensaje')!;
+
+        const actualizar = () => {
+          const marcadas = casillas().filter((c) => c.checked);
+          contador.textContent = `${marcadas.length} seleccionado${marcadas.length === 1 ? '' : 's'}`;
+          for (const b of botones) b.disabled = marcadas.length === 0;
+          todos.checked = marcadas.length > 0 && marcadas.length === casillas().length;
+          todos.indeterminate = marcadas.length > 0 && !todos.checked;
+          for (const c of casillas()) c.closest('li')!.classList.toggle('marcado', c.checked);
+        };
+        form.addEventListener('change', (ev) => {
+          if (ev.target === todos) for (const c of casillas()) c.checked = todos.checked;
+          actualizar();
+        });
+        // Clic en cualquier parte de la fila (menos en los links) marca o desmarca.
+        form.addEventListener('click', (ev) => {
+          const t = ev.target as HTMLElement;
+          if (t.closest('a, input, button, label')) return;
+          const fila = t.closest('li');
+          const c = fila?.querySelector<HTMLInputElement>('input[name="archivo"]');
+          if (c) {
+            c.checked = !c.checked;
+            actualizar();
+          }
+        });
+
+        for (const boton of botones) {
+          boton.addEventListener('click', async () => {
+            const archivos = casillas().filter((c) => c.checked).map((c) => c.value);
+            if (!archivos.length) return;
+            for (const b of botones) b.disabled = true;
+            mensaje.textContent = 'Guardando…';
+            try {
+              const res = await fetch('/admin/api/eventos', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ lista, accion: boton.dataset.accion, archivos }),
+              });
+              const datos = await res.json();
+              if (!res.ok) throw new Error(datos.error ?? `Error ${res.status}`);
+              // Sacamos de la lista lo que ya se resolvió.
+              for (const a of archivos) form.querySelector(`li[data-archivo="${a}"]`)?.remove();
+              const que = boton.textContent!.trim();
+              mensaje.textContent = `${que}: ${datos.cambiados} evento${datos.cambiados === 1 ? '' : 's'}. La web se actualiza en unos 6 minutos.`;
+              if (!casillas().length) mensaje.textContent += ' 🎉 No quedan pendientes.';
+            } catch (err) {
+              mensaje.textContent = `No se pudo guardar: ${(err as Error).message}`;
+            }
+            actualizar();
+          });
+        }
+        actualizar();
+      }
+    </script>
+
+    <style>
+      body {
+        min-height: 100vh;
+      }
+      .barra-admin {
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--bg);
+      }
+      .fila {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 28px;
+        padding-block: 14px;
+      }
+      .marca {
+        font-size: 24px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 20px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .links a[aria-current='page'] {
+        color: var(--azul);
+      }
+      .usuario {
+        margin-left: auto;
+        color: var(--dim);
+        font-size: 14px;
+      }
+      .principal {
+        padding-block: 28px 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 40px;
+      }
+      .aviso {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 560px;
+        padding-top: 40px;
+        color: var(--muted);
+      }
+      .aviso p {
+        margin: 0;
+      }
+      .aviso .btn {
+        margin-top: 12px;
+      }
+      .cabecera {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .pestanas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pestanas a {
+        padding: 10px 16px;
+        border-radius: 22px;
+        border: 1px solid #3a3a40;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .pestanas a[aria-selected='true'] {
+        background: var(--fg);
+        color: var(--bg);
+        border-color: var(--fg);
+      }
+      .cuenta {
+        display: inline-block;
+        min-width: 22px;
+        margin-left: 6px;
+        padding: 1px 7px;
+        border-radius: 11px;
+        background: var(--azul);
+        color: var(--bg);
+        font-size: 12px;
+        text-align: center;
+      }
+      .ver-todos {
+        font-size: 14px;
+        color: var(--muted);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .vacio {
+        color: var(--muted);
+        font-size: 18px;
+      }
+      .acciones {
+        position: sticky;
+        top: 64px;
+        z-index: 4;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .todos {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+      }
+      .botones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .botones .btn {
+        min-height: 40px;
+        font-size: 14px;
+      }
+      .btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      .mensaje {
+        margin: 0;
+        min-height: 1.4em;
+        color: var(--azul);
+        font-weight: 600;
+      }
+      .eventos {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .evento {
+        display: grid;
+        grid-template-columns: auto 64px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .evento:hover {
+        border-color: #3a3a40;
+      }
+      .evento.marcado {
+        border-color: var(--azul);
+        background: rgb(64 138 201 / 0.08);
+      }
+      input[type='checkbox'] {
+        width: 20px;
+        height: 20px;
+        accent-color: var(--azul);
+        cursor: pointer;
+      }
+      .foto-chica {
+        width: 64px;
+        height: 64px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: var(--surface);
+      }
+      .foto-chica img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .datos {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+      }
+      .titulo {
+        font-size: 17px;
+      }
+      .detalle {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .etiquetas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .etiqueta {
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--muted);
+      }
+      .etiqueta--fuente {
+        color: var(--dim);
+      }
+      .enlaces {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: right;
+      }
+      .enlaces a {
+        color: var(--azul);
+        padding: 4px 0;
+      }
+      @media (max-width: 640px) {
+        .evento {
+          grid-template-columns: auto 52px minmax(0, 1fr);
+        }
+        .foto-chica {
+          width: 52px;
+          height: 52px;
+        }
+        .enlaces {
+          grid-column: 2 / -1;
+          flex-direction: row;
+          gap: 16px;
+          text-align: left;
+        }
+        .acciones {
+          top: 108px;
+        }
+      }
+    </style>
+  </body>
+</html>

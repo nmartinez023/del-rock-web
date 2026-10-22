@@ -18,6 +18,18 @@ Las fotos van a `src/assets/` y Astro las optimiza (WebP, varios tamaños) en el
 
 > El contenido actual es de ejemplo (salvo la nota de *Infame*). Borralo cuando cargues el real.
 
+## Panel /admin
+
+**https://del-rock-web.delrockarg.workers.dev/admin** — revisar la agenda de a muchos: lista los eventos pendientes
+(leídos en vivo del repo), con un checkbox por fila y "seleccionar todos", y **Publicar / Descartar / Pasar a la otra
+lista** lo seleccionado en **un solo commit**. Pestañas para la Agenda (rock) y "Otros eventos de Rosario".
+
+- Usa la misma sesión de GitHub que Keystatic (cookie `keystatic-gh-access-token`); si venció, la renueva sola o pide
+  iniciar sesión. Cada pedido verifica que el usuario tenga permiso de escritura en el repo.
+- Edita una sola línea del YAML (`estado` o `rockNacional`), sin tocar el resto. "Pasar a la otra lista" cambia
+  `rockNacional` y el Action "Reubicar eventos" mueve el archivo.
+- Código: `src/pages/admin/` (página y API) y `src/lib/admin/github.ts`. Lugar para sumar otras herramientas a futuro.
+
 ## Recolector de agenda
 
 Un GitHub Action (`.github/workflows/recolector.yml`) corre 4 veces por día, y también cuando cambia una fuente o el
