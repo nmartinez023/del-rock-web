@@ -1,0 +1,50 @@
+# Cuando guardás un evento en el panel, mueve de lista los que tildaste o destildaste como
+# "Rock nacional" (Agenda ↔ Otros eventos de Rosario). Tarda menos de un minuto.
+name: Reubicar eventos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/agenda/**'
+      - 'src/content/otros-eventos/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Misma fila que el recolector, para que no se pisen.
+concurrency:
+  group: recolector
+  cancel-in-progress: false
+
+jobs:
+  reubicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - run: node recolector/reubicar.mjs
+
+      - run: npm run validar-panel
+
+      - name: Guardar cambios
+        run: |
+          RUTAS="src/content/agenda src/content/otros-eventos src/content/bandas"
+          if [ -z "$(git status --porcelain $RUTAS)" ]; then
+            echo "Nada para mover."
+            exit 0
+          fi
+          git config user.name "Recolector Del Rock"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A $RUTAS
+          git commit -m "Agenda: reubicar eventos marcados en el panel"
+          git pull --rebase
+          git push

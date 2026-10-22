@@ -226,8 +226,10 @@ export function reubicar({ fuentesRosario, bandas, dirs = DIRS, dirBandas, seco 
   for (const e of leerYaml(dirs.otros)) {
     if (e.datos.rockNacional !== true) continue;
     const { artistas = [], ...resto } = e.datos;
+    // Si la IA no supo quiénes tocan, en un show la banda es el título ("Cruzando el Charco").
+    const nombres = artistas.length ? artistas : resto.tipo === 'festival' ? [] : [resto.titulo];
     const slugs = [];
-    for (const nombre of artistas) {
+    for (const nombre of nombres) {
       const s = slug(nombre);
       if (!s) continue;
       if (!nombrePorSlug.has(s)) {

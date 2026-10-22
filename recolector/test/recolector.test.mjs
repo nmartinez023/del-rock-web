@@ -283,6 +283,20 @@ test('YAML: el lector del panel (js-yaml) ve como texto lo que es texto', () => 
   for (const v of [d.titulo, d.hora, d.origen.id, d.origen.huella, d.origen.detalle]) assert.equal(typeof v, 'string');
 });
 
+test('reubicar: un show sin artistas que pasa a rock usa el título como banda', () => {
+  const { dirs, dirBandas, borrar } = carpetas();
+  try {
+    mezclar([aplicarClasificacion(evento('CRUZANDO EL CHARCO', { id: 'c' }), respuesta({ rockNacional: false, genero: 'sin datos', titulo: 'Cruzando el Charco', artistas: [] }), bandas, rosario)], rosario, { hoy: HOY, dirs });
+    const [archivo] = archivos(dirs.otros);
+    writeFileSync(join(dirs.otros, archivo), stringify({ ...leer(dirs.otros, archivo), rockNacional: true }));
+    reubicar({ fuentesRosario: new Set(['rosario']), bandas, dirs, dirBandas });
+    assert.deepEqual(leer(dirs.agenda, archivo).bandas, ['cruzando-el-charco']);
+    assert.deepEqual(leer(dirBandas, 'cruzando-el-charco.yaml'), { nombre: 'Cruzando el Charco', automatica: true });
+  } finally {
+    borrar();
+  }
+});
+
 test('estados: normaliza los viejos sin emoji', () => {
   assert.deepEqual(['publicado', 'pendiente', 'descartado', undefined].map(normalizarEstado), ['✅ Publicado', '⏳ Pendiente', '❌ Descartado', '⏳ Pendiente']);
 });
