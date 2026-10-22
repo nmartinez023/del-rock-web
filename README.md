@@ -18,6 +18,31 @@ Las fotos van a `src/assets/` y Astro las optimiza (WebP, varios tamaños) en el
 
 > El contenido actual es de ejemplo (salvo la nota de *Infame*). Borralo cuando cargues el real.
 
+## Recolector de agenda
+
+Un GitHub Action (`.github/workflows/recolector.yml`) corre 4 veces por día, recorre las fuentes cargadas en
+el panel (**Fuentes de agenda**) y guarda los shows que encuentra en `src/content/agenda/` con estado **Pendiente**.
+En la web solo aparecen las fechas **Publicada**: las revisás en *Agenda* y les cambiás el estado.
+
+- **Fuentes:** URL de una ticketera, venue o productora. *Qué eventos traer*: "Solo bandas cargadas" (busca los
+  nombres de la colección Bandas en el título) o "Todos" (para fuentes 100% rock).
+- **Extracción:** lee los eventos publicados como JSON-LD (`schema.org/Event`), que usan muchas ticketeras.
+  Para un sitio que no lo tenga, se agrega un adaptador en `recolector/adaptadores/` y se registra por dominio en `index.mjs`.
+- **Duplicados:** el mismo show (fecha + lugar + banda) no se carga dos veces, aunque venga de otra fuente o ya lo hayas cargado a mano.
+- **Ediciones a mano:** si corregís una fecha que trajo el recolector, no la vuelve a pisar.
+- **Respeta `robots.txt`** y se identifica como `DelRockBot`.
+- Si una fuente da error, la ejecución falla y GitHub te avisa por mail. El resumen de cada corrida está en *Actions*.
+
+```bash
+npm run recolectar -- --seco
+```
+
+```bash
+npm run test:recolector
+```
+
+El paso para sumar un modelo de IA (limpiar títulos, detectar bandas nuevas) va en `recolector/clasificar.mjs`.
+
 ## Keystatic en la nube (GitHub App)
 
 Todo el sitio es HTML prerenderizado. Lo único que corre en el Worker es el panel (`/keystatic` y `/api/keystatic`),

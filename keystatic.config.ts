@@ -92,10 +92,20 @@ export default config({
       slugField: 'titulo',
       path: 'src/content/agenda/*',
       format: { data: 'yaml' },
-      columns: ['titulo', 'fecha'],
+      columns: ['titulo', 'fecha', 'estado'],
       schema: {
         titulo: fields.slug({
           name: { label: 'Título', description: 'Nombre de la banda o del festival' },
+        }),
+        estado: fields.select({
+          label: 'Estado',
+          description: 'Solo las fechas "Publicada" aparecen en la web. Las que trae el recolector entran como "Pendiente".',
+          options: [
+            { label: 'Publicada', value: 'publicado' },
+            { label: 'Pendiente de revisión', value: 'pendiente' },
+            { label: 'Descartada', value: 'descartado' },
+          ],
+          defaultValue: 'publicado',
         }),
         banda: fields.relationship({ label: 'Banda (si es un show de una banda)', collection: 'bandas' }),
         fecha: fields.date({ label: 'Fecha', validation: { isRequired: true } }),
@@ -113,6 +123,50 @@ export default config({
           directory: 'src/assets/agenda',
           publicPath: '../../assets/agenda/',
         }),
+        origen: fields.object(
+          {
+            fuente: fields.text({ label: 'Fuente' }),
+            id: fields.text({ label: 'ID en la ticketera' }),
+            huella: fields.text({ label: 'Huella' }),
+          },
+          {
+            label: 'Origen automático',
+            description:
+              'Lo completa el recolector. Si editás la fecha a mano, el recolector deja de actualizarla. No hace falta tocar estos campos.',
+          },
+        ),
+      },
+    }),
+
+    fuentes: collection({
+      label: 'Fuentes de agenda',
+      slugField: 'nombre',
+      path: 'src/content/fuentes/*',
+      format: { data: 'yaml' },
+      columns: ['nombre', 'activa'],
+      schema: {
+        nombre: fields.slug({ name: { label: 'Nombre', description: 'Ej: "Niceto en Passline"' } }),
+        url: fields.url({
+          label: 'URL',
+          description: 'Página de la ticketera, venue o productora con el listado de eventos.',
+          validation: { isRequired: true },
+        }),
+        activa: fields.checkbox({ label: 'Activa', defaultValue: true }),
+        filtro: fields.select({
+          label: 'Qué eventos traer',
+          options: [
+            { label: 'Todos (la fuente es 100% rock)', value: 'todos' },
+            { label: 'Solo bandas cargadas en "Bandas"', value: 'bandas' },
+          ],
+          defaultValue: 'bandas',
+        }),
+        provincia: fields.select({
+          label: 'Provincia por defecto',
+          description: 'Se usa cuando la ticketera no dice dónde es.',
+          options: PROVINCIAS.map((p) => ({ label: p, value: p })),
+          defaultValue: 'CABA',
+        }),
+        notas: fields.text({ label: 'Notas', multiline: true }),
       },
     }),
   },

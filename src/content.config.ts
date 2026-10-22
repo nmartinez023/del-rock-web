@@ -40,6 +40,7 @@ const agenda = defineCollection({
   schema: ({ image }) =>
     z.object({
       titulo: z.string(),
+      estado: z.enum(['publicado', 'pendiente', 'descartado']).default('publicado'),
       banda: reference('bandas').nullable().optional(),
       fecha: z.coerce.date(),
       hora: z.string().optional(),

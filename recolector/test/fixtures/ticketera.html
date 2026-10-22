@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<title>Ticketera de prueba</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "name": "Ticketera de prueba" },
+    {
+      "@type": "MusicEvent",
+      "name": "KAPANGA &amp; invitados - Gira 2026",
+      "startDate": "2026-11-15T00:30:00Z",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Teatro Flores",
+        "address": { "@type": "PostalAddress", "addressLocality": "Ciudad Autónoma de Buenos Aires", "addressRegion": "CABA" }
+      },
+      "offers": { "@type": "Offer", "url": "https://tickets.ejemplo/kapanga-flores" },
+      "performer": [{ "@type": "MusicGroup", "name": "Kapanga" }]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": ["Event", "MusicEvent"],
+        "name": "Turf en Rosario",
+        "startDate": "2026-12-05T21:30:00-03:00",
+        "location": { "@type": "Place", "name": "Distrito Rock", "address": "Av. Siempreviva 123, Rosario, Santa Fe" },
+        "url": "https://tickets.ejemplo/turf-rosario"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": "MusicEvent",
+        "name": "No Te Va Gustar",
+        "startDate": "2026-12-10T21:00:00-03:00",
+        "eventStatus": "https://schema.org/EventCancelled",
+        "location": { "@type": "Place", "name": "Estadio" },
+        "url": "https://tickets.ejemplo/ntvg"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": "TheaterEvent",
+        "name": "Obra de teatro infantil",
+        "startDate": "2026-11-20",
+        "location": { "@type": "Place", "name": "Sala Chica", "address": { "addressLocality": "La Plata" } },
+        "url": "https://tickets.ejemplo/obra"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "item": {
+        "@type": "Festival",
+        "name": "Festival Bandera",
+        "startDate": "2026-10-24",
+        "location": { "@type": "Place", "name": "Predio" },
+        "url": "https://tickets.ejemplo/bandera-pasado"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">{ esto no es JSON válido, </script>
+</head>
+<body></body>
+</html>

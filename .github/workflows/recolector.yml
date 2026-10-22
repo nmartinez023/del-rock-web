@@ -1,0 +1,55 @@
+# Recorre las fuentes de agenda 4 veces por día y guarda las fechas nuevas como "pendiente".
+# Las revisás en el panel (/keystatic → Agenda) y las publicás cambiando el estado.
+name: Recolector de agenda
+
+on:
+  schedule:
+    - cron: '15 */6 * * *' # 03:15, 09:15, 15:15 y 21:15 en Argentina
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recolector
+  cancel-in-progress: false
+
+jobs:
+  recolectar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run test:recolector
+
+      - name: Recolectar
+        id: recolectar
+        run: npm run recolectar
+        continue-on-error: true
+
+      - name: Guardar fechas nuevas
+        run: |
+          if [ -z "$(git status --porcelain src/content/agenda)" ]; then
+            echo "Sin cambios en la agenda."
+            exit 0
+          fi
+          git config user.name "Recolector Del Rock"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/agenda
+          git commit -m "Agenda: fechas del recolector"
+          # Si mientras tanto guardaste algo desde el panel, nos ponemos al día antes de subir.
+          git pull --rebase
+          git push
+
+      - name: Avisar si alguna fuente falló
+        if: steps.recolectar.outcome == 'failure'
+        run: |
+          echo "Alguna fuente dio error. Mirá el resumen de esta ejecución."
+          exit 1

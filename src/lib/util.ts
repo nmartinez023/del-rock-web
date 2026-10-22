@@ -65,6 +65,6 @@ export async function proximasFechas() {
   const hoy = new Date(new Date().toLocaleDateString('en-CA', { timeZone: TZ }));
   const todas = await getCollection('agenda');
   return todas
-    .filter((f) => f.data.fecha.getTime() >= hoy.getTime())
+    .filter((f) => f.data.estado === 'publicado' && f.data.fecha.getTime() >= hoy.getTime())
     .sort((a, b) => a.data.fecha.getTime() - b.data.fecha.getTime());
 }
