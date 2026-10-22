@@ -41,7 +41,11 @@ export const GET: APIRoute = async ({ params, request }) => {
   const tipo = res.headers.get('content-type') ?? '';
   const largo = Number(res.headers.get('content-length') ?? 0);
   if (!res.ok || !tipo.startsWith('image/') || largo > MAX_BYTES) {
-    return new Response('Imagen no disponible', { status: 502, headers: { 'cache-control': 'public, max-age=300' } });
+    // x-origen: qué respondió la ticketera (para entender por qué falla una imagen).
+    return new Response('Imagen no disponible', {
+      status: 502,
+      headers: { 'cache-control': 'public, max-age=300', 'x-origen': `${res.status} ${tipo || 'sin tipo'} ${largo || ''}`.trim() },
+    });
   }
 
   const respuesta = new Response(res.body, {
