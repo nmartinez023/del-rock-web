@@ -1,0 +1,6 @@
+nombre: Passline
+url: https://home.passline.com/
+activa: true
+rosario: false
+provincia: Otra
+notas: Bloquea bots (Cloudflare). Se trae a mano desde /admin/ticketeras con el botón Traer de Passline.

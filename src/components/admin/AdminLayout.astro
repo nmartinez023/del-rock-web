@@ -1,0 +1,161 @@
+---
+// Esqueleto de las páginas de /admin: encabezado con navegación, y los avisos de sesión
+// (sin sesión, sin permiso, error). El contenido de la página solo se muestra con estado "ok".
+import '../../styles/global.css';
+
+interface Props {
+  titulo: string;
+  activo: '/admin' | '/admin/ticketeras';
+  estado: 'sin-sesion' | 'sin-permiso' | 'error' | 'ok';
+  login?: string;
+  error?: string;
+}
+const { titulo, activo, estado, login = '', error = '' } = Astro.props;
+const LINKS = [
+  { href: '/admin', texto: 'Revisar agenda' },
+  { href: '/admin/ticketeras', texto: 'Ticketeras manuales' },
+  { href: '/keystatic', texto: 'Keystatic' },
+  { href: '/', texto: 'Ver el sitio' },
+];
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{titulo} · Admin · Del Rock</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body>
+    <header class="barra-admin">
+      <div class="container fila">
+        <a href="/admin" class="d marca">Del Rock <span class="azul">Admin</span></a>
+        <nav class="links" aria-label="Admin">
+          {LINKS.map((l) => <a href={l.href} aria-current={l.href === activo ? 'page' : undefined}>{l.texto}</a>)}
+        </nav>
+        {login && <span class="usuario">@{login}</span>}
+      </div>
+    </header>
+
+    <main class="container principal">
+      {
+        estado === 'sin-sesion' && (
+          <section class="aviso" id="sin-sesion">
+            <h1 class="d">Iniciá sesión</h1>
+            <p id="renovando">Renovando tu sesión de GitHub…</p>
+            <p id="pedir-login" hidden>
+              El panel usa la misma sesión que Keystatic. <a class="btn" href="/api/keystatic/github/login">Iniciar sesión con GitHub</a>
+              <br />
+              <small>Después de iniciar sesión, volvé a <strong>{activo}</strong>.</small>
+            </p>
+          </section>
+        )
+      }
+      {
+        estado === 'sin-permiso' && (
+          <section class="aviso">
+            <h1 class="d">Sin permiso</h1>
+            <p>@{login} no tiene permiso de escritura en el repo de Del Rock.</p>
+          </section>
+        )
+      }
+      {
+        estado === 'error' && (
+          <section class="aviso">
+            <h1 class="d">No se pudo leer el repo</h1>
+            <p>{error}</p>
+            <p><a class="btn" href={Astro.url.pathname + Astro.url.search}>Reintentar</a></p>
+          </section>
+        )
+      }
+      {estado === 'ok' && <slot />}
+    </main>
+
+    <script>
+      // Sin sesión: intentar renovarla con la cookie de Keystatic; si no se puede, pedir login.
+      const sinSesion = document.getElementById('sin-sesion');
+      if (sinSesion) {
+        fetch('/api/keystatic/github/refresh-token', { method: 'POST', credentials: 'same-origin' })
+          .then((r) => {
+            if (r.ok) location.reload();
+            else throw new Error();
+          })
+          .catch(() => {
+            document.getElementById('renovando')!.hidden = true;
+            document.getElementById('pedir-login')!.hidden = false;
+          });
+      }
+    </script>
+
+    <style>
+      body {
+        min-height: 100vh;
+      }
+      .barra-admin {
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--bg);
+      }
+      .fila {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 28px;
+        padding-block: 14px;
+      }
+      .marca {
+        font-size: 24px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 20px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .links a[aria-current='page'] {
+        color: var(--azul);
+      }
+      .usuario {
+        margin-left: auto;
+        color: var(--dim);
+        font-size: 14px;
+      }
+      .principal {
+        padding-block: 28px 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .principal :global(h1) {
+        margin: 0;
+        font-size: 40px;
+      }
+      .aviso {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 560px;
+        padding-top: 40px;
+        color: var(--muted);
+      }
+      .aviso p {
+        margin: 0;
+      }
+      .aviso .btn {
+        margin-top: 12px;
+      }
+      :global(.btn:disabled) {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    </style>
+  </body>
+</html>

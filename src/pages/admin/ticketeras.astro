@@ -1,0 +1,220 @@
+---
+// Ticketeras que bloquean a los bots desde servidores (Passline, AllAccess): las traés vos con tu navegador.
+// Lo traído se guarda en el repo (recolector/entradas/) y el recolector lo clasifica y carga como Pendiente.
+import AdminLayout from '../../components/admin/AdminLayout.astro';
+import { COOKIE_TOKEN, ErrorGitHub, IMPORTABLES, leerImportaciones, verificarAcceso, type Importable } from '../../lib/admin/github';
+import { MARCADOR_ALLACCESS } from '../../lib/admin/marcador-allaccess';
+
+export const prerender = false;
+
+const token = Astro.cookies.get(COOKIE_TOKEN)?.value;
+let estado: 'sin-sesion' | 'sin-permiso' | 'error' | 'ok' = 'sin-sesion';
+let login = '';
+let error = '';
+let importaciones: Awaited<ReturnType<typeof leerImportaciones>> | null = null;
+
+if (token) {
+  try {
+    const acceso = await verificarAcceso(token);
+    login = acceso.login;
+    if (!acceso.puede) estado = 'sin-permiso';
+    else {
+      importaciones = await leerImportaciones(token);
+      estado = 'ok';
+    }
+  } catch (err) {
+    if (err instanceof ErrorGitHub && err.status === 401) estado = 'sin-sesion';
+    else {
+      estado = 'error';
+      error = (err as Error).message;
+    }
+  }
+}
+Astro.response.headers.set('cache-control', 'no-store');
+
+const ultimaVez = (f: Importable) => {
+  const i = importaciones?.[f];
+  if (!i?.guardado) return 'Todavía no se trajo nunca.';
+  const cuando = new Date(i.guardado).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', dateStyle: 'medium', timeStyle: 'short' });
+  return `Última vez: ${cuando}${i.por ? ` por @${i.por}` : ''} (${i.cantidad} eventos).`;
+};
+---
+
+<AdminLayout titulo="Ticketeras manuales" activo="/admin/ticketeras" estado={estado} login={login} error={error}>
+  <div class="cabecera">
+    <h1 class="d">Ticketeras manuales</h1>
+    <p class="intro">
+      Estas ticketeras bloquean a los bots, así que el recolector no puede leerlas solo. Las traés vos desde tu navegador; se guardan
+      en el repo y en unos minutos el recolector las clasifica y deja el rock nacional como <strong>Pendiente</strong> en
+      <a href="/admin">Revisar agenda</a>.
+    </p>
+  </div>
+
+  <section class="tarjeta" id="passline">
+    <h2 class="d">{IMPORTABLES.passline.nombre}</h2>
+    <p class="ultima">{ultimaVez('passline')}</p>
+    <p>Trae los eventos de música de Argentina directo desde la API de Passline, con tu navegador.</p>
+    <p><button type="button" class="btn" id="traer-passline">Traer de Passline</button></p>
+    <p class="mensaje" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="tarjeta" id="allaccess">
+    <h2 class="d">{IMPORTABLES.allaccess.nombre}</h2>
+    <p class="ultima">{ultimaVez('allaccess')}</p>
+    <ol class="pasos">
+      <li>
+        Arrastrá este botón a tu barra de marcadores (una sola vez):
+        <a class="marcador" href={MARCADOR_ALLACCESS} onclick="event.preventDefault()">📥 Del Rock: copiar AllAccess</a>
+      </li>
+      <li>Entrá a <a href="https://www.allaccess.com.ar/" target="_blank" rel="noopener">allaccess.com.ar ↗</a> y tocá el marcador. Lee los eventos de la portada (tarda alrededor de un minuto).</li>
+      <li>Cuando termine, tocá <strong>Copiar</strong> y pegalo acá:</li>
+    </ol>
+    <textarea id="pegar-allaccess" rows="5" placeholder='[{"url":"https://www.allaccess.com.ar/event/…", …}]'></textarea>
+    <p><button type="button" class="btn" id="guardar-allaccess">Guardar AllAccess</button></p>
+    <p class="mensaje" role="status" aria-live="polite"></p>
+  </section>
+
+  <script>
+    const PASSLINE = 'https://api.passline.com/v1/event/GetBillboardByFilters';
+    const POR_PAGINA = 300;
+    // Campos que se guardan (el resto de la respuesta no hace falta).
+    const CAMPOS = ['id', 'nombre', 'artistas', 'url', 'fecha_inicio', 'hora_inicio', 'lugar', 'nombre_communa', 'nombre_region', 'precio_min', 'recorte', 'miniatura', 'agotado', 'category_name', 'upper_category_name'];
+    const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
+
+    async function guardar(fuente: string, eventos: unknown[], mensaje: Element) {
+      mensaje.textContent = `Guardando ${eventos.length} eventos…`;
+      const res = await fetch('/admin/api/importar', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ fuente, eventos }),
+      });
+      const datos = await res.json();
+      if (!res.ok) throw new Error(datos.error ?? `Error ${res.status}`);
+      mensaje.textContent = `✅ Guardados ${datos.cantidad} eventos. En unos minutos el recolector los clasifica: el rock nacional aparece como Pendiente en Revisar agenda.`;
+    }
+
+    const botonPassline = document.querySelector<HTMLButtonElement>('#traer-passline');
+    botonPassline?.addEventListener('click', async () => {
+      const mensaje = document.querySelector('#passline .mensaje')!;
+      botonPassline.disabled = true;
+      try {
+        const todos: Record<string, unknown>[] = [];
+        for (let pagina = 0; pagina < 6; pagina++) {
+          mensaje.textContent = `Pidiendo a Passline (página ${pagina + 1})…`;
+          const res = await fetch(PASSLINE, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              commune: '', communeNum: null, country: 'argentina', end_date: '', limit: `${pagina * POR_PAGINA},${POR_PAGINA}`, offset: '1',
+              order_by_sales: 1, region: null, start_date: '', tag: null, tag_id: null, text: '', type: 0, upper_category_id: '17',
+            }),
+          });
+          if (!res.ok) throw new Error(`Passline respondió ${res.status}`);
+          const lote = await res.json();
+          if (!Array.isArray(lote)) throw new Error('Passline respondió algo inesperado.');
+          todos.push(...lote);
+          if (lote.length < POR_PAGINA) break;
+        }
+        const vistos = new Set();
+        const eventos = todos
+          .filter((e) => String(e.fecha_inicio ?? '') >= hoy && !vistos.has(e.id) && vistos.add(e.id))
+          .map((e) => Object.fromEntries(CAMPOS.filter((c) => e[c] != null).map((c) => [c, e[c]])));
+        if (!eventos.length) throw new Error('Passline no devolvió eventos próximos.');
+        await guardar('passline', eventos, mensaje);
+      } catch (err) {
+        mensaje.textContent = `No se pudo: ${(err as Error).message}`;
+      }
+      botonPassline.disabled = false;
+    });
+
+    const botonAllAccess = document.querySelector<HTMLButtonElement>('#guardar-allaccess');
+    botonAllAccess?.addEventListener('click', async () => {
+      const mensaje = document.querySelector('#allaccess .mensaje')!;
+      const area = document.querySelector<HTMLTextAreaElement>('#pegar-allaccess')!;
+      botonAllAccess.disabled = true;
+      try {
+        let eventos;
+        try {
+          eventos = JSON.parse(area.value);
+        } catch {
+          throw new Error('Lo pegado no es lo que copia el marcador. Volvé a copiarlo.');
+        }
+        if (!Array.isArray(eventos) || !eventos.length) throw new Error('No hay eventos en lo pegado.');
+        await guardar('allaccess', eventos, mensaje);
+        area.value = '';
+      } catch (err) {
+        mensaje.textContent = `No se pudo: ${(err as Error).message}`;
+      }
+      botonAllAccess.disabled = false;
+    });
+  </script>
+
+  <style>
+    .cabecera {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 760px;
+    }
+    .intro {
+      margin: 0;
+      color: var(--muted);
+    }
+    .intro a {
+      color: var(--azul);
+    }
+    .tarjeta {
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    .tarjeta h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .tarjeta p {
+      margin: 0;
+    }
+    .ultima {
+      color: var(--dim);
+      font-size: 14px;
+    }
+    .pasos {
+      margin: 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pasos a:not(.marcador) {
+      color: var(--azul);
+    }
+    .marcador {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 6px 14px;
+      border: 2px dashed var(--azul);
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: grab;
+    }
+    textarea {
+      width: 100%;
+      background: var(--surface);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      font: 13px/1.4 ui-monospace, monospace;
+    }
+    .mensaje {
+      min-height: 1.4em;
+      color: var(--azul);
+      font-weight: 600;
+    }
+  </style>
+</AdminLayout>

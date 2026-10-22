@@ -1,6 +1,6 @@
 nombre: AllAccess
 url: https://www.allaccess.com.ar/
-activa: false
+activa: true
 rosario: false
 provincia: Otra
-notas: Desactivada. Desde GitHub Actions su firewall (AWS WAF) responde 403 (bloquea bots desde servidores). Desde una PC sí anda, pero no corresponde esquivar el bloqueo.
+notas: Bloquea bots desde servidores. Se trae a mano desde /admin/ticketeras con el marcador.

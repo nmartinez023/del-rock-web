@@ -139,6 +139,91 @@ export function aplicarAccion(texto: string, accion: Accion, lista: Lista) {
   return /^estado:.*$/m.test(texto) ? texto.replace(/^estado:.*$/m, `estado: ${estado}`) : texto.replace(/^(titulo:.*)$/m, `$1\nestado: ${estado}`);
 }
 
+/**
+ * Ticketeras que no se pueden leer desde un servidor (bloquean bots): las traés vos desde /admin/ticketeras
+ * con tu navegador, se guardan en el repo y el recolector las procesa como cualquier otra fuente.
+ */
+export const IMPORTABLES = {
+  passline: {
+    nombre: 'Passline',
+    archivo: 'recolector/entradas/passline.json',
+    campos: ['id', 'nombre', 'artistas', 'url', 'fecha_inicio', 'hora_inicio', 'lugar', 'nombre_communa', 'nombre_region', 'precio_min', 'recorte', 'miniatura', 'agotado', 'category_name', 'upper_category_name'],
+    url: /^https:\/\/(www\.)?passline\.com\//,
+  },
+  allaccess: {
+    nombre: 'AllAccess',
+    archivo: 'recolector/entradas/allaccess.json',
+    campos: ['url', 'jsonld', 'imagen'],
+    url: /^https:\/\/www\.allaccess\.com\.ar\/event\/[\w-]+$/,
+  },
+} as const;
+export type Importable = keyof typeof IMPORTABLES;
+
+/** Solo los campos conocidos, como texto y con largo acotado; descarta lo que no tenga un link válido de la ticketera. */
+export function depurarImportacion(fuente: Importable, eventos: unknown[]) {
+  const { campos, url } = IMPORTABLES[fuente];
+  return eventos.flatMap((e) => {
+    if (!e || typeof e !== 'object') return [];
+    const limpio: Record<string, string> = {};
+    for (const c of campos) {
+      const v = (e as Record<string, unknown>)[c];
+      if (v != null) limpio[c] = String(v).slice(0, c === 'jsonld' ? 20_000 : 1_000);
+    }
+    return url.test(limpio.url ?? '') ? [limpio] : [];
+  });
+}
+
+/** Cuándo y quién trajo por última vez cada ticketera importada (lee solo el encabezado del archivo). */
+export async function leerImportaciones(token: string) {
+  const fuentes = Object.keys(IMPORTABLES) as Importable[];
+  const alias = fuentes.map((f) => `${f}: object(expression: ${JSON.stringify(`${REPO.rama}:${IMPORTABLES[f].archivo}`)}) { ... on Blob { text } }`);
+  const d = await graphql<{ repository: Record<string, { text?: string } | null> }>(
+    token,
+    `query($o:String!,$n:String!){ repository(owner:$o,name:$n){ ${alias.join(' ')} } }`,
+    { o: REPO.owner, n: REPO.name },
+  );
+  return Object.fromEntries(
+    fuentes.map((f) => {
+      const cabeza = (d.repository[f]?.text ?? '').slice(0, 300);
+      return [f, { guardado: /"guardado":"([^"]+)"/.exec(cabeza)?.[1] ?? '', por: /"por":"([^"]+)"/.exec(cabeza)?.[1] ?? '', cantidad: Number(/"cantidad":(\d+)/.exec(cabeza)?.[1] ?? 0) }];
+    }),
+  ) as Record<Importable, { guardado: string; por: string; cantidad: number }>;
+}
+
+/** Guarda lo traído de una ticketera en un commit (dispara el recolector, que lo clasifica y carga). */
+export async function guardarImportacion(token: string, fuente: Importable, eventos: Record<string, string>[], login: string) {
+  const { archivo, nombre } = IMPORTABLES[fuente];
+  const cabeza = JSON.stringify({ guardado: new Date().toISOString(), por: login, cantidad: eventos.length });
+  // Un evento por línea: los cambios entre una importación y otra se leen fácil en el historial.
+  const contenido = `${cabeza.slice(0, -1)},"eventos":[\n${eventos.map((e) => JSON.stringify(e)).join(',\n')}\n]}\n`;
+  for (let intento = 0; intento < 3; intento++) {
+    const d = await graphql<{ repository: { ref: { target: { oid: string } } } }>(
+      token,
+      `query($o:String!,$n:String!){ repository(owner:$o,name:$n){ ref(qualifiedName: ${JSON.stringify(`refs/heads/${REPO.rama}`)}){ target { oid } } } }`,
+      { o: REPO.owner, n: REPO.name },
+    );
+    try {
+      const r = await graphql<{ createCommitOnBranch: { commit: { oid: string } } }>(
+        token,
+        `mutation($i:CreateCommitOnBranchInput!){ createCommitOnBranch(input:$i){ commit { oid } } }`,
+        {
+          i: {
+            branch: { repositoryNameWithOwner: `${REPO.owner}/${REPO.name}`, branchName: REPO.rama },
+            expectedHeadOid: d.repository.ref.target.oid,
+            message: { headline: `Admin: ${eventos.length} eventos traídos de ${nombre}`, body: `Desde /admin/ticketeras, por ${login}.` },
+            fileChanges: { additions: [{ path: archivo, contents: aBase64(contenido) }] },
+          },
+        },
+      );
+      return { cantidad: eventos.length, commit: r.createCommitOnBranch.commit.oid };
+    } catch (err) {
+      if (err instanceof ErrorGitHub && err.status === 409 && intento < 2) continue;
+      throw err;
+    }
+  }
+  throw new ErrorGitHub('No se pudo guardar: el repo cambió varias veces seguidas. Probá de nuevo.', 409);
+}
+
 function aBase64(texto: string) {
   const bytes = new TextEncoder().encode(texto);
   let binario = '';

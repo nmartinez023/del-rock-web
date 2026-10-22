@@ -1,0 +1,58 @@
+{
+ "guardado": "2026-10-22T20:00:00.000Z",
+ "por": "prueba",
+ "cantidad": 3,
+ "eventos": [
+  {
+   "id": "530496",
+   "nombre": "DIVIDIDOS en Teatro Flores - 17 diciembre 2026",
+   "artistas": "",
+   "url": "https://www.passline.com/eventos/divididos-en-teatro-flores-17-diciembre-2026",
+   "fecha_inicio": "2026-12-17",
+   "hora_inicio": "19:00:00",
+   "lugar": "TEATRO FLORES",
+   "nombre_communa": "C.A.B.A.",
+   "nombre_region": "Capital Federal",
+   "precio_min": "",
+   "recorte": "https://imagenes.passline.com/eventos/-758085-rec.jpg",
+   "miniatura": "https://imagenes.passline.com/eventos/-758085-min.jpg",
+   "agotado": "1",
+   "category_name": "Alternative Rock",
+   "upper_category_name": "Música"
+  },
+  {
+   "id": "537576",
+   "nombre": "El Kuelgue en Mendoza",
+   "artistas": "",
+   "url": "https://www.passline.com/eventos/el-kuelgue-en-mendoza",
+   "fecha_inicio": "2026-11-14",
+   "hora_inicio": "21:00:00",
+   "lugar": "Auditorio angel Bustelo",
+   "nombre_communa": "12 DE OCTUBRE",
+   "nombre_region": "Mendoza",
+   "precio_min": "65000.00",
+   "recorte": "https://imagenes.passline.com/eventos/-768178-rec.jpg",
+   "miniatura": "https://imagenes.passline.com/eventos/-768178-min.jpg",
+   "agotado": "0",
+   "category_name": "Música Argentina",
+   "upper_category_name": "Música"
+  },
+  {
+   "id": "538742",
+   "nombre": "Abel en Bariloche!",
+   "artistas": "",
+   "url": "https://www.passline.com/eventos/abel-en-bariloche",
+   "fecha_inicio": "2026-12-11",
+   "hora_inicio": "21:30:00",
+   "lugar": "ESTADIO CLUB BOMBEROS",
+   "nombre_communa": "SAN CARLOS DE BARILOCHE",
+   "nombre_region": "R&iacute;o Negro",
+   "precio_min": "110000.00",
+   "recorte": "https://imagenes.passline.com/eventos/-797165-rec.jpg",
+   "miniatura": "https://imagenes.passline.com/eventos/-797165-min.jpg",
+   "agotado": "0",
+   "category_name": "Tour Conciertos",
+   "upper_category_name": "Música"
+  }
+ ]
+}

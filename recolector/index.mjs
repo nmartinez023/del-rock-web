@@ -5,7 +5,7 @@
 //
 // Uso: npm run recolectar            (escribe los archivos; necesita OPENROUTER_API_KEY)
 //      npm run recolectar -- --seco  (solo muestra qué haría)
-import { appendFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { leerYaml, leerBandas, mezclar, indicePorOrigen, reubicar, limpiarBandas } from './agenda.mjs';
 import { adaptadorPara } from './adaptadores/index.mjs';
 import { normalizar, hoyEnArgentina, completar, fechaHora } from './normalizar.mjs';
@@ -115,12 +115,26 @@ async function clasificarPendientes(items) {
 for (const fuente of fuentes) {
   try {
     const adaptador = adaptadorPara(fuente.url);
-    const url = adaptador.urlDeDatos?.(fuente.url) ?? fuente.url;
-    if (!(await puedeLeer(url, AGENTE))) {
-      log(`- **${fuente.slug}**: robots.txt no permite leer ${url}, la salteo.`);
-      continue;
+    let crudos;
+    if (adaptador.importado) {
+      // Ticketera que bloquea bots: se lee lo que trajiste desde /admin/ticketeras.
+      if (!existsSync(adaptador.importado)) {
+        log(`- **${fuente.slug}**: todavía no hay datos. Traelos desde /admin/ticketeras.`);
+        continue;
+      }
+      const texto = readFileSync(adaptador.importado, 'utf8');
+      const guardado = /"guardado":"([^"]+)"/.exec(texto.slice(0, 300))?.[1] ?? '';
+      const dias = guardado ? Math.floor((Date.now() - Date.parse(guardado)) / 86_400_000) : null;
+      if (dias === null || dias >= 7) log(`- ⚠️ **${fuente.slug}**: los datos tienen ${dias ?? '?'} días. Volvé a traerlos desde /admin/ticketeras.`);
+      crudos = adaptador.extraer(texto, fuente.url);
+    } else {
+      const url = adaptador.urlDeDatos?.(fuente.url) ?? fuente.url;
+      if (!(await puedeLeer(url, AGENTE))) {
+        log(`- **${fuente.slug}**: robots.txt no permite leer ${url}, la salteo.`);
+        continue;
+      }
+      crudos = adaptador.extraer(await descargar(adaptador, url), url);
     }
-    const crudos = adaptador.extraer(await descargar(adaptador, url), url);
     const guardados = indicePorOrigen();
 
     // 2. Eventos futuros, con su respuesta de IA si ya está en caché.

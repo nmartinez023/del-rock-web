@@ -2,7 +2,7 @@
 // Panel /admin: revisar la agenda de a muchos. Lista los eventos pendientes (en vivo desde el repo),
 // con checkbox por fila, y publica / descarta / cambia de lista lo seleccionado en un solo commit.
 // Usa la misma sesión de GitHub que Keystatic. A futuro: más herramientas en /admin.
-import '../../styles/global.css';
+import AdminLayout from '../../components/admin/AdminLayout.astro';
 import { COOKIE_TOKEN, ErrorGitHub, LISTAS, leerEventos, verificarAcceso, type EventoAdmin, type Lista } from '../../lib/admin/github';
 
 export const prerender = false;
@@ -58,156 +58,81 @@ const ETIQUETA_ESTADO = { publicado: '✅ Publicado', pendiente: '⏳ Pendiente'
 const mover = lista === 'agenda' ? 'No es rock → Otros' : 'Es rock → Agenda';
 ---
 
-<!doctype html>
-<html lang="es-AR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Admin · Del Rock</title>
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" />
-  </head>
-  <body>
-    <header class="barra-admin">
-      <div class="container fila">
-        <a href="/admin" class="d marca">Del Rock <span class="azul">Admin</span></a>
-        <nav class="links" aria-label="Admin">
-          <a href="/admin" aria-current="page">Revisar agenda</a>
-          <a href="/keystatic">Keystatic</a>
-          <a href="/">Ver el sitio</a>
-        </nav>
-        {login && <span class="usuario">@{login}</span>}
-      </div>
-    </header>
 
-    <main class="container principal">
-      {
-        estado === 'sin-sesion' && (
-          <section class="aviso" id="sin-sesion">
-            <h1 class="d">Iniciá sesión</h1>
-            <p id="renovando">Renovando tu sesión de GitHub…</p>
-            <p id="pedir-login" hidden>
-              El panel usa la misma sesión que Keystatic. <a class="btn" href="/api/keystatic/github/login">Iniciar sesión con GitHub</a>
-              <br />
-              <small>Después de iniciar sesión, volvé a <strong>/admin</strong>.</small>
-            </p>
-          </section>
-        )
-      }
-      {
-        estado === 'sin-permiso' && (
-          <section class="aviso">
-            <h1 class="d">Sin permiso</h1>
-            <p>@{login} no tiene permiso de escritura en el repo de Del Rock.</p>
-          </section>
-        )
-      }
-      {
-        estado === 'error' && (
-          <section class="aviso">
-            <h1 class="d">No se pudo leer el repo</h1>
-            <p>{error}</p>
-            <p><a class="btn" href={Astro.url.pathname + Astro.url.search}>Reintentar</a></p>
-          </section>
-        )
-      }
-      {
-        estado === 'ok' && (
-          <>
-            <div class="cabecera">
-              <h1 class="d">Revisar agenda</h1>
-              <div class="pestanas" role="tablist">
-                {(Object.keys(LISTAS) as Lista[]).map((l) => (
-                  <a role="tab" aria-selected={l === lista} href={`/admin?lista=${l}${ver === 'todos' ? '&ver=todos' : ''}`}>
-                    {LISTAS[l].titulo} <span class="cuenta">{pendientes[l]}</span>
-                  </a>
-                ))}
-              </div>
-              <label class="ver-todos">
-                <input type="checkbox" id="ver-todos" checked={ver === 'todos'} /> Mostrar también publicados y descartados
+<AdminLayout titulo="Revisar agenda" activo="/admin" estado={estado} login={login} error={error}>
+        <div class="cabecera">
+          <h1 class="d">Revisar agenda</h1>
+          <div class="pestanas" role="tablist">
+            {(Object.keys(LISTAS) as Lista[]).map((l) => (
+              <a role="tab" aria-selected={l === lista} href={`/admin?lista=${l}${ver === 'todos' ? '&ver=todos' : ''}`}>
+                {LISTAS[l].titulo} <span class="cuenta">{pendientes[l]}</span>
+              </a>
+            ))}
+          </div>
+          <label class="ver-todos">
+            <input type="checkbox" id="ver-todos" checked={ver === 'todos'} /> Mostrar también publicados y descartados
+          </label>
+        </div>
+
+        {eventos.length === 0 ? (
+          <p class="vacio">{ver === 'todos' ? 'No hay eventos próximos en esta lista.' : '🎉 No hay pendientes en esta lista.'}</p>
+        ) : (
+          <form id="lista" data-lista={lista}>
+            <div class="acciones" role="toolbar" aria-label="Acciones sobre lo seleccionado">
+              <label class="todos">
+                <input type="checkbox" id="todos" /> <span id="contador">0 seleccionados</span>
               </label>
+              <div class="botones">
+                <button type="button" class="btn" data-accion="publicar" disabled>✅ Publicar</button>
+                <button type="button" class="btn btn--borde" data-accion="descartar" disabled>❌ Descartar</button>
+                <button type="button" class="btn btn--borde" data-accion="mover" disabled>{mover}</button>
+                {ver === 'todos' && (
+                  <button type="button" class="btn btn--borde" data-accion="pendiente" disabled>⏳ Pendiente</button>
+                )}
+              </div>
             </div>
+            <p class="mensaje" id="mensaje" role="status" aria-live="polite" />
 
-            {eventos.length === 0 ? (
-              <p class="vacio">{ver === 'todos' ? 'No hay eventos próximos en esta lista.' : '🎉 No hay pendientes en esta lista.'}</p>
-            ) : (
-              <form id="lista" data-lista={lista}>
-                <div class="acciones" role="toolbar" aria-label="Acciones sobre lo seleccionado">
-                  <label class="todos">
-                    <input type="checkbox" id="todos" /> <span id="contador">0 seleccionados</span>
+            <ul class="eventos">
+              {eventos.map((e) => (
+                <li class="evento" data-archivo={e.archivo}>
+                  <label class="check">
+                    <input type="checkbox" name="archivo" value={e.archivo} aria-label={`Seleccionar ${e.titulo}`} />
                   </label>
-                  <div class="botones">
-                    <button type="button" class="btn" data-accion="publicar" disabled>✅ Publicar</button>
-                    <button type="button" class="btn btn--borde" data-accion="descartar" disabled>❌ Descartar</button>
-                    <button type="button" class="btn btn--borde" data-accion="mover" disabled>{mover}</button>
-                    {ver === 'todos' && (
-                      <button type="button" class="btn btn--borde" data-accion="pendiente" disabled>⏳ Pendiente</button>
-                    )}
+                  <div class="foto-chica">
+                    {e.imagen && <img src={e.imagen} alt="" loading="lazy" referrerpolicy="no-referrer" />}
                   </div>
-                </div>
-                <p class="mensaje" id="mensaje" role="status" aria-live="polite" />
-
-                <ul class="eventos">
-                  {eventos.map((e) => (
-                    <li class="evento" data-archivo={e.archivo}>
-                      <label class="check">
-                        <input type="checkbox" name="archivo" value={e.archivo} aria-label={`Seleccionar ${e.titulo}`} />
-                      </label>
-                      <div class="foto-chica">
-                        {e.imagen && <img src={e.imagen} alt="" loading="lazy" referrerpolicy="no-referrer" />}
-                      </div>
-                      <div class="datos">
-                        <strong class="titulo">{e.titulo}</strong>
-                        <span class="detalle">
-                          {fechaCorta(e.fecha)}
-                          {e.hora && ` · ${e.hora}`} · {e.venue}, {e.ciudad}
-                          {precio(e.precioDesde) && ` · ${precio(e.precioDesde)}`}
-                        </span>
-                        <span class="etiquetas">
-                          {e.tipo === 'festival' && <span class="etiqueta">Festival</span>}
-                          {e.genero && <span class="etiqueta">{e.genero}</span>}
-                          <span class="etiqueta etiqueta--fuente">{e.fuente}</span>
-                          {ver === 'todos' && <span class="etiqueta">{ETIQUETA_ESTADO[e.estado]}</span>}
-                        </span>
-                      </div>
-                      <div class="enlaces">
-                        {e.entradas && (
-                          <a href={e.entradas} target="_blank" rel="noopener">
-                            Ticketera ↗
-                          </a>
-                        )}
-                        <a href={editar(e)} target="_blank" rel="noopener">
-                          Editar ↗
-                        </a>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </form>
-            )}
-          </>
-        )
-      }
-    </main>
+                  <div class="datos">
+                    <strong class="titulo">{e.titulo}</strong>
+                    <span class="detalle">
+                      {fechaCorta(e.fecha)}
+                      {e.hora && ` · ${e.hora}`} · {e.venue}, {e.ciudad}
+                      {precio(e.precioDesde) && ` · ${precio(e.precioDesde)}`}
+                    </span>
+                    <span class="etiquetas">
+                      {e.tipo === 'festival' && <span class="etiqueta">Festival</span>}
+                      {e.genero && <span class="etiqueta">{e.genero}</span>}
+                      <span class="etiqueta etiqueta--fuente">{e.fuente}</span>
+                      {ver === 'todos' && <span class="etiqueta">{ETIQUETA_ESTADO[e.estado]}</span>}
+                    </span>
+                  </div>
+                  <div class="enlaces">
+                    {e.entradas && (
+                      <a href={e.entradas} target="_blank" rel="noopener">
+                        Ticketera ↗
+                      </a>
+                    )}
+                    <a href={editar(e)} target="_blank" rel="noopener">
+                      Editar ↗
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </form>
+        )}
 
     <script>
-      // Sin sesión: intentar renovarla con la cookie de Keystatic; si no se puede, pedir login.
-      const sinSesion = document.getElementById('sin-sesion');
-      if (sinSesion) {
-        fetch('/api/keystatic/github/refresh-token', { method: 'POST', credentials: 'same-origin' })
-          .then((r) => {
-            if (r.ok) location.reload();
-            else throw new Error();
-          })
-          .catch(() => {
-            document.getElementById('renovando')!.hidden = true;
-            document.getElementById('pedir-login')!.hidden = false;
-          });
-      }
-
       document.getElementById('ver-todos')?.addEventListener('change', (ev) => {
         const url = new URL(location.href);
         if ((ev.target as HTMLInputElement).checked) url.searchParams.set('ver', 'todos');
@@ -278,65 +203,6 @@ const mover = lista === 'agenda' ? 'No es rock → Otros' : 'Es rock → Agenda'
     </script>
 
     <style>
-      body {
-        min-height: 100vh;
-      }
-      .barra-admin {
-        border-bottom: 1px solid var(--line);
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: var(--bg);
-      }
-      .fila {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 12px 28px;
-        padding-block: 14px;
-      }
-      .marca {
-        font-size: 24px;
-      }
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px 20px;
-        font-weight: 600;
-        font-size: 14px;
-      }
-      .links a[aria-current='page'] {
-        color: var(--azul);
-      }
-      .usuario {
-        margin-left: auto;
-        color: var(--dim);
-        font-size: 14px;
-      }
-      .principal {
-        padding-block: 28px 120px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      h1 {
-        margin: 0;
-        font-size: 40px;
-      }
-      .aviso {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        max-width: 560px;
-        padding-top: 40px;
-        color: var(--muted);
-      }
-      .aviso p {
-        margin: 0;
-      }
-      .aviso .btn {
-        margin-top: 12px;
-      }
       .cabecera {
         display: flex;
         flex-direction: column;
@@ -409,10 +275,6 @@ const mover = lista === 'agenda' ? 'No es rock → Otros' : 'Es rock → Agenda'
       .botones .btn {
         min-height: 40px;
         font-size: 14px;
-      }
-      .btn:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
       }
       .mensaje {
         margin: 0;
@@ -522,5 +384,4 @@ const mover = lista === 'agenda' ? 'No es rock → Otros' : 'Es rock → Agenda'
         }
       }
     </style>
-  </body>
-</html>
+</AdminLayout>

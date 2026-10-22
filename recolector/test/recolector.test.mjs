@@ -160,21 +160,11 @@ test('Ticketek: de la portada solo los eventos de música, sin repetir', () => {
   assert.deepEqual(adaptadorPara('https://www.ticketek.com.ar/').eventosDePortada(portada).map((a) => a.url), ['a/x']);
 });
 
-test('AllAccess: portada → página de cada evento (JSON-LD), con og:image y sin la "descripción" que es la fecha', async () => {
+test('AllAccess: lee lo que juntó el marcador (JSON-LD de cada evento), con og:image y sin la "descripción" que es la fecha', () => {
   const ad = adaptadorPara('https://www.allaccess.com.ar/');
-  const paginas = JSON.parse(fixture('allaccess.json'));
-  const portada = `<a href='../event/foo-fighters'>x</a><a href="https://www.allaccess.com.ar/event/syderama">y</a><a href='../event/foo-fighters'>x</a>`;
-  const pedidos = [];
-  const pedir = async (u) => {
-    pedidos.push(u);
-    const p = paginas.find((x) => x.url === u);
-    const html = p ? `<html><head><meta property="og:image" content="${p.imagen}">${p.jsonld}</head><body>app</body></html>` : portada;
-    return { ok: true, text: async () => html };
-  };
-  const cuerpo = await ad.descargar(ad.urlDeDatos(), { agente: 'X', pedir, espera: 0 });
-  assert.deepEqual(pedidos, ['https://www.allaccess.com.ar/', 'https://www.allaccess.com.ar/event/foo-fighters', 'https://www.allaccess.com.ar/event/syderama']);
-
-  const [foo, syd] = ad.extraer(cuerpo).map((c) => normalizar(c, nacional('https://www.allaccess.com.ar/')));
+  assert.equal(ad.importado, 'recolector/entradas/allaccess.json', 'no se pide a la web: se lee lo traído desde /admin');
+  const archivo = JSON.stringify({ guardado: '2026-10-22T20:00:00.000Z', por: 'prueba', cantidad: 2, eventos: JSON.parse(fixture('allaccess.json')) });
+  const [foo, syd] = ad.extraer(archivo).map((c) => normalizar(c, nacional('https://www.allaccess.com.ar/')));
   assert.deepEqual(
     [syd.titulo, syd.fecha, syd.hora, syd.venue, syd.ciudad, syd.provincia, syd.precioDesde, syd.descripcion],
     ['SYDERAMA', '2026-10-24', '20:30', 'The Roxy Bar & Grill', 'CABA', 'CABA', 20000, ''],
@@ -182,6 +172,20 @@ test('AllAccess: portada → página de cada evento (JSON-LD), con og:image y si
   assert.equal(syd.entradas, 'https://www.allaccess.com.ar/event/syderama');
   assert.match(syd.imagen, /^https:\/\/cdn\.getcrowder\.com\//);
   assert.equal(foo.id, 'foo-fighters');
+});
+
+test('Passline: lee lo traído desde /admin; CABA, entidades HTML y localidades en mayúsculas', () => {
+  const ad = adaptadorPara('https://home.passline.com/');
+  assert.equal(ad.importado, 'recolector/entradas/passline.json');
+  const [divididos, kuelgue, abel] = ad.extraer(fixture('passline.json')).map((c) => normalizar(c, nacional('https://home.passline.com/')));
+  assert.deepEqual(
+    [divididos.fecha, divididos.hora, divididos.venue, divididos.ciudad, divididos.provincia, divididos.precioDesde, divididos.id],
+    ['2026-12-17', '19:00', 'TEATRO FLORES', 'Buenos Aires', 'CABA', null, '530496'],
+  );
+  assert.equal(divididos.entradas, 'https://www.passline.com/eventos/divididos-en-teatro-flores-17-diciembre-2026');
+  assert.match(divididos.imagen, /^https:\/\/imagenes\.passline\.com\/.+-rec\.jpg$/);
+  assert.deepEqual([kuelgue.provincia, kuelgue.precioDesde], ['Mendoza', 65000]);
+  assert.deepEqual([abel.ciudad, abel.provincia, abel.hora], ['San Carlos De Bariloche', 'Otra', '21:30']);
 });
 
 test('Movistar Arena: funciones de la ficha (año deducido), matiné y noche, y la fecha del listado si la ficha no cargó', () => {
