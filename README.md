@@ -40,18 +40,15 @@ Se consulta una sola vez por build; sin token, la sección muestra solo el botó
 
 Para mostrar un post dentro de una nota, pegá su link en el campo *Link al post de Instagram*.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-Cada push a `main` publica el sitio. Configuración del proyecto en Cloudflare:
+El sitio se publica como Worker con archivos estáticos en https://del-rock-web.delrockarg.workers.dev.
+Cada push a `main` dispara un build en Cloudflare (Workers Builds): `npm run build` y después `wrangler deploy`,
+que lee `wrangler.jsonc` (sirve `dist/` y muestra `404.astro` en las rutas que no existen).
 
-| Campo | Valor |
-|---|---|
-| Framework preset | Astro |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| Node | sale de `.node-version` (24) |
-| Variables | `INSTAGRAM_TOKEN` (opcional), `SITE_URL` cuando haya dominio propio |
+- Node: sale de `.node-version` (24).
+- Variables de build (*Settings › Builds › Variables*): `INSTAGRAM_TOKEN` (opcional) y `SITE_URL` cuando haya dominio propio.
 
 **Rebuild diario:** `.github/workflows/rebuild-diario.yml` llama todos los días a las 06:00 (hora argentina) a un
-*Deploy Hook* de Cloudflare, para traer los posts nuevos de Instagram y sacar las fechas pasadas de la agenda.
-Creá el hook en *Settings › Builds › Deploy hooks* y guardá su URL como secret `CF_DEPLOY_HOOK` en el repo de GitHub.
+*Deploy Hook* del Worker, para traer los posts nuevos de Instagram y sacar las fechas pasadas de la agenda.
+Creá el hook en *Settings › Builds › Deploy Hooks* (rama `main`) y guardá su URL como secret `CF_DEPLOY_HOOK` en el repo de GitHub.

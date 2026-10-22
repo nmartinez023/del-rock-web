@@ -1,0 +1,10 @@
+// Worker de Cloudflare que sirve el sitio estático compilado en dist/.
+{
+  "name": "del-rock-web",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./dist",
+    // Las rutas que no existen muestran src/pages/404.astro con estado 404.
+    "not_found_handling": "404-page"
+  }
+}
