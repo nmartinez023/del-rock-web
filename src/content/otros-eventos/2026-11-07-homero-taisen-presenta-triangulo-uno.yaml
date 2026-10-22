@@ -1,0 +1,21 @@
+titulo: Homero Taisen presenta Triángulo Uno
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+artistas:
+  - Triángulo Uno
+fecha: 2026-11-07
+hora: '20:00'
+venue: Centro Cultural Güemes
+direccion: Güemes 2808
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/HOMERO-TAISEN-PRESENTA-TRIANGULO/
+precioDesde: 20000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/09/3201db97-190d-4659-a071-26a8d41e614e.jpg
+aviso: EVENTO APTO +18 AÑOS
+origen:
+  fuente: entrada-play
+  id: HOMERO-TAISEN-PRESENTA-TRIANGULO
+  huella: fd52ce472c790e81
+  detalle: 2026-10-22

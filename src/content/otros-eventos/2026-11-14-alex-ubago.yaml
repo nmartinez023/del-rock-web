@@ -1,0 +1,21 @@
+titulo: Alex Ubago
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+artistas:
+  - Alex Ubago
+fecha: 2026-11-14
+hora: '21:00'
+venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/ALEX-UBAGO-EN-BIOCERES-ARENA/
+precioDesde: 70000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2025/12/1080x1080_R.jpg
+aviso: EVENTO APTO +12 AÑOS ACOMPAÑADO POR UN MAYOR DE EDAD
+origen:
+  fuente: entrada-play
+  id: ALEX-UBAGO-EN-BIOCERES-ARENA
+  huella: 4317d7597e76dddf
+  detalle: 2026-10-22

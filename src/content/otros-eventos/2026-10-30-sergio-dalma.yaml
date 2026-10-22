@@ -1,0 +1,21 @@
+titulo: Sergio Dalma
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: false
+artistas:
+  - Sergio Dalma
+fecha: 2026-10-30
+hora: '21:00'
+venue: La Segunda Seguros Arena
+direccion: Av. Córdoba 3475
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://entradaplay.com/SERGIO-DALMA/
+precioDesde: 80000
+imagen: https://entradaplay.com/media/imagenes_eventos/home/2026/07/800x800ros.jpg
+aviso: EVENTO APTO +12 AÑOS ACOMPAÑADO POR UN MAYOR DE EDAD
+origen:
+  fuente: entrada-play
+  id: SERGIO-DALMA
+  huella: eecddc3bd9b4f5f2
+  detalle: 2026-10-22
