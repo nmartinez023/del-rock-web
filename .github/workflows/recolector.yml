@@ -1,10 +1,18 @@
-# Recorre las fuentes de agenda 4 veces por día y guarda las fechas nuevas como "pendiente".
-# Las revisás en el panel (/keystatic → Agenda) y las publicás cambiando el estado.
+# Recorre las fuentes de agenda 4 veces por día, clasifica los eventos con IA (Claude Haiku 5.5
+# vía OpenRouter) y los guarda como "Pendiente": rock nacional en Agenda, el resto de las fuentes
+# de Rosario en "Otros eventos de Rosario". También corre cuando cambia una fuente o el recolector.
+# Necesita el secret OPENROUTER_API_KEY.
 name: Recolector de agenda
 
 on:
   schedule:
     - cron: '15 */6 * * *' # 03:15, 09:15, 15:15 y 21:15 en Argentina
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/fuentes/**'
+      - 'recolector/**'
+      - '.github/workflows/recolector.yml'
   workflow_dispatch:
 
 permissions:
@@ -33,23 +41,27 @@ jobs:
         id: recolectar
         run: npm run recolectar
         continue-on-error: true
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          RECOLECTOR_MODELO: ${{ vars.RECOLECTOR_MODELO }}
 
-      - name: Guardar fechas nuevas
+      - name: Guardar cambios
         run: |
-          if [ -z "$(git status --porcelain src/content/agenda src/content/bandas)" ]; then
-            echo "Sin cambios en la agenda."
+          RUTAS="src/content/agenda src/content/otros-eventos src/content/bandas recolector/cache-ia.json"
+          if [ -z "$(git status --porcelain $RUTAS)" ]; then
+            echo "Sin cambios."
             exit 0
           fi
           git config user.name "Recolector Del Rock"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/agenda src/content/bandas
-          git commit -m "Agenda: fechas del recolector"
+          git add -A $RUTAS
+          git commit -m "Agenda: eventos del recolector"
           # Si mientras tanto guardaste algo desde el panel, nos ponemos al día antes de subir.
           git pull --rebase
           git push
 
-      - name: Avisar si alguna fuente falló
+      - name: Avisar si algo falló
         if: steps.recolectar.outcome == 'failure'
         run: |
-          echo "Alguna fuente dio error. Mirá el resumen de esta ejecución."
+          echo "Alguna fuente dio error o la IA no respondió. Mirá el resumen de esta ejecución."
           exit 1

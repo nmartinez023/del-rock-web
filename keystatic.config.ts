@@ -11,6 +11,9 @@ const PROVINCIAS = [
   'Otra',
 ] as const;
 
+// Mismo texto en recolector/agenda.mjs y src/content.config.ts.
+const ESTADOS = ['✅ Publicado', '⏳ Pendiente', '❌ Descartado'];
+
 export default config({
   // El contenido vive en GitHub: cada "Save" del panel es un commit en main.
   storage: { kind: 'github', repo: 'nmartinez023/del-rock-web' },
@@ -93,75 +96,21 @@ export default config({
     }),
 
     agenda: collection({
-      label: 'Agenda',
+      label: 'Agenda (rock nacional)',
       slugField: 'titulo',
       path: 'src/content/agenda/*',
       format: { data: 'yaml' },
-      columns: ['titulo', 'fecha', 'estado'],
-      schema: {
-        titulo: fields.slug({
-          name: { label: 'Título', description: 'Nombre de la banda o del festival' },
-        }),
-        estado: fields.select({
-          label: 'Estado',
-          description: 'Solo las fechas "Publicada" aparecen en la web. Las que trae el recolector entran como "Pendiente".',
-          options: [
-            { label: 'Publicada', value: 'publicado' },
-            { label: 'Pendiente de revisión', value: 'pendiente' },
-            { label: 'Descartada', value: 'descartado' },
-          ],
-          defaultValue: 'publicado',
-        }),
-        tipo: fields.select({
-          label: 'Tipo',
-          options: [
-            { label: 'Show', value: 'show' },
-            { label: 'Festival', value: 'festival' },
-          ],
-          defaultValue: 'show',
-        }),
-        bandas: fields.multiRelationship({
-          label: 'Bandas',
-          description: 'Las que tocan. Un festival puede no tener ninguna o llevar su lineup.',
-          collection: 'bandas',
-        }),
-        fecha: fields.date({ label: 'Fecha', validation: { isRequired: true } }),
-        hora: fields.text({ label: 'Hora', description: 'Ej: 21:00' }),
-        venue: fields.text({ label: 'Lugar', validation: { length: { min: 1 } } }),
-        direccion: fields.text({ label: 'Dirección', description: 'Calle y número, para el link "Cómo llegar".' }),
-        ciudad: fields.text({ label: 'Ciudad', validation: { length: { min: 1 } } }),
-        provincia: fields.select({
-          label: 'Provincia',
-          options: PROVINCIAS.map((p) => ({ label: p, value: p })),
-          defaultValue: 'CABA',
-        }),
-        entradas: fields.url({ label: 'Link de entradas' }),
-        precioDesde: fields.integer({ label: 'Precio desde (en pesos)', description: 'Vacío si no se sabe; 0 si es gratis.' }),
-        imagen: fields.url({
-          label: 'Imagen (URL)',
-          description: 'La trae el recolector desde la ticketera. La web la muestra a través de su propio servidor, sin guardarla en el repo.',
-        }),
-        aviso: fields.text({ label: 'Aviso', description: 'Ej: "Apto +18 años".' }),
-        descripcion: fields.text({ label: 'Descripción', multiline: true }),
-        flyer: fields.image({
-          label: 'Flyer propio',
-          description: 'Opcional. Si lo subís, se usa en lugar de la imagen de la ticketera.',
-          directory: 'src/assets/agenda',
-          publicPath: '../../assets/agenda/',
-        }),
-        origen: fields.object(
-          {
-            fuente: fields.text({ label: 'Fuente' }),
-            id: fields.text({ label: 'ID en la ticketera' }),
-            huella: fields.text({ label: 'Huella' }),
-          },
-          {
-            label: 'Origen automático',
-            description:
-              'Lo completa el recolector. Si editás la fecha a mano, el recolector deja de actualizarla. No hace falta tocar estos campos.',
-          },
-        ),
-      },
+      columns: ['estado', 'titulo', 'fecha'],
+      schema: camposEvento({ conBandas: true }),
+    }),
+
+    otros: collection({
+      label: 'Otros eventos de Rosario',
+      slugField: 'titulo',
+      path: 'src/content/otros-eventos/*',
+      format: { data: 'yaml' },
+      columns: ['estado', 'titulo', 'fecha'],
+      schema: camposEvento({ conBandas: false }),
     }),
 
     fuentes: collection({
@@ -169,7 +118,7 @@ export default config({
       slugField: 'nombre',
       path: 'src/content/fuentes/*',
       format: { data: 'yaml' },
-      columns: ['nombre', 'activa'],
+      columns: ['nombre', 'rosario', 'activa'],
       schema: {
         nombre: fields.slug({ name: { label: 'Nombre', description: 'Ej: "Niceto en Passline"' } }),
         url: fields.url({
@@ -178,13 +127,12 @@ export default config({
           validation: { isRequired: true },
         }),
         activa: fields.checkbox({ label: 'Activa', defaultValue: true }),
-        filtro: fields.select({
-          label: 'Qué eventos traer',
-          options: [
-            { label: 'Todos (la fuente es 100% rock)', value: 'todos' },
-            { label: 'Solo bandas cargadas en "Bandas"', value: 'bandas' },
-          ],
-          defaultValue: 'bandas',
+        rosario: fields.checkbox({
+          label: 'Es de Rosario',
+          description:
+            'Tildado: se guardan todos sus eventos (los de rock nacional en Agenda, el resto en "Otros eventos de Rosario"). ' +
+            'Sin tildar: solo se guardan los de rock nacional.',
+          defaultValue: false,
         }),
         provincia: fields.select({
           label: 'Provincia por defecto',
@@ -197,3 +145,90 @@ export default config({
     }),
   },
 });
+
+/**
+ * Campos de un evento. Los de rock nacional (Agenda) llevan bandas de la colección Bandas;
+ * los otros eventos de Rosario solo guardan los nombres de los artistas.
+ */
+function camposEvento({ conBandas }: { conBandas: boolean }) {
+  return {
+    titulo: fields.slug({
+      name: { label: 'Título', description: 'Nombre de la banda o del festival' },
+    }),
+    // El emoji va dentro del valor porque el listado del panel muestra el valor tal cual.
+    estado: fields.select({
+      label: 'Estado',
+      description: conBandas
+        ? 'Solo los "Publicado" aparecen en la web. Los que trae el recolector entran como "Pendiente".'
+        : 'Para la otra app que use estos eventos. No se muestran en Del Rock.',
+      options: ESTADOS.map((e) => ({ label: e, value: e })),
+      defaultValue: ESTADOS[0],
+    }),
+    rockNacional: fields.checkbox({
+      label: 'Rock nacional',
+      description: conBandas
+        ? 'Lo decide la IA. Si lo destildás, el recolector lo pasa a "Otros eventos de Rosario" (o lo borra si la fuente no es de Rosario).'
+        : 'Lo decide la IA. Si lo tildás, el recolector lo pasa a la Agenda de rock nacional.',
+      defaultValue: conBandas,
+    }),
+    tipo: fields.select({
+      label: 'Tipo',
+      options: [
+        { label: 'Show', value: 'show' },
+        { label: 'Festival', value: 'festival' },
+      ],
+      defaultValue: 'show',
+    }),
+    ...(conBandas
+      ? {
+          bandas: fields.multiRelationship({
+            label: 'Bandas',
+            description: 'Las que tocan. Un festival puede no tener ninguna o llevar su lineup.',
+            collection: 'bandas',
+          }),
+        }
+      : {
+          artistas: fields.array(fields.text({ label: 'Artista' }), {
+            label: 'Artistas',
+            itemLabel: (p) => p.value,
+          }),
+        }),
+    fecha: fields.date({ label: 'Fecha', validation: { isRequired: true } }),
+    hora: fields.text({ label: 'Hora', description: 'Ej: 21:00' }),
+    venue: fields.text({ label: 'Lugar', validation: { length: { min: 1 } } }),
+    direccion: fields.text({ label: 'Dirección', description: 'Calle y número, para el link "Cómo llegar".' }),
+    ciudad: fields.text({ label: 'Ciudad', validation: { length: { min: 1 } } }),
+    provincia: fields.select({
+      label: 'Provincia',
+      options: PROVINCIAS.map((p) => ({ label: p, value: p })),
+      defaultValue: 'CABA',
+    }),
+    entradas: fields.url({ label: 'Link de entradas' }),
+    precioDesde: fields.integer({ label: 'Precio desde (en pesos)', description: 'Vacío si no se sabe; 0 si es gratis.' }),
+    imagen: fields.url({
+      label: 'Imagen (URL)',
+      description: 'La trae el recolector desde la ticketera. La web la muestra a través de su propio servidor, sin guardarla en el repo.',
+    }),
+    aviso: fields.text({ label: 'Aviso', description: 'Ej: "Apto +18 años".' }),
+    descripcion: fields.text({ label: 'Descripción', multiline: true }),
+    flyer: fields.image({
+      label: 'Flyer propio',
+      description: 'Opcional. Si lo subís, se usa en lugar de la imagen de la ticketera.',
+      directory: 'src/assets/agenda',
+      publicPath: '../../assets/agenda/',
+    }),
+    origen: fields.object(
+      {
+        fuente: fields.text({ label: 'Fuente' }),
+        id: fields.text({ label: 'ID en la ticketera' }),
+        huella: fields.text({ label: 'Huella' }),
+        detalle: fields.text({ label: 'Última lectura de la página del evento' }),
+      },
+      {
+        label: 'Origen automático',
+        description:
+          'Lo completa el recolector. Si editás el evento a mano, el recolector deja de actualizarlo. No hace falta tocar estos campos.',
+      },
+    ),
+  };
+}

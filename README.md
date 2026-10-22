@@ -20,26 +20,32 @@ Las fotos van a `src/assets/` y Astro las optimiza (WebP, varios tamaños) en el
 
 ## Recolector de agenda
 
-Un GitHub Action (`.github/workflows/recolector.yml`) corre 4 veces por día, recorre las fuentes cargadas en
-el panel (**Fuentes de agenda**) y guarda los shows que encuentra en `src/content/agenda/` con estado **Pendiente**.
-En la web solo aparecen las fechas **Publicada**: las revisás en *Agenda* y les cambiás el estado.
+Un GitHub Action (`.github/workflows/recolector.yml`) corre 4 veces por día, y también cuando cambia una fuente o el
+recolector. Recorre las fuentes cargadas en el panel (**Fuentes de agenda**), clasifica cada evento con IA y lo guarda
+con estado **⏳ Pendiente**:
 
-- **Fuentes:** URL de una ticketera, venue o productora. *Qué eventos traer*: "Solo bandas cargadas" (busca los
-  nombres de la colección Bandas en el título) o "Todos" (para fuentes 100% rock).
-- **Extracción:** lee los eventos publicados como JSON-LD (`schema.org/Event`), que usan muchas ticketeras.
-  Para un sitio que no lo tenga, se agrega un adaptador en `recolector/adaptadores/` y se registra por dominio en `index.mjs`.
-- **Varias bandas:** una fecha puede tener varias (`bandas`). Se reconocen las ya cargadas y, con "Todos", se crean las
-  que faltan separando el título ("A + B", "A & B", "A / B", "A ft B"). Las bandas creadas quedan ocultas hasta que tengan algo publicado.
-- **Festivales:** `tipo: festival`. No se inventan bandas desde el título: solo se asocian las cargadas que aparezcan o el lineup que informe la ticketera.
-- **Detalle de cada evento:** del listado salen precio e imagen; de la página de cada evento, dirección, aviso (+18, etc.)
-  y descripción. Esa página se lee al cargar el evento y después como mucho una vez por semana.
-- **Imágenes:** se guarda solo la URL. La web las muestra en `/agenda/<fecha>/imagen`, un endpoint del Worker que la pide
-  a la ticketera y la deja en caché (7 días en el navegador, 30 en Cloudflare). Solo sirve imágenes de fechas publicadas.
-  Si subís un *Flyer propio* en el panel, se usa ese.
-- **Duplicados:** el mismo evento (fecha + lugar + bandas) no se carga dos veces, aunque venga de otra fuente o ya lo hayas cargado a mano.
-- **Ediciones a mano:** si corregís una fecha que trajo el recolector, no la vuelve a pisar.
-- **Respeta `robots.txt`** y se identifica como `DelRockBot`.
-- Si una fuente da error, la ejecución falla y GitHub te avisa por mail. El resumen de cada corrida está en *Actions*.
+| Evento | Fuente de Rosario | Fuente de otro lado |
+|---|---|---|
+| Rock nacional | **Agenda (rock nacional)** — `src/content/agenda/` | **Agenda (rock nacional)** |
+| Otro género | **Otros eventos de Rosario** — `src/content/otros-eventos/` | No se guarda |
+
+En la web solo aparecen los de la Agenda con estado **✅ Publicado**. Los "otros eventos" no se muestran en Del Rock:
+salen, junto con los de rock, por `/api/eventos.json` para usarlos desde otra app.
+
+- **IA:** Claude Haiku 5.5 vía OpenRouter (`OPENROUTER_API_KEY` en los secrets de GitHub; el modelo se puede cambiar con la
+  variable `RECOLECTOR_MODELO`). Para cada evento nuevo decide si es rock nacional, si es festival, el título limpio y quiénes tocan.
+  Las respuestas se guardan en `recolector/cache-ia.json`: un evento no se vuelve a consultar mientras no cambie. El costo de cada
+  corrida figura en el resumen del Action. Si la IA no responde, esos eventos se reintentan en la corrida siguiente.
+- **Bandas:** las de los eventos de rock se vinculan a la colección Bandas; las que no existen se crean ocultas
+  (aparecen en la web cuando tienen una fecha publicada o una nota).
+- **Corregir a la IA:** destildá o tildá **Rock nacional** en el evento y el recolector lo pasa a la otra lista en la corrida siguiente.
+- **Detalle de cada evento:** del listado salen precio e imagen; de la página de cada evento, dirección, aviso y descripción
+  (se lee al cargar el evento y después como mucho una vez por semana).
+- **Imágenes:** se guarda solo la URL. La web las muestra en `/agenda/<evento>/imagen`, un endpoint del Worker que las pide
+  a la ticketera y las deja en caché. Si subís un *Flyer propio* en el panel, se usa ese.
+- **Duplicados:** el mismo evento (fecha + lugar + título) no se carga dos veces.
+- **Ediciones a mano:** si editás un evento que trajo el recolector, no lo vuelve a pisar (cambiar el estado no cuenta como edición).
+- **Respeta `robots.txt`** y se identifica como `DelRockBot`. Para sitios sin JSON-LD hay adaptadores en `recolector/adaptadores/`.
 
 ```bash
 npm run recolectar -- --seco
@@ -48,8 +54,6 @@ npm run recolectar -- --seco
 ```bash
 npm run test:recolector
 ```
-
-El paso para sumar un modelo de IA (limpiar títulos, detectar bandas nuevas) va en `recolector/clasificar.mjs`.
 
 ## Keystatic en la nube (GitHub App)
 

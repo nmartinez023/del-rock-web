@@ -11,7 +11,7 @@ import {
 } from '../../../lib/util';
 
 export async function getStaticPaths() {
-  const fechas = await getCollection('agenda', (f) => f.data.estado === 'publicado');
+  const fechas = await getCollection('agenda', (f) => f.data.estado === 'publicado' && f.data.rockNacional);
   const slugs = await slugsDeAgenda();
   return fechas.flatMap((fecha) => {
     const slug = slugs.get(fecha.id)!;

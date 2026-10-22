@@ -1,53 +1,59 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, mkdtempSync, writeFileSync, readdirSync, rmSync } from 'node:fs';
+import { readFileSync, mkdtempSync, writeFileSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { parse, stringify } from 'yaml';
 import { extraer } from '../adaptadores/jsonld.mjs';
 import { adaptadorPara } from '../adaptadores/index.mjs';
 import { normalizar, fechaHora, provinciaDe, completar } from '../normalizar.mjs';
-import { clasificar, nombresDelTitulo } from '../clasificar.mjs';
-import { mezclar } from '../agenda.mjs';
+import { aplicarClasificacion, bandaPara } from '../clasificar.mjs';
+import { mezclar, reubicar, huellaDe, PENDIENTE, PUBLICADO, normalizarEstado } from '../agenda.mjs';
+import { crearClasificador, cargarCache, claveIA, SinCredito } from '../ia.mjs';
 import { parsearRobots, rutaPermitida } from '../robots.mjs';
 
 const html = readFileSync(new URL('./fixtures/ticketera.html', import.meta.url), 'utf8');
-const fuente = { slug: 'prueba', url: 'https://tickets.ejemplo/listado', provincia: 'CABA', filtro: 'bandas' };
+const fuente = { slug: 'prueba', url: 'https://tickets.ejemplo/listado', provincia: 'CABA', rosario: false };
+const rosario = { ...fuente, slug: 'rosario', rosario: true };
 const bandas = [
   { slug: 'kapanga', nombre: 'Kapanga' },
   { slug: 'turf', nombre: 'Turf' },
-  { slug: 'ntvg', nombre: 'No Te Va Gustar' },
-  { slug: 'los-espiritus', nombre: 'Los Espíritus' },
+  { slug: 'los-piojos', nombre: 'Los Piojos' },
 ];
-const HOY = '2026-10-25'; // el Festival Bandera (24/10) ya pasó
-
-const procesar = (f = fuente) =>
-  extraer(html)
-    .map((c) => normalizar(c, f))
-    .filter(Boolean)
-    .map((e) => clasificar(e, bandas, f))
-    .filter(Boolean);
+const HOY = '2026-10-25';
 
 const evento = (titulo, extra = {}) => ({
-  titulo,
-  fecha: '2026-11-01',
-  hora: '21:00',
-  venue: 'Club',
-  ciudad: 'Buenos Aires',
-  provincia: 'CABA',
-  entradas: 'https://t/x',
-  artistas: [],
-  id: titulo,
-  ...extra,
+  titulo, fecha: '2026-11-01', hora: '21:00', venue: 'Club', ciudad: 'Rosario', provincia: 'Santa Fe',
+  entradas: 'https://t/x', artistas: [], id: titulo, ...extra,
 });
+const respuesta = (extra = {}) => ({ rockNacional: true, tipo: 'show', titulo: 'Kapanga', artistas: ['Kapanga'], ...extra });
 
-test('extrae eventos de @graph e ItemList y saltea JSON roto', () => {
+/** Carpetas temporales con la misma forma que el repo. */
+function carpetas() {
+  const raiz = mkdtempSync(join(tmpdir(), 'recolector-'));
+  const dirs = { agenda: join(raiz, 'agenda'), otros: join(raiz, 'otros') };
+  const dirBandas = join(raiz, 'bandas');
+  for (const d of [...Object.values(dirs), dirBandas]) rmSync(d, { recursive: true, force: true });
+  return { raiz, dirs, dirBandas, borrar: () => rmSync(raiz, { recursive: true, force: true }) };
+}
+const leer = (dir, archivo) => parse(readFileSync(join(dir, archivo), 'utf8'));
+const archivos = (dir) => (existsSync(dir) ? readdirSync(dir).sort() : []);
+
+// --- Extracción y normalización -------------------------------------------------
+
+test('JSON-LD: extrae eventos de @graph e ItemList y saltea JSON roto', () => {
   const crudos = extraer(html);
   assert.equal(crudos.length, 5);
   assert.equal(crudos[0].nombre, 'KAPANGA & invitados - Gira 2026');
   assert.equal(crudos[0].url, 'https://tickets.ejemplo/kapanga-flores');
   assert.deepEqual(crudos[0].artistas, ['Kapanga']);
   assert.equal(crudos[2].cancelado, true);
+});
+
+test('JSON-LD genérico: precio más bajo de las ofertas y descripción', () => {
+  const [ev] = extraer(`<script type="application/ld+json">{"@type":"MusicEvent","name":"X","startDate":"2026-11-01",
+    "description":"Show acústico","offers":[{"price":"20000"},{"price":"15000.50"},{"lowPrice":"18000"}]}</script>`);
+  assert.deepEqual([ev.precioDesde, ev.descripcion], [15001, 'Show acústico']);
 });
 
 test('convierte la hora a Argentina (UTC 00:30 del 15 = 21:30 del 14)', () => {
@@ -57,215 +63,211 @@ test('convierte la hora a Argentina (UTC 00:30 del 15 = 21:30 del 14)', () => {
   assert.equal(fechaHora('mañana'), null);
 });
 
-test('deduce la provincia desde la dirección', () => {
+test('deduce la provincia desde la dirección; la región manda sobre la calle', () => {
   assert.equal(provinciaDe('Ciudad Autónoma de Buenos Aires'), 'CABA');
   assert.equal(provinciaDe('Av. Siempreviva 123, Rosario, Santa Fe'), 'Santa Fe');
   assert.equal(provinciaDe('La Plata'), 'Buenos Aires');
-  assert.equal(provinciaDe('Montevideo'), null);
-  // La región manda sobre la dirección (calle Córdoba en Rosario).
   assert.equal(provinciaDe('Santa Fe', 'Rosario', 'Córdoba 1650'), 'Santa Fe');
+  assert.equal(provinciaDe('Montevideo'), null);
 });
 
-test('con filtro "bandas" deja solo eventos con bandas cargadas y descarta cancelados', () => {
-  assert.deepEqual(
-    procesar().map((e) => [e.bandas, e.fecha, e.provincia, e.venue]),
-    [
-      [['kapanga'], '2026-11-14', 'CABA', 'Teatro Flores'],
-      [['turf'], '2026-12-05', 'Santa Fe', 'Distrito Rock'],
-    ],
-  );
-});
-
-test('con filtro "todos" entran también el festival (sin bandas) y la obra', () => {
-  const ev = procesar({ ...fuente, filtro: 'todos' });
-  assert.equal(ev.length, 4);
-  const festival = ev.find((e) => e.titulo === 'Festival Bandera');
-  assert.deepEqual([festival.tipo, festival.bandas, festival.bandasNuevas], ['festival', [], []]);
-  const obra = ev.find((e) => e.titulo === 'Obra de teatro infantil');
-  assert.deepEqual([obra.tipo, obra.bandas, obra.provincia], ['show', [], 'Buenos Aires']);
-});
-
-test('nombresDelTitulo: limpia el título y separa varios artistas', () => {
-  assert.deepEqual(nombresDelTitulo('LOS PIOJOS - Gira 2026'), ['Los Piojos']);
-  assert.deepEqual(nombresDelTitulo('Ciro y los Persas en el Estadio Único'), ['Ciro y los Persas']);
-  assert.deepEqual(nombresDelTitulo('El Mató a un Policía Motorizado + invitados'), ['El Mató a un Policía Motorizado']);
-  assert.deepEqual(nombresDelTitulo('Pez (presentación nuevo disco)'), ['Pez']);
-  assert.deepEqual(nombresDelTitulo('SILVESTRE Y LA NARANJA'), ['Silvestre y la Naranja']);
-  assert.deepEqual(nombresDelTitulo('CARAS EXTRAÑAS DESPIDE EL AÑO'), ['Caras Extrañas']);
-  assert.deepEqual(nombresDelTitulo('Las Pastillas del Abuelo + Guasones / Valdés'), ['Las Pastillas del Abuelo', 'Guasones', 'Valdés']);
-  assert.deepEqual(nombresDelTitulo('DIRTY SOUND CLUB x CCG'), ['Dirty Sound Club', 'CCG']);
-  assert.deepEqual(nombresDelTitulo('Viejas Locas & Jóvenes Pordioseros - Gira'), ['Viejas Locas', 'Jóvenes Pordioseros']);
-});
-
-test('dos bandas: matchea las cargadas y crea las que faltan', () => {
-  const f = { ...fuente, filtro: 'todos' };
-  // Las dos cargadas, unidas por "y" (que no es separador): las reconoce por nombre.
-  assert.deepEqual(clasificar(evento('Los Espíritus y Kapanga en el Teatro Flores'), bandas, f).bandas, ['los-espiritus', 'kapanga']);
-  // Una cargada y otra nueva.
-  const mixto = clasificar(evento('Turf + Los Gardelitos'), bandas, f);
-  assert.deepEqual(mixto.bandas, ['turf', 'los-gardelitos']);
-  assert.deepEqual(mixto.bandasNuevas, [{ slug: 'los-gardelitos', nombre: 'Los Gardelitos' }]);
-  // Con "y": la conocida se reconoce y el resto queda como banda nueva.
-  assert.deepEqual(clasificar(evento('Los Espíritus y Él Mató'), bandas, f).bandas, ['los-espiritus', 'el-mato']);
-  // Una banda conocida que en realidad es el lugar no se asocia: "Charly Day en CCG".
-  const conLugar = clasificar(evento('Charly Day en CCG'), [...bandas, { slug: 'ccg', nombre: 'CCG' }], f);
-  assert.deepEqual(conLugar.bandas, ['charly-day']);
-  // Artistas informados por la ticketera: se usan tal cual.
-  const informados = clasificar(evento('Noche de rock', { artistas: ['Kapanga', 'Los Tabaleros'] }), bandas, f);
-  assert.deepEqual(informados.bandas, ['kapanga', 'los-tabaleros']);
-  // Con filtro "bandas" no se crean nuevas, pero se mantienen las cargadas.
-  assert.deepEqual(clasificar(evento('Turf + Los Gardelitos'), bandas, fuente).bandas, ['turf']);
-  assert.equal(clasificar(evento('Los Gardelitos'), bandas, fuente), null);
-});
-
-test('festivales: sin bandas o con el lineup que se reconozca, nunca inventadas del título', () => {
-  const f = { ...fuente, filtro: 'todos' };
-  const solo = clasificar(evento('Festival Bandera 2026'), bandas, f);
-  assert.deepEqual([solo.tipo, solo.bandas, solo.bandasNuevas], ['festival', [], []]);
-  const conLineup = clasificar(evento('Cosquín Rock Fest: Turf, No Te Va Gustar y más'), bandas, f);
-  assert.deepEqual([conLineup.tipo, conLineup.bandas.sort()], ['festival', ['ntvg', 'turf']]);
-  // Con filtro "bandas", un festival entra solo si tiene alguna banda cargada.
-  assert.equal(clasificar(evento('Festival Bandera'), bandas, fuente), null);
-  assert.equal(clasificar(evento('Festival con Kapanga'), bandas, fuente).tipo, 'festival');
-});
-
-test('mezclar: crea pendientes, actualiza los no editados y respeta los editados a mano', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'agenda-'));
-  try {
-    // Una fecha cargada a mano del mismo show de Turf: no se duplica.
-    writeFileSync(
-      join(dir, 'turf-manual.yaml'),
-      stringify({ titulo: 'Turf', estado: 'publicado', tipo: 'show', bandas: ['turf'], fecha: '2026-12-05', hora: '21:30', venue: 'Distrito Rock', ciudad: 'Rosario', provincia: 'Santa Fe' }),
-    );
-    const eventos = procesar({ ...fuente, filtro: 'todos' });
-
-    const r1 = mezclar(dir, eventos, fuente, { hoy: HOY });
-    assert.equal(r1.nuevos.length, 2, 'Kapanga y la obra (Festival Bandera ya pasó)');
-    assert.equal(r1.omitidos, 1, 'Turf ya estaba cargado a mano');
-    const kapanga = r1.nuevos.find((a) => a.includes('kapanga'));
-    const texto = readFileSync(join(dir, kapanga), 'utf8');
-    assert.match(texto, /^hora: '21:30'$/m, 'la hora va entre comillas');
-    const datos = parse(texto);
-    assert.deepEqual([datos.estado, datos.tipo, datos.bandas], ['pendiente', 'show', ['kapanga']]);
-    assert.equal(datos.titulo, 'KAPANGA & invitados - Gira 2026');
-
-    // Segunda corrida igual: no cambia nada.
-    const r2 = mezclar(dir, eventos, fuente, { hoy: HOY });
-    assert.deepEqual([r2.nuevos.length, r2.actualizados.length, r2.sinCambios], [0, 0, 2]);
-
-    // La ticketera cambia la hora: se actualiza y mantiene el estado.
-    writeFileSync(join(dir, kapanga), stringify({ ...datos, estado: 'publicado' }));
-    const cambiados = eventos.map((e) => (e.bandas.includes('kapanga') ? { ...e, hora: '22:00' } : e));
-    const r3 = mezclar(dir, cambiados, fuente, { hoy: HOY });
-    assert.deepEqual(r3.actualizados, [kapanga]);
-    const actualizado = parse(readFileSync(join(dir, kapanga), 'utf8'));
-    assert.deepEqual([actualizado.hora, actualizado.estado], ['22:00', 'publicado']);
-
-    // Le agregás una banda a mano: el recolector ya no lo toca aunque la ticketera cambie.
-    writeFileSync(join(dir, kapanga), stringify({ ...actualizado, bandas: ['kapanga', 'turf'] }));
-    const r4 = mezclar(dir, eventos, fuente, { hoy: HOY });
-    assert.equal(r4.actualizados.length, 0);
-    assert.deepEqual(parse(readFileSync(join(dir, kapanga), 'utf8')).bandas, ['kapanga', 'turf']);
-
-    assert.equal(readdirSync(dir).length, 3);
-  } finally {
-    rmSync(dir, { recursive: true, force: true });
-  }
-});
-
-test('crea las bandas que faltan, una sola vez y solo si se guarda la fecha', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'agenda-'));
-  const dirBandas = mkdtempSync(join(tmpdir(), 'bandas-'));
-  try {
-    const f = { ...fuente, filtro: 'todos' };
-    const lista = [...bandas];
-    const clasificados = [
-      evento('LOS PIOJOS + Los Gardelitos - Gira 2026', { fecha: '2026-11-01', id: '1' }),
-      evento('Los Piojos - segunda fecha', { fecha: '2026-11-02', id: '2' }),
-      evento('Los Pericos - ya pasó', { fecha: '2026-10-01', id: '3' }),
-    ].map((e) => {
-      const c = clasificar(e, lista, f);
-      for (const b of c.bandasNuevas) if (!lista.some((x) => x.slug === b.slug)) lista.push(b);
-      return c;
-    });
-    assert.deepEqual(clasificados.map((c) => c.bandas), [['los-piojos', 'los-gardelitos'], ['los-piojos'], ['los-pericos']]);
-
-    const r = mezclar(dir, clasificados, f, { hoy: HOY, dirBandas });
-    assert.deepEqual(r.bandasNuevas.map((b) => b.nombre), ['Los Piojos', 'Los Gardelitos'], 'Los Pericos no: su fecha ya pasó');
-    assert.deepEqual(readdirSync(dirBandas).sort(), ['los-gardelitos.yaml', 'los-piojos.yaml']);
-    assert.deepEqual(parse(readFileSync(join(dirBandas, 'los-piojos.yaml'), 'utf8')), { nombre: 'Los Piojos', automatica: true });
-    assert.deepEqual(parse(readFileSync(join(dir, r.nuevos[0]), 'utf8')).bandas, ['los-piojos', 'los-gardelitos']);
-  } finally {
-    rmSync(dir, { recursive: true, force: true });
-    rmSync(dirBandas, { recursive: true, force: true });
-  }
-});
-
-test('adaptador de Entrada Play: lee su JSON y arma fecha, lugar, link y bandas', () => {
+test('Entrada Play: listado (precio, imagen, link) y página del evento (descripción, aviso, dirección)', () => {
   const ad = adaptadorPara('https://entradaplay.com');
   assert.equal(ad.urlDeDatos('https://entradaplay.com'), 'https://entradaplay.com/obtener_eventos/?cantidad_eventos=200');
-  const cuerpo = readFileSync(new URL('./fixtures/entradaplay.json', import.meta.url), 'utf8');
-  const f = { ...fuente, url: 'https://entradaplay.com', provincia: 'Santa Fe', filtro: 'todos' };
-  const ev = ad
-    .extraer(cuerpo, ad.urlDeDatos(f.url))
-    .map((c) => normalizar(c, f))
-    .filter(Boolean)
-    .map((e) => clasificar(e, bandas, f));
-
-  assert.equal(ev.length, 2, 'el evento sin fecha se descarta');
-  assert.deepEqual(
-    [ev[0].fecha, ev[0].hora, ev[0].venue, ev[0].ciudad, ev[0].provincia, ev[0].entradas, ev[0].bandas],
-    ['2026-11-07', '21:00', 'Teatro de Prueba', 'Rosario', 'Santa Fe', 'https://entradaplay.com/LOS-PIOJOS/', ['los-piojos']],
-  );
-  assert.deepEqual(
-    [ev[1].fecha, ev[1].hora, ev[1].ciudad, ev[1].entradas, ev[1].bandas],
-    ['2026-11-15', '', 'Santa Fe', 'https://otra-ticketera.ejemplo/evento', ['banda-invitada', 'otro-artista']],
-  );
-  assert.equal(adaptadorPara('https://otra.ejemplo/x').extraer, extraer, 'el resto usa JSON-LD');
-});
-
-test('Entrada Play: precio e imagen del listado; descripción, aviso y dirección de la página del evento', () => {
-  const ad = adaptadorPara('https://entradaplay.com');
   const lista = ad.extraer(readFileSync(new URL('./fixtures/entradaplay.json', import.meta.url), 'utf8'), 'https://entradaplay.com/obtener_eventos/');
-  assert.equal(lista[0].imagen, 'https://entradaplay.com/media/eventos/banda.jpg');
-  assert.equal(lista[0].precioDesde, 25000);
-
-  const html = readFileSync(new URL('./fixtures/entradaplay-evento.html', import.meta.url), 'utf8');
-  const extra = ad.detalle(lista[0], html);
+  assert.equal(lista.length, 3);
+  assert.deepEqual(
+    [lista[0].imagen, lista[0].precioDesde, lista[0].url, lista[1].url],
+    ['https://entradaplay.com/media/eventos/banda.jpg', 25000, 'https://entradaplay.com/LOS-PIOJOS/', 'https://otra-ticketera.ejemplo/evento'],
+  );
+  const extra = ad.detalle(lista[0], readFileSync(new URL('./fixtures/entradaplay-evento.html', import.meta.url), 'utf8'));
   assert.deepEqual(extra, {
     direccion: 'Calle Falsa 123',
     descripcion: 'La banda vuelve a Rosario con un show único.\n\nApertura de puertas: 20 hs.\n\nInvitados especiales.',
     aviso: 'EVENTO APTO +18 AÑOS',
   });
   const ev = normalizar(completar(lista[0], extra), { url: 'https://entradaplay.com', provincia: 'Santa Fe' });
-  assert.deepEqual(
-    [ev.direccion, ev.precioDesde, ev.imagen, ev.aviso],
-    ['Calle Falsa 123', 25000, 'https://entradaplay.com/media/eventos/banda.jpg', 'EVENTO APTO +18 AÑOS'],
-  );
+  assert.deepEqual([ev.fecha, ev.hora, ev.venue, ev.ciudad, ev.provincia, ev.direccion], ['2026-11-07', '21:00', 'Teatro de Prueba', 'Rosario', 'Santa Fe', 'Calle Falsa 123']);
+  assert.equal(normalizar(lista[2], fuente), null, 'el evento sin fecha se descarta');
+  assert.equal(adaptadorPara('https://otra.ejemplo/x').extraer, extraer, 'el resto usa JSON-LD');
 });
 
-test('JSON-LD genérico: precio más bajo de las ofertas y descripción', () => {
-  const [ev] = extraer(`<script type="application/ld+json">{"@type":"MusicEvent","name":"X","startDate":"2026-11-01",
-    "description":"Show acústico","offers":[{"price":"20000"},{"price":"15000.50"},{"lowPrice":"18000"}]}</script>`);
-  assert.deepEqual([ev.precioDesde, ev.descripcion], [15001, 'Show acústico']);
+// --- Clasificación ------------------------------------------------------------
+
+test('rock nacional: va a la Agenda, con bandas cargadas o nuevas', () => {
+  const ev = aplicarClasificacion(evento('LOS PIOJOS + Los Gardelitos'), respuesta({ titulo: 'Los Piojos + Los Gardelitos', artistas: ['Los Piojos', 'Los Gardelitos'] }), bandas, fuente);
+  assert.equal(ev.destino, 'agenda');
+  assert.equal(ev.titulo, 'Los Piojos + Los Gardelitos');
+  assert.deepEqual(ev.bandas, ['los-piojos', 'los-gardelitos']);
+  assert.deepEqual(ev.bandasNuevas, [{ slug: 'los-gardelitos', nombre: 'Los Gardelitos' }]);
+  assert.equal(bandaPara('Piojos', bandas)?.slug, 'los-piojos', 'sin importar el artículo');
 });
 
-test('mezclar: si esta vez no se leyó la página del evento, conserva la descripción guardada', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'agenda-'));
+test('no es rock: de Rosario va a "otros" con los artistas como texto; de otro lado no se guarda', () => {
+  const ia = respuesta({ rockNacional: false, titulo: 'Los Nocheros', artistas: ['Los Nocheros'] });
+  const otro = aplicarClasificacion(evento('LOS NOCHEROS'), ia, bandas, rosario);
+  assert.deepEqual([otro.destino, otro.artistas, otro.bandas, otro.bandasNuevas], ['otros', ['Los Nocheros'], [], []]);
+  assert.equal(aplicarClasificacion(evento('LOS NOCHEROS'), ia, bandas, fuente), null);
+});
+
+test('festival de rock sin lineup: va a la Agenda sin bandas', () => {
+  const ev = aplicarClasificacion(evento('FESTIVAL BANDERA'), respuesta({ tipo: 'festival', titulo: 'Festival Bandera', artistas: [] }), bandas, fuente);
+  assert.deepEqual([ev.destino, ev.tipo, ev.bandas], ['agenda', 'festival', []]);
+});
+
+// --- IA (con fetch simulado: no gasta créditos) --------------------------------
+
+const respuestaApi = (contenido, status = 200, costo = 0.0003) => ({
+  status,
+  ok: status < 300,
+  json: async () => ({ choices: [{ message: { content: typeof contenido === 'string' ? contenido : JSON.stringify(contenido) } }], usage: { cost: costo } }),
+  text: async () => 'error',
+});
+
+test('IA: pide formato estructurado al modelo configurado y devuelve la respuesta con su costo', async () => {
+  const pedidos = [];
+  const ia = crearClasificador({ apiKey: 'k', modelo: 'anthropic/claude-haiku-5.5', pedir: async (url, init) => (pedidos.push(JSON.parse(init.body)), respuestaApi(respuesta())) });
+  const r = await ia(evento('KAPANGA', { descripcion: 'x'.repeat(5000) }));
+  assert.deepEqual(r, { ...respuesta(), costo: 0.0003 });
+  assert.equal(pedidos[0].model, 'anthropic/claude-haiku-5.5');
+  assert.equal(pedidos[0].response_format.type, 'json_schema');
+  assert.equal(JSON.parse(pedidos[0].messages[1].content).descripcion.length, 1500, 'la descripción se recorta');
+});
+
+test('IA: si OpenRouter rechaza el formato (400), reintenta pidiendo JSON por instrucción', async () => {
+  const pedidos = [];
+  const respuestas = [respuestaApi('', 400), respuestaApi('```json\n' + JSON.stringify(respuesta()) + '\n```')];
+  const ia = crearClasificador({ apiKey: 'k', pedir: async (u, init) => (pedidos.push(JSON.parse(init.body)), respuestas.shift()) });
+  assert.equal((await ia(evento('KAPANGA'))).titulo, 'Kapanga');
+  assert.equal(pedidos[1].response_format, undefined);
+});
+
+test('IA: sin crédito o key inválida corta con SinCredito; respuestas inválidas se reintentan', async () => {
+  const sinCredito = crearClasificador({ apiKey: 'k', pedir: async () => respuestaApi('', 402) });
+  await assert.rejects(sinCredito(evento('X')), SinCredito);
+
+  const respuestas = [respuestaApi({ nada: true }), respuestaApi('no es json'), respuestaApi(respuesta())];
+  const conReintento = crearClasificador({ apiKey: 'k', pedir: async () => respuestas.shift(), esperar: async () => {} });
+  assert.equal((await conReintento(evento('X'))).rockNacional, true);
+});
+
+test('caché de IA: guarda por evento y olvida los que pasaron hace mucho', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'cache-'));
+  const archivo = join(dir, 'cache.json');
   try {
-    const base = evento('Turf', { bandas: ['turf'], tipo: 'show', precioDesde: 20000, imagen: 'https://t/img.jpg' });
-    mezclar(dir, [{ ...base, descripcion: 'Texto largo', aviso: '+18', direccion: 'Calle 1', detalle: '2026-10-25' }], fuente, { hoy: HOY });
-    const [archivo] = readdirSync(dir);
-    // Corrida siguiente: cambia el precio y no se leyó la página (no hay descripción en el evento).
-    const r = mezclar(dir, [{ ...base, precioDesde: 25000 }], fuente, { hoy: HOY });
-    assert.deepEqual(r.actualizados, [archivo]);
-    const d = parse(readFileSync(join(dir, archivo), 'utf8'));
-    assert.deepEqual([d.precioDesde, d.descripcion, d.aviso, d.direccion, d.origen.detalle], [25000, 'Texto largo', '+18', 'Calle 1', '2026-10-25']);
-    // Y una tercera corrida igual no cambia nada.
-    assert.equal(mezclar(dir, [{ ...base, precioDesde: 25000 }], fuente, { hoy: HOY }).actualizados.length, 0);
+    const c = cargarCache(archivo);
+    const nuevo = evento('A', { fecha: '2026-11-01' });
+    c.set(claveIA(nuevo), respuesta(), nuevo.fecha);
+    c.set('vieja', respuesta(), '2026-01-01');
+    c.guardar(HOY);
+    const otra = cargarCache(archivo);
+    assert.deepEqual(otra.get(claveIA(nuevo)), respuesta());
+    assert.equal(otra.get('vieja'), undefined);
+    assert.equal(claveIA(nuevo), claveIA({ ...nuevo, descripcion: 'leída después' }), 'la clave no depende de la página del evento');
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+// --- Guardado -------------------------------------------------------------------
+
+test('mezclar: rock a Agenda y el resto a "otros", como Pendiente; crea las bandas nuevas', () => {
+  const { dirs, dirBandas, borrar } = carpetas();
+  try {
+    const rock = aplicarClasificacion(evento('LOS GARDELITOS', { id: '1' }), respuesta({ titulo: 'Los Gardelitos', artistas: ['Los Gardelitos'] }), bandas, rosario);
+    const otro = aplicarClasificacion(evento('LOS NOCHEROS', { id: '2' }), respuesta({ rockNacional: false, titulo: 'Los Nocheros', artistas: ['Los Nocheros'] }), bandas, rosario);
+    const r = mezclar([rock, otro], rosario, { hoy: HOY, dirs, dirBandas });
+    assert.deepEqual(r.nuevos, ['2026-11-01-los-gardelitos.yaml', 'otros/2026-11-01-los-nocheros.yaml']);
+    const a = leer(dirs.agenda, '2026-11-01-los-gardelitos.yaml');
+    assert.deepEqual([a.estado, a.rockNacional, a.bandas, a.artistas], [PENDIENTE, true, ['los-gardelitos'], undefined]);
+    assert.match(readFileSync(join(dirs.agenda, '2026-11-01-los-gardelitos.yaml'), 'utf8'), /^hora: '21:00'$/m);
+    const o = leer(dirs.otros, '2026-11-01-los-nocheros.yaml');
+    assert.deepEqual([o.estado, o.rockNacional, o.artistas, o.bandas], [PENDIENTE, false, ['Los Nocheros'], undefined]);
+    assert.deepEqual(archivos(dirBandas), ['los-gardelitos.yaml'], 'no se crean bandas para los que no son rock');
+
+    // Segunda corrida igual: nada cambia.
+    const r2 = mezclar([rock, otro], rosario, { hoy: HOY, dirs, dirBandas });
+    assert.deepEqual([r2.nuevos.length, r2.actualizados.length, r2.sinCambios], [0, 0, 2]);
+  } finally {
+    borrar();
+  }
+});
+
+test('mezclar: actualiza lo no editado (manteniendo estado), respeta lo editado y conserva la descripción', () => {
+  const { dirs, borrar } = carpetas();
+  try {
+    const base = aplicarClasificacion(evento('KAPANGA', { id: 'k', descripcion: 'Texto', detalle: '2026-10-25' }), respuesta(), bandas, fuente);
+    mezclar([base], fuente, { hoy: HOY, dirs });
+    const [archivo] = archivos(dirs.agenda);
+    // La publicás: cambiar el estado no cuenta como edición.
+    writeFileSync(join(dirs.agenda, archivo), stringify({ ...leer(dirs.agenda, archivo), estado: PUBLICADO }));
+
+    // Cambia el precio y esta vez no se leyó la página del evento.
+    const cambio = { ...base, precioDesde: 30000, descripcion: '', detalle: undefined };
+    assert.deepEqual(mezclar([cambio], fuente, { hoy: HOY, dirs }).actualizados, [archivo]);
+    const d = leer(dirs.agenda, archivo);
+    assert.deepEqual([d.estado, d.precioDesde, d.descripcion, d.origen.detalle], [PUBLICADO, 30000, 'Texto', '2026-10-25']);
+
+    // La editás a mano: el recolector no la vuelve a tocar.
+    writeFileSync(join(dirs.agenda, archivo), stringify({ ...d, titulo: 'Kapanga en vivo' }));
+    assert.equal(mezclar([{ ...cambio, precioDesde: 1 }], fuente, { hoy: HOY, dirs }).actualizados.length, 0);
+    assert.equal(leer(dirs.agenda, archivo).titulo, 'Kapanga en vivo');
+  } finally {
+    borrar();
+  }
+});
+
+test('mezclar: si un evento ya no es rock, se mueve a "otros" (Rosario) o se borra (otras fuentes)', () => {
+  const { dirs, borrar } = carpetas();
+  try {
+    const ev = evento('CRUZANDO EL CHARCO', { id: 'c' });
+    const comoRock = (f) => aplicarClasificacion(ev, respuesta({ titulo: 'Cruzando el Charco', artistas: ['Cruzando el Charco'] }), bandas, f);
+    const comoOtro = (f) => aplicarClasificacion(ev, respuesta({ rockNacional: false, titulo: 'Cruzando el Charco', artistas: ['Cruzando el Charco'] }), bandas, f) ?? { ...ev, destino: null };
+
+    mezclar([comoRock(rosario)], rosario, { hoy: HOY, dirs });
+    const r = mezclar([comoOtro(rosario)], rosario, { hoy: HOY, dirs });
+    assert.equal(r.movidos.length, 1);
+    assert.deepEqual([archivos(dirs.agenda).length, archivos(dirs.otros).length], [0, 1]);
+
+    // Otra fuente (no de Rosario), otro show: si deja de ser rock, se borra.
+    const ev2 = evento('CRUZANDO EL CHARCO', { id: 'c2', fecha: '2026-11-08', venue: 'Teatro' });
+    const ia2 = (rock) => respuesta({ rockNacional: rock, titulo: 'Cruzando el Charco', artistas: ['Cruzando el Charco'] });
+    mezclar([aplicarClasificacion(ev2, ia2(true), bandas, fuente)], fuente, { hoy: HOY, dirs });
+    assert.equal(archivos(dirs.agenda).length, 1);
+    const sale = aplicarClasificacion(ev2, ia2(false), bandas, fuente) ?? { ...ev2, destino: null };
+    assert.equal(mezclar([sale], fuente, { hoy: HOY, dirs }).borrados.length, 1);
+    assert.equal(archivos(dirs.agenda).length, 0);
+  } finally {
+    borrar();
+  }
+});
+
+test('reubicar: respeta lo que marcás a mano en "Rock nacional"', () => {
+  const { dirs, dirBandas, borrar } = carpetas();
+  try {
+    mezclar([aplicarClasificacion(evento('KAPANGA', { id: '1' }), respuesta(), bandas, rosario)], rosario, { hoy: HOY, dirs });
+    mezclar([aplicarClasificacion(evento('LOS PERICOS', { id: '2' }), respuesta({ rockNacional: false, titulo: 'Los Pericos', artistas: ['Los Pericos'] }), bandas, rosario)], rosario, { hoy: HOY, dirs });
+    const [enAgenda] = archivos(dirs.agenda);
+    const [enOtros] = archivos(dirs.otros);
+    // Destildás Kapanga y tildás Los Pericos.
+    writeFileSync(join(dirs.agenda, enAgenda), stringify({ ...leer(dirs.agenda, enAgenda), rockNacional: false }));
+    writeFileSync(join(dirs.otros, enOtros), stringify({ ...leer(dirs.otros, enOtros), rockNacional: true }));
+
+    const movidos = reubicar({ fuentesRosario: new Set(['rosario']), bandas, dirs, dirBandas });
+    assert.equal(movidos.length, 2);
+    assert.deepEqual(leer(dirs.otros, enAgenda).artistas, ['Kapanga']);
+    assert.deepEqual(leer(dirs.agenda, enOtros).bandas, ['los-pericos']);
+    assert.deepEqual(archivos(dirBandas), ['los-pericos.yaml']);
+    // Y quedan como editados a mano: el recolector no los vuelve a mover.
+    const d = leer(dirs.agenda, enOtros);
+    assert.notEqual(d.origen.huella, huellaDe(d));
+  } finally {
+    borrar();
+  }
+});
+
+test('estados: normaliza los viejos sin emoji', () => {
+  assert.deepEqual(['publicado', 'pendiente', 'descartado', undefined].map(normalizarEstado), ['✅ Publicado', '⏳ Pendiente', '❌ Descartado', '⏳ Pendiente']);
 });
 
 test('robots.txt: respeta Disallow y la regla más específica', () => {

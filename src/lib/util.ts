@@ -67,7 +67,7 @@ export async function bandasVisibles() {
   ]);
   const conContenido = new Set([
     ...noticias.map((n) => n.data.banda?.id),
-    ...agenda.filter((f) => f.data.estado === 'publicado').flatMap((f) => f.data.bandas),
+    ...agenda.filter((f) => f.data.estado === 'publicado' && f.data.rockNacional).flatMap((f) => f.data.bandas),
   ]);
   return bandas
     .filter((b) => !b.data.automatica || conContenido.has(b.id))
@@ -223,6 +223,6 @@ export async function proximasFechas() {
   const hoy = new Date(new Date().toLocaleDateString('en-CA', { timeZone: TZ }));
   const todas = await getCollection('agenda');
   return todas
-    .filter((f) => f.data.estado === 'publicado' && f.data.fecha.getTime() >= hoy.getTime())
+    .filter((f) => f.data.estado === 'publicado' && f.data.rockNacional && f.data.fecha.getTime() >= hoy.getTime())
     .sort((a, b) => a.data.fecha.getTime() - b.data.fecha.getTime());
 }
