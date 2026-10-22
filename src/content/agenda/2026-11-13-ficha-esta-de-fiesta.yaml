@@ -1,7 +1,7 @@
 titulo: Ficha Esta de Fiesta
 estado: ⏳ Pendiente
 tipo: show
-rockNacional: true
+rockNacional: false
 genero: rock
 bandas:
   - toribio-los-paranamas

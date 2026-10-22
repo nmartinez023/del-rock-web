@@ -1,7 +1,7 @@
 titulo: Viaje de Ida + Polaroid
 estado: ⏳ Pendiente
 tipo: show
-rockNacional: true
+rockNacional: false
 genero: indie rock
 bandas:
   - viaje-de-ida

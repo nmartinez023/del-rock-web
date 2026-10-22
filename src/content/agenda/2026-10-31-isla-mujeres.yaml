@@ -1,7 +1,7 @@
 titulo: Isla Mujeres
 estado: ⏳ Pendiente
 tipo: show
-rockNacional: true
+rockNacional: false
 genero: indie rock
 bandas:
   - isla-mujeres
