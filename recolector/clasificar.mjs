@@ -9,6 +9,16 @@ const MAX_NUEVAS = 6;
 
 const sinArticulo = (s) => plano(s).replace(/^(los|las|la|el) /, '');
 
+/**
+ * Título de la IA, salvo que no comparta ninguna palabra con el original (la IA a veces
+ * "inventa": "LOS NOCHEROS" → "LosNgueros"). En ese caso se queda el original.
+ */
+export function tituloSeguro(deIA, original) {
+  const palabras = (s) => new Set(plano(s).split(' ').filter((p) => p.length > 2));
+  const orig = palabras(original);
+  return deIA && [...palabras(deIA)].some((p) => orig.has(p)) ? deIA : original;
+}
+
 /** Banda ya cargada con ese nombre ("Los Piojos" = "LOS PIOJOS" = "Piojos"). */
 export function bandaPara(nombre, bandas) {
   const n = sinArticulo(nombre);
@@ -17,7 +27,7 @@ export function bandaPara(nombre, bandas) {
 
 /** Devuelve el evento listo para guardar (con `destino`), o null si no se guarda. */
 export function aplicarClasificacion(ev, ia, bandas, fuente) {
-  const base = { ...ev, titulo: ia.titulo || ev.titulo, tipo: ia.tipo, rockNacional: ia.rockNacional };
+  const base = { ...ev, titulo: tituloSeguro(ia.titulo, ev.titulo), tipo: ia.tipo, genero: ia.genero ?? '', rockNacional: ia.rockNacional };
 
   if (!ia.rockNacional) {
     if (!fuente.rosario) return null;

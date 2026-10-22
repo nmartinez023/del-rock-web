@@ -35,7 +35,7 @@ export const GET: APIRoute = async ({ site }) => {
 };
 
 function comunes(d: {
-  titulo: string; estado: string; tipo: string; fecha: Date; hora?: string; venue: string; direccion?: string;
+  titulo: string; estado: string; tipo: string; genero?: string; fecha: Date; hora?: string; venue: string; direccion?: string;
   ciudad: string; provincia: string; entradas?: string | null; precioDesde?: number | null; imagen?: string | null;
   aviso?: string; descripcion?: string; origen?: { fuente?: string };
 }) {
@@ -43,6 +43,7 @@ function comunes(d: {
     titulo: legible(d.titulo),
     estado: d.estado,
     tipo: d.tipo,
+    genero: d.genero ?? '',
     fecha: d.fecha.toISOString().slice(0, 10),
     hora: d.hora ?? '',
     lugar: d.venue,

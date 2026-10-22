@@ -49,6 +49,7 @@ const campos = (image: SchemaContext['image']) => ({
   titulo: z.string(),
   estado,
   tipo: z.enum(['show', 'festival']).default('show'),
+  genero: z.string().optional(),
   fecha: z.coerce.date(),
   hora: z.string().optional(),
   venue: z.string(),

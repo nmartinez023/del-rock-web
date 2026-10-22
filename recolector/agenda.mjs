@@ -19,7 +19,7 @@ export function normalizarEstado(v) {
 
 // Campos que completa el recolector. Si alguno cambia a mano, el evento queda como "editado" y no se pisa.
 export const CAMPOS_AUTO = [
-  'titulo', 'tipo', 'rockNacional', 'bandas', 'artistas', 'fecha', 'hora', 'venue', 'direccion',
+  'titulo', 'tipo', 'genero', 'rockNacional', 'bandas', 'artistas', 'fecha', 'hora', 'venue', 'direccion',
   'ciudad', 'provincia', 'entradas', 'precioDesde', 'imagen', 'aviso', 'descripcion',
 ];
 
@@ -49,6 +49,7 @@ export const huellaDe = (d) => hash(camposAuto(d));
 /** Cómo queda guardado un evento en su carpeta (sin estado ni origen). La huella se calcula sobre esto. */
 export function guardable(ev, destino) {
   const d = { titulo: ev.titulo, tipo: ev.tipo || 'show', rockNacional: destino === 'agenda' };
+  if (ev.genero) d.genero = ev.genero;
   if (destino === 'agenda' && ev.bandas?.length) d.bandas = ev.bandas;
   if (destino === 'otros' && ev.artistas?.length) d.artistas = ev.artistas;
   for (const c of ['fecha', 'hora', 'venue', 'direccion', 'ciudad', 'provincia', 'entradas', 'precioDesde', 'imagen', 'aviso', 'descripcion']) {

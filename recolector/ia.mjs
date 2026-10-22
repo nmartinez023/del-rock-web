@@ -9,12 +9,15 @@ export const MODELO = process.env.RECOLECTOR_MODELO || 'anthropic/claude-haiku-5
 const URL_API = 'https://openrouter.ai/api/v1/chat/completions';
 const ARCHIVO_CACHE = 'recolector/cache-ia.json';
 const DIAS_CACHE = 45; // se olvidan las respuestas de eventos que pasaron hace más de esto
+// Subirla cuando cambian las instrucciones: invalida la caché y se reclasifica todo (cuesta centavos).
+const VERSION = 2;
 
 const ESQUEMA = {
   type: 'object',
   additionalProperties: false,
-  required: ['rockNacional', 'tipo', 'titulo', 'artistas'],
+  required: ['genero', 'rockNacional', 'tipo', 'titulo', 'artistas'],
   properties: {
+    genero: { type: 'string' },
     rockNacional: { type: 'boolean' },
     tipo: { type: 'string', enum: ['show', 'festival'] },
     titulo: { type: 'string' },
@@ -23,17 +26,19 @@ const ESQUEMA = {
 };
 
 export const INSTRUCCIONES = `Clasificás eventos publicados por ticketeras argentinas para Del Rock, un medio de rock nacional.
-Respondé solo con el JSON pedido:
+Respondé solo con el JSON pedido. Usá lo que sabés de cada artista, no solo el texto del evento.
 
+- genero: el género musical del evento en pocas palabras ("punk rock", "rock barrial", "cumbia pop", "folklore", "stand-up"). Pensalo antes de decidir rockNacional.
 - rockNacional: true si el evento es de rock nacional: artistas argentinos (o uruguayos muy ligados a la escena argentina, como No Te Va Gustar o El Cuarteto de Nos) de rock, pop-rock, punk, hardcore, metal, indie, alternativo, ska, reggae, blues, rock barrial, psicodelia o stoner. También true para tributos a artistas de rock nacional y para festivales donde la mayoría es rock nacional.
   false para cumbia, cuarteto, folklore, tango, chamamé, trap, reggaetón, música urbana, pop melódico o baladas, electrónica y fiestas de DJ, stand-up, teatro, espectáculos infantiles, tributos a artistas extranjeros y artistas extranjeros. Si no conocés al artista, decidí por lo que dicen el título y la descripción; si de verdad no hay forma de saberlo, false.
+  Ejemplos: 2 Minutos (punk rock) → true. Andy Chango (rock) → true. Silvestre y la Naranja (indie rock) → true. Los Pérez García (rock) → true. Ke Personajes (cumbia) → false. LBC (cumbia pop) → false. Los Nocheros (folklore) → false. Sergio Dalma (pop melódico, España) → false.
 - tipo: "festival" si se presenta como festival o ciclo con varios artistas; si no, "show".
 - titulo: el nombre del evento, limpio: sin ciudad, lugar, fecha, hora ni frases de venta. Con mayúsculas y minúsculas normales (no todo en mayúscula), respetando cómo se escribe el artista ("El Mató a un Policía Motorizado", "LBC"). Si hay nombre de gira o de show, puede ir después de un guion largo: "Ke Personajes — Corazón Ausente Tour".
 - artistas: quienes tocan, cada uno por separado y bien escrito. Sin el lugar, la gira, "invitados" ni DJs genéricos. No inventes artistas que no aparezcan en los datos. Vacío si no se sabe (por ejemplo, un festival sin lineup anunciado).`;
 
 /** Clave de caché: solo datos del listado, así la respuesta no cambia por leer o no la página del evento. */
 export function claveIA(ev) {
-  return hash({ t: ev.titulo, f: ev.fecha, v: ev.venue, c: ev.ciudad, a: ev.artistas ?? [] });
+  return hash({ v: VERSION, t: ev.titulo, f: ev.fecha, l: ev.venue, c: ev.ciudad, a: ev.artistas ?? [] });
 }
 
 export function cargarCache(archivo = ARCHIVO_CACHE) {
@@ -53,6 +58,7 @@ export function cargarCache(archivo = ARCHIVO_CACHE) {
 function valido(r) {
   return (
     r &&
+    typeof r.genero === 'string' &&
     typeof r.rockNacional === 'boolean' &&
     (r.tipo === 'show' || r.tipo === 'festival') &&
     typeof r.titulo === 'string' &&
@@ -99,7 +105,6 @@ export function crearClasificador({ apiKey, pedir = fetch, modelo = MODELO, espe
           ? {}
           : {
               response_format: { type: 'json_schema', json_schema: { name: 'evento', strict: true, schema: ESQUEMA } },
-              reasoning: { effort: 'low' },
             }),
       };
       const res = await pedir(URL_API, {
@@ -132,6 +137,7 @@ export function crearClasificador({ apiKey, pedir = fetch, modelo = MODELO, espe
         const r = leerJson(json.choices?.[0]?.message?.content);
         if (valido(r)) {
           return {
+            genero: r.genero.trim().toLowerCase(),
             rockNacional: r.rockNacional,
             tipo: r.tipo,
             titulo: r.titulo.trim(),

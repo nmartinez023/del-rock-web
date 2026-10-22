@@ -26,7 +26,7 @@ const evento = (titulo, extra = {}) => ({
   titulo, fecha: '2026-11-01', hora: '21:00', venue: 'Club', ciudad: 'Rosario', provincia: 'Santa Fe',
   entradas: 'https://t/x', artistas: [], id: titulo, ...extra,
 });
-const respuesta = (extra = {}) => ({ rockNacional: true, tipo: 'show', titulo: 'Kapanga', artistas: ['Kapanga'], ...extra });
+const respuesta = (extra = {}) => ({ genero: 'rock', rockNacional: true, tipo: 'show', titulo: 'Kapanga', artistas: ['Kapanga'], ...extra });
 
 /** Carpetas temporales con la misma forma que el repo. */
 function carpetas() {
@@ -108,6 +108,12 @@ test('no es rock: de Rosario va a "otros" con los artistas como texto; de otro l
   const otro = aplicarClasificacion(evento('LOS NOCHEROS'), ia, bandas, rosario);
   assert.deepEqual([otro.destino, otro.artistas, otro.bandas, otro.bandasNuevas], ['otros', ['Los Nocheros'], [], []]);
   assert.equal(aplicarClasificacion(evento('LOS NOCHEROS'), ia, bandas, fuente), null);
+});
+
+test('título: si la IA devuelve algo que no se parece al original, queda el original', () => {
+  const ev = aplicarClasificacion(evento('LOS NOCHEROS'), respuesta({ rockNacional: false, titulo: 'LosNgueros', artistas: ['Los Nocheros'] }), bandas, rosario);
+  assert.equal(ev.titulo, 'LOS NOCHEROS');
+  assert.equal(aplicarClasificacion(evento('CARAS EXTRAÑAS DESPIDE EL AÑO EN ROSARIO'), respuesta({ titulo: 'Caras Extrañas despide el año' }), bandas, fuente).titulo, 'Caras Extrañas despide el año');
 });
 
 test('festival de rock sin lineup: va a la Agenda sin bandas', () => {

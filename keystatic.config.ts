@@ -171,6 +171,7 @@ function camposEvento({ conBandas }: { conBandas: boolean }) {
         : 'Lo decide la IA. Si lo tildás, el recolector lo pasa a la Agenda de rock nacional.',
       defaultValue: conBandas,
     }),
+    genero: fields.text({ label: 'Género', description: 'Lo pone la IA (ej: "punk rock", "cumbia pop").' }),
     tipo: fields.select({
       label: 'Tipo',
       options: [
