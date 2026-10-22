@@ -35,7 +35,7 @@ const fechas = (await proximasFechas()).filter((f) => tocaEn(f, banda.id));
     fechas.length > 0 && (
       <section class="container bloque">
         <SeccionTitulo texto="Próximas fechas" />
-        <AgendaGrid fechas={fechas} filtro={false} />
+        <AgendaGrid fechas={fechas} filtro={false} variante="lista" />
       </section>
     )
   }

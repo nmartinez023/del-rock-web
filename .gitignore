@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # estado local de Wrangler
 .wrangler/
+
+# Configuración local de Claude Code
+.claude/

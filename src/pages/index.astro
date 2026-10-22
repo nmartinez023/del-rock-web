@@ -36,7 +36,7 @@ const fechas = (await proximasFechas()).slice(0, 8);
         <div class="bloque-cabecera">
           <SeccionTitulo texto="Agenda" />
         </div>
-        <AgendaGrid fechas={fechas} />
+        <AgendaGrid fechas={fechas} filtro={false} />
         <a href="/agenda/" class="ver-mas">Ver toda la agenda</a>
       </section>
     )

@@ -5,9 +5,11 @@ import { bandasDe, diaMes, imagenDeFecha, precioTexto, rutaDeFecha, slugTag, tit
 interface Props {
   fecha: Fecha;
   i?: number;
+  /** Ciudad normalizada, para el filtro de la agenda. */
+  ciudad?: string;
 }
 
-const { fecha, i = 0 } = Astro.props;
+const { fecha, i = 0, ciudad } = Astro.props;
 const { data } = fecha;
 const { dia, mes } = diaMes(data.fecha);
 const rot = [-1.6, 1.2, -0.8, 1.8, -1.2, 0.9][i % 6];
@@ -28,6 +30,7 @@ const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : no
   class="afiche"
   style={`--rot:${rot}deg`}
   data-provincia={data.provincia}
+  data-ciudad={ciudad}
   data-fecha={data.fecha.toISOString().slice(0, 10)}
 >
   <span class="cinta-adhesiva" aria-hidden="true"></span>
@@ -70,6 +73,10 @@ const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : no
     transform: rotate(var(--rot));
     box-shadow: 0 10px 24px rgb(0 0 0 / 0.45);
     transition: transform 0.15s ease;
+  }
+  /* El filtro de la agenda oculta afiches con el atributo hidden: el display: flex no lo tiene que pisar. */
+  .afiche[hidden] {
+    display: none;
   }
   a.afiche:hover {
     color: var(--tinta);

@@ -12,7 +12,7 @@ const fechas = await proximasFechas();
     <SeccionTitulo texto="Agenda" nivel="h1">
       <p class="desc">Próximos shows y festivales en todo el país.</p>
     </SeccionTitulo>
-    {fechas.length > 0 ? <AgendaGrid fechas={fechas} /> : <p class="desc">No hay fechas cargadas por ahora.</p>}
+    {fechas.length > 0 ? <AgendaGrid fechas={fechas} variante="lista" /> : <p class="desc">No hay fechas cargadas por ahora.</p>}
   </section>
 </Base>
 
