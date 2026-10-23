@@ -12,8 +12,14 @@ import { plano } from './texto.mjs';
 
 const DIR = 'src/content/bandas';
 const REINTENTAR_DIAS = 30;
-const ESPERA_MS = 250; // entre pedidos, para no pasar el cupo de la API
+const ESPERA_MS = 1000; // entre pedidos, para no pasar el cupo de la API
+// Por corrida (corre todos los días): el cupo de las apps en modo desarrollo es chico.
+const MAX_PEDIDOS = 150;
+// Si Spotify pide esperar más que esto, cortamos y seguimos en la próxima corrida (puede pedir horas).
+const ESPERA_MAXIMA_S = 60;
 
+/** Spotify pidió esperar demasiado: se guarda lo hecho y se sigue otro día. */
+class SinCupo extends Error {}
 
 /** "https://open.spotify.com/intl-es/artist/1ZBOAgEJMHUEuoiMEN2FJJ?si=…" → "1ZBOAgEJMHUEuoiMEN2FJJ" */
 export const idDeArtista = (url = '') => /open\.spotify\.com\/(?:[\w-]+\/)?artist\/([A-Za-z0-9]{22})/.exec(url)?.[1] ?? null;
@@ -57,7 +63,9 @@ function cliente(tk) {
     for (let intento = 0; intento < 4; intento++) {
       const res = await fetch(`https://api.spotify.com/v1${ruta}`, { headers: { authorization: `Bearer ${tk}` } });
       if (res.status === 429) {
-        await dormir((Number(res.headers.get('retry-after')) || 5) * 1000);
+        const espera = Number(res.headers.get('retry-after')) || 5;
+        if (espera > ESPERA_MAXIMA_S) throw new SinCupo(`Spotify pidió esperar ${Math.round(espera / 60)} minutos.`);
+        await dormir(espera * 1000);
         continue;
       }
       // Errores de Spotify (502, 503…) suelen ser pasajeros: esperar un poco y reintentar.
@@ -81,10 +89,15 @@ async function main() {
     console.log('Faltan SPOTIFY_CLIENT_ID y SPOTIFY_CLIENT_SECRET: no se busca nada.');
     return;
   }
-  const pedir = cliente(await token(id, secreto));
+  const pedirSinTope = cliente(await token(id, secreto));
+  let pedidos = 0;
+  const pedir = (ruta) => {
+    if (++pedidos > MAX_PEDIDOS) throw new SinCupo(`Llegó al tope de ${MAX_PEDIDOS} búsquedas por corrida.`);
+    return pedirSinTope(ruta);
+  };
   const hoy = new Date().toISOString().slice(0, 10);
   const limite = new Date(Date.now() - REINTENTAR_DIAS * 864e5).toISOString().slice(0, 10);
-  const r = { aprobadas: [], sugeridas: [], sinResultado: 0, salteadas: 0, errores: [] };
+  const r = { aprobadas: [], sugeridas: [], sinResultado: 0, salteadas: 0, errores: [], corte: '' };
 
   for (const archivo of readdirSync(DIR).filter((f) => f.endsWith('.yaml')).sort()) {
     const ruta = join(DIR, archivo);
@@ -121,6 +134,10 @@ async function main() {
         }
       }
     } catch (err) {
+      if (err instanceof SinCupo) {
+        r.corte = err.message;
+        break;
+      }
       r.errores.push(`${banda.nombre}: ${err.message}`);
       if (r.errores.length >= 5) break; // algo anda mal en general (cupo, claves): mejor cortar
       continue;
@@ -128,7 +145,9 @@ async function main() {
     if (nueva && !seco) writeFileSync(ruta, yamlPanel(nueva));
   }
 
-  const resumen = `${r.sugeridas.length} sugeridas para revisar en /admin/bandas, ${r.aprobadas.length} completadas desde su link, ${r.sinResultado} sin coincidencia, ${r.salteadas} ya revisadas.`;
+  const resumen =
+    `${r.sugeridas.length} sugeridas para revisar en /admin/bandas, ${r.aprobadas.length} completadas desde su link, ${r.sinResultado} sin coincidencia, ${r.salteadas} ya revisadas.` +
+    (r.corte ? ` ${r.corte} Las que faltan siguen en la próxima corrida.` : '');
   console.log(`Spotify: ${resumen}`);
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Spotify\n\n${resumen}\n`);
   if (r.sugeridas.length) console.log(`Sugeridas: ${r.sugeridas.join(', ')}`);

@@ -4,7 +4,7 @@ name: Bandas en Spotify
 
 on:
   schedule:
-    - cron: '30 7 * * 1' # lunes 4:30 (Argentina)
+    - cron: '30 7 * * *' # todos los días 4:30 (Argentina), de a 150 búsquedas
   workflow_dispatch:
   # Al cambiar el buscador, corre solo (así arranca la primera vez sin tocar nada).
   push:
@@ -16,14 +16,15 @@ permissions:
   contents: write
   actions: write # para disparar el deploy agrupado
 
-# Misma fila que el recolector: los dos escriben en src/content/bandas.
+# Fila propia: si se demorara, no frena al recolector. Igual no se pisan: los dos hacen git pull --rebase.
 concurrency:
-  group: recolector
+  group: spotify
   cancel-in-progress: false
 
 jobs:
   spotify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
