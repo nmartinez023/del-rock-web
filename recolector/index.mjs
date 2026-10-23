@@ -17,7 +17,7 @@ const AGENTE = 'DelRockBot/1.0 (+https://del-rock-web.delrockarg.workers.dev)';
 const DIR_BANDAS = 'src/content/bandas';
 const DIAS_DETALLE = 7; // cada cuánto se vuelve a leer la página de un evento ya cargado
 const MAX_DETALLES = 80; // tope de páginas de evento por fuente y por corrida
-const MAX_IA = 300; // tope de consultas a la IA por corrida
+const MAX_IA = 1500; // tope de consultas a la IA por corrida (Passline trae ~1400 eventos de una; después quedan en caché)
 const seco = process.argv.includes('--seco');
 
 const fuentes = leerYaml('src/content/fuentes')
