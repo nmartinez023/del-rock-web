@@ -60,6 +60,11 @@ function cliente(tk) {
         await dormir((Number(res.headers.get('retry-after')) || 5) * 1000);
         continue;
       }
+      // Errores de Spotify (502, 503…) suelen ser pasajeros: esperar un poco y reintentar.
+      if (res.status >= 500 && intento < 3) {
+        await dormir(2000 * (intento + 1));
+        continue;
+      }
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`Spotify ${res.status} en ${ruta}: ${(await res.text()).slice(0, 200)}`);
       await dormir(ESPERA_MS);
@@ -128,8 +133,9 @@ async function main() {
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Spotify\n\n${resumen}\n`);
   if (r.sugeridas.length) console.log(`Sugeridas: ${r.sugeridas.join(', ')}`);
   if (r.errores.length) {
-    console.error(`Errores:\n- ${r.errores.join('\n- ')}`);
-    process.exitCode = 1;
+    // Las que fallaron quedan sin tocar y se vuelven a buscar en la próxima corrida.
+    console.warn(`Sin respuesta de Spotify (se reintentan la próxima vez):\n- ${r.errores.join('\n- ')}`);
+    if (r.errores.length >= 5) process.exitCode = 1; // se cortó antes de terminar
   }
 }
 

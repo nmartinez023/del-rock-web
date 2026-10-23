@@ -34,8 +34,11 @@ jobs:
 
       - run: npm ci
 
+      # Aunque se corte a mitad de camino, lo que ya encontró se guarda igual.
       - name: Buscar en Spotify
+        id: buscar
         run: node recolector/spotify.mjs
+        continue-on-error: true
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
@@ -58,3 +61,9 @@ jobs:
           gh workflow run deploy.yml --ref main
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: Avisar si la búsqueda se cortó
+        if: steps.buscar.outcome == 'failure'
+        run: |
+          echo "Spotify no respondió varias veces seguidas (o las claves no sirven). Mirá el paso 'Buscar en Spotify'."
+          exit 1
