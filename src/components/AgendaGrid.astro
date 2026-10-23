@@ -12,7 +12,7 @@ interface Props {
 
 const { fechas, filtro = true, variante = 'carrusel' } = Astro.props;
 
-// Zonas con fechas (CABA y GBA juntos, cada gran ciudad con su área, el resto por provincia),
+// Zonas con fechas (Buenos Aires con CABA, GBA e interior; cada gran ciudad con su área; el resto por provincia),
 // de la que tiene más a la que tiene menos; "Otras ciudades" siempre al final.
 const zonaDeFecha = (f: Fecha) => zonaDe(f.data.ciudad, f.data.provincia);
 const porZona = new Map<string, number>();
