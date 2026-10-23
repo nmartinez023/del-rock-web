@@ -804,6 +804,19 @@
    "fecha": "2026-11-12",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "472e338292a0924e": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Cielo Razzo despide el 2026",
+    "artistas": [
+     "Cielo Razzo"
+    ]
+   },
+   "fecha": "2026-12-12",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "482262ee0e0f4c1f": {
    "r": {
     "genero": "rock",
@@ -1348,6 +1361,19 @@
    "fecha": "2026-11-18",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "6955a70f646ea3fd": {
+   "r": {
+    "genero": "sin especificar",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Sergio Torres",
+    "artistas": [
+     "Sergio Torres"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "69739149e0f35e62": {
    "r": {
     "genero": "fiesta popular",
@@ -1666,6 +1692,19 @@
     ]
    },
    "fecha": "2027-08-16",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "862f608deaaa2a81": {
+   "r": {
+    "genero": "sin datos",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Marisa Mere",
+    "artistas": [
+     "Marisa Mere"
+    ]
+   },
+   "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "87ba3c2dd4928b5a": {
@@ -3060,6 +3099,19 @@
     ]
    },
    "fecha": "2026-10-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "e74e327f81049a17": {
+   "r": {
+    "genero": "trap",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Mati RJ",
+    "artistas": [
+     "Mati RJ"
+    ]
+   },
+   "fecha": "2026-11-14",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "e78da8fd512629a5": {
