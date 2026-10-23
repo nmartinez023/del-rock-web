@@ -1,6 +1,7 @@
 ---
 import Afiche from './Afiche.astro';
 import { slugTag, type Fecha } from '../lib/util';
+import { zonaDe } from '../lib/zonas';
 
 interface Props {
   fechas: Fecha[];
@@ -11,21 +12,14 @@ interface Props {
 
 const { fechas, filtro = true, variante = 'carrusel' } = Astro.props;
 
-// Ciudades con fechas, de la que tiene más a la que tiene menos. Se agrupan por nombre normalizado
-// ("Rosario" y "ROSARIO" son la misma) y se muestra la forma más usada.
-const porCiudad = new Map<string, { nombre: string; cantidad: number; formas: Map<string, number> }>();
-for (const f of fechas) {
-  const nombre = f.data.ciudad?.trim();
-  if (!nombre) continue;
-  const clave = slugTag(nombre);
-  const c = porCiudad.get(clave) ?? { nombre, cantidad: 0, formas: new Map() };
-  c.cantidad++;
-  c.formas.set(nombre, (c.formas.get(nombre) ?? 0) + 1);
-  porCiudad.set(clave, c);
-}
-const ciudades = [...porCiudad.entries()]
-  .map(([clave, c]) => ({ clave, cantidad: c.cantidad, nombre: [...c.formas.entries()].sort((a, b) => b[1] - a[1])[0][0] }))
-  .sort((a, b) => b.cantidad - a.cantidad || a.nombre.localeCompare(b.nombre, 'es'));
+// Zonas con fechas (CABA y GBA juntos, cada gran ciudad con su área, el resto por provincia),
+// de la que tiene más a la que tiene menos; "Otras ciudades" siempre al final.
+const zonaDeFecha = (f: Fecha) => zonaDe(f.data.ciudad, f.data.provincia);
+const porZona = new Map<string, number>();
+for (const f of fechas) porZona.set(zonaDeFecha(f), (porZona.get(zonaDeFecha(f)) ?? 0) + 1);
+const ciudades = [...porZona.entries()]
+  .map(([nombre, cantidad]) => ({ clave: slugTag(nombre), nombre, cantidad }))
+  .sort((a, b) => Number(a.nombre === 'Otras ciudades') - Number(b.nombre === 'Otras ciudades') || b.cantidad - a.cantidad || a.nombre.localeCompare(b.nombre, 'es'));
 ---
 
 <div class="agenda" data-agenda>
@@ -42,7 +36,7 @@ const ciudades = [...porCiudad.entries()]
         </div>
         {ciudades.length > 1 && (
           <div class="filtro">
-            <label for="filtro-ciudad">Ciudad</label>
+            <label for="filtro-ciudad">Zona</label>
             <select id="filtro-ciudad" data-filtro-ciudad>
               <option value="">Todas ({fechas.length})</option>
               {ciudades.map((c) => (
@@ -57,7 +51,7 @@ const ciudades = [...porCiudad.entries()]
     )
   }
   <div class:list={['grilla', `grilla--${variante}`]}>
-    {fechas.map((f, i) => <Afiche fecha={f} i={i} ciudad={slugTag(f.data.ciudad ?? '')} />)}
+    {fechas.map((f, i) => <Afiche fecha={f} i={i} ciudad={slugTag(zonaDeFecha(f))} />)}
   </div>
   <p class="vacio" hidden>No hay fechas próximas que coincidan.</p>
 </div>
