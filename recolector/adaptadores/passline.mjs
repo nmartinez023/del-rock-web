@@ -22,9 +22,12 @@ export function extraer(cuerpo) {
   return eventosDe(cuerpo)
     .filter((e) => e.nombre && /^\d{4}-\d{2}-\d{2}$/.test(e.fecha_inicio ?? ''))
     .map((e) => {
-      const region = limpiar(e.nombre_region ?? '');
-      const comuna = limpiar(e.nombre_communa ?? '');
-      const caba = /capital federal/i.test(region) || /^c\.?\s?a\.?\s?b\.?\s?a\.?$/i.test(comuna);
+      // Passline a veces codifica dos veces ("CA&amp;Ntilde;UELAS"): se limpia dos veces.
+      const region = limpiar(limpiar(e.nombre_region ?? ''));
+      let comuna = limpiar(limpiar(e.nombre_communa ?? ''));
+      // "CA" es su abreviatura de la Ciudad de Buenos Aires (Galpón B, Lalalá…); en otra provincia no dice nada.
+      const caba = /capital federal/i.test(region) || /^c\.?\s?a\.?\s?b\.?\s?a\.?$/i.test(comuna) || (comuna === 'CA' && /^buenos aires$/i.test(region));
+      if (comuna === 'CA') comuna = region;
       const hora = /^(\d{2}):(\d{2})/.exec(e.hora_inicio ?? '');
       return {
         nombre: limpiar(e.nombre),

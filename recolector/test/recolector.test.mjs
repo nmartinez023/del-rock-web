@@ -188,6 +188,18 @@ test('Passline: lee lo traído desde /admin; CABA, entidades HTML y localidades 
   assert.deepEqual([abel.ciudad, abel.provincia, abel.hora], ['San Carlos De Bariloche', 'Otra', '21:30']);
 });
 
+test('Passline: localidades codificadas dos veces y "CA" como Ciudad de Buenos Aires', () => {
+  const ad = adaptadorPara('https://home.passline.com/');
+  const ev = (comuna, region) => ({ id: 1, nombre: 'X', url: 'https://www.passline.com/eventos/x', fecha_inicio: '2026-11-06', nombre_communa: comuna, nombre_region: region });
+  const lugar = (comuna, region) => {
+    const [c] = ad.extraer(JSON.stringify([ev(comuna, region)])).map((e) => normalizar(e, nacional('https://home.passline.com/')));
+    return [c.ciudad, c.provincia];
+  };
+  assert.deepEqual(lugar('CA&amp;Ntilde;UELAS', 'Buenos Aires'), ['Cañuelas', 'Buenos Aires']);
+  assert.deepEqual(lugar('CA', 'Buenos Aires'), ['Buenos Aires', 'CABA']);
+  assert.deepEqual(lugar('CA', 'C&amp;oacute;rdoba'), ['Córdoba', 'Córdoba']);
+});
+
 test('Movistar Arena: funciones de la ficha (año deducido), matiné y noche, y la fecha del listado si la ficha no cargó', () => {
   const ad = adaptadorPara('https://www.movistararena.com.ar/shows');
   assert.equal(ad.urlDeDatos(), 'https://www.movistararena.com.ar/shows');
