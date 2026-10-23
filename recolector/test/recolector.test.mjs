@@ -211,8 +211,12 @@ test('TuEntrada: datos de Next en el HTML; una gira da un evento por ciudad', as
   const ad = adaptadorPara('https://tuentrada.com/');
   const empaquetar = (obj) => `<script>self.__next_f.push([1,${JSON.stringify(JSON.stringify(obj))}])</script>`;
   const portada = empaquetar({ banners: [{ model: 'event', id: 883, slug: 'dyango-tco', name: 'Dyango' }, { model: 'eventGroup', id: 1, slug: 'ntvg-gira' }] })
-    + empaquetar({ items: [{ model: 'event', id: 883, slug: 'dyango-tco' }, { data: { url: 'x' }, type: 'link' }] });
-  assert.deepEqual(ad.eventosDePortada(portada).map((e) => e.slug), ['dyango-tco', 'ntvg-gira']);
+    + empaquetar({ items: [{ model: 'event', id: 883, slug: 'dyango-tco' }, { data: { url: 'x' }, type: 'link' }] })
+    // Tarjeta suelta de la grilla de la portada (así aparecía Babasónicos).
+    + `<script>self.__next_f.push([1,${JSON.stringify('3e:["$","$L31","1165",{"alt":"BABASONICOS","href":"babasonicos-amr","id":1165,"src":"https://bucket.tuentrada.com/b.jpg"}]\n')}])</script>`;
+  const enPortada = ad.eventosDePortada(portada);
+  assert.deepEqual(enPortada.map((e) => e.slug), ['dyango-tco', 'ntvg-gira', 'babasonicos-amr']);
+  assert.deepEqual([enPortada[2].name, enPortada[2].imageMainNew.src], ['BABASONICOS', 'https://bucket.tuentrada.com/b.jpg']);
 
   const evs = ad.extraer(fixture('tuentrada.json')).map((c) => normalizar(c, nacional('https://tuentrada.com/', 'Buenos Aires')));
   const ntvg = evs.filter((e) => e.titulo === 'NO TE VA GUSTAR');

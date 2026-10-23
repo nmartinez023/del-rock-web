@@ -62,11 +62,24 @@ function arraysDe(texto, clave) {
   return salida;
 }
 
-/** Eventos de la portada (carrusel y listados), sin repetir. */
+/**
+ * Tarjetas sueltas de la portada (la grilla de eventos): {"alt":"BABASONICOS","href":"babasonicos-amr","id":1165,"src":…}.
+ * Se pasan a la misma forma que los eventos del carrusel.
+ */
+function tarjetas(texto) {
+  const salida = [];
+  for (const m of texto.matchAll(/"href":"([a-z0-9][\w&-]*)","id":\d+/g)) {
+    const t = valorEn(texto, texto.lastIndexOf('{', m.index));
+    if (t?.href === m[1] && t.id) salida.push({ model: 'event', id: t.id, slug: t.href, name: t.alt ?? '', imageMainNew: { src: t.src ?? '' } });
+  }
+  return salida;
+}
+
+/** Eventos de la portada (carrusel, listados y tarjetas), sin repetir. */
 export function eventosDePortada(html) {
   const texto = datosDeNext(html);
   const vistos = new Map();
-  for (const lista of [...arraysDe(texto, 'banners'), ...arraysDe(texto, 'items')]) {
+  for (const lista of [...arraysDe(texto, 'banners'), ...arraysDe(texto, 'items'), tarjetas(texto)]) {
     for (const e of lista) {
       if (/^event(Group)?$/.test(e?.model) && e.slug && !vistos.has(e.slug)) vistos.set(e.slug, e);
     }
