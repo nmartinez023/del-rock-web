@@ -1,16 +1,9 @@
 ---
-import { bandasVisibles } from '../lib/util';
-import Sticker from './Sticker.astro';
-
-const bandas = await bandasVisibles();
 const anio = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="container interior">
-    <div class="stickers">
-      {bandas.map((b, i) => <Sticker href={`/bandas/${b.id}/`} texto={b.data.nombre} i={i} />)}
-    </div>
     <div class="pie">
       <span class="d marca">Del Rock <span class="azul">Arg</span></span>
       <nav aria-label="Pie de página" class="links">
@@ -37,13 +30,7 @@ const anio = new Date().getFullYear();
     display: flex;
     flex-direction: column;
     gap: 48px;
-    padding-block: 64px 32px;
-  }
-  .stickers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 12px;
-    align-items: center;
+    padding-block: 40px 32px;
   }
   .pie {
     display: flex;
@@ -51,8 +38,6 @@ const anio = new Date().getFullYear();
     gap: 16px 24px;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
     font-size: 14px;
     color: var(--dim);
   }
