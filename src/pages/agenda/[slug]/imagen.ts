@@ -30,7 +30,7 @@ export const GET: APIRoute = async ({ params, request }) => {
   let res: Response;
   try {
     res = await fetch(origen, {
-      headers: { 'user-agent': 'DelRockBot/1.0 (+https://del-rock-web.delrockarg.workers.dev)' },
+      headers: { 'user-agent': 'DelRockBot/1.0 (+https://delrock.ar)' },
       // @ts-expect-error: opción propia de Cloudflare para cachear la respuesta de origen
       cf: { cacheTtl: 2592000, cacheEverything: true },
     });

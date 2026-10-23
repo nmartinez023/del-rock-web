@@ -112,7 +112,7 @@ export function crearClasificador({ apiKey, pedir = fetch, modelo = MODELO, espe
         headers: {
           authorization: `Bearer ${apiKey}`,
           'content-type': 'application/json',
-          'http-referer': 'https://del-rock-web.delrockarg.workers.dev',
+          'http-referer': 'https://delrock.ar',
           'x-title': 'Del Rock - recolector de agenda',
         },
         body: JSON.stringify(cuerpo),

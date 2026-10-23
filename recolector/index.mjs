@@ -13,7 +13,7 @@ import { aplicarClasificacion, bandasEnEvento, clasificacionPorBanda } from './c
 import { crearClasificador, cargarCache, claveIA, MODELO, SinCredito } from './ia.mjs';
 import { puedeLeer } from './robots.mjs';
 
-const AGENTE = 'DelRockBot/1.0 (+https://del-rock-web.delrockarg.workers.dev)';
+const AGENTE = 'DelRockBot/1.0 (+https://delrock.ar)';
 const DIR_BANDAS = 'src/content/bandas';
 const DIAS_DETALLE = 7; // cada cuánto se vuelve a leer la página de un evento ya cargado
 const MAX_DETALLES = 80; // tope de páginas de evento por fuente y por corrida

@@ -6,9 +6,9 @@ import keystatic from '@keystatic/astro';
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 
-// URL pública para links canónicos y previews al compartir. Cuando tengas dominio
-// propio, cargá SITE_URL en las variables de build del Worker en Cloudflare.
-const site = process.env.SITE_URL ?? 'https://del-rock-web.delrockarg.workers.dev';
+// URL pública para links canónicos y previews al compartir (el dominio propio).
+// Se puede pisar con SITE_URL en las variables de build del Worker en Cloudflare.
+const site = process.env.SITE_URL ?? 'https://delrock.ar';
 
 // Todo el sitio se prerenderiza como HTML estático. Lo único que corre en el
 // Worker es el panel de Keystatic (/keystatic y /api/keystatic), que guarda

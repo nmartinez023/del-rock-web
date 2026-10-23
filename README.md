@@ -5,7 +5,7 @@ Astro + Keystatic (CMS que guarda el contenido en este repo) + Cloudflare Worker
 
 ## Cargar contenido
 
-Entrá a **https://del-rock-web.delrockarg.workers.dev/keystatic** e iniciá sesión con GitHub (cuenta `nmartinez023`).
+Entrá a **https://delrock.ar/keystatic** e iniciá sesión con GitHub (cuenta `nmartinez023`).
 Cada **Save** es un commit en `main`, y ese commit publica el sitio solo en un par de minutos.
 
 | Colección | Carpeta | Qué es |
@@ -20,7 +20,7 @@ Las fotos van a `src/assets/` y Astro las optimiza (WebP, varios tamaños) en el
 
 ## Panel /admin
 
-**https://del-rock-web.delrockarg.workers.dev/admin** — revisar la agenda de a muchos: lista los eventos pendientes
+**https://delrock.ar/admin** — revisar la agenda de a muchos: lista los eventos pendientes
 (leídos en vivo del repo), con un checkbox por fila y "seleccionar todos", y **Publicar / Descartar / Pasar a la otra
 lista** lo seleccionado en **un solo commit**. Pestañas para la Agenda (rock) y "Otros eventos de Rosario".
 
@@ -78,7 +78,7 @@ que se autentica con una GitHub App instalada en este repo:
 
 - Permisos: *Contents* lectura y escritura, *Metadata* lectura, *Pull requests* lectura.
 - *Request user authorization (OAuth) during installation*: activado.
-- Callback URLs: `https://del-rock-web.delrockarg.workers.dev/api/keystatic/github/oauth/callback`
+- Callback URLs: `https://delrock.ar/api/keystatic/github/oauth/callback`
   y `http://127.0.0.1:4321/api/keystatic/github/oauth/callback` (para desarrollo local).
 
 Variables en Cloudflare (Worker `del-rock-web`):
@@ -116,7 +116,7 @@ Para mostrar un post dentro de una nota, pegá su link en el campo *Link al post
 
 ## Deploy (Cloudflare Workers)
 
-El sitio se publica en https://del-rock-web.delrockarg.workers.dev con el adapter `@astrojs/cloudflare`.
+El sitio se publica en https://delrock.ar con el adapter `@astrojs/cloudflare`.
 Los deploys se agrupan: `.github/workflows/deploy.yml` corre con cada push a `main`, espera **5 minutos sin cambios
 nuevos** y recién ahí llama al *Deploy Hook* de Cloudflare (que hace `npm run build` y `wrangler deploy`). Si llega otro
 cambio en esos 5 minutos, la espera vuelve a empezar: publicar 100 eventos seguidos son 100 commits pero 1 deploy.
