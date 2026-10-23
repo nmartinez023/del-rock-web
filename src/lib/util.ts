@@ -199,9 +199,15 @@ export function precioTexto(precio: number | null | undefined) {
 }
 
 /** Imagen del evento: flyer propio (optimizado por Astro) o la de la ticketera, servida por nuestro Worker. */
+// Ticketeras cuyo firewall no deja que nuestro servidor pida sus fotos (responde 403): en esas,
+// la foto la carga directo el navegador de quien visita, desde la ticketera.
+const IMAGEN_DIRECTA = /^https:\/\/bucket\.tuentrada\.com\//;
+
 export function imagenDeFecha(fecha: Fecha, ruta: string) {
   if (fecha.data.flyer) return { tipo: 'local' as const, src: fecha.data.flyer };
-  if (fecha.data.imagen) return { tipo: 'remota' as const, src: `${ruta}imagen` };
+  const { imagen } = fecha.data;
+  if (imagen && IMAGEN_DIRECTA.test(imagen)) return { tipo: 'remota' as const, src: imagen };
+  if (imagen) return { tipo: 'remota' as const, src: `${ruta}imagen` };
   return null;
 }
 
