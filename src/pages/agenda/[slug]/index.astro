@@ -232,6 +232,21 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
 </Base>
 
 <script>
+  // Flyer tipo banner (mucho más ancho que alto): en el celular se muestra con su proporción
+  // en vez del cuadrado (ver .marco.es-banner). La medida se toma al cargar la foto.
+  const marco = document.querySelector<HTMLElement>('.marco');
+  const flyer = marco?.querySelector<HTMLImageElement>('img.frente');
+  const medir = () => {
+    if (!marco || !flyer?.naturalWidth || !flyer.naturalHeight) return;
+    const proporcion = flyer.naturalWidth / flyer.naturalHeight;
+    if (proporcion >= 1.4) {
+      marco.style.setProperty('--proporcion', String(proporcion));
+      marco.classList.add('es-banner');
+    }
+  };
+  medir(); // si ya había cargado
+  flyer?.addEventListener('load', medir);
+
   for (const b of document.querySelectorAll<HTMLButtonElement>('[data-copiar]')) {
     b.addEventListener('click', async () => {
       const aviso = b.parentElement?.querySelector('.copiado');
@@ -453,6 +468,9 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
     padding-bottom: 4px;
   }
   @media (max-width: 560px) {
+    .marco.es-banner {
+      aspect-ratio: var(--proporcion);
+    }
     .ficha > div {
       grid-template-columns: 1fr;
       gap: 6px;
