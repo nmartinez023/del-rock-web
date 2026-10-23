@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { bandasVisibles } from '../../lib/util';
+import { bandasVisibles, spotifyDe } from '../../lib/util';
 import Base from '../../layouts/Base.astro';
 import SeccionTitulo from '../../components/SeccionTitulo.astro';
 
@@ -27,6 +27,8 @@ const iniciales = (nombre: string) =>
               <div class="foto">
                 {b.data.foto ? (
                   <Image src={b.data.foto} alt="" width={200} height={200} />
+                ) : spotifyDe(b)?.foto ? (
+                  <img src={spotifyDe(b)!.foto!} alt="" width="200" height="200" loading="lazy" referrerpolicy="no-referrer" />
                 ) : (
                   <span class="d iniciales" aria-hidden="true">
                     {iniciales(b.data.nombre)}

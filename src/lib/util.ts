@@ -59,6 +59,13 @@ export function slugTag(tag: string) {
  * Bandas que se muestran en la web, ordenadas por nombre. Las que creó el recolector
  * quedan ocultas hasta que tengan una fecha publicada o una nota.
  */
+/** Lo que se muestra de Spotify de una banda: solo si el perfil está aprobado (o lo cargaste a mano). */
+export function spotifyDe(banda: CollectionEntry<'bandas'>) {
+  const { spotify, spotifyEstado, fotoSpotify, generos } = banda.data;
+  if (!spotify || spotifyEstado === 'sugerido' || spotifyEstado === 'descartado') return null;
+  return { url: spotify, foto: fotoSpotify ?? null, generos };
+}
+
 export async function bandasVisibles() {
   const [bandas, noticias, agenda] = await Promise.all([
     getCollection('bandas'),

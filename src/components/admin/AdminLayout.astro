@@ -5,7 +5,7 @@ import '../../styles/global.css';
 
 interface Props {
   titulo: string;
-  activo: '/admin' | '/admin/ticketeras';
+  activo: '/admin' | '/admin/ticketeras' | '/admin/bandas';
   estado: 'sin-sesion' | 'sin-permiso' | 'error' | 'ok';
   login?: string;
   error?: string;
@@ -14,6 +14,7 @@ const { titulo, activo, estado, login = '', error = '' } = Astro.props;
 const LINKS = [
   { href: '/admin', texto: 'Revisar agenda' },
   { href: '/admin/ticketeras', texto: 'Ticketeras manuales' },
+  { href: '/admin/bandas', texto: 'Bandas en Spotify' },
   { href: '/keystatic', texto: 'Keystatic' },
   { href: '/', texto: 'Ver el sitio' },
 ];

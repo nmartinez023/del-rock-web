@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 import SeccionTitulo from '../../components/SeccionTitulo.astro';
 import NoticiaCard from '../../components/NoticiaCard.astro';
 import AgendaGrid from '../../components/AgendaGrid.astro';
-import { bandasVisibles, noticiasOrdenadas, proximasFechas, tocaEn } from '../../lib/util';
+import { bandasVisibles, noticiasOrdenadas, proximasFechas, spotifyDe, tocaEn } from '../../lib/util';
 
 export async function getStaticPaths() {
   const bandas = await bandasVisibles();
@@ -16,17 +16,36 @@ const { banda } = Astro.props;
 const { data } = banda;
 const noticias = (await noticiasOrdenadas()).filter((n) => n.data.banda?.id === banda.id);
 const fechas = (await proximasFechas()).filter((f) => tocaEn(f, banda.id));
+const spotify = spotifyDe(banda);
 ---
 
 <Base titulo={data.nombre} descripcion={data.descripcion ?? `Noticias, fechas y coberturas de ${data.nombre} en Del Rock.`}>
   <header class="container cabecera">
-    {data.foto && <div class="foto avatar"><Image src={data.foto} alt="" width={240} height={240} loading="eager" /></div>}
+    {data.foto ? (
+      <div class="foto avatar"><Image src={data.foto} alt="" width={240} height={240} loading="eager" /></div>
+    ) : (
+      spotify?.foto && (
+        <figure class="avatar-spotify">
+          <a class="foto avatar" href={spotify.url} rel="noopener" aria-label={`${data.nombre} en Spotify`}>
+            <img src={spotify.foto} alt="" width="240" height="240" loading="eager" referrerpolicy="no-referrer" />
+          </a>
+          <figcaption>Foto: <a href={spotify.url} rel="noopener">Spotify</a></figcaption>
+        </figure>
+      )
+    )}
     <div class="texto">
       <h1 class="d nombre">{data.nombre}</h1>
       {data.descripcion && <p class="desc">{data.descripcion}</p>}
+      {spotify && spotify.generos.length > 0 && (
+        <ul class="generos">
+          {spotify.generos.map((g) => (
+            <li>{g}</li>
+          ))}
+        </ul>
+      )}
       <div class="links">
         {data.instagram && <a class="btn btn--borde" href={data.instagram} rel="noopener">Instagram</a>}
-        {data.spotify && <a class="btn btn--borde" href={data.spotify} rel="noopener">Spotify</a>}
+        {spotify && <a class="btn btn--borde" href={spotify.url} rel="noopener">Spotify</a>}
       </div>
     </div>
   </header>
@@ -69,6 +88,39 @@ const fechas = (await proximasFechas()).filter((f) => tocaEn(f, banda.id));
     aspect-ratio: 1;
     border-radius: 50%;
     border: 3px solid var(--azul);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .avatar-spotify {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .avatar-spotify figcaption {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .generos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .generos li {
+    padding: 3px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: capitalize;
   }
   .texto {
     flex: 1 1 320px;

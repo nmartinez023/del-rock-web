@@ -1,0 +1,248 @@
+---
+// Panel /admin/bandas: los perfiles de Spotify que encontró la búsqueda automática (recolector/spotify.mjs).
+// Puede ser otra banda con el mismo nombre: hasta que lo apruebes, la web no muestra ni el link ni la foto.
+import AdminLayout from '../../components/admin/AdminLayout.astro';
+import { COOKIE_TOKEN, ErrorGitHub, leerBandasSugeridas, verificarAcceso, type BandaSpotify } from '../../lib/admin/github';
+
+export const prerender = false;
+
+const token = Astro.cookies.get(COOKIE_TOKEN)?.value;
+let estado: 'sin-sesion' | 'sin-permiso' | 'error' | 'ok' = 'sin-sesion';
+let login = '';
+let error = '';
+let bandas: BandaSpotify[] = [];
+
+if (token) {
+  try {
+    const acceso = await verificarAcceso(token);
+    login = acceso.login;
+    if (!acceso.puede) estado = 'sin-permiso';
+    else {
+      bandas = await leerBandasSugeridas(token);
+      estado = 'ok';
+    }
+  } catch (err) {
+    if (err instanceof ErrorGitHub && err.status === 401) estado = 'sin-sesion';
+    else {
+      estado = 'error';
+      error = (err as Error).message;
+    }
+  }
+}
+Astro.response.headers.set('cache-control', 'no-store');
+
+const editar = (b: BandaSpotify) => `/keystatic/branch/main/collection/bandas/item/${b.archivo.replace(/\.yaml$/, '')}`;
+---
+
+<AdminLayout titulo="Bandas en Spotify" activo="/admin/bandas" estado={estado} login={login} error={error}>
+  <div class="cabecera">
+    <h1 class="d">Bandas en Spotify</h1>
+    <p class="ayuda">
+      La búsqueda automática encontró estos perfiles con el mismo nombre que la banda. Abrí los dudosos en Spotify y aprobá los que
+      son: recién ahí la web muestra la foto, los géneros y el link. Los que marques como "No es esta banda" no se vuelven a sugerir;
+      a esos les podés cargar el link correcto a mano en Keystatic.
+    </p>
+  </div>
+
+  {
+    bandas.length === 0 ? (
+      <p class="vacio">🎉 No hay perfiles para revisar.</p>
+    ) : (
+      <form id="lista">
+        <div class="acciones" role="toolbar" aria-label="Acciones sobre lo seleccionado">
+          <label class="todos">
+            <input type="checkbox" id="todos" /> <span id="contador">0 seleccionadas</span>
+          </label>
+          <div class="botones">
+            <button type="button" class="btn" data-accion="aprobar" disabled>
+              ✅ Es la banda
+            </button>
+            <button type="button" class="btn btn--borde" data-accion="descartar" disabled>
+              ❌ No es esta banda
+            </button>
+          </div>
+        </div>
+        <p class="mensaje" id="mensaje" role="status" aria-live="polite" />
+
+        <ul class="bandas">
+          {bandas.map((b) => (
+            <li class="banda" data-archivo={b.archivo}>
+              <label class="check">
+                <input type="checkbox" name="archivo" value={b.archivo} aria-label={`Seleccionar ${b.nombre}`} />
+              </label>
+              <div class="foto">{b.foto && <img src={b.foto} alt="" loading="lazy" referrerpolicy="no-referrer" />}</div>
+              <div class="datos">
+                <strong>{b.nombre}</strong>
+                {b.generos.length > 0 && <span class="generos">{b.generos.join(' · ')}</span>}
+                <span class="enlaces">
+                  <a href={b.spotify} target="_blank" rel="noopener">
+                    Spotify ↗
+                  </a>
+                  <a href={editar(b)} target="_blank" rel="noopener">
+                    Editar ↗
+                  </a>
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </form>
+    )
+  }
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('#lista');
+    if (form) {
+      const casillas = () => [...form.querySelectorAll<HTMLInputElement>('input[name="archivo"]')];
+      const todos = form.querySelector<HTMLInputElement>('#todos')!;
+      const botones = [...form.querySelectorAll<HTMLButtonElement>('[data-accion]')];
+      const contador = form.querySelector('#contador')!;
+      const mensaje = form.querySelector('#mensaje')!;
+
+      const actualizar = () => {
+        const marcadas = casillas().filter((c) => c.checked);
+        contador.textContent = `${marcadas.length} seleccionada${marcadas.length === 1 ? '' : 's'}`;
+        for (const b of botones) b.disabled = marcadas.length === 0;
+        todos.checked = marcadas.length > 0 && marcadas.length === casillas().length;
+        todos.indeterminate = marcadas.length > 0 && !todos.checked;
+        for (const c of casillas()) c.closest('li')!.classList.toggle('marcado', c.checked);
+      };
+      form.addEventListener('change', (ev) => {
+        if (ev.target === todos) for (const c of casillas()) c.checked = todos.checked;
+        actualizar();
+      });
+      // Clic en cualquier parte de la tarjeta (menos en los links) marca o desmarca.
+      form.addEventListener('click', (ev) => {
+        const t = ev.target as HTMLElement;
+        if (t.closest('a, input, button, label')) return;
+        const c = t.closest('li')?.querySelector<HTMLInputElement>('input[name="archivo"]');
+        if (c) {
+          c.checked = !c.checked;
+          actualizar();
+        }
+      });
+
+      for (const boton of botones) {
+        boton.addEventListener('click', async () => {
+          const archivos = casillas().filter((c) => c.checked).map((c) => c.value);
+          if (!archivos.length) return;
+          for (const b of botones) b.disabled = true;
+          mensaje.textContent = 'Guardando…';
+          try {
+            const res = await fetch('/admin/api/bandas', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ accion: boton.dataset.accion, archivos }),
+            });
+            const datos = await res.json();
+            if (!res.ok) throw new Error(datos.error ?? `Error ${res.status}`);
+            for (const a of archivos) form.querySelector(`li[data-archivo="${a}"]`)?.remove();
+            const que = boton.dataset.accion === 'aprobar' ? 'Aprobadas' : 'Descartadas';
+            mensaje.textContent = `${que}: ${datos.cambiados}. La web se actualiza en unos 6 minutos.`;
+            if (!casillas().length) mensaje.textContent += ' 🎉 No quedan para revisar.';
+          } catch (err) {
+            mensaje.textContent = `No se pudo guardar: ${(err as Error).message}`;
+          }
+          actualizar();
+        });
+      }
+      actualizar();
+    }
+  </script>
+
+  <style>
+    .cabecera {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ayuda,
+    .vacio {
+      margin: 0;
+      color: var(--muted);
+      max-width: 75ch;
+    }
+    .acciones {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      background: var(--bg);
+    }
+    .todos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .mensaje {
+      margin: 0;
+      min-height: 1.4em;
+      color: var(--muted);
+    }
+    .bandas {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: 10px;
+    }
+    .banda {
+      display: grid;
+      grid-template-columns: auto 64px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid #2a2a30;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .banda.marcado {
+      border-color: var(--azul);
+      background: rgb(64 138 201 / 0.08);
+    }
+    .check input {
+      width: 18px;
+      height: 18px;
+    }
+    .foto {
+      width: 64px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #1c1c22;
+    }
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .datos {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+    .generos {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: capitalize;
+    }
+    .enlaces {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+    }
+  </style>
+</AdminLayout>

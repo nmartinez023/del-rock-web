@@ -231,9 +231,17 @@ function aBase64(texto: string) {
   return btoa(binario);
 }
 
-/** Aplica la acción a los archivos elegidos y lo guarda todo en un solo commit (reintenta si alguien guardó a la vez). */
-export async function guardar(token: string, lista: Lista, accion: Accion, archivos: string[], login: string) {
-  const carpeta = LISTAS[lista].carpeta;
+/**
+ * Cambia varios archivos de una carpeta en un solo commit: lee su versión actual, les aplica `transformar`
+ * y sube solo los que cambiaron. Si alguien guardó a la vez, reintenta con lo nuevo.
+ */
+async function editarArchivos(
+  token: string,
+  carpeta: string,
+  archivos: string[],
+  transformar: (texto: string) => string,
+  mensaje: (cambiados: number) => { headline: string; body: string },
+) {
   for (let intento = 0; intento < 3; intento++) {
     // Estado actual de la rama y de cada archivo, en una sola consulta.
     const alias = archivos.map((a, i) => `f${i}: object(expression: ${JSON.stringify(`${REPO.rama}:${carpeta}/${a}`)}) { ... on Blob { text } }`);
@@ -245,12 +253,10 @@ export async function guardar(token: string, lista: Lista, accion: Accion, archi
     const cambios = archivos.flatMap((a, i) => {
       const actual = d.repository[`f${i}`]?.text;
       if (!actual) return []; // ya no existe (lo movieron o borraron)
-      const nuevo = aplicarAccion(actual, accion, lista);
+      const nuevo = transformar(actual);
       return nuevo === actual ? [] : [{ path: `${carpeta}/${a}`, contents: aBase64(nuevo) }];
     });
     if (!cambios.length) return { cambiados: 0, commit: null };
-
-    const verbo = { publicar: 'Publicar', descartar: 'Descartar', pendiente: 'Volver a pendiente', mover: lista === 'agenda' ? 'Pasar a Otros' : 'Pasar a Agenda' }[accion];
     try {
       const r = await graphql<{ createCommitOnBranch: { commit: { oid: string } } }>(
         token,
@@ -259,7 +265,7 @@ export async function guardar(token: string, lista: Lista, accion: Accion, archi
           i: {
             branch: { repositoryNameWithOwner: `${REPO.owner}/${REPO.name}`, branchName: REPO.rama },
             expectedHeadOid: d.repository.ref.target.oid,
-            message: { headline: `Admin: ${verbo} ${cambios.length} evento${cambios.length === 1 ? '' : 's'}`, body: `Desde /admin, por ${login}.` },
+            message: mensaje(cambios.length),
             fileChanges: { additions: cambios },
           },
         },
@@ -271,4 +277,65 @@ export async function guardar(token: string, lista: Lista, accion: Accion, archi
     }
   }
   throw new ErrorGitHub('No se pudo guardar: el repo cambió varias veces seguidas. Probá de nuevo.', 409);
+}
+
+/** Aplica la acción a los eventos elegidos y lo guarda todo en un solo commit. */
+export async function guardar(token: string, lista: Lista, accion: Accion, archivos: string[], login: string) {
+  const verbo = { publicar: 'Publicar', descartar: 'Descartar', pendiente: 'Volver a pendiente', mover: lista === 'agenda' ? 'Pasar a Otros' : 'Pasar a Agenda' }[accion];
+  return editarArchivos(token, LISTAS[lista].carpeta, archivos, (texto) => aplicarAccion(texto, accion, lista), (n) => ({
+    headline: `Admin: ${verbo} ${n} evento${n === 1 ? '' : 's'}`,
+    body: `Desde /admin, por ${login}.`,
+  }));
+}
+
+// ——— Bandas: perfiles de Spotify sugeridos por la búsqueda automática (recolector/spotify.mjs) ———
+
+export const CARPETA_BANDAS = 'src/content/bandas';
+
+export interface BandaSpotify {
+  archivo: string;
+  nombre: string;
+  spotify: string;
+  foto: string;
+  generos: string[];
+  automatica: boolean;
+}
+
+/** Las bandas con un perfil de Spotify sugerido sin revisar, leídas del repo en vivo. */
+export async function leerBandasSugeridas(token: string): Promise<BandaSpotify[]> {
+  const d = await graphql<{ repository: { object: { entries: { name: string; object: { text: string | null } | null }[] } | null } }>(
+    token,
+    `query($o:String!,$n:String!,$e:String!){ repository(owner:$o,name:$n){ object(expression:$e){ ... on Tree { entries { name object { ... on Blob { text } } } } } } }`,
+    { o: REPO.owner, n: REPO.name, e: `${REPO.rama}:${CARPETA_BANDAS}` },
+  );
+  return (d.repository.object?.entries ?? [])
+    .filter((e) => e.name.endsWith('.yaml') && e.object?.text)
+    .flatMap((e) => {
+      const texto = e.object!.text!;
+      const c = leerCampos(texto);
+      if (c.spotifyEstado !== 'sugerido' || !c.spotify) return [];
+      const lista = /^generos:\r?\n((?:[ \t]*-.*\r?\n?)*)/m.exec(texto)?.[1] ?? '';
+      const generos = [...lista.matchAll(/-[ \t]*(.+)/g)].map((m) => sinComillas(m[1]));
+      return [{ archivo: e.name, nombre: c.nombre ?? e.name, spotify: c.spotify, foto: c.fotoSpotify ?? '', generos, automatica: c.automatica === 'true' }];
+    })
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+}
+
+export type AccionSpotify = 'aprobar' | 'descartar';
+
+/** Aprobar deja el perfil y lo muestra en la web; descartar borra link, foto y géneros y no lo vuelve a sugerir. */
+export function aplicarSpotify(texto: string, accion: AccionSpotify) {
+  if (!/^spotifyEstado:[ \t]*sugerido[ \t]*\r?$/m.test(texto)) return texto; // ya lo revisó alguien
+  if (accion === 'aprobar') return texto.replace(/^spotifyEstado:.*$/m, 'spotifyEstado: aprobado');
+  return texto
+    .replace(/^(spotify|fotoSpotify):.*(\r?\n)?/gm, '')
+    .replace(/^generos:.*\r?\n(?:[ \t]*-.*(\r?\n)?)*/m, '')
+    .replace(/^spotifyEstado:.*$/m, 'spotifyEstado: descartado');
+}
+
+export async function guardarSpotify(token: string, accion: AccionSpotify, archivos: string[], login: string) {
+  return editarArchivos(token, CARPETA_BANDAS, archivos, (texto) => aplicarSpotify(texto, accion), (n) => ({
+    headline: `Admin: ${accion === 'aprobar' ? 'Aprobar' : 'Descartar'} Spotify de ${n} banda${n === 1 ? '' : 's'}`,
+    body: `Desde /admin/bandas, por ${login}.`,
+  }));
 }

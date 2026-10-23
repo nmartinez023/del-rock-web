@@ -86,7 +86,20 @@ export default config({
         }),
         descripcion: fields.text({ label: 'Descripción corta', multiline: true }),
         instagram: fields.url({ label: 'Instagram de la banda' }),
-        spotify: fields.url({ label: 'Spotify' }),
+        spotify: fields.url({ label: 'Spotify', description: 'Link al perfil del artista. Si lo cargás vos, la foto y los géneros se completan solos.' }),
+        spotifyEstado: fields.select({
+          label: 'Spotify: estado',
+          description: 'Sugerido = lo encontró la búsqueda automática y todavía no se muestra en la web (aprobalo en /admin/bandas).',
+          options: [
+            { label: 'Aprobado (o cargado a mano)', value: 'aprobado' },
+            { label: 'Sugerido, sin revisar', value: 'sugerido' },
+            { label: 'Descartado: no es esta banda', value: 'descartado' },
+          ],
+          defaultValue: 'aprobado',
+        }),
+        fotoSpotify: fields.url({ label: 'Foto de Spotify', description: 'La completa la búsqueda. Si subís una foto arriba, se usa esa.' }),
+        generos: fields.array(fields.text({ label: 'Género' }), { label: 'Géneros (de Spotify)', itemLabel: (p) => p.value }),
+        spotifyBuscado: fields.text({ label: 'Última búsqueda en Spotify sin resultado', description: 'Se vuelve a buscar 30 días después.' }),
         automatica: fields.checkbox({
           label: 'Creada por el recolector',
           description:

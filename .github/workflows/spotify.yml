@@ -1,0 +1,60 @@
+# Busca en Spotify las bandas sin perfil y completa foto y géneros de las que tienen link.
+# Lo encontrado por nombre queda "sugerido": se aprueba en /admin/bandas antes de verse en la web.
+name: Bandas en Spotify
+
+on:
+  schedule:
+    - cron: '30 7 * * 1' # lunes 4:30 (Argentina)
+  workflow_dispatch:
+  # Al cambiar el buscador, corre solo (así arranca la primera vez sin tocar nada).
+  push:
+    branches: [main]
+    paths:
+      - 'recolector/spotify.mjs'
+
+permissions:
+  contents: write
+  actions: write # para disparar el deploy agrupado
+
+# Misma fila que el recolector: los dos escriben en src/content/bandas.
+concurrency:
+  group: recolector
+  cancel-in-progress: false
+
+jobs:
+  spotify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: Buscar en Spotify
+        run: node recolector/spotify.mjs
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+
+      # Si algo quedó que el panel no puede abrir, no se sube.
+      - run: npm run validar-panel
+
+      - name: Guardar cambios
+        run: |
+          if [ -z "$(git status --porcelain src/content/bandas)" ]; then
+            echo "Sin cambios."
+            exit 0
+          fi
+          git config user.name "Recolector Del Rock"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src/content/bandas
+          git commit -m "Bandas: perfiles de Spotify"
+          git pull --rebase
+          git push
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
