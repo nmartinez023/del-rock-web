@@ -23,6 +23,14 @@ const nombres = (await bandasDe(fecha)).map((b) => b.data.nombre);
 const enTitulo = slugTag(data.titulo);
 // Más de 3 bandas es un festival: el afiche no las lista.
 const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : nombres.filter((n) => !enTitulo.includes(slugTag(n)));
+
+// Texto para el buscador de la agenda: título, todas las bandas y el lugar, en minúscula y sin tildes.
+const buscar = [data.titulo, ...nombres, data.venue, data.direccion, data.ciudad, data.provincia]
+  .filter(Boolean)
+  .join(' ')
+  .normalize('NFD')
+  .replace(/[̀-ͯ]/g, '')
+  .toLowerCase();
 ---
 
 <a
@@ -31,6 +39,7 @@ const lineup = nombres.length > 3 ? [] : data.tipo === 'festival' ? nombres : no
   style={`--rot:${rot}deg`}
   data-provincia={data.provincia}
   data-ciudad={ciudad}
+  data-buscar={buscar}
   data-fecha={data.fecha.toISOString().slice(0, 10)}
 >
   <span class="cinta-adhesiva" aria-hidden="true"></span>

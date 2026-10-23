@@ -30,24 +30,36 @@ const ciudades = [...porCiudad.entries()]
 
 <div class="agenda" data-agenda>
   {
-    filtro && ciudades.length > 1 && (
-      <div class="filtro">
-        <label for="filtro-ciudad">Ciudad</label>
-        <select id="filtro-ciudad" data-filtro-ciudad>
-          <option value="">Todas ({fechas.length})</option>
-          {ciudades.map((c) => (
-            <option value={c.clave}>
-              {c.nombre} ({c.cantidad})
-            </option>
-          ))}
-        </select>
+    filtro && (
+      <div class="filtros">
+        <div class="buscador">
+          <label for="buscar-agenda" class="sr-only">Buscar</label>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-3.5-3.5" />
+          </svg>
+          <input id="buscar-agenda" type="search" placeholder="Buscar banda, venue o lugar" autocomplete="off" data-buscar-agenda />
+        </div>
+        {ciudades.length > 1 && (
+          <div class="filtro">
+            <label for="filtro-ciudad">Ciudad</label>
+            <select id="filtro-ciudad" data-filtro-ciudad>
+              <option value="">Todas ({fechas.length})</option>
+              {ciudades.map((c) => (
+                <option value={c.clave}>
+                  {c.nombre} ({c.cantidad})
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
     )
   }
   <div class:list={['grilla', `grilla--${variante}`]}>
     {fechas.map((f, i) => <Afiche fecha={f} i={i} ciudad={slugTag(f.data.ciudad ?? '')} />)}
   </div>
-  <p class="vacio" hidden>No hay fechas próximas en esa ciudad.</p>
+  <p class="vacio" hidden>No hay fechas próximas que coincidan.</p>
 </div>
 
 <script>
@@ -57,31 +69,47 @@ const ciudades = [...porCiudad.entries()]
   for (const agenda of document.querySelectorAll<HTMLElement>('[data-agenda]')) {
     const afiches = [...agenda.querySelectorAll<HTMLElement>('.afiche')];
     const selector = agenda.querySelector<HTMLSelectElement>('[data-filtro-ciudad]');
+    const buscador = agenda.querySelector<HTMLInputElement>('[data-buscar-agenda]');
     const vacio = agenda.querySelector<HTMLElement>('.vacio')!;
+    const normalizar = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-    const aplicar = (ciudad: string) => {
+    // Muestra las fechas futuras de la ciudad elegida que tienen todas las palabras buscadas.
+    const aplicar = () => {
+      const ciudad = selector?.value ?? '';
+      const palabras = normalizar(buscador?.value ?? '').split(/\s+/).filter(Boolean);
       let visibles = 0;
       for (const a of afiches) {
-        const ok = a.dataset.fecha! >= hoy && (!ciudad || a.dataset.ciudad === ciudad);
+        const texto = a.dataset.buscar ?? '';
+        const ok = a.dataset.fecha! >= hoy && (!ciudad || a.dataset.ciudad === ciudad) && palabras.every((p) => texto.includes(p));
         a.hidden = !ok;
         if (ok) visibles++;
       }
       vacio.hidden = visibles > 0;
     };
 
+    // La ciudad y la búsqueda quedan en la dirección (?ciudad=rosario&q=divididos), para compartir el link filtrado.
+    const url = new URL(location.href);
+    const recordar = (clave: string, valor: string) => {
+      if (valor) url.searchParams.set(clave, valor);
+      else url.searchParams.delete(clave);
+      history.replaceState(null, '', url);
+    };
     if (selector) {
-      // La ciudad elegida queda en la dirección (?ciudad=rosario), para compartir el link filtrado.
-      const url = new URL(location.href);
       const inicial = url.searchParams.get('ciudad') ?? '';
       if ([...selector.options].some((o) => o.value === inicial)) selector.value = inicial;
       selector.addEventListener('change', () => {
-        aplicar(selector.value);
-        if (selector.value) url.searchParams.set('ciudad', selector.value);
-        else url.searchParams.delete('ciudad');
-        history.replaceState(null, '', url);
+        aplicar();
+        recordar('ciudad', selector.value);
       });
     }
-    aplicar(selector?.value ?? '');
+    if (buscador) {
+      buscador.value = url.searchParams.get('q') ?? '';
+      buscador.addEventListener('input', () => {
+        aplicar();
+        recordar('q', buscador.value.trim());
+      });
+    }
+    aplicar();
   }
 </script>
 
@@ -90,6 +118,53 @@ const ciudades = [...porCiudad.entries()]
     display: flex;
     flex-direction: column;
     gap: 32px;
+  }
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+  .buscador {
+    position: relative;
+    flex: 1 1 280px;
+    max-width: 440px;
+  }
+  .buscador svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--azul);
+    pointer-events: none;
+  }
+  .buscador input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 0 16px 0 44px;
+    border-radius: 22px;
+    border: 1px solid #3a3a40;
+    background: var(--bg);
+    color: var(--fg);
+    font: 600 15px var(--f-body);
+  }
+  .buscador input::placeholder {
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .buscador input:hover,
+  .buscador input:focus-visible {
+    border-color: var(--azul);
+    outline: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   .filtro {
     display: flex;
@@ -134,6 +209,19 @@ const ciudades = [...porCiudad.entries()]
   }
 
   @media (max-width: 600px) {
+    /* El buscador y la ciudad, uno abajo del otro y a lo ancho. */
+    .buscador,
+    .filtro {
+      flex-basis: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+    /* Sin ancho propio: si no, la ciudad con el nombre más largo lo estira más allá de la pantalla. */
+    .filtro select {
+      flex: 1;
+      width: 0;
+    }
+
     /* Home: los primeros afiches en un carrusel horizontal. */
     .grilla--carrusel {
       display: flex;
