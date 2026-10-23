@@ -1,0 +1,18 @@
+titulo: Humbe
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - humbe
+fecha: 2026-10-29
+hora: "20:30"
+venue: Teatro Gran Rex
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://tuentrada.com/humbe-tgr
+imagen: https://bucket.tuentrada.com/bucket/events/humbe/humbe-image-main-1773172293.jpg
+origen:
+  fuente: tuentrada
+  id: 723-4963
+  huella: 26d439dba46410b0

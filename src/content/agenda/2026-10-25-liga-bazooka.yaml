@@ -1,0 +1,18 @@
+titulo: Liga Bazooka
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - liga-bazooka
+fecha: 2026-10-25
+hora: "17:00"
+venue: Teatro Gran Rex
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://tuentrada.com/liga-bazooka-tgr
+imagen: https://bucket.tuentrada.com/bucket/events/liga-bazooka/liga-bazooka-image-main-1787754672.jpg
+origen:
+  fuente: tuentrada
+  id: 1249-7553
+  huella: 2bf0151a050a41e4

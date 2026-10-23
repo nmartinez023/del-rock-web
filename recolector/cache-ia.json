@@ -1,6 +1,17 @@
 {
  "version": 1,
  "entradas": {
+  "02cf40789dbd4031": {
+   "r": {
+    "genero": "jazz",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Jazz Buenos Aires",
+    "artistas": []
+   },
+   "fecha": "2026-11-24",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "038bd1698f749a56": {
    "r": {
     "genero": "pop rock",
@@ -125,6 +136,17 @@
     ]
    },
    "fecha": "2026-12-10",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "0b5025537cc6d210": {
+   "r": {
+    "genero": "no especificado",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Ciclo Aura",
+    "artistas": []
+   },
+   "fecha": "2026-10-26",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "0ccc08803f1525d5": {
@@ -630,6 +652,19 @@
    "fecha": "2027-03-03",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "37af8488bba7bc68": {
+   "r": {
+    "genero": "pop rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Humbe",
+    "artistas": [
+     "Humbe"
+    ]
+   },
+   "fecha": "2026-10-29",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "37c6f90c7f02e135": {
    "r": {
     "genero": "no especificado",
@@ -750,6 +785,17 @@
     "artistas": []
    },
    "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "3d53f92fdf51318e": {
+   "r": {
+    "genero": "espectáculo infantil",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Bobicraft",
+    "artistas": []
+   },
+   "fecha": "2026-10-27",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "3d833edce71a9c60": {
@@ -2065,6 +2111,19 @@
    "fecha": "2026-11-22",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "9c2c54efca24962c": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "Liga Bazooka",
+    "artistas": [
+     "Liga Bazooka"
+    ]
+   },
+   "fecha": "2026-10-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "9d1dc8de16cc17eb": {
    "r": {
     "genero": "chamamé",
@@ -2194,6 +2253,17 @@
     ]
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a683a21189a7ecaa": {
+   "r": {
+    "genero": "música clásica",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Grandes Intérpretes Internacionales",
+    "artistas": []
+   },
+   "fecha": "2026-12-08",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "a8052e4777273a47": {
@@ -3214,6 +3284,17 @@
     "artistas": []
    },
    "fecha": "2026-12-25",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "ede293296ff99433": {
+   "r": {
+    "genero": "pop",
+    "rockNacional": false,
+    "tipo": "festival",
+    "titulo": "Los 40 Primavera Pop",
+    "artistas": []
+   },
+   "fecha": "2026-10-28",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "ef5b84ed8fa96192": {

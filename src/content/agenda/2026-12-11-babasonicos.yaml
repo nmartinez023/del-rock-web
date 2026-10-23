@@ -1,0 +1,18 @@
+titulo: Babasonicos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - babasonicos
+fecha: 2026-12-11
+hora: "21:00"
+venue: Anfiteatro Municipal Rosario
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://tuentrada.com/babasonicos-amr
+imagen: https://bucket.tuentrada.com/bucket/events/babasonicos/babasonicos-image-main-1783349613.jpg
+origen:
+  fuente: tuentrada
+  id: 1165-7355
+  huella: a67909b8c9a6b729
