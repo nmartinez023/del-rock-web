@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import FotoCompleta from '../../../components/FotoCompleta.astro';
+import AvisoAgenda from '../../../components/AvisoAgenda.astro';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import SeccionTitulo from '../../../components/SeccionTitulo.astro';
@@ -201,6 +202,7 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
           </div>
         </div>
         {vendedor && !yaPaso && <p class="vendedor">La compra se hace en {vendedor}.</p>}
+        {!yaPaso && <AvisoAgenda variante="corto" />}
       </div>
     </div>
 

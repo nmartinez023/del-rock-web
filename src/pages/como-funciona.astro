@@ -1,0 +1,284 @@
+---
+// Cómo funciona la agenda: de dónde salen los shows, cómo se eligen, cada cuánto se actualizan
+// y qué tener en cuenta antes de comprar. No nombra las ticketeras que se usan.
+import Base from '../layouts/Base.astro';
+import SeccionTitulo from '../components/SeccionTitulo.astro';
+
+const INSTAGRAM = 'https://www.instagram.com/del.rock.arg/';
+
+const datos = [
+  { valor: '4×', texto: 'se actualiza por día' },
+  { valor: '100%', texto: 'rock nacional' },
+  { valor: 'Gratis', texto: 'siempre' },
+  { valor: 'Todo', texto: 'el país' },
+];
+
+// Las preguntas también van como datos estructurados (FAQPage) para los buscadores.
+const preguntas = [
+  {
+    p: '¿De dónde sale la información de los shows?',
+    r: 'La recopilamos automáticamente de distintas ticketeras y de los sitios oficiales de venues y salas de todo el país. También sumamos fechas que cargamos nosotros o que nos mandan las bandas.',
+  },
+  {
+    p: '¿Cómo eligen qué shows publicar?',
+    r: 'De todo lo que encontramos, nos quedamos con el rock nacional. Un sistema automático hace un primer filtro (cruzando con nuestro listado de bandas) y después revisamos cada fecha a mano antes de publicarla.',
+  },
+  {
+    p: '¿Cada cuánto se actualiza la agenda?',
+    r: 'Revisamos las fuentes varias veces por día. Las fechas nuevas suelen aparecer en pocas horas, igual que los cambios de horario, lugar o precio.',
+  },
+  {
+    p: '¿Venden entradas?',
+    r: 'No. Cuando tocás "Comprar entradas" te llevamos directo al sitio oficial donde se venden. Nosotros solo te mostramos dónde y cuándo toca cada banda.',
+  },
+  {
+    p: '¿Los precios son exactos?',
+    r: 'Son de referencia: mostramos el precio "desde" que publica cada ticketera, que puede no incluir el cargo por servicio y cambiar sin aviso. El precio final es siempre el del sitio oficial.',
+  },
+  {
+    p: '¿Falta un show o hay un dato mal?',
+    r: 'Escribinos por Instagram a @del.rock.arg con el link del evento y lo revisamos. Si sos de una banda, mandanos tus fechas y las sumamos.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: preguntas.map(({ p, r }) => ({ '@type': 'Question', name: p, acceptedAnswer: { '@type': 'Answer', text: r } })),
+};
+---
+
+<Base
+  titulo="Cómo funciona la agenda"
+  descripcion="La agenda de Del Rock reúne en un solo lugar los shows de rock nacional de todo el país: de dónde sale la información, cada cuánto se actualiza y qué tener en cuenta antes de comprar."
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="container pagina">
+    <SeccionTitulo texto="Cómo funciona la agenda" nivel="h1">
+      <p class="bajada">
+        En vez de entrar a un montón de sitios distintos, en la agenda de Del Rock encontrás los shows de rock nacional de todo el
+        país en un solo lugar.
+      </p>
+    </SeccionTitulo>
+
+    <ul class="datos">
+      {
+        datos.map((d) => (
+          <li>
+            <span class="d valor">{d.valor}</span>
+            <span class="texto">{d.texto}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <section class="pasos" aria-labelledby="titulo-pasos">
+      <h2 id="titulo-pasos" class="d">Así se arma</h2>
+      <ol>
+        <li>
+          <span class="d numero">1</span>
+          <div>
+            <h3>Buscamos</h3>
+            <p>Recorremos automáticamente ticketeras y sitios de venues de todo el país, varias veces por día.</p>
+          </div>
+        </li>
+        <li>
+          <span class="d numero">2</span>
+          <div>
+            <h3>Filtramos</h3>
+            <p>De todo lo que aparece nos quedamos con el rock nacional, cruzando cada evento con nuestro listado de bandas.</p>
+          </div>
+        </li>
+        <li>
+          <span class="d numero">3</span>
+          <div>
+            <h3>Revisamos</h3>
+            <p>Cada fecha pasa por nuestras manos antes de publicarse: corregimos títulos, sumamos info y descartamos lo que no va.</p>
+          </div>
+        </li>
+        <li>
+          <span class="d numero">4</span>
+          <div>
+            <h3>Te llevamos</h3>
+            <p>Desde cada show vas directo al sitio oficial para comprar tus entradas. No vendemos ni cobramos nada.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="preguntas" aria-labelledby="titulo-preguntas">
+      <h2 id="titulo-preguntas" class="d">Preguntas frecuentes</h2>
+      {
+        preguntas.map(({ p, r }) => (
+          <details>
+            <summary>{p}</summary>
+            <p>{r}</p>
+          </details>
+        ))
+      }
+    </section>
+
+    <section class="importante" aria-labelledby="titulo-importante">
+      <h2 id="titulo-importante" class="d">Importante</h2>
+      <p>
+        La información de la agenda (fechas, horarios, lugares, precios y disponibilidad) se toma de fuentes de terceros y puede
+        cambiar en cualquier momento. Aunque la actualizamos varias veces por día, un cambio publicado en la ticketera o en el sitio
+        del venue puede tardar en verse reflejado acá. Antes de comprar o de viajar a un show, confirmá siempre los datos en el sitio
+        oficial: esa es la información que vale. Del Rock no vende entradas ni es responsable por cambios, suspensiones o
+        cancelaciones de los eventos.
+      </p>
+    </section>
+
+    <div class="cierre">
+      <a href="/agenda/" class="btn">Ver la agenda</a>
+      <a href={INSTAGRAM} class="btn btn--borde" target="_blank" rel="noopener">Escribinos por Instagram</a>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .pagina {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-block: 48px 96px;
+    max-width: 920px;
+  }
+  .bajada {
+    margin: 14px 0 0;
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 19px;
+  }
+  h2 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.05;
+  }
+  .datos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+  }
+  .datos .texto {
+    overflow-wrap: anywhere;
+  }
+  .datos li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px;
+    background: var(--papel);
+    color: var(--tinta);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.4);
+  }
+  .datos li:nth-child(odd) {
+    transform: rotate(-1deg);
+  }
+  .datos li:nth-child(even) {
+    transform: rotate(1deg);
+  }
+  .valor {
+    font-size: 40px;
+    line-height: 1;
+    color: #2f6ea6; /* azul de marca oscurecido para contraste sobre papel */
+  }
+  .texto {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pasos ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .pasos li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .numero {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--azul);
+    color: var(--bg);
+    font-size: 22px;
+  }
+  .pasos h3 {
+    margin: 4px 0 6px;
+    font-size: 19px;
+  }
+  .pasos p {
+    margin: 0;
+    color: var(--muted);
+  }
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+  details:first-of-type {
+    border-top: 1px solid var(--line);
+  }
+  summary {
+    cursor: pointer;
+    padding: 18px 36px 18px 0;
+    font-weight: 700;
+    font-size: 18px;
+    list-style: none;
+    position: relative;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--azul);
+    font-size: 26px;
+    font-weight: 400;
+  }
+  details[open] summary::after {
+    content: '–';
+  }
+  summary:hover {
+    color: var(--azul);
+  }
+  details p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    max-width: 720px;
+  }
+  .importante {
+    padding: 24px;
+    border-left: 4px solid var(--azul);
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+  }
+  .importante h2 {
+    margin-bottom: 12px;
+  }
+  .importante p {
+    margin: 0;
+    color: var(--muted);
+  }
+  .cierre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>

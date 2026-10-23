@@ -1,0 +1,72 @@
+---
+// Aviso sobre el origen de los datos de la agenda: se recopilan de ticketeras y sitios de los venues,
+// así que pueden cambiar allá antes que acá. "completo" en /agenda; "corto" en la ficha de cada show.
+interface Props {
+  variante?: 'completo' | 'corto';
+}
+const { variante = 'completo' } = Astro.props;
+---
+
+<aside class:list={['aviso', `aviso--${variante}`]} aria-label="Sobre la información de la agenda">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M12 11v6M12 7.5v.5"></path>
+  </svg>
+  {
+    variante === 'completo' ? (
+      <p>
+        La información de los shows (fechas, horarios, lugares y precios) la recopilamos de distintas ticketeras y de los sitios
+        de los venues. Si algo cambia allá, puede tardar en verse reflejado acá: antes de comprar, confirmá los datos en el sitio
+        oficial. <a href="/como-funciona/">Cómo funciona la agenda</a>
+      </p>
+    ) : (
+      <p>
+        Datos tomados de la ticketera o del venue: pueden cambiar. Confirmá fecha, horario y precio en el sitio oficial antes de
+        comprar. <a href="/como-funciona/">Más info</a>
+      </p>
+    )
+  }
+</aside>
+
+<style>
+  .aviso {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border-left: 3px solid var(--azul);
+    background: var(--surface);
+    color: var(--muted);
+    border-radius: 0 8px 8px 0;
+  }
+  .aviso svg {
+    flex: none;
+    margin-top: 2px;
+    color: var(--azul);
+  }
+  .aviso p {
+    margin: 0;
+  }
+  .aviso a {
+    color: var(--azul);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .aviso a:hover {
+    text-decoration: underline;
+  }
+  .aviso--completo {
+    padding: 14px 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 860px;
+  }
+  .aviso--corto {
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .aviso--corto svg {
+    width: 16px;
+    height: 16px;
+  }
+</style>
