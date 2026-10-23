@@ -49,9 +49,7 @@ const LINKS = [
             <h1 class="d">Iniciá sesión</h1>
             <p id="renovando">Renovando tu sesión de GitHub…</p>
             <p id="pedir-login" hidden>
-              El panel usa la misma sesión que Keystatic. <a class="btn" href="/api/keystatic/github/login">Iniciar sesión con GitHub</a>
-              <br />
-              <small>Después de iniciar sesión, volvé a <strong>{activo}</strong>.</small>
+              El panel usa la misma sesión que Keystatic. <a class="btn" href={`/admin/api/login?volver=${activo}`}>Iniciar sesión con GitHub</a>
             </p>
           </section>
         )
