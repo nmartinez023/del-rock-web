@@ -19,6 +19,7 @@ permissions:
   contents: write
   actions: write # para disparar el deploy agrupado
 
+# Una corrida a la vez ("Reubicar eventos" tiene su propia fila, para no cancelar la pendiente).
 concurrency:
   group: recolector
   cancel-in-progress: false

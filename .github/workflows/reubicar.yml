@@ -14,9 +14,11 @@ permissions:
   contents: write
   actions: write # para disparar el deploy agrupado
 
-# Misma fila que el recolector, para que no se pisen.
+# Fila propia: si compartiera la del recolector, cada guardado desde el panel cancelaría la
+# corrida del recolector que estuviera esperando (GitHub deja una sola pendiente por fila).
+# No se pisan igual: los dos hacen git pull --rebase antes de subir.
 concurrency:
-  group: recolector
+  group: reubicar
   cancel-in-progress: false
 
 jobs:
