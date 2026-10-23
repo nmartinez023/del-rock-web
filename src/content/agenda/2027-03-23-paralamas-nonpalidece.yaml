@@ -7,16 +7,16 @@ bandas:
   - nonpalidece
   - os-paralamas-do-sucesso
 fecha: 2027-03-23
-hora: ""
+hora: "21:00"
 venue: Movistar Arena
 direccion: Humboldt 450
 ciudad: Buenos Aires
 provincia: CABA
 entradas: https://www.movistararena.com.ar/show/46ef1dbf-7353-4e1f-82c8-7ff2334f7ca5
 precioDesde: 60000
-imagen: https://www.movistararena.com.ar/static/artistas/E526F_PARALAMASNONPALIDECE_FileFotoFichaListado
+imagen: https://www.movistararena.com.ar/static/artistas/AB930_PARALAMASNONPALIDECE_FileFotoFichaDesktop
 descripcion: "PARALAMAS + NONPALIDECE: POR PRIMERA VEZ JUNTOS Dos bandas fundamentales de la música latinoamericana se encuentran por primera vez en un mismo escenario. Nonpalidece y Os Paralamas do Sucesso llegan al Movistar Arena de Buenos Aires el 23 de marzo de 2027 para protagonizar una noche histórica, donde el reggae, el rock, el ska y las raíces latinoamericanas se unen en un encuentro que atraviesa generaciones. La fecha será parte de la celebración de los 30 años de trayectoria de Nonpalidece, uno de los grandes referentes del reggae argentino y latinoamericano, que regresa al Arena después de agotar su show en abril de 2025. Por su parte, Os Paralamas do Sucesso, con más de 40 años de carrera, llega con clásicos como “Meu Erro”, “Alagados”, “Lanterna dos Afogados” y “Aonde Quer Que Eu Vá”, luego de agotar cuatro presentaciones en La Trastienda en 2026. Dos grandes historias musicales. Un mismo escenario. Una noche para celebrar canciones que atravesaron fronteras y generaciones."
 origen:
   fuente: movistar-arena
   id: 46ef1dbf-7353-4e1f-82c8-7ff2334f7ca5-2027-03-23
-  huella: d46ebdd55f032bfa
+  huella: ae4e241cbb31381b

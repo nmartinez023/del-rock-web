@@ -1,0 +1,18 @@
+titulo: La Jenny
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-jenny
+fecha: 2026-10-23
+hora: "21:00"
+venue: Sociedad Italiana De San Fernando
+ciudad: San Fernando
+provincia: Buenos Aires
+entradas: https://tuentrada.com/lajenny-sf
+imagen: https://bucket.tuentrada.com/bucket/events/la-jenny/la-jenny-image-main-1788270278.jpeg
+origen:
+  fuente: tuentrada
+  id: 1355-7794
+  huella: 151ec37471f797f9

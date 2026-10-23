@@ -7,7 +7,7 @@ bandas:
   - ntvg
 fecha: 2026-11-22
 hora: "20:00"
-venue: Estadio Qac (estacionamiento)
+venue: Qac Estacionamiento
 ciudad: Quilmes
 provincia: Buenos Aires
 entradas: https://tuentrada.com/ntvg-gira
@@ -15,4 +15,4 @@ imagen: https://bucket.tuentrada.com/bucket/event-groups/no-te-va-gustar/no-te-v
 origen:
   fuente: tuentrada
   id: 1-6037
-  huella: d90322ca153edb51
+  huella: bd3152de806ea083

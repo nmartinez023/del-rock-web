@@ -203,6 +203,19 @@
    "fecha": "2027-01-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "1aad2989485e6206": {
+   "r": {
+    "genero": "pop melódico",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Axel",
+    "artistas": [
+     "Axel"
+    ]
+   },
+   "fecha": "2026-10-23",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "1aeec63a01193a41": {
    "r": {
     "genero": "indie rock",
@@ -1618,6 +1631,17 @@
    "fecha": "2027-03-20",
    "modelo": "anthropic/claude-haiku-5.5"
   },
+  "827bd8dc709ac713": {
+   "r": {
+    "genero": "cine",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "DC Studios: Clayface",
+    "artistas": []
+   },
+   "fecha": "2026-10-26",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
   "84736e6e5a921e52": {
    "r": {
     "genero": "pop melódico",
@@ -1833,6 +1857,19 @@
     ]
    },
    "fecha": "2026-10-28",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "8f33e23d4edb3cda": {
+   "r": {
+    "genero": "rock",
+    "rockNacional": true,
+    "tipo": "show",
+    "titulo": "La Jenny",
+    "artistas": [
+     "La Jenny"
+    ]
+   },
+   "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "90115b03643f3a0f": {
@@ -2118,6 +2155,17 @@
     ]
    },
    "fecha": "2026-10-31",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "a8052e4777273a47": {
+   "r": {
+    "genero": "jazz",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Sueño y Telepatía",
+    "artistas": []
+   },
+   "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "a8a482aba1de689c": {
@@ -3257,6 +3305,19 @@
     ]
    },
    "fecha": "2026-12-07",
+   "modelo": "anthropic/claude-haiku-5.5"
+  },
+  "f827c33c4bfef24a": {
+   "r": {
+    "genero": "stand-up",
+    "rockNacional": false,
+    "tipo": "show",
+    "titulo": "Fede Cyrulnik",
+    "artistas": [
+     "Fede Cyrulnik"
+    ]
+   },
+   "fecha": "2026-10-23",
    "modelo": "anthropic/claude-haiku-5.5"
   },
   "f847b44cff453a5f": {
