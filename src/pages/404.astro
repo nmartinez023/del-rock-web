@@ -1,4 +1,5 @@
 ---
+import { INICIO } from '../lib/lanzamiento';
 import Base from '../layouts/Base.astro';
 ---
 
@@ -7,7 +8,7 @@ import Base from '../layouts/Base.astro';
     <p class="m pintada">Acá no hay nada</p>
     <h1 class="d titulo">Error 404</h1>
     <p class="desc">La página que buscás no existe o se movió.</p>
-    <a href="/" class="btn">Volver al inicio</a>
+    <a href={INICIO} class="btn">Volver al inicio</a>
   </section>
 </Base>
 

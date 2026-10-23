@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import NoticiaCard from './NoticiaCard.astro';
+import SeccionTitulo from './SeccionTitulo.astro';
+import AgendaGrid from './AgendaGrid.astro';
+import InstagramFeed from './InstagramFeed.astro';
+import { noticiasOrdenadas, proximasFechas } from '../lib/util';
+
+const noticias = await noticiasOrdenadas();
+const [principal, ...resto] = noticias;
+const ultimas = resto.slice(0, 4);
+const grilla = resto.slice(4, 10);
+const fechas = (await proximasFechas()).slice(0, 8);
+---
+
+<Base>
+  <h1 class="sr-only">Del Rock Arg: rock nacional, todos los días</h1>
+
+  {
+    principal && (
+      <section class="container hero">
+        <div class="hero-principal">
+          <NoticiaCard noticia={principal} variante="grande" prioridad />
+        </div>
+        <aside class="hero-lateral" aria-labelledby="lo-ultimo">
+          <h2 id="lo-ultimo" class="m lo-ultimo">Lo último</h2>
+          {ultimas.map((n) => <NoticiaCard noticia={n} variante="lista" />)}
+        </aside>
+      </section>
+    )
+  }
+
+  {
+    fechas.length > 0 && (
+      <section class="container bloque">
+        <div class="bloque-cabecera">
+          <SeccionTitulo texto="Agenda" />
+        </div>
+        <AgendaGrid fechas={fechas} filtro={false} />
+        <a href="/agenda/" class="ver-mas">Ver toda la agenda</a>
+      </section>
+    )
+  }
+
+  {
+    grilla.length > 0 && (
+      <section class="container bloque">
+        <SeccionTitulo texto="Noticias" />
+        <div class="grilla-noticias">
+          {grilla.map((n) => <NoticiaCard noticia={n} />)}
+        </div>
+        <a href="/noticias/" class="ver-mas">Todas las noticias</a>
+      </section>
+    )
+  }
+
+  <InstagramFeed />
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-block: 28px 64px;
+  }
+  .hero-principal {
+    flex: 999 1 600px;
+    min-width: 0;
+  }
+  .hero-lateral {
+    flex: 1 1 320px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .lo-ultimo {
+    margin: 0 0 4px;
+    font-size: 28px;
+    color: var(--azul);
+    transform: rotate(-2deg);
+    transform-origin: left;
+  }
+  .bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-block: 56px 72px;
+  }
+  .grilla-noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 44px 32px;
+  }
+  .ver-mas {
+    align-self: flex-start;
+    font-weight: 700;
+    border-bottom: 2px solid var(--azul);
+    padding-bottom: 4px;
+  }
+</style>

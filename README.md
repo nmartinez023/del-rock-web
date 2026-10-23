@@ -133,3 +133,13 @@ El Deploy Hook compila igual. Cloudflare sí compila un push con 20 commits o m�
 **Rebuild diario:** `.github/workflows/rebuild-diario.yml` llama todos los días a las 06:00 (hora argentina) a un
 *Deploy Hook* del Worker, para traer los posts nuevos de Instagram y sacar las fechas pasadas de la agenda.
 La URL del hook está guardada como secret `CF_DEPLOY_HOOK` en el repo de GitHub.
+
+## Antes del lanzamiento ("Próximamente")
+
+Mientras `LANZADO = false` en `src/lib/lanzamiento.ts`:
+
+- `/` muestra la página de **Próximamente** (logo latiendo).
+- La portada real está en la dirección de `PORTADA_PREVIA` (no se enlaza desde ningún lado público).
+- Todas las páginas llevan `noindex` y `robots.txt` solo deja rastrear `/`.
+
+Para lanzar: poner `LANZADO = true`, subir, y listo (vuelve la portada en `/` y se indexa todo).

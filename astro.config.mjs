@@ -24,7 +24,7 @@ export default defineConfig({
     markdoc(),
     keystatic(),
     // Sitemap para buscadores. Afuera: el panel y las URLs viejas de la agenda (que redirigen).
-    sitemap({ filter: (pagina) => !/\/keystatic|\/api\/|\/agenda\/\d{4}-\d{2}-\d{2}-/.test(pagina) }),
+    sitemap({ filter: (pagina) => !/\/keystatic|\/api\/|\/previa-|\/agenda\/\d{4}-\d{2}-\d{2}-/.test(pagina) }),
   ],
   // Sin sesiones de Astro: así el adapter no crea un KV en Cloudflare.
   session: false,

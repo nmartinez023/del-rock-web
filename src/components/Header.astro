@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
+import { INICIO } from '../lib/lanzamiento';
 
 const secciones = [
   { href: '/noticias/', label: 'Noticias' },
@@ -13,7 +14,7 @@ const actual = Astro.url.pathname;
 
 <header class="header">
   <div class="container fila">
-    <a href="/" class="marca" aria-label="Del Rock Arg, inicio">
+    <a href={INICIO} class="marca" aria-label="Del Rock Arg, inicio">
       <Image src={logo} alt="" width={64} height={64} loading="eager" />
     </a>
 
