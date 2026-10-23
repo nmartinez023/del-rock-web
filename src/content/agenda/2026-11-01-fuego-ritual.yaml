@@ -1,0 +1,18 @@
+titulo: Fuego Ritual
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - fuego-ritual
+fecha: 2026-11-01
+hora: "19:00"
+venue: Maldini Alto Avellaneda
+ciudad: Avellaneda
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/111-fuego-ritual-en-maldini-avellaneda-570296
+imagen: https://imagenes.passline.com/eventos/-815342-rec.jpg
+origen:
+  fuente: passline
+  id: "570296"
+  huella: 3cb1c07c5d7afca9

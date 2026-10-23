@@ -1,0 +1,19 @@
+titulo: nonpalidece ! 30 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nonpalidece
+fecha: 2026-10-31
+hora: "20:00"
+venue: AREA COSTANERA
+ciudad: Quilmes
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/nonpalidece-30-anos
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/nonpalidece-30-anos-553734-rec_2.jpg
+origen:
+  fuente: passline
+  id: "553734"
+  huella: ff2bc1a9f53d0361

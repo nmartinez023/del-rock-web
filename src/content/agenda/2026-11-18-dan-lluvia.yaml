@@ -1,0 +1,19 @@
+titulo: Dan Lluvia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - dan-lluvia
+fecha: 2026-11-18
+hora: "21:00"
+venue: CLUB TUCUMÁN de Quilmes
+ciudad: Quilmes Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/dan-lluvia-en-quilmes-mie-18-nov-21-hs
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/-816626-rec.jpg
+origen:
+  fuente: passline
+  id: "570620"
+  huella: 69e37e7218e7dadb

@@ -1,0 +1,19 @@
+titulo: Traslado Milo J en Estadio Kempes
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - milo
+fecha: 2026-12-05
+hora: "15:00"
+venue: Estadio Kempes
+ciudad: Cordoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/traslado-milo-j-en-estadio-kempes
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/-794134-rec.jpg
+origen:
+  fuente: passline
+  id: "555586"
+  huella: 3540a71f93576757

@@ -1,0 +1,19 @@
+titulo: Viejas Locas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - viejas-locas
+fecha: 2026-11-14
+hora: "21:00"
+venue: CITY BAR
+ciudad: Martinez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-en-city-bar-de-martinez
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "568110"
+  huella: 096fb4e937e36928

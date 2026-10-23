@@ -1,0 +1,19 @@
+titulo: Traslado Franky Rizardo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - franky-rizardo
+fecha: 2026-12-07
+hora: "23:30"
+venue: La Fábrica
+ciudad: Córdoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/traslado-franky-rizardo-en-la-fabrica
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/traslado-franky-rizardo-en-la-fabrica-555921-rec.jpg
+origen:
+  fuente: passline
+  id: "555921"
+  huella: 518787b6077c9db8

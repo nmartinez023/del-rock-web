@@ -1,0 +1,19 @@
+titulo: Una Banda Redonda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - una-banda-redonda
+fecha: 2026-11-13
+hora: "22:00"
+venue: Teatro San Telmo (ex Satisfaction)
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/una-banda-redonda-en-satisfaction
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/una-banda-redonda-en-satisfaction-564314-rec.jpg
+origen:
+  fuente: passline
+  id: "564314"
+  huella: 30c0250275e535ef

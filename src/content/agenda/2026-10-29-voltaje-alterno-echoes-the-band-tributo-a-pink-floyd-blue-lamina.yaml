@@ -1,0 +1,21 @@
+titulo: Voltaje Alterno + Echoes The Band (Tributo a Pink Floyd) + Blue Lamina
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock progresivo y psicodélico
+bandas:
+  - voltaje-alterno
+  - echoes-the-band
+  - blue-lamina
+fecha: 2026-10-29
+hora: "19:30"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/voltaje-alterno-echoes-the-band-tributo-a-pink-floyd-blue-lamina-en-club-conjura
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/voltaje-alterno-echoes-the-band-tributo-a-pink-floyd-los-duendes-en-club-conjura-568079-rec.jpg
+origen:
+  fuente: passline
+  id: "568079"
+  huella: ec99d3982404c482

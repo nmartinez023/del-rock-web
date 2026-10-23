@@ -1,0 +1,20 @@
+titulo: La Grecia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-grecia
+fecha: 2026-11-21
+hora: "20:00"
+venue: Teatro Vorterix
+direccion: Av. Federico Lacroze 3455
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/la-grecia-en-vorterix
+precioDesde: 25000
+imagen: https://cdn.getcrowder.com/images/70c2ddff-6565-46be-878e-a77b4487b05e-la-grecia---vorterix---640x640.jpg
+origen:
+  fuente: allaccess
+  id: la-grecia-en-vorterix
+  huella: f9c233dde58e0d99

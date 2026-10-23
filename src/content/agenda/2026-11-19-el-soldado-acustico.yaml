@@ -1,0 +1,19 @@
+titulo: El Soldado Acústico
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock acústico
+bandas:
+  - el-soldado
+fecha: 2026-11-19
+hora: "21:00"
+venue: Vecchia Republica
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/el-soldado-acustico-caba
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/el-soldado-acustico-caba-565159-rec.jpg
+origen:
+  fuente: passline
+  id: "565159"
+  huella: 7cbacc75ce7be296

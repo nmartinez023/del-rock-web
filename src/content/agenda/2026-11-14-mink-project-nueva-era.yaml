@@ -1,0 +1,19 @@
+titulo: Mink Project — Nueva Era
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - mink-project
+fecha: 2026-11-14
+hora: "20:30"
+venue: Auditorio J. M. Giuffra
+ciudad: El Palomar
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/mink-project-nueva-era
+precioDesde: 17500
+imagen: https://imagenes.passline.com/eventos/-794188-rec.jpg
+origen:
+  fuente: passline
+  id: "555890"
+  huella: 37d0937e26004698

@@ -1,0 +1,19 @@
+titulo: JAF
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jaf
+fecha: 2026-10-30
+hora: "21:00"
+venue: Joseph Bar
+ciudad: Merlo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jaf-en-joseph
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/-790588-rec.jpg
+origen:
+  fuente: passline
+  id: "553225"
+  huella: 72d534ad92eb6623

@@ -1,0 +1,20 @@
+titulo: Apnea x Murk
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - apnea
+  - murk
+fecha: 2026-11-21
+hora: "23:55"
+venue: Magna Club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/apnea-x-murk
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-815738-rec.jpg
+origen:
+  fuente: passline
+  id: "570167"
+  huella: b78c8009e5b99d82

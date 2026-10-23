@@ -1,0 +1,19 @@
+titulo: Perro Indio festeja 10 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - perro-indio
+fecha: 2026-11-22
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/perro-indio-festeja-10-anos-en-flores
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/perro-indio-festeja-10-anos-en-flores-545586-rec.jpg
+origen:
+  fuente: passline
+  id: "545586"
+  huella: d70d3212e323ef1b

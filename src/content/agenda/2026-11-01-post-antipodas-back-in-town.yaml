@@ -1,0 +1,19 @@
+titulo: Post Antipodas — Back in Town
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - post-antipodas
+fecha: 2026-11-01
+hora: "01:00"
+venue: Secret Location
+ciudad: Junin
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/post-antipodas-back-in-town
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/post-antipodas-back-in-town-566469-rec.jpg
+origen:
+  fuente: passline
+  id: "566469"
+  huella: 0422151448a9d807

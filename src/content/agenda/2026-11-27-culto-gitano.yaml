@@ -1,0 +1,19 @@
+titulo: Culto Gitano
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - culto-gitano
+fecha: 2026-11-27
+hora: "21:00"
+venue: Cine Teatro Paramount
+ciudad: Caseros
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/culto-gitano-caseros-2711
+precioDesde: 45000
+imagen: https://imagenes.passline.com/eventos/culto-gitano-caseros-2711-552989-rec.jpg
+origen:
+  fuente: passline
+  id: "552989"
+  huella: dfcf394bbc496cdc

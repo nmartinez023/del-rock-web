@@ -1,0 +1,19 @@
+titulo: Luzbel
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: heavy metal
+bandas:
+  - luzbel
+fecha: 2026-11-06
+hora: "23:00"
+venue: Melt Underground
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/luzbel-001
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-807236-rec.jpg
+origen:
+  fuente: passline
+  id: "559454"
+  huella: 6447f39485a6048d

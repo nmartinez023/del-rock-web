@@ -1,0 +1,19 @@
+titulo: Prender fuego la Máquina
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-viaje-de-jim
+fecha: 2026-11-19
+hora: "20:00"
+venue: El Padilla
+ciudad: Temperley
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/evdj-presenta-prender-fuego-la-maquina
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-805701-rec.jpg
+origen:
+  fuente: passline
+  id: "560165"
+  huella: 26ffc913abac7938

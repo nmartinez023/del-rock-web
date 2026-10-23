@@ -1,0 +1,19 @@
+titulo: Daniel Agostini
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - daniel-agostini
+fecha: 2026-11-13
+hora: "21:00"
+venue: SOCIEDAD ITALIANA
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/daniel-agostini-san-miguel
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/daniel-agostini-san-miguel-542677-rec.jpg
+origen:
+  fuente: passline
+  id: "542677"
+  huella: 26835108759cdf53

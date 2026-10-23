@@ -1,0 +1,20 @@
+titulo: C.R.O
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - c-r-o
+fecha: 2026-10-30
+hora: "21:00"
+venue: Malvinas Argentinas
+direccion: Gutenberg
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/cro
+precioDesde: 40000
+imagen: https://cdn.getcrowder.com/images/15c4132a-158c-4986-bd5d-894ea32df3cf-croticketera640x640.jpg
+origen:
+  fuente: allaccess
+  id: cro
+  huella: 03f4d9328e9af58f

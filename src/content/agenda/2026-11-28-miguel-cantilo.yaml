@@ -1,0 +1,19 @@
+titulo: Miguel Cantilo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+bandas:
+  - miguel-cantilo
+fecha: 2026-11-28
+hora: "20:00"
+venue: CLUB TUCUMÁN de Quilmes
+ciudad: Quilmes Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/miguel-cantilo-en-quilmes-sab-28-nov-20-hs
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/miguel-cantilo-en-quilmes-sab-28-nov-20-hs-567511-rec.jpg
+origen:
+  fuente: passline
+  id: "567511"
+  huella: 6db7ad568692f777

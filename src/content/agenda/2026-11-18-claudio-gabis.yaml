@@ -1,0 +1,19 @@
+titulo: Claudio Gabis
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - claudio-gabis
+fecha: 2026-11-18
+hora: "20:30"
+venue: Cultura Wiphala
+ciudad: Los Polvorines
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/claudio-gabis-en-cultura-wiphala
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/claudio-gabis-en-cultura-wiphala-571101-rec.jpg
+origen:
+  fuente: passline
+  id: "571101"
+  huella: cc2c7946aaa28c7c

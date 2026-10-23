@@ -1,0 +1,20 @@
+titulo: Aliento de Perro + Trotsky Vengarán
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - aliento-de-perro
+  - trotsky-vengaran
+fecha: 2026-12-05
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/aliento-de-perro-trotsky-vengaran-en-groove-05122026
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/aliento-de-perro-trotsky-vengaran-en-groove-05122026-569860-rec.jpg
+origen:
+  fuente: passline
+  id: "569860"
+  huella: 4e10afdedc52e0d1

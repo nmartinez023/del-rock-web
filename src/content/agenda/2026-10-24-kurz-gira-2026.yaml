@@ -1,0 +1,19 @@
+titulo: KURZ — Gira 2026
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - kurz
+fecha: 2026-10-24
+hora: "23:30"
+venue: El Arca
+ciudad: Concepcion Del Uruguay
+provincia: Otra
+entradas: https://www.passline.com/eventos/kurz-en-el-arca-concepcion-del-uruguay-gira-2026
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/kurz-en-el-arca-concepcion-del-uruguay-gira-2026-545410-rec.jpg
+origen:
+  fuente: passline
+  id: "545410"
+  huella: 2580d470c13e984b

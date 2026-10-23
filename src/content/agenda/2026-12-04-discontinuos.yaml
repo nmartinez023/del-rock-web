@@ -1,0 +1,20 @@
+titulo: Discontinuos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - discontinuos
+fecha: 2026-12-04
+hora: "20:00"
+venue: The Roxy Live
+direccion: Cnel. Niceto Vega 5542
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/discontinuos-en-the-roxy-live
+precioDesde: 25000
+imagen: https://cdn.getcrowder.com/images/1c5b840a-0427-4e88-a7f6-86eb44351217-discontinuos-640x640-roxy.jpg
+origen:
+  fuente: allaccess
+  id: discontinuos-en-the-roxy-live
+  huella: 5bcd6466ce33cabe

@@ -1,0 +1,19 @@
+titulo: Periplos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - periplos
+fecha: 2026-11-14
+hora: "21:00"
+venue: NEMPLA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/periplos-vuelve-a-nempla
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/periplos-vuelve-a-nempla-567391-rec.jpg
+origen:
+  fuente: passline
+  id: "567391"
+  huella: d0fc9fdb27a6a1ce

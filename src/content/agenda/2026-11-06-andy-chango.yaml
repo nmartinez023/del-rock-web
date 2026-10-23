@@ -1,0 +1,19 @@
+titulo: Andy Chango
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - andy-chango
+fecha: 2026-11-06
+hora: "20:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/andy-chango-en-san-miguel
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/andy-chango-en-san-miguel-561051-rec.jpg
+origen:
+  fuente: passline
+  id: "561051"
+  huella: d2fe661a422b6420

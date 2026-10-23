@@ -1,0 +1,19 @@
+titulo: "Felián presenta su álbum debut: De las Bestias de la Noche"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - felian
+fecha: 2026-11-22
+hora: "21:00"
+venue: JJ- Circuito Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/felian-presenta-en-vivo-su-album-debut-de-las-bestias-de-la-noche
+precioDesde: 9000
+imagen: https://imagenes.passline.com/eventos/felian-presenta-en-vivo-su-album-debut-de-las-bestias-de-la-noche-565041-rec.jpg
+origen:
+  fuente: passline
+  id: "565041"
+  huella: 017c6a8335ae7a16

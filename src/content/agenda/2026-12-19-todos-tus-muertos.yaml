@@ -1,0 +1,19 @@
+titulo: Todos Tus Muertos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - todos-tus-muertos
+fecha: 2026-12-19
+hora: "22:00"
+venue: El amparo bar
+ciudad: Burzaco
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/todos-tus-muertos-en-burzaco
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/todos-tus-muertos-en-burzaco-557618-rec.jpg
+origen:
+  fuente: passline
+  id: "557618"
+  huella: 63703e8f7c86d2a9

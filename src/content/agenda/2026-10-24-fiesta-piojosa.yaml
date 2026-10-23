@@ -1,0 +1,19 @@
+titulo: Fiesta Piojosa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - los-piojos
+fecha: 2026-10-24
+hora: "23:30"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/fiesta-piojosa-en-house-27-babilonia
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-797161-rec.jpg
+origen:
+  fuente: passline
+  id: "557880"
+  huella: f2604d4060524de9

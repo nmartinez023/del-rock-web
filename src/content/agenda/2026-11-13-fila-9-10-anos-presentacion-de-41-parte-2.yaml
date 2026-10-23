@@ -1,0 +1,20 @@
+titulo: "Fila 9: 10 años + Presentación de 41 – Parte 2"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - fila-9
+  - "41"
+fecha: 2026-11-13
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/fila-9-10-anos-presentacion-de-41-parte-2
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fila-9-10-anos-presentacion-de-41-parte-2-526696-rec.jpg
+origen:
+  fuente: passline
+  id: "526696"
+  huella: 2eeeac3014997077

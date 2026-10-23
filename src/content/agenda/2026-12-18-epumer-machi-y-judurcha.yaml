@@ -1,0 +1,21 @@
+titulo: Epumer, Machi y Judurcha
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - epumer
+  - machi
+  - judurcha
+fecha: 2026-12-18
+hora: "21:00"
+venue: La Carbonera - San Telmo
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/epumer-machi-judurcha-cerrando-el-ano-en-la-carbonera
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/epumer-machi-judurcha-cerrando-el-ano-en-la-carbonera-571016-rec.jpg
+origen:
+  fuente: passline
+  id: "571016"
+  huella: d9300e5eb3378e2d

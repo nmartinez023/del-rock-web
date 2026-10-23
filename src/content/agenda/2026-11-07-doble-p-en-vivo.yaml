@@ -1,0 +1,19 @@
+titulo: Doble P en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - doble-p
+fecha: 2026-11-07
+hora: "23:30"
+venue: La Fábrica
+ciudad: Comodoro Rivadavia
+provincia: Otra
+entradas: https://www.passline.com/eventos/show-de-doble-p-en-vivo-18
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/show-de-doble-p-en-vivo-18-563760-rec.jpg
+origen:
+  fuente: passline
+  id: "563760"
+  huella: ec21e1333babe8f9

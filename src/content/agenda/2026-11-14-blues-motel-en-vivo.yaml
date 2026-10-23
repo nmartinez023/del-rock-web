@@ -1,0 +1,19 @@
+titulo: Blues Motel en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: blues rock
+bandas:
+  - blues-motel
+fecha: 2026-11-14
+hora: "20:00"
+venue: Galpon B
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/blues-motel-en-vivo-14-de-noviembre
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-787493-rec.jpg
+origen:
+  fuente: passline
+  id: "530506"
+  huella: 9fe45187d3a152a3

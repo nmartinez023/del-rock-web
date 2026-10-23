@@ -1,0 +1,19 @@
+titulo: Eruca Sativa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - eruca-sativa
+fecha: 2026-12-10
+hora: "21:00"
+venue: Cars Cervecería
+ciudad: La Rioja
+provincia: Otra
+entradas: https://www.passline.com/eventos/eruca-sativa-en-la-rioja
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/eruca-sativa-en-la-roja-566396-rec.jpg
+origen:
+  fuente: passline
+  id: "566396"
+  huella: 903c9533bfde9cad

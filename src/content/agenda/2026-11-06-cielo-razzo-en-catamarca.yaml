@@ -1,0 +1,19 @@
+titulo: Cielo Razzo en Catamarca
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cielo-razzo
+fecha: 2026-11-06
+hora: "21:00"
+venue: Complejo Uta
+ciudad: San Fdo Del Valle De Catamarca
+provincia: Otra
+entradas: https://www.passline.com/eventos/cielo-razzo-en-catamarca
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/cielo-razzo-en-catamarca-548426-rec.jpg
+origen:
+  fuente: passline
+  id: "548426"
+  huella: 91ac19e4cd31fe7e

@@ -1,0 +1,19 @@
+titulo: Tobika — Inteligencia Artesanal
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - tobika
+fecha: 2026-10-23
+hora: "20:00"
+venue: GUAJIRA
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/tobika-presenta-inteligencia-artesanal
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/-772470-rec.jpg
+origen:
+  fuente: passline
+  id: "540699"
+  huella: 42afef4b69ea7ae3

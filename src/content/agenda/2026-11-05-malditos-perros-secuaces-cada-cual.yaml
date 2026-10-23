@@ -1,0 +1,20 @@
+titulo: Malditos Perros Secuaces + Cada Cual
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - malditos-perros-secuaces
+  - cada-cual
+fecha: 2026-11-05
+hora: "20:00"
+venue: JJ Circuito Cultural
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/malditos-perros-secuaces-cada-cual
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/malditos-perros-secuaces-cada-cual-568896-rec.jpg
+origen:
+  fuente: passline
+  id: "568896"
+  huella: fca39ef2387e8415

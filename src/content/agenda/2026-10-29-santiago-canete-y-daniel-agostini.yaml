@@ -1,0 +1,20 @@
+titulo: Santiago Cañete y Daniel Agostini
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - santiago-canete
+  - daniel-agostini
+fecha: 2026-10-29
+hora: "20:30"
+venue: FOREST DAN TOM
+ciudad: Tortuguitas
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/santiago-canete-y-daniel-agostini-en-after-de-la-pera-ed-music
+precioDesde: 14000
+imagen: https://imagenes.passline.com/eventos/-811996-rec.jpg
+origen:
+  fuente: passline
+  id: "561917"
+  huella: 396989cfe4b768ad

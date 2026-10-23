@@ -1,0 +1,19 @@
+titulo: C4 en Villa Mercedes, San Luis.
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - c4
+fecha: 2026-10-24
+hora: "23:00"
+venue: Avanto Espacio Cultural
+ciudad: Villa Mercedes
+provincia: Otra
+entradas: https://www.passline.com/eventos/c4-en-villa-mercedes-san-luis
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/c4-en-villa-mercedes-san-luis-543843-rec.jpg
+origen:
+  fuente: passline
+  id: "543843"
+  huella: 1ab0bdafbbb1e4c4

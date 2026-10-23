@@ -1,18 +1,875 @@
-## Recolector de agenda (2026-10-23T12:05:23.585Z)
+## Recolector de agenda (2026-10-23T12:54:12.585Z)
 Modelo: anthropic/claude-haiku-5.5
 
-- **allaccess**: todavía no hay datos. Traelos desde /admin/ticketeras.
+- **allaccess**: 43 eventos en la página → 19 de rock nacional (2 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 19 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 0 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
+  - nuevo: 2026-10-24-andres-calamaro-en-tucuman.yaml
+  - nuevo: 2026-10-30-c-r-o.yaml
+  - nuevo: 2026-11-06-ciro-y-los-persas.yaml
+  - nuevo: 2026-12-05-milo-j.yaml
+  - nuevo: 2026-12-12-de-la-rose.yaml
+  - nuevo: 2026-10-23-salta-la-banca.yaml
+  - nuevo: 2026-10-23-pogofest-especial-halloween.yaml
+  - nuevo: 2026-10-25-elnueveonce-presenta-nuevo-disco.yaml
+  - nuevo: 2026-10-24-decima-20-anos.yaml
+  - nuevo: 2026-10-24-syderama.yaml
+  - nuevo: 2026-12-26-npv-fest-edicion-multiverso.yaml
+  - nuevo: 2026-11-21-la-grecia.yaml
+  - nuevo: 2026-12-04-discontinuos.yaml
+  - nuevo: 2026-11-15-h-de-perra.yaml
+  - nuevo: 2026-11-01-motor-furioso.yaml
+  - nuevo: 2026-11-21-la-mancha-de-rolando.yaml
+  - nuevo: 2026-12-12-del-lado-b-homenaje-al-rock-nacional.yaml
+  - nuevo: 2026-12-04-dmc-back-to-rock-tour-2026.yaml
+  - nuevo: 2026-11-28-la-vieja-ruta-35-anos.yaml
+  - banda nueva: C.R.O
+  - banda nueva: Ciro y Los Persas
+  - banda nueva: De La Rose
+  - banda nueva: Salta la Banca
+  - banda nueva: ElNueveOnce
+  - banda nueva: Décima
+  - banda nueva: Sydérama
+  - banda nueva: Marito Baracus
+  - banda nueva: Trukini
+  - banda nueva: Alejo y Valentina
+  - banda nueva: La Grecia
+  - banda nueva: Discontinuos
+  - banda nueva: H de Perra
+  - banda nueva: Motor Furioso
+  - banda nueva: La Mancha de Rolando
+  - banda nueva: DMC
+  - banda nueva: La Vieja Ruta
 - **dame-mi-ticket** (Rosario): 28 eventos en la página → 19 de rock nacional (11 con banda conocida), 9 otros, 0 sin clasificar. 0 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 28 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
 - **entrada-play** (Rosario): 36 eventos en la página → 15 de rock nacional (11 con banda conocida), 21 otros, 0 sin clasificar. 0 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 36 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
-- **movistar-arena**: 84 eventos en la página → 19 de rock nacional (18 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 0 nuevos, 1 actualizados, 0 cambiados de lista, 0 borrados, 17 sin cambios, 1 ya cargados por otra vía. Páginas de evento leídas: 0.
-- **passline**: todavía no hay datos. Traelos desde /admin/ticketeras.
-- **ticketek**: 58 eventos en la página → 10 de rock nacional (10 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 0 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 10 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
-- **tuentrada**: 50 eventos en la página → 7 de rock nacional (5 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 3 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 4 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
-  - nuevo: 2026-10-25-liga-bazooka.yaml
-  - nuevo: 2026-12-11-babasonicos.yaml
-  - nuevo: 2026-10-29-humbe.yaml
-  - banda nueva: Liga Bazooka
-  - banda nueva: Humbe
+- **movistar-arena**: 85 eventos en la página → 20 de rock nacional (19 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 0 nuevos, 2 actualizados, 0 cambiados de lista, 0 borrados, 17 sin cambios, 1 ya cargados por otra vía. Páginas de evento leídas: 0.
+- **passline**: 1398 eventos en la página → 397 de rock nacional (43 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 396 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 0 sin cambios, 1 ya cargados por otra vía. Páginas de evento leídas: 0.
+  - nuevo: 2026-12-17-divididos.yaml
+  - nuevo: 2026-12-11-divididos.yaml
+  - nuevo: 2026-12-10-divididos.yaml
+  - nuevo: 2026-12-15-divididos.yaml
+  - nuevo: 2026-11-12-kudai-harakiri-tour.yaml
+  - nuevo: 2026-11-14-el-kuelgue-en-mendoza.yaml
+  - nuevo: 2026-10-30-cadena-perpetua.yaml
+  - nuevo: 2026-11-07-la-beriso.yaml
+  - nuevo: 2026-11-06-ivan-noble-canciones-traspapeladas-parte-2.yaml
+  - nuevo: 2026-11-12-maro-so-much-has-changed.yaml
+  - nuevo: 2026-10-31-cadena-perpetua.yaml
+  - nuevo: 2026-11-13-el-kuelgue-en-san-juan.yaml
+  - nuevo: 2026-11-22-adollz.yaml
+  - nuevo: 2026-11-13-fila-9-10-anos-presentacion-de-41-parte-2.yaml
+  - nuevo: 2026-11-20-duratierra-presenta-su-nuevo-disco.yaml
+  - nuevo: 2026-11-20-kapanga-en-c-art-media.yaml
+  - nuevo: 2026-11-27-la-mono-presenta-siervos-misticos.yaml
+  - nuevo: 2026-11-29-taburete-el-perro-que-fuma-tour.yaml
+  - nuevo: 2026-12-05-lisandro-aristimuno-polaridad.yaml
+  - nuevo: 2026-11-18-paula-mattheus.yaml
+  - nuevo: 2026-11-13-ivan-noble-canciones-traspapeladas-parte-2.yaml
+  - nuevo: 2026-11-14-adrian-berra.yaml
+  - nuevo: 2026-10-24-2-minutos-en-haedo.yaml
+  - nuevo: 2026-10-30-winona-riders.yaml
+  - nuevo: 2026-11-15-la-la-love-you-el-tour-intergalactico.yaml
+  - nuevo: 2026-11-28-zeballos.yaml
+  - nuevo: 2026-10-31-andando-descalzo-celebra-sus-30-anos.yaml
+  - nuevo: 2026-10-24-superlogico-show-atp.yaml
+  - nuevo: 2026-11-21-estoicos.yaml
+  - nuevo: 2026-11-08-mi-ultima-solucion.yaml
+  - nuevo: 2026-10-23-la-h-no-murio.yaml
+  - nuevo: 2026-11-19-mir-nicolas.yaml
+  - nuevo: 2026-10-31-dancing-mood-y-mimi-maura.yaml
+  - nuevo: 2026-12-13-eruca-sativa.yaml
+  - nuevo: 2026-10-25-lucho-al-attaque-corvex-forestando-musica.yaml
+  - nuevo: 2026-10-23-tobika-inteligencia-artesanal.yaml
+  - nuevo: 2026-11-07-cielo-razzo-en-tucuman.yaml
+  - nuevo: 2026-11-13-daniel-agostini.yaml
+  - nuevo: 2026-12-06-circulo-del-bosque-en-concierto-vii.yaml
+  - nuevo: 2026-10-25-daniel-agostini.yaml
+  - nuevo: 2026-10-23-pipo-cipolatti.yaml
+  - nuevo: 2026-11-06-cielo-razzo-en-catamarca.yaml
+  - nuevo: 2026-11-22-perro-indio-festeja-10-anos.yaml
+  - nuevo: 2026-12-12-eruca-sativa.yaml
+  - nuevo: 2026-10-24-jovenes-pordioseros-en-guevara-lafe.yaml
+  - nuevo: 2026-10-30-paz-carrara-tresxtres-tour.yaml
+  - nuevo: 2026-10-24-c4-en-villa-mercedes-san-luis.yaml
+  - nuevo: 2026-11-05-cielo-razzo.yaml
+  - nuevo: 2026-11-13-viejas-locas-x-fya.yaml
+  - nuevo: 2026-11-07-fiesta-lfcrarezas-los-fabulosos-cadillacs.yaml
+  - nuevo: 2026-10-30-jaf.yaml
+  - nuevo: 2026-10-31-nonpalidece-30-anos.yaml
+  - nuevo: 2026-11-12-ariel-prat.yaml
+  - nuevo: 2026-12-05-hambol-toda-una-familia.yaml
+  - nuevo: 2026-10-24-kurz-gira-2026.yaml
+  - nuevo: 2026-12-11-eruca-sativa-en-tucuman.yaml
+  - nuevo: 2026-11-06-vilma-palma.yaml
+  - nuevo: 2026-11-08-cielo-razzo.yaml
+  - nuevo: 2026-11-13-monarca.yaml
+  - nuevo: 2026-10-24-jovenes-pordioseros-en-laferrere.yaml
+  - nuevo: 2026-11-27-culto-gitano.yaml
+  - nuevo: 2026-12-05-bardcore-fest-v.yaml
+  - nuevo: 2026-11-20-ave-rapaz.yaml
+  - nuevo: 2026-10-23-10-anos-de-corales-de-aqualand-ultimo-concierto.yaml
+  - nuevo: 2026-12-03-los-abuelos-de-la-nada.yaml
+  - nuevo: 2026-10-31-i-hate-models-traslado.yaml
+  - nuevo: 2026-10-31-william-gray-living-fossils-20-anos.yaml
+  - nuevo: 2026-11-07-viejas-locas.yaml
+  - nuevo: 2026-11-14-jovenes-pordioseros.yaml
+  - nuevo: 2026-11-15-don-olimpio-10-anos.yaml
+  - nuevo: 2026-10-24-fiesta-ricotera-ser-redondo-recreando-oktubre.yaml
+  - nuevo: 2026-11-07-karamelo-santo-emily-daniels.yaml
+  - nuevo: 2026-10-23-bestia-bebe.yaml
+  - nuevo: 2026-11-14-blues-motel-en-vivo.yaml
+  - nuevo: 2026-11-14-c-r-i-y-los-incorruptibles.yaml
+  - nuevo: 2026-10-23-homenaje-a-charly-75x75.yaml
+  - nuevo: 2026-10-23-jueces-de-marmol-big-gun-rose-gun.yaml
+  - nuevo: 2026-10-24-dark-warrior.yaml
+  - nuevo: 2026-10-24-aldih.yaml
+  - nuevo: 2026-10-24-buey-solo-10-anos.yaml
+  - nuevo: 2026-10-24-la-alternative-fest-3.yaml
+  - nuevo: 2026-10-24-hilda-canta-charly.yaml
+  - nuevo: 2026-10-24-arvejas-negras-y-satelite-hormiga.yaml
+  - nuevo: 2026-10-24-nde-ramirez.yaml
+  - nuevo: 2026-10-29-mala-junta-fest.yaml
+  - nuevo: 2026-10-30-tributo-a-viejas-locas-intoxicados.yaml
+  - nuevo: 2026-10-31-los-magos-lucas-galinanes-y-las-realidades-daltonica.yaml
+  - nuevo: 2026-10-31-guille-marmol.yaml
+  - nuevo: 2026-10-31-soda-stereo-por-fuerza-stereo.yaml
+  - nuevo: 2026-11-05-experiencia-rock-nacional-por-seba-saavedra.yaml
+  - nuevo: 2026-11-06-indira-paganotto-traslado.yaml
+  - nuevo: 2026-11-07-juanse.yaml
+  - nuevo: 2026-11-07-jovenes-pordioseros-en-el-amaparo-bar.yaml
+  - nuevo: 2026-11-14-traslado-tan-bionica-en-estadio-instituto.yaml
+  - nuevo: 2026-11-14-barbarie-hacia-un-nuevo-horizonte-10.yaml
+  - nuevo: 2026-11-20-fiesta-del-rock-nacional.yaml
+  - nuevo: 2026-11-22-alien-ritual.yaml
+  - nuevo: 2026-12-04-lucho-al-attaque-en-san-miguel.yaml
+  - nuevo: 2026-12-05-traslado-milo-j-en-estadio-kempes.yaml
+  - nuevo: 2026-12-05-adrian-berra-antes-de-saltar.yaml
+  - nuevo: 2026-12-19-encuentro-metalero-y-federal.yaml
+  - nuevo: 2026-12-26-viejas-locas-ultima-del-ano.yaml
+  - nuevo: 2026-10-23-pedro-monardi-la-candelera.yaml
+  - nuevo: 2026-10-23-bula-lds.yaml
+  - nuevo: 2026-10-23-en-bajada-y-tukera-juntos-en-quilmes.yaml
+  - nuevo: 2026-10-23-las-caricias-presentan-hiroshima.yaml
+  - nuevo: 2026-10-23-yuqueri.yaml
+  - nuevo: 2026-10-23-gretel-toloza-y-el-micelio-filamentos.yaml
+  - nuevo: 2026-10-23-los-magos-socorro-shopin-sur-kamarada.yaml
+  - nuevo: 2026-10-23-awa-jamtusabes.yaml
+  - nuevo: 2026-10-23-pena-bomba-con-la-grecia.yaml
+  - nuevo: 2026-10-23-los-mangrulleros-tinto.yaml
+  - nuevo: 2026-10-23-certicos-fecha-debut.yaml
+  - nuevo: 2026-10-23-festejo-por-el-cumple-de-charly-garcia.yaml
+  - nuevo: 2026-10-23-let-there-be-rock.yaml
+  - nuevo: 2026-10-23-mamba-negra-maj7.yaml
+  - nuevo: 2026-10-23-celebramos-a-charly.yaml
+  - nuevo: 2026-10-23-los-espacios-las-ganas.yaml
+  - nuevo: 2026-10-23-jovenes-pordioseros.yaml
+  - nuevo: 2026-10-23-tributo-a-guasones-por-gusanos.yaml
+  - nuevo: 2026-10-23-autos-robados.yaml
+  - nuevo: 2026-10-23-maria-volante-hedone-y-mango-blu.yaml
+  - nuevo: 2026-10-23-a-lo-sumo.yaml
+  - nuevo: 2026-10-23-la-jam-de-charly-2026.yaml
+  - nuevo: 2026-10-23-more-y-joyce.yaml
+  - nuevo: 2026-10-23-rakkatta.yaml
+  - nuevo: 2026-10-24-la-reunion.yaml
+  - nuevo: 2026-10-24-el-mamut-zona-oeste.yaml
+  - nuevo: 2026-10-24-mujer-cebra-presentacion-inhibidor.yaml
+  - nuevo: 2026-10-24-microondas-teleplomo-los-cowboys.yaml
+  - nuevo: 2026-10-24-nonpalidece-30-anos-en-tigre.yaml
+  - nuevo: 2026-10-24-lucuma-sessions-tributo-a-revolver.yaml
+  - nuevo: 2026-10-24-lucio-balduini-y-el-bosque-brillante.yaml
+  - nuevo: 2026-10-24-matinee-30.yaml
+  - nuevo: 2026-10-24-no-hay-banda-club-pasto.yaml
+  - nuevo: 2026-10-24-coramina-no-te-me-enojes-cloe-abigail-sociedad-fuego.yaml
+  - nuevo: 2026-10-24-chala-rasta-junto-a-okalacumba.yaml
+  - nuevo: 2026-10-24-saquarema-maya-aimaretti-chiste-negro.yaml
+  - nuevo: 2026-10-24-hojas-por-el-barrio-las-curtis-playa-nudista.yaml
+  - nuevo: 2026-10-24-los-guarros.yaml
+  - nuevo: 2026-10-24-seneca-seven-seven.yaml
+  - nuevo: 2026-10-24-inyector-tributo-a-riff-y-cuerpo-extrano.yaml
+  - nuevo: 2026-10-24-bien-desocupados-punk-rock-verdaderos-impostores-lpk.yaml
+  - nuevo: 2026-10-24-paoletti-estupendo-krupoviesa.yaml
+  - nuevo: 2026-10-24-sumo-por-pettinato.yaml
+  - nuevo: 2026-10-24-dopamind.yaml
+  - nuevo: 2026-10-24-max-carra.yaml
+  - nuevo: 2026-10-24-almafuerte-por-santos-y-pecadores.yaml
+  - nuevo: 2026-10-24-fiesta-piojosa.yaml
+  - nuevo: 2026-10-25-gris-montesplash-numen-imo.yaml
+  - nuevo: 2026-10-25-jam-especial-rock-nacional.yaml
+  - nuevo: 2026-10-25-tarea-fina.yaml
+  - nuevo: 2026-10-26-noche-de-mejores-clientes.yaml
+  - nuevo: 2026-10-28-cosmofonias-extra-oktubre-patricio-rey-y-sus-redonditos-de-ricota-198.yaml
+  - nuevo: 2026-10-28-cosmofonias-oktubre.yaml
+  - nuevo: 2026-10-29-chantada-x-uniforme.yaml
+  - nuevo: 2026-10-29-voltaje-alterno-echoes-the-band-tributo-a-pink-floyd-blue-lamina.yaml
+  - nuevo: 2026-10-29-joystick-presenta-diarios-de-humo-malta-caramelo-tarro-and-the-baldes.yaml
+  - nuevo: 2026-10-29-una-obra-redonda.yaml
+  - nuevo: 2026-10-29-santiago-canete-y-daniel-agostini.yaml
+  - nuevo: 2026-10-29-rojobarcelo.yaml
+  - nuevo: 2026-10-30-hasta-la-muerte-x-z2m-presentacion-de-risk-taker.yaml
+  - nuevo: 2026-10-30-fiesta-de-halloween.yaml
+  - nuevo: 2026-10-30-homenaje-a-korneta-suarez.yaml
+  - nuevo: 2026-10-30-mujer-cebra.yaml
+  - nuevo: 2026-10-30-stigma-25-anos.yaml
+  - nuevo: 2026-10-30-noche-ricotera.yaml
+  - nuevo: 2026-10-30-mardemares-y-tribu-cosmica.yaml
+  - nuevo: 2026-10-30-flema.yaml
+  - nuevo: 2026-10-30-fiesta-nac-and-rock.yaml
+  - nuevo: 2026-10-30-4corazones-redspace.yaml
+  - nuevo: 2026-10-30-exile-noche-stone-100.yaml
+  - nuevo: 2026-10-30-goteo-x-algarete-halloween-night.yaml
+  - nuevo: 2026-10-30-cementerio-club.yaml
+  - nuevo: 2026-10-30-algarete-x-goteo-halloween-night.yaml
+  - nuevo: 2026-10-31-trukini-los-batertofis-en-merlo-bs-as.yaml
+  - nuevo: 2026-10-31-metalween.yaml
+  - nuevo: 2026-10-31-abadia-halloween.yaml
+  - nuevo: 2026-10-31-noche-retruco.yaml
+  - nuevo: 2026-10-31-halloween-en-pedernal-con-la-ducha.yaml
+  - nuevo: 2026-10-31-bestia-bebe.yaml
+  - nuevo: 2026-10-31-sebastian-veron-presenta-riomar-y-tresdpaez.yaml
+  - nuevo: 2026-10-31-ma-heroica.yaml
+  - nuevo: 2026-10-31-curu-en-vivo.yaml
+  - nuevo: 2026-10-31-el-cuarto-soda.yaml
+  - nuevo: 2026-10-31-tributo-a-viejas-locas.yaml
+  - nuevo: 2026-10-31-noche-ricotera.yaml
+  - nuevo: 2026-10-31-heclape-y-lia-gonzalez-presentan-luna-roja.yaml
+  - nuevo: 2026-10-31-luciana-palacios-valentina-cooke-ropa-sucia.yaml
+  - nuevo: 2026-10-31-pena-renguera-con-descarrilados.yaml
+  - nuevo: 2026-10-31-polvorin-y-amigxs-cumple-de-vichenzzo.yaml
+  - nuevo: 2026-10-31-spiritual-rebel-especial-halloween.yaml
+  - nuevo: 2026-10-31-santi-aysine.yaml
+  - nuevo: 2026-10-31-sab-31-oct-ulises-bueno.yaml
+  - nuevo: 2026-10-31-dosis-halloween.yaml
+  - nuevo: 2026-10-31-el-club-de-la-serpiente.yaml
+  - nuevo: 2026-11-01-post-antipodas-back-in-town.yaml
+  - nuevo: 2026-11-01-fuego-ritual.yaml
+  - nuevo: 2026-11-01-sin1rostro.yaml
+  - nuevo: 2026-11-01-el-cuarto-soda.yaml
+  - nuevo: 2026-11-01-thelma-presenta-perfiles-falsos.yaml
+  - nuevo: 2026-11-02-el-arbol-de-diego.yaml
+  - nuevo: 2026-11-04-el-cashmere.yaml
+  - nuevo: 2026-11-04-jovenes-pordioseros-en-makena-cumple-de-toti.yaml
+  - nuevo: 2026-11-05-malditos-perros-secuaces-cada-cual.yaml
+  - nuevo: 2026-11-05-radical.yaml
+  - nuevo: 2026-11-05-luciana-tagliapietra-agustin-goytia-kaixara.yaml
+  - nuevo: 2026-11-05-mejorera-pantifico-aralea.yaml
+  - nuevo: 2026-11-05-jaf.yaml
+  - nuevo: 2026-11-05-frans-y-los-hijos-del-rigor.yaml
+  - nuevo: 2026-11-06-andy-chango.yaml
+  - nuevo: 2026-11-06-azul-ball-cande-guerzoni.yaml
+  - nuevo: 2026-11-06-corriente-de-la-luna-y-sinalagma-en-marquee.yaml
+  - nuevo: 2026-11-06-nonpalidece-ciclo-rock-san-martin.yaml
+  - nuevo: 2026-11-06-fuego-fatuo.yaml
+  - nuevo: 2026-11-06-gulp-tributo-redonditos-de-ricota.yaml
+  - nuevo: 2026-11-06-lisandro-aristimuno-set-solo-acustico.yaml
+  - nuevo: 2026-11-06-intensiva-presentacion-oficial-del-nuevo-disco.yaml
+  - nuevo: 2026-11-06-turmalina.yaml
+  - nuevo: 2026-11-06-fiesta-del-rock-nacional.yaml
+  - nuevo: 2026-11-06-c4-vuelve-al-padilla-de-temperley.yaml
+  - nuevo: 2026-11-06-los-sub-presentan-destruye-todo.yaml
+  - nuevo: 2026-11-06-tortura-presenta-disco-nuevo-jugo-de-basura-www.yaml
+  - nuevo: 2026-11-06-descarrilados-homenaje-a-la-renga.yaml
+  - nuevo: 2026-11-06-luzbel.yaml
+  - nuevo: 2026-11-06-mala-fama.yaml
+  - nuevo: 2026-11-06-los-guanacos-y-salida-de-emergencia.yaml
+  - nuevo: 2026-11-06-el-supper-de-huguito-y-nico-lucero-en-vivo.yaml
+  - nuevo: 2026-11-06-piantados-y-arsis.yaml
+  - nuevo: 2026-11-07-la-bomba-de-tiempo.yaml
+  - nuevo: 2026-11-07-2-minutos-en-reinas-rock-varela.yaml
+  - nuevo: 2026-11-07-la-mississippi-en-la-plata.yaml
+  - nuevo: 2026-11-07-deportivo-la-poronga-en-vivo.yaml
+  - nuevo: 2026-11-07-aztral.yaml
+  - nuevo: 2026-11-07-2-razones-20-anos-junto-a-la-garufa.yaml
+  - nuevo: 2026-11-07-ciclo-vision-louded-fungals.yaml
+  - nuevo: 2026-11-07-delvento.yaml
+  - nuevo: 2026-11-07-jocha.yaml
+  - nuevo: 2026-11-07-fulanas-trio-el-engrupe.yaml
+  - nuevo: 2026-11-07-quimera.yaml
+  - nuevo: 2026-11-07-los-totora.yaml
+  - nuevo: 2026-11-07-pena-de-rock.yaml
+  - nuevo: 2026-11-07-7-11-la-vida-animal-marton-marton-el-sueno-del-pibe.yaml
+  - nuevo: 2026-11-07-doble-p-en-vivo.yaml
+  - nuevo: 2026-11-07-dramer.yaml
+  - nuevo: 2026-11-08-eldoscientosiete.yaml
+  - nuevo: 2026-11-08-guacho-bleu-presenta-guita-y-guitarras-primer-acto.yaml
+  - nuevo: 2026-11-08-la-mississippi.yaml
+  - nuevo: 2026-11-08-cadelago-music-please.yaml
+  - nuevo: 2026-11-08-arboledas-15-anos.yaml
+  - nuevo: 2026-11-08-caras-de-liebre-tributo-a-los-redondos.yaml
+  - nuevo: 2026-11-12-festival-nicotina.yaml
+  - nuevo: 2026-11-12-yuli-y-las-dosis-deckie.yaml
+  - nuevo: 2026-11-12-twisted-tongues-presentacion-oficial.yaml
+  - nuevo: 2026-11-12-frenkel.yaml
+  - nuevo: 2026-11-12-107-faunos-fantasmagoria-bisturi.yaml
+  - nuevo: 2026-11-12-casildo.yaml
+  - nuevo: 2026-11-13-zamarbide-cumbre-del-metal-41.yaml
+  - nuevo: 2026-11-13-viva-elastico.yaml
+  - nuevo: 2026-11-13-ciclo-buam-vol-3.yaml
+  - nuevo: 2026-11-13-santiago-moraes-y-visiones.yaml
+  - nuevo: 2026-11-13-reckero-asamblea.yaml
+  - nuevo: 2026-11-13-nonpalidece-en-vivo.yaml
+  - nuevo: 2026-11-13-micky-rodriguez-y-la-que-faltaba.yaml
+  - nuevo: 2026-11-13-francis-mi-diario-punk-piano-session.yaml
+  - nuevo: 2026-11-13-los-ojos-de-ramon.yaml
+  - nuevo: 2026-11-13-una-banda-redonda.yaml
+  - nuevo: 2026-11-13-club-marfil.yaml
+  - nuevo: 2026-11-13-canciones-y-almas-especial-25-anos-de-sed.yaml
+  - nuevo: 2026-11-13-disturbio-am.yaml
+  - nuevo: 2026-11-14-eslavos-en-jujuy.yaml
+  - nuevo: 2026-11-14-jenny-de-guzman-show-class-zumba.yaml
+  - nuevo: 2026-11-14-vida-rumbo-al-furia.yaml
+  - nuevo: 2026-11-14-rayo-negro-playa-nudista-brishit-bardo-kilmatara-camello-bastardo.yaml
+  - nuevo: 2026-11-14-diluvio-presentacion-album-debut.yaml
+  - nuevo: 2026-11-14-el-reloj-y-poseidotica.yaml
+  - nuevo: 2026-11-14-riff-x-humanoides.yaml
+  - nuevo: 2026-11-14-flor-otero-delfi-cheb.yaml
+  - nuevo: 2026-11-14-homenaje-a-soda-stereo-y-gustavo-cerati-por-camino-stereo.yaml
+  - nuevo: 2026-11-14-mink-project-nueva-era.yaml
+  - nuevo: 2026-11-14-mercedes-blues-festival-j-c-smith.yaml
+  - nuevo: 2026-11-14-periplos.yaml
+  - nuevo: 2026-11-14-segunda-mano-clasicos-lado-b.yaml
+  - nuevo: 2026-11-14-viejas-locas.yaml
+  - nuevo: 2026-11-14-felipe-barrozo-mafe-fages-paranoiko.yaml
+  - nuevo: 2026-11-14-noche-de-rock-en-moron.yaml
+  - nuevo: 2026-11-14-charlie-3.yaml
+  - nuevo: 2026-11-14-tarea-fina-ultima-del-ano.yaml
+  - nuevo: 2026-11-14-fatiga.yaml
+  - nuevo: 2026-11-14-perro-fantasma-nubes-en-mi-casa.yaml
+  - nuevo: 2026-11-14-festi-catarsis.yaml
+  - nuevo: 2026-11-14-banquete-rengo-fiesta-redonda.yaml
+  - nuevo: 2026-11-15-jah-roots-session-resistencia.yaml
+  - nuevo: 2026-11-18-claudio-gabis.yaml
+  - nuevo: 2026-11-18-dan-lluvia.yaml
+  - nuevo: 2026-11-19-prender-fuego-la-maquina.yaml
+  - nuevo: 2026-11-19-fiesta-yugular.yaml
+  - nuevo: 2026-11-19-daniel-devita.yaml
+  - nuevo: 2026-11-19-el-soldado-acustico.yaml
+  - nuevo: 2026-11-19-gustavo-cordera.yaml
+  - nuevo: 2026-11-19-el-perfume-presenta-formas-de-desordenar.yaml
+  - nuevo: 2026-11-20-fotone-pequeno-mod-percal.yaml
+  - nuevo: 2026-11-20-afterlife-bloodparade-alas-de-abril.yaml
+  - nuevo: 2026-11-20-max-rcu.yaml
+  - nuevo: 2026-11-20-guacho-bestia-y-the-comando-pickless.yaml
+  - nuevo: 2026-11-20-alika-full-band.yaml
+  - nuevo: 2026-11-20-la-147.yaml
+  - nuevo: 2026-11-20-entretiempo-en-vivo.yaml
+  - nuevo: 2026-11-20-gustavo-cordera-y-la-caravana.yaml
+  - nuevo: 2026-11-21-duratierra-presenta-su-nuevo-disco.yaml
+  - nuevo: 2026-11-21-joystick-presenta-diarios-de-humo-en-la-plata-junto-a-ktacumbas-y-cik.yaml
+  - nuevo: 2026-11-21-mote-violett-parr.yaml
+  - nuevo: 2026-11-21-expulsados-20-anos-de-museo-de-cera.yaml
+  - nuevo: 2026-11-21-lombardia-en-vivo.yaml
+  - nuevo: 2026-11-21-botafogo-y-miguel-vilanova.yaml
+  - nuevo: 2026-11-21-rey-garufa.yaml
+  - nuevo: 2026-11-21-miguel-cantilo.yaml
+  - nuevo: 2026-11-21-la-chica-del-cumpleanos-felicia-rara.yaml
+  - nuevo: 2026-11-21-fiesta-del-rock-nacional.yaml
+  - nuevo: 2026-11-21-10-anos-de-barbarie-la-batalla-final.yaml
+  - nuevo: 2026-11-21-la-147.yaml
+  - nuevo: 2026-11-21-panter.yaml
+  - nuevo: 2026-11-21-cielo-razzo.yaml
+  - nuevo: 2026-11-21-pulsion-x-null.yaml
+  - nuevo: 2026-11-21-apnea-x-murk.yaml
+  - nuevo: 2026-11-22-mal-pasar.yaml
+  - nuevo: 2026-11-22-polosur-viaje-a-la-nada-locales-antes-muerto.yaml
+  - nuevo: 2026-11-22-simulando-un-vuelo-presentacion-de-martes-30.yaml
+  - nuevo: 2026-11-22-diego-presa-me-daras-mil-hijos-juan-pablo-fernandez-y-los-techistas-d.yaml
+  - nuevo: 2026-11-22-la-linea-las-cosas-buenas.yaml
+  - nuevo: 2026-11-22-dan-lluvia.yaml
+  - nuevo: 2026-11-22-felian-presenta-su-album-debut-de-las-bestias-de-la-noche.yaml
+  - nuevo: 2026-11-22-viejas-locas-y-jovenes-pordioseros-en-en-encuentro-club.yaml
+  - nuevo: 2026-11-22-cool-sueca-y-mariana-bianchini.yaml
+  - nuevo: 2026-11-22-superlogico-fiesta-18-aniversario-del-club-tucuman.yaml
+  - nuevo: 2026-11-22-club-dsrt.yaml
+  - nuevo: 2026-11-26-david-tagger-presenta-el-poder-de-los-olvidados-intimo.yaml
+  - nuevo: 2026-11-27-ba-hard-rock.yaml
+  - nuevo: 2026-11-27-vuelve-cruda-con-interzona-y-el-gran-nikky-gatsby.yaml
+  - nuevo: 2026-11-27-dana-salguero-jojo.yaml
+  - nuevo: 2026-11-27-versatilia.yaml
+  - nuevo: 2026-11-27-el-reloj-y-akenathon-en-concierto.yaml
+  - nuevo: 2026-11-27-rey-garufa.yaml
+  - nuevo: 2026-11-27-david-meiser-low-end.yaml
+  - nuevo: 2026-11-28-montanas-miedo-puro-era-de-acuario.yaml
+  - nuevo: 2026-11-28-waiting-en-capital.yaml
+  - nuevo: 2026-11-28-brutagrua.yaml
+  - nuevo: 2026-11-28-miguel-cantilo.yaml
+  - nuevo: 2026-11-28-c4-en-san-martin-atp.yaml
+  - nuevo: 2026-11-28-la-mancha-de-rolando.yaml
+  - nuevo: 2026-11-28-garufas-ultima-del-ano.yaml
+  - nuevo: 2026-11-28-estado-salvaje-nightrain.yaml
+  - nuevo: 2026-11-28-jorge-savoretti.yaml
+  - nuevo: 2026-11-29-mocchi-cierra-el-ano-en-casa.yaml
+  - nuevo: 2026-11-29-yas-xxi-el-menor-de-los-males.yaml
+  - nuevo: 2026-11-29-jam-todavia-suena.yaml
+  - nuevo: 2026-12-02-jump-the-fence-presentacion-de-album-debut.yaml
+  - nuevo: 2026-12-03-un-fuego-para-iorio.yaml
+  - nuevo: 2026-12-03-catarsis-40.yaml
+  - nuevo: 2026-12-04-mua-taladrando-comova-roche.yaml
+  - nuevo: 2026-12-04-50-anos-de-el-jardin-de-los-presentes.yaml
+  - nuevo: 2026-12-04-lisandro-aristimuno-polaridad.yaml
+  - nuevo: 2026-12-04-viejas-locas.yaml
+  - nuevo: 2026-12-04-blackdali-despide-el-ano-junto-a-mereketembe.yaml
+  - nuevo: 2026-12-05-massacre-en-flores-cierre-de-ano.yaml
+  - nuevo: 2026-12-05-aliento-de-perro-trotsky-vengaran.yaml
+  - nuevo: 2026-12-05-karavana-el-camino-nos-vuelve-a-encontrar.yaml
+  - nuevo: 2026-12-05-todos-los-problemas-yony-linyero.yaml
+  - nuevo: 2026-12-06-traslado-wade.yaml
+  - nuevo: 2026-12-06-caras-extranas-6-de-diciembre-2026.yaml
+  - nuevo: 2026-12-06-jovenes-pordioseros-en-jujuy.yaml
+  - nuevo: 2026-12-07-rodrigo-manigot-acustico.yaml
+  - nuevo: 2026-12-07-traslado-franky-rizardo.yaml
+  - nuevo: 2026-12-09-boanerges.yaml
+  - nuevo: 2026-12-10-pier-y-mancha-de-rolando-cierran-el-ano-en-makena.yaml
+  - nuevo: 2026-12-10-eruca-sativa.yaml
+  - nuevo: 2026-12-11-head-despide-insano.yaml
+  - nuevo: 2026-12-12-los-perez-garcia-12-de-diciembre-2026.yaml
+  - nuevo: 2026-12-12-kamada-en-groove.yaml
+  - nuevo: 2026-12-13-discontinuos-y-neutra.yaml
+  - nuevo: 2026-12-18-broke-carrey-presenta-hijo-del-pais.yaml
+  - nuevo: 2026-12-18-viejas-locas.yaml
+  - nuevo: 2026-12-18-jovenes-pordioseros.yaml
+  - nuevo: 2026-12-18-epumer-machi-y-judurcha.yaml
+  - nuevo: 2026-12-19-juan-henjes-en-vivo.yaml
+  - nuevo: 2026-12-19-los-cafres-despiden-el-ano.yaml
+  - nuevo: 2026-12-19-nonpalidece-30-anos.yaml
+  - nuevo: 2026-12-19-todos-tus-muertos.yaml
+  - nuevo: 2026-12-20-bahiano-por-forestando-musica-ala-norte-forest-dan-tom.yaml
+  - nuevo: 2026-12-23-a-n-i-m-a-l-30-anos-de-el-nuevo-camino-del-hombre-solidario.yaml
+  - nuevo: 2026-12-26-la-biblia-segun-vox-dei.yaml
+  - nuevo: 2026-12-26-la-paris-rnroll-show-en-vivo.yaml
+  - nuevo: 2026-12-26-ojo-animal-revive-insoportablemente-vivo.yaml
+  - nuevo: 2026-12-27-estelares-constelacion-de-canciones.yaml
+  - nuevo: 2027-02-27-sobredosis-de-soda.yaml
+  - nuevo: 2027-03-20-nepal-20-de-marzo-2027.yaml
+  - banda nueva: Divididos
+  - banda nueva: Kudai
+  - banda nueva: Cadena Perpetua
+  - banda nueva: La Beriso
+  - banda nueva: Iván Noble
+  - banda nueva: Maro
+  - banda nueva: Adollz
+  - banda nueva: Fila 9
+  - banda nueva: 41
+  - banda nueva: Duratierra
+  - banda nueva: Siervos Místicos
+  - banda nueva: Taburete
+  - banda nueva: Lisandro Aristimuño
+  - banda nueva: Paula Mattheus
+  - banda nueva: Adrián Berra
+  - banda nueva: Winona Riders
+  - banda nueva: La La Love You
+  - banda nueva: Zeballos
+  - banda nueva: Andando Descalzo
+  - banda nueva: Superlógico
+  - banda nueva: Estoicos
+  - banda nueva: Mi Ultima Solucion
+  - banda nueva: La H no murió
+  - banda nueva: Mir Nicolás
+  - banda nueva: Dancing Mood
+  - banda nueva: Mimi Maura
+  - banda nueva: Eruca Sativa
+  - banda nueva: Tobika
+  - banda nueva: Daniel Agostini
+  - banda nueva: Círculo del Bosque
+  - banda nueva: Perro Indio
+  - banda nueva: Paz Carrara
+  - banda nueva: tresxtres
+  - banda nueva: C4
+  - banda nueva: Viejas Locas
+  - banda nueva: FYA
+  - banda nueva: Los Fabulosos Cadillacs
+  - banda nueva: JAF
+  - banda nueva: Ariel Prat
+  - banda nueva: Hambol
+  - banda nueva: KURZ
+  - banda nueva: Vilma Palma
+  - banda nueva: Monarca
+  - banda nueva: Culto Gitano
+  - banda nueva: Anubis
+  - banda nueva: Meta
+  - banda nueva: Ave Rapaz
+  - banda nueva: Corales de Aqualand
+  - banda nueva: I Hate Models
+  - banda nueva: William Gray
+  - banda nueva: Don Olimpio
+  - banda nueva: Ser Redondo
+  - banda nueva: Karamelo Santo
+  - banda nueva: Emily Daniels
+  - banda nueva: Bestia Bebé
+  - banda nueva: Blues Motel
+  - banda nueva: C.R.I.
+  - banda nueva: Los Incorruptibles
+  - banda nueva: Jueces de Mármol
+  - banda nueva: Big Gun
+  - banda nueva: Rose Gun
+  - banda nueva: Dark Warrior
+  - banda nueva: ALDIH
+  - banda nueva: Buey Solo
+  - banda nueva: Mauser
+  - banda nueva: Wintergray
+  - banda nueva: Hilda
+  - banda nueva: Arvejas Negras
+  - banda nueva: Satélite Hormiga
+  - banda nueva: Nde Ramírez
+  - banda nueva: Licántropo
+  - banda nueva: Walter Broide
+  - banda nueva: Los Magos
+  - banda nueva: Lucas Galiñanes y Las Realidades
+  - banda nueva: Daltonica
+  - banda nueva: Guille Mármol
+  - banda nueva: Por Fuerza Stereo
+  - banda nueva: The Viaje
+  - banda nueva: Seba Saavedra
+  - banda nueva: Indira Paganotto
+  - banda nueva: Juanse
+  - banda nueva: Ramita Puzzo
+  - banda nueva: Barbarie
+  - banda nueva: Alien Ritual
+  - banda nueva: Burn in Noise
+  - banda nueva: Pedro Monardi
+  - banda nueva: La Candelera
+  - banda nueva: DJ Akapulco
+  - banda nueva: BULA
+  - banda nueva: LDS
+  - banda nueva: En Bajada
+  - banda nueva: Tukera
+  - banda nueva: Yuquerí
+  - banda nueva: Gretel Toloza
+  - banda nueva: El Micelio
+  - banda nueva: Awa
+  - banda nueva: Jamtusabes
+  - banda nueva: Los Mangrulleros
+  - banda nueva: Cérticos
+  - banda nueva: Vennus
+  - banda nueva: Nana
+  - banda nueva: Hormigueros
+  - banda nueva: Mamba Negra
+  - banda nueva: Maj7
+  - banda nueva: Los Espacios
+  - banda nueva: Las Ganas
+  - banda nueva: Gusanos
+  - banda nueva: Autos Robados
+  - banda nueva: Maria Volante
+  - banda nueva: Hedone
+  - banda nueva: Mango Blu
+  - banda nueva: A Lo Sumo
+  - banda nueva: More
+  - banda nueva: Joyce
+  - banda nueva: Rakkatta
+  - banda nueva: La Reunión
+  - banda nueva: El Mamut
+  - banda nueva: Mujer Cebra
+  - banda nueva: Kill Flora
+  - banda nueva: Microondas
+  - banda nueva: Teleplomo
+  - banda nueva: Los Cowboys
+  - banda nueva: La Dolar
+  - banda nueva: Mariano Venini
+  - banda nueva: Lucio Balduini
+  - banda nueva: El Bosque Brillante
+  - banda nueva: Matinée
+  - banda nueva: No Hay Banda Club
+  - banda nueva: Pasto
+  - banda nueva: Chala Rasta
+  - banda nueva: Okalacumba
+  - banda nueva: Saquarema
+  - banda nueva: Maya Aimaretti
+  - banda nueva: Chiste Negro
+  - banda nueva: Hojas por el Barrio
+  - banda nueva: Las Curtis
+  - banda nueva: Playa Nudista
+  - banda nueva: Los Guarros
+  - banda nueva: Seneca
+  - banda nueva: Seven & Seven
+  - banda nueva: Inyector
+  - banda nueva: Cuerpo Extraño
+  - banda nueva: Bien Desocupados
+  - banda nueva: Verdaderos Impostores
+  - banda nueva: LPK
+  - banda nueva: Paoletti
+  - banda nueva: Estupendo
+  - banda nueva: Krupoviesa
+  - banda nueva: Pettinato
+  - banda nueva: Dopamind
+  - banda nueva: Max Carra
+  - banda nueva: Almafuerte
+  - banda nueva: Los Piojos
+  - banda nueva: Tarea Fina
+  - banda nueva: Walter Sidoti
+  - banda nueva: Mejores Clientes
+  - banda nueva: Patricio Rey y sus Redonditos de Ricota
+  - banda nueva: Chantada
+  - banda nueva: Uniforme
+  - banda nueva: Voltaje Alterno
+  - banda nueva: Echoes The Band
+  - banda nueva: Blue Lamina
+  - banda nueva: Una Obra Redonda
+  - banda nueva: Santiago Cañete
+  - banda nueva: Rojobarcelo
+  - banda nueva: Hasta la Muerte
+  - banda nueva: Z2M
+  - banda nueva: Horacio
+  - banda nueva: Martín Alé
+  - banda nueva: Stigma
+  - banda nueva: Efímero
+  - banda nueva: Brujos de Merlin
+  - banda nueva: Dejavu
+  - banda nueva: Mardemares
+  - banda nueva: Tribu Cósmica
+  - banda nueva: Flema
+  - banda nueva: 4Corazones
+  - banda nueva: Redspace
+  - banda nueva: Exile
+  - banda nueva: Goteo
+  - banda nueva: Algarete
+  - banda nueva: Cementerio Club
+  - banda nueva: Symetrie Inegale
+  - banda nueva: Precaución
+  - banda nueva: Abadía
+  - banda nueva: Goya
+  - banda nueva: Apotegma
+  - banda nueva: Requiem Fuzz
+  - banda nueva: La Ducha
+  - banda nueva: Riomar
+  - banda nueva: Tresdpaez
+  - banda nueva: Ma Heroica
+  - banda nueva: Curu
+  - banda nueva: Soda Stereo
+  - banda nueva: Intoxicados
+  - banda nueva: Heclape
+  - banda nueva: Lia Gonzalez
+  - banda nueva: Luciana Palacios
+  - banda nueva: Valentina Cooke
+  - banda nueva: Ropa Sucia
+  - banda nueva: Descarrilados
+  - banda nueva: Polvorín
+  - banda nueva: Spiritual Rebel
+  - banda nueva: Santi Aysine
+  - banda nueva: Dosis
+  - banda nueva: El Club de la Serpiente
+  - banda nueva: Post Antipodas
+  - banda nueva: Fuego Ritual
+  - banda nueva: Sin1Rostro
+  - banda nueva: El Cuarto Soda
+  - banda nueva: Thelma
+  - banda nueva: La Luis Machine
+  - banda nueva: El Árbol de Diego
+  - banda nueva: El Cashmere
+  - banda nueva: Malditos Perros Secuaces
+  - banda nueva: Cada Cual
+  - banda nueva: Radicäl
+  - banda nueva: Luciana Tagliapietra
+  - banda nueva: Agustín Goytía
+  - banda nueva: Kaixara
+  - banda nueva: Pantifico
+  - banda nueva: Aralea
+  - banda nueva: Frans y los Hijos del Rigor
+  - banda nueva: Azul Ball
+  - banda nueva: Cande Güerzoni
+  - banda nueva: Corriente de la Luna
+  - banda nueva: Sinalagma
+  - banda nueva: Fuego Fatuo
+  - banda nueva: Gulp
+  - banda nueva: Intensiva
+  - banda nueva: Turmalina
+  - banda nueva: Los Sub
+  - banda nueva: Viaje Relámpago
+  - banda nueva: Verde y los Caballos a Marte
+  - banda nueva: Tortura
+  - banda nueva: Jugo de Basura
+  - banda nueva: WWW
+  - banda nueva: Luzbel
+  - banda nueva: Mala Fama
+  - banda nueva: Los Guanacos
+  - banda nueva: Salida de Emergencia
+  - banda nueva: El Supper
+  - banda nueva: Huguito
+  - banda nueva: Nico Lucero
+  - banda nueva: Piantados
+  - banda nueva: Arsis
+  - banda nueva: La Bomba de Tiempo
+  - banda nueva: La Mississippi
+  - banda nueva: Deportivo La Poronga
+  - banda nueva: Aztral
+  - banda nueva: 2 Razones
+  - banda nueva: La Garufa
+  - banda nueva: Louded
+  - banda nueva: Fungals
+  - banda nueva: Delvento
+  - banda nueva: Jocha
+  - banda nueva: Fulanas Trio
+  - banda nueva: El Engrupe
+  - banda nueva: Quimera
+  - banda nueva: Los Totora
+  - banda nueva: 7.11 La Vida Animal
+  - banda nueva: Marton Marton
+  - banda nueva: El Sueño del Pibe
+  - banda nueva: Doble P
+  - banda nueva: Dramer
+  - banda nueva: Eldoscientosiete
+  - banda nueva: Guacho Bleu
+  - banda nueva: Cadelago
+  - banda nueva: Arboledas
+  - banda nueva: La Vieja Nocturna
+  - banda nueva: Extraños
+  - banda nueva: Caras de Liebre
+  - banda nueva: Yuli y las Dosis
+  - banda nueva: Deckie
+  - banda nueva: Twisted Tongues
+  - banda nueva: Frenkel
+  - banda nueva: 107 Faunos
+  - banda nueva: Fantasmagoria
+  - banda nueva: Bisturí
+  - banda nueva: Casildo
+  - banda nueva: Zamarbide
+  - banda nueva: Santiago Moraes
+  - banda nueva: Visiones
+  - banda nueva: Reckero
+  - banda nueva: Asamblea
+  - banda nueva: Micky Rodríguez
+  - banda nueva: La Yugular
+  - banda nueva: Ningún Dios
+  - banda nueva: Francis
+  - banda nueva: Los Ojos de Ramón
+  - banda nueva: Una Banda Redonda
+  - banda nueva: Club Marfil
+  - banda nueva: SED
+  - banda nueva: Disturbio AM
+  - banda nueva: Eslavos
+  - banda nueva: Vida
+  - banda nueva: Diluvio
+  - banda nueva: Barbos
+  - banda nueva: Poder Loco
+  - banda nueva: El Reloj
+  - banda nueva: Poseidótica
+  - banda nueva: Riff
+  - banda nueva: Humanoides
+  - banda nueva: Cien1000Años
+  - banda nueva: Flor Otero
+  - banda nueva: Delfi Cheb
+  - banda nueva: Camino Stereo
+  - banda nueva: Mink Project
+  - banda nueva: J.C Smith
+  - banda nueva: Periplos
+  - banda nueva: Segunda Mano
+  - banda nueva: Felipe Barrozo
+  - banda nueva: Mafe Fages
+  - banda nueva: Paranoiko
+  - banda nueva: La Tropa del Diluvio
+  - banda nueva: Briganti
+  - banda nueva: Los Principitos
+  - banda nueva: Charlie 3
+  - banda nueva: Fatiga
+  - banda nueva: Perro Fantasma
+  - banda nueva: Nubes en mi casa
+  - banda nueva: Banquete Rengo
+  - banda nueva: Claudio Gabis
+  - banda nueva: Dan Lluvia
+  - banda nueva: El Viaje de Jim
+  - banda nueva: Yugular
+  - banda nueva: Daniel Devita
+  - banda nueva: El Soldado
+  - banda nueva: Gustavo Cordera
+  - banda nueva: El Perfume
+  - banda nueva: Selector Camilo
+  - banda nueva: Fotone
+  - banda nueva: Pequeño Mod
+  - banda nueva: Percal
+  - banda nueva: Afterlife
+  - banda nueva: Bloodparade
+  - banda nueva: Alas de Abril
+  - banda nueva: Max RCU
+  - banda nueva: Guacho Bestia
+  - banda nueva: The Comando Pickless
+  - banda nueva: Alika
+  - banda nueva: La 147
+  - banda nueva: Entretiempo
+  - banda nueva: Mote
+  - banda nueva: Violett Parr
+  - banda nueva: Expulsados
+  - banda nueva: Lombardía
+  - banda nueva: Botafogo
+  - banda nueva: Miguel Vilanova
+  - banda nueva: Rey Garufa
+  - banda nueva: Miguel Cantilo
+  - banda nueva: La Chica del Cumpleaños
+  - banda nueva: Felicia
+  - banda nueva: Rara
+  - banda nueva: Panter
+  - banda nueva: Pulsion
+  - banda nueva: Null
+  - banda nueva: Apnea
+  - banda nueva: Murk
+  - banda nueva: Mal Pasar
+  - banda nueva: Simulando un Vuelo
+  - banda nueva: Diego Presa
+  - banda nueva: Me Darás Mil Hijos
+  - banda nueva: Juan Pablo Fernández y los Techistas del Apocalipsis
+  - banda nueva: La Línea
+  - banda nueva: Felián
+  - banda nueva: Cool Sueca
+  - banda nueva: Mariana Bianchini
+  - banda nueva: Londonground
+  - banda nueva: David Tagger
+  - banda nueva: Vuelve Cruda
+  - banda nueva: Interzona
+  - banda nueva: El Gran Nikky Gatsby
+  - banda nueva: Dana Salguero
+  - banda nueva: Jojo
+  - banda nueva: Versatilia
+  - banda nueva: Akenathon
+  - banda nueva: Indio Solari
+  - banda nueva: David Meiser
+  - banda nueva: Montañas
+  - banda nueva: Miedo Puro
+  - banda nueva: Era de Acuario
+  - banda nueva: Brutagrua
+  - banda nueva: Garufas
+  - banda nueva: Estado Salvaje
+  - banda nueva: Nightrain
+  - banda nueva: Jorge Savoretti
+  - banda nueva: Mocchi
+  - banda nueva: Yas XXI
+  - banda nueva: El Menor de los Males
+  - banda nueva: Jump The Fence
+  - banda nueva: Insonorizado
+  - banda nueva: Catarsis
+  - banda nueva: MUA!
+  - banda nueva: Taladrando
+  - banda nueva: Comova Roche
+  - banda nueva: El Diluvio
+  - banda nueva: Los Pasajeros
+  - banda nueva: Blackdali
+  - banda nueva: Mereketembe
+  - banda nueva: Massacre
+  - banda nueva: Aliento de Perro
+  - banda nueva: Trotsky Vengarán
+  - banda nueva: Karavana
+  - banda nueva: Todos Los Problemas
+  - banda nueva: Yony Linyero
+  - banda nueva: Wade
+  - banda nueva: Rodrigo Manigot
+  - banda nueva: Franky Rizardo
+  - banda nueva: Boanerges
+  - banda nueva: HEAD
+  - banda nueva: Insano
+  - banda nueva: Kamada
+  - banda nueva: Broke Carrey
+  - banda nueva: Hijo del País
+  - banda nueva: Epumer
+  - banda nueva: Machi
+  - banda nueva: Judurcha
+  - banda nueva: Juan Henjes
+  - banda nueva: Los Cafres
+  - banda nueva: Todos Tus Muertos
+  - banda nueva: A.N.I.M.A.L.
+  - banda nueva: NVLO
+  - banda nueva: No Guerra
+  - banda nueva: Vox Dei
+  - banda nueva: La Paris RnRoll
+  - banda nueva: Ojo Animal
+  - banda nueva: Estelares
+  - banda nueva: Sobredosis de Soda
+- **ticketek**: 58 eventos en la página → 11 de rock nacional (11 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 1 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 10 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
+  - nuevo: 2026-10-24-daniel-agostini.yaml
+- **tuentrada**: 50 eventos en la página → 7 de rock nacional (7 con banda conocida), 0 otros (no se guardan), 0 sin clasificar. 0 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 7 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
 - **turbo-entrada-com** (Rosario): 25 eventos en la página → 5 de rock nacional (5 con banda conocida), 18 otros, 0 sin clasificar. 0 nuevos, 0 actualizados, 0 cambiados de lista, 0 borrados, 23 sin cambios, 0 ya cargados por otra vía. Páginas de evento leídas: 0.
 
-IA: 7 consultas, costo USD 0.0018.
+IA: 1397 consultas, costo USD 0.4399.

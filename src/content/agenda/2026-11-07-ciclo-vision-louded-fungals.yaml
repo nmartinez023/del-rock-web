@@ -1,0 +1,20 @@
+titulo: Ciclo Visión — Louded + Fungals
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - louded
+  - fungals
+fecha: 2026-11-07
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/ciclo-vision-louded-fungals-en-club-conjura
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/ciclo-vision-louded-fungals-en-club-conjura-568019-rec.jpg
+origen:
+  fuente: passline
+  id: "568019"
+  huella: a9f95b189b95070d

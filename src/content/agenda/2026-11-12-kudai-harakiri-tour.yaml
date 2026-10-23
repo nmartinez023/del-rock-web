@@ -1,0 +1,19 @@
+titulo: Kudai — Harakiri Tour
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - kudai
+fecha: 2026-11-12
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/kudai-harakiri-tour-en-argentina-12112026
+precioDesde: 90000
+imagen: https://imagenes.passline.com/eventos/kudai-harakiri-tour-en-argentina-12112026-542644-rec.jpg
+origen:
+  fuente: passline
+  id: "542644"
+  huella: ba4393676cc27940

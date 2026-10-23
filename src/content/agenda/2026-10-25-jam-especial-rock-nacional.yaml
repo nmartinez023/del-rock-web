@@ -1,0 +1,16 @@
+titulo: JAM especial Rock Nacional
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+fecha: 2026-10-25
+hora: "21:00"
+venue: Emily Daniels
+ciudad: Vicente Lopez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jam-especial-rock-nacional-emily-daniels
+imagen: https://imagenes.passline.com/eventos/-815766-rec.jpg
+origen:
+  fuente: passline
+  id: "570583"
+  huella: d5ff257ea30d8f6b

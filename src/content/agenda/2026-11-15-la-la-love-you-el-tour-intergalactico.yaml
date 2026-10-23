@@ -1,0 +1,19 @@
+titulo: La La Love You — El tour intergaláctico
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie pop
+bandas:
+  - la-la-love-you
+fecha: 2026-11-15
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-la-love-you-el-tour-intergalactico
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/la-la-love-you-el-tour-intergalactico-535262-rec.jpg
+origen:
+  fuente: passline
+  id: "535262"
+  huella: 6dfa181e2e8fe866

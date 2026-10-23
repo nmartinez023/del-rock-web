@@ -1,0 +1,20 @@
+titulo: Homenaje a Korneta Suárez
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - horacio
+  - martin-ale
+fecha: 2026-10-30
+hora: "21:00"
+venue: Finisterre
+ciudad: Temperley
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/homenaje-a-korneta-suarez-de-horacio-y-martin-ale
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/homenaje-a-korneta-suarez-de-horacio-y-martin-ale-560416-rec.jpg
+origen:
+  fuente: passline
+  id: "560416"
+  huella: 6e08f5a4c2c78e3c

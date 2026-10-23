@@ -1,0 +1,19 @@
+titulo: "Guacho Bleu presenta: Guita y Guitarras — Primer Acto"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - guacho-bleu
+fecha: 2026-11-08
+hora: "20:30"
+venue: IMAGINARIO CULTURAL BAR
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/guacho-bleu-presenta-guita-y-guitarras-primer-acto
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/guacho-bleu-presenta-guita-y-guitarras-primer-acto-570493-rec.jpg
+origen:
+  fuente: passline
+  id: "570493"
+  huella: 7bbf15dec7159c53

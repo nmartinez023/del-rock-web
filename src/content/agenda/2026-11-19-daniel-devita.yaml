@@ -1,0 +1,19 @@
+titulo: Daniel Devita
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - daniel-devita
+fecha: 2026-11-19
+hora: "20:30"
+venue: Marquee Session Live
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/daniel-devita-en-el-marquee
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/daniel-devita-en-el-marquee-556220-rec.jpg
+origen:
+  fuente: passline
+  id: "556220"
+  huella: b1736bc5d4e5a969

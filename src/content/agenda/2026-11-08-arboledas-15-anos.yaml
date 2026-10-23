@@ -1,0 +1,21 @@
+titulo: Arboledas 15 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - arboledas
+  - la-vieja-nocturna
+  - extranos
+fecha: 2026-11-08
+hora: "22:00"
+venue: Mondo bizarro bar
+ciudad: Jose Clemente Paz
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/arboledas-15-anos
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/arboledas-15-anos-570830-rec.jpg
+origen:
+  fuente: passline
+  id: "570830"
+  huella: bcea7cc3edfc0052

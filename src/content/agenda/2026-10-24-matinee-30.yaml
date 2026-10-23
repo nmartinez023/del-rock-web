@@ -1,0 +1,19 @@
+titulo: Matinée + 30
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - matinee
+fecha: 2026-10-24
+hora: "20:00"
+venue: Nuevo Morumbi
+ciudad: Mar Del Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/matinee-30
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "566386"
+  huella: 37ff02aa68d62cfb

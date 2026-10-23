@@ -1,0 +1,19 @@
+titulo: Simulando un Vuelo — Presentación de "Martes 30"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - simulando-un-vuelo
+fecha: 2026-11-22
+hora: "20:00"
+venue: Lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/simulando-un-vuelo-presenta-su-disco-martes-30
+precioDesde: 16000
+imagen: https://imagenes.passline.com/eventos/simulando-un-vuelo-presenta-su-disco-martes-30-563104-rec.jpg
+origen:
+  fuente: passline
+  id: "563104"
+  huella: 7d92edbec055cd33

@@ -1,0 +1,20 @@
+titulo: Motor Furioso
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - motor-furioso
+fecha: 2026-11-01
+hora: "18:00"
+venue: The Roxy Live
+direccion: Cnel. Niceto Vega 5542
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/motor-furioso-vuelve-a-the-roxy-live
+precioDesde: 12000
+imagen: https://cdn.getcrowder.com/images/3854ef80-150e-4e28-8b6f-741f21ddcb2e-640x640-27.jpg
+origen:
+  fuente: allaccess
+  id: motor-furioso-vuelve-a-the-roxy-live
+  huella: d8e211211fae3c82

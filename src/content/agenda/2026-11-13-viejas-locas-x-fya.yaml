@@ -1,0 +1,20 @@
+titulo: Viejas Locas x FYA
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - viejas-locas
+  - fya
+fecha: 2026-11-13
+hora: "21:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-x-fya-en-san-miguel
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/viejas-locas-x-fya-en-san-miguel-552509-rec.jpg
+origen:
+  fuente: passline
+  id: "552509"
+  huella: 1b877d559cea5b67

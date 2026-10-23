@@ -1,0 +1,17 @@
+titulo: Viva Elástico
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+fecha: 2026-11-13
+hora: "20:00"
+venue: Biri Biri
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/viva-elastico-551493
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/viva-elastico-551493-rec.jpg
+origen:
+  fuente: passline
+  id: "551493"
+  huella: 8777467ad33e3a48

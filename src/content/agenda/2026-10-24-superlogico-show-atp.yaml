@@ -1,0 +1,19 @@
+titulo: Superlógico Show ATP
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - superlogico
+fecha: 2026-10-24
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/superlogico-show-atp-24-octubre-2026
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/superlogico-show-atp-24-octubre-2026-534033-rec.jpg
+origen:
+  fuente: passline
+  id: "534033"
+  huella: bcd0a55934142493

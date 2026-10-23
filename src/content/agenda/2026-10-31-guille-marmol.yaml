@@ -1,0 +1,19 @@
+titulo: Guille Mármol
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - guille-marmol
+fecha: 2026-10-31
+hora: "20:30"
+venue: Luzuriaga Club Social
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/guille-marmol-en-barracas
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/guille-marmol-en-barracas-554273-rec.jpg
+origen:
+  fuente: passline
+  id: "554273"
+  huella: b964f5dab3bdd2f0

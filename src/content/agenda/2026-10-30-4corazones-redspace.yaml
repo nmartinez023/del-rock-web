@@ -1,0 +1,20 @@
+titulo: 4Corazones — Redspace
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - 4corazones
+  - redspace
+fecha: 2026-10-30
+hora: "23:00"
+venue: HI FI STUDIO
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/4corazones-redspace-and-more
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/-812889-rec.jpg
+origen:
+  fuente: passline
+  id: "568654"
+  huella: 2da416e956765364

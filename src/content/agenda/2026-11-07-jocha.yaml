@@ -1,0 +1,19 @@
+titulo: Jocha
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jocha
+fecha: 2026-11-07
+hora: "21:00"
+venue: NEMPLA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/jocha
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/jocha-565940-rec.jpg
+origen:
+  fuente: passline
+  id: "565940"
+  huella: 3a23a1457ac0c2ee

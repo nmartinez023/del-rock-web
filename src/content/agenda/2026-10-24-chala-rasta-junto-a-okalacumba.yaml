@@ -1,0 +1,20 @@
+titulo: Chala Rasta junto a Okalacumba
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: reggae
+bandas:
+  - chala-rasta
+  - okalacumba
+fecha: 2026-10-24
+hora: "21:00"
+venue: Guajira bar
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/chala-rasta-vuelve-a-la-plata-junto-a-okalacumba
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "557645"
+  huella: c38e6c642fd31a58

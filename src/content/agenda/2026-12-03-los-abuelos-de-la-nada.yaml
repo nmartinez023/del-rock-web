@@ -1,0 +1,17 @@
+titulo: Los Abuelos de la Nada
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock
+fecha: 2026-12-03
+hora: "22:00"
+venue: Torquato Tasso
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/los-abuelos-de-la-nada-554331
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/-811932-rec.jpg
+origen:
+  fuente: passline
+  id: "554331"
+  huella: 1b8ef7d0dd440cdf

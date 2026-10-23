@@ -1,0 +1,19 @@
+titulo: Sin1Rostro
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - sin1rostro
+fecha: 2026-11-01
+hora: "20:00"
+venue: Casa Pulsar
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/sin1rostro-la-plata-563073
+precioDesde: 17000
+imagen: https://imagenes.passline.com/eventos/sin1rostro-la-plata-563073-rec.jpg
+origen:
+  fuente: passline
+  id: "563073"
+  huella: 880247004d2f523e

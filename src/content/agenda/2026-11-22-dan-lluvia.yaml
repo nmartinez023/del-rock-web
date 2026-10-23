@@ -1,0 +1,19 @@
+titulo: Dan Lluvia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - dan-lluvia
+fecha: 2026-11-22
+hora: "21:00"
+venue: Capi Club
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/dan-lluvia-en-rosario
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-804376-rec.jpg
+origen:
+  fuente: passline
+  id: "562878"
+  huella: b5b28e454a845c58

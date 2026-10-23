@@ -1,0 +1,19 @@
+titulo: Mardemares y Tribu Cósmica
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - mardemares
+  - tribu-cosmica
+fecha: 2026-10-30
+hora: "22:00"
+venue: Panda Rojo Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mardemares-y-yribu-cosmica
+imagen: https://imagenes.passline.com/eventos/mardemares-y-yribu-cosmica-562676-rec.jpg
+origen:
+  fuente: passline
+  id: "562676"
+  huella: fc1d70303509aac2

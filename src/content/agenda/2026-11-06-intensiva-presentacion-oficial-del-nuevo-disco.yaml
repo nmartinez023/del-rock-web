@@ -1,0 +1,19 @@
+titulo: Intensiva — Presentación oficial del nuevo disco
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - intensiva
+fecha: 2026-11-06
+hora: "21:30"
+venue: Gier Music Club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/intensiva-gier-music-club-presentacion-oficial-del-nuevo-disco
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/intensiva-gier-music-club-presentacion-oficial-del-nuevo-disco-558441-rec.jpg
+origen:
+  fuente: passline
+  id: "558441"
+  huella: f2c00885c13e6e46

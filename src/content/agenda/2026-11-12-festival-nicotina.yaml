@@ -1,0 +1,17 @@
+titulo: Festival Nicotina
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock
+fecha: 2026-11-12
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/festival-nicotina-en-club-conjura
+precioDesde: 7000
+imagen: https://imagenes.passline.com/eventos/festival-nicotina-en-club-conjura-568534-rec.jpg
+origen:
+  fuente: passline
+  id: "568534"
+  huella: fc7a006ed73a8514

@@ -1,0 +1,19 @@
+titulo: Gulp tributo Redonditos de Ricota
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - gulp
+fecha: 2026-11-06
+hora: "20:30"
+venue: Teatro Favaloro
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/gulp-tributo-redonditos-de-ricota
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/gulp-tributo-redonditos-de-ricota-570809-rec.jpg
+origen:
+  fuente: passline
+  id: "570809"
+  huella: b13c2f2513072b33

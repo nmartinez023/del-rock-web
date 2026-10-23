@@ -1,0 +1,19 @@
+titulo: Hambol — Toda una familia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - hambol
+fecha: 2026-12-05
+hora: "20:00"
+venue: Beatflow
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/hambol-toda-una-familia
+precioDesde: 13000
+imagen: https://imagenes.passline.com/eventos/hambol-toda-una-familia-553920-rec.jpg
+origen:
+  fuente: passline
+  id: "553920"
+  huella: ad6b7a53d6a22ea7

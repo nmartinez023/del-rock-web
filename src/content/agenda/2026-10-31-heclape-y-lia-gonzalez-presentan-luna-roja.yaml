@@ -1,0 +1,20 @@
+titulo: Heclape y Lia Gonzalez presentan Luna roja
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie pop
+bandas:
+  - heclape
+  - lia-gonzalez
+fecha: 2026-10-31
+hora: "21:00"
+venue: Microcentro Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/heclape-y-lia-gonzalez-presentan-luna-roja
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/heclape-y-lia-gonzalez-presentan-luna-roja-568282-rec.jpg
+origen:
+  fuente: passline
+  id: "568282"
+  huella: 272e9021d8a181c8

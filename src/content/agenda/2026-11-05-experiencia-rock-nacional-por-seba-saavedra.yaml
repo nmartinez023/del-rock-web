@@ -1,0 +1,19 @@
+titulo: Experiencia Rock Nacional por Seba Saavedra
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+bandas:
+  - seba-saavedra
+fecha: 2026-11-05
+hora: "20:00"
+venue: Lucille Bar
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/experiencia-rock-nacional-por-seba-saavedra
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/experiencia-rock-nacional-por-seba-saavedra-553812-rec.jpg
+origen:
+  fuente: passline
+  id: "553812"
+  huella: 00ce8b080dfe2ac0

@@ -1,0 +1,19 @@
+titulo: Lucho al Attaque en San Miguel 🔥
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - lucho-al-attaque
+fecha: 2026-12-04
+hora: "21:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/lucho-al-ataque-en-san-miguel
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/lucho-al-ataque-en-san-miguel-545903-rec.jpg
+origen:
+  fuente: passline
+  id: "545903"
+  huella: f13c9c650dc13cd7

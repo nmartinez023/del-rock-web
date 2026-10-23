@@ -1,0 +1,19 @@
+titulo: Panter
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: hard rock
+bandas:
+  - panter
+fecha: 2026-11-21
+hora: "22:00"
+venue: Mauris
+ciudad: Zarate
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/panter-en-zarate
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/panter-en-zarate-564919-rec.jpg
+origen:
+  fuente: passline
+  id: "564919"
+  huella: 824b544af362235d

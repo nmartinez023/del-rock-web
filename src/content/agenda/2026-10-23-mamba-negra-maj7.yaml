@@ -1,0 +1,20 @@
+titulo: Mamba Negra & Maj7
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - mamba-negra
+  - maj7
+fecha: 2026-10-23
+hora: "21:30"
+venue: El Club De La Musica
+ciudad: Villa Ballester
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/mamba-negra-maj7-en-el-club-de-la-musica
+precioDesde: 13000
+imagen: https://imagenes.passline.com/eventos/-815187-rec.jpg
+origen:
+  fuente: passline
+  id: "569617"
+  huella: c3f2e44bf78f97db

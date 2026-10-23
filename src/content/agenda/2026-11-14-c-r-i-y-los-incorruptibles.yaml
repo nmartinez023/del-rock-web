@@ -1,0 +1,20 @@
+titulo: C.R.I. y Los Incorruptibles
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - c-r-i
+  - los-incorruptibles
+fecha: 2026-11-14
+hora: "20:30"
+venue: Base Cultural Ugarte
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/cri-y-los-incorruptibles-en-base-cultural-ugarte-ugarte-2789-caba-22hs
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/cri-y-los-incorruptibles-en-base-cultural-ugarte-ugarte-2789-caba-22hs-551289-rec.jpg
+origen:
+  fuente: passline
+  id: "551289"
+  huella: 6564a1fd0d5286da

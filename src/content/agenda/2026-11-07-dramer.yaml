@@ -1,0 +1,19 @@
+titulo: Dramer
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - dramer
+fecha: 2026-11-07
+hora: "23:30"
+venue: Capi Club
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/dramer-en-rosario
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-806052-rec.jpg
+origen:
+  fuente: passline
+  id: "563954"
+  huella: 738b0e0f4ee2e739

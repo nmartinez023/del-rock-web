@@ -1,0 +1,20 @@
+titulo: Reckero + Asamblea
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - reckero
+  - asamblea
+fecha: 2026-11-13
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/reckero-asamblea-en-club-conjura
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/reckero-asamblea-en-club-conjura-570089-rec.jpg
+origen:
+  fuente: passline
+  id: "570089"
+  huella: 861191cdad9af701

@@ -1,0 +1,20 @@
+titulo: Thelma presenta Perfiles falsos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - thelma
+  - la-luis-machine
+fecha: 2026-11-01
+hora: "20:00"
+venue: Moscu Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/thelma-presenta-su-nuevo-disco-perfiles-falsos-banda-invitada-la-luis-machine
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/-808312-rec.jpg
+origen:
+  fuente: passline
+  id: "565493"
+  huella: 9e4eaa43a941cba1

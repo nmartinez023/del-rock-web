@@ -1,0 +1,20 @@
+titulo: En Bajada y Tukera Juntos en Quilmes
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - en-bajada
+  - tukera
+fecha: 2026-10-23
+hora: "20:00"
+venue: CLUB TUCUMÁN de Quilmes
+ciudad: Quilmes Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/en-bajada-y-tukera-juntos-en-quilmes-vie-23-oct-20-hs
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-809625-rec.jpg
+origen:
+  fuente: passline
+  id: "564505"
+  huella: 2476cc423af65da9

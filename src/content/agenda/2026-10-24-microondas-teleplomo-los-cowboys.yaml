@@ -1,0 +1,21 @@
+titulo: Microondas + Teleplomo + Los Cowboys
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - microondas
+  - teleplomo
+  - los-cowboys
+fecha: 2026-10-24
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/microondas-teleplomo-los-cowboys-en-club-conjura
+precioDesde: 6000
+imagen: https://imagenes.passline.com/eventos/microondas-teleplomo-los-cowboys-en-club-conjura-556856-rec.jpg
+origen:
+  fuente: passline
+  id: "556856"
+  huella: db2818ab8910f425

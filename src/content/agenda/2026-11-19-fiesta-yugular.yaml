@@ -1,0 +1,19 @@
+titulo: Fiesta Yugular
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - yugular
+fecha: 2026-11-19
+hora: "20:00"
+venue: Vuela el Pez
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/fiesta-yugular-buenos-aires-vuela-el-pez-1911
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/fiesta-yugular-buenos-aires-vuela-el-pez-1911-570094-rec.jpg
+origen:
+  fuente: passline
+  id: "570094"
+  huella: 2056b650fdc3ad0c

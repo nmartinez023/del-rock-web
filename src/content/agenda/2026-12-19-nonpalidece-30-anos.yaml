@@ -1,0 +1,19 @@
+titulo: Nonpalidece - 30 Años!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nonpalidece
+fecha: 2026-12-19
+hora: "22:00"
+venue: TATTERSALL San Isidro
+ciudad: San Isidro
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/nonpalidece-30-anos-556515
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-804682-rec.jpg
+origen:
+  fuente: passline
+  id: "556515"
+  huella: 9f67e35ceaedc9e6

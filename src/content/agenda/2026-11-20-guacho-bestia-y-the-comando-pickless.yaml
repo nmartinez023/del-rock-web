@@ -1,0 +1,20 @@
+titulo: Guacho Bestia y The Comando Pickless
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - guacho-bestia
+  - the-comando-pickless
+fecha: 2026-11-20
+hora: "20:00"
+venue: Tacheles Polo de Cultura Emergente
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/guacho-bestia-y-the-comando-pickless-en-tacheles-2010
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/guacho-bestia-y-the-comando-pickless-en-tacheles-2010-570175-rec.jpg
+origen:
+  fuente: passline
+  id: "570175"
+  huella: 5a521da761da0684

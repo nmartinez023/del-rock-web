@@ -1,0 +1,19 @@
+titulo: Eldoscientosiete
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - eldoscientosiete
+fecha: 2026-11-08
+hora: "19:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/eldoscientosiete-en-san-miguel
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/eldoscientosiete-en-san-miguel-563133-rec.jpg
+origen:
+  fuente: passline
+  id: "563133"
+  huella: 55d637500bdf03be

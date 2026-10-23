@@ -1,0 +1,20 @@
+titulo: BULA + LDS
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - bula
+  - lds
+fecha: 2026-10-23
+hora: "20:00"
+venue: Multiespacio Korova
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/bula-lds-en-korova
+precioDesde: 6000
+imagen: https://imagenes.passline.com/eventos/-810341-rec.jpg
+origen:
+  fuente: passline
+  id: "566415"
+  huella: f14b9cf2dbd44e6f

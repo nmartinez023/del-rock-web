@@ -1,0 +1,19 @@
+titulo: Andando Descalzo celebra sus 30 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: ska reggae
+bandas:
+  - andando-descalzo
+fecha: 2026-10-31
+hora: "23:30"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/andando-descalzo-celebra-sus-30-anos
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/andando-descalzo-celebra-sus-30-anos-537233-rec.jpg
+origen:
+  fuente: passline
+  id: "537233"
+  huella: e72eee4930fa40c4

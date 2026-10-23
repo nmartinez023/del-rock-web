@@ -1,0 +1,19 @@
+titulo: Entretiempo en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - entretiempo
+fecha: 2026-11-20
+hora: "21:00"
+venue: Nobleza Obliga
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/entretiempo-en-vivo
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-805657-rec.jpg
+origen:
+  fuente: passline
+  id: "563730"
+  huella: 23ead9c88b936072

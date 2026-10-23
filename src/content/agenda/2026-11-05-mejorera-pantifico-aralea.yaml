@@ -1,0 +1,20 @@
+titulo: "Mejorera: Pantifico + Aralea"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie pop
+bandas:
+  - pantifico
+  - aralea
+fecha: 2026-11-05
+hora: "21:00"
+venue: El Imaginario
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mejorera-en-el-imaginario-pantifico-aralea
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/mejorera-en-el-imaginario-pantifico-aralea-568609-rec.jpg
+origen:
+  fuente: passline
+  id: "568609"
+  huella: 3ddd85072f543d39

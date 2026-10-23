@@ -1,0 +1,19 @@
+titulo: Jenny de Guzman Show Class Zumba
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-jenny
+fecha: 2026-11-14
+hora: "17:30"
+venue: CENTRO DE CONVENCIONES VICENTE LOPEZ ¨Dr. Arturo Frondizi¨
+ciudad: Vicente Lopez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jenny-de-guzman-show-class-zumba
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/jenny-de-guzman-show-class-zumba-560741-rec.jpg
+origen:
+  fuente: passline
+  id: "560741"
+  huella: 4869191ec17969f7

@@ -1,0 +1,19 @@
+titulo: Duratierra presenta su nuevo disco
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - duratierra
+fecha: 2026-11-21
+hora: "20:00"
+venue: Margarita Xirgu
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/duratierra-presenta-su-nuevo-disco-en-el-teatro-xirgu-555724
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-793946-rec.jpg
+origen:
+  fuente: passline
+  id: "555724"
+  huella: 1a4a8b9ac6efd2c9

@@ -1,0 +1,20 @@
+titulo: Karamelo Santo — Emily Daniels
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: reggae rock
+bandas:
+  - karamelo-santo
+  - emily-daniels
+fecha: 2026-11-07
+hora: "23:30"
+venue: EMILY DANIELS
+ciudad: Vicente Lopez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/karamelo-santo-emily-daniels
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/karamelo-santo-emily-daniels-553727-rec.jpg
+origen:
+  fuente: passline
+  id: "553727"
+  huella: 8bef6a1e86b9627a

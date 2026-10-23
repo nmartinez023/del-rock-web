@@ -1,0 +1,19 @@
+titulo: Monarca
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - monarca
+fecha: 2026-11-13
+hora: "22:00"
+venue: Planta Alta Rock Bar
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/monaca-en-caba
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/monaca-en-caba-546653-rec.jpg
+origen:
+  fuente: passline
+  id: "546653"
+  huella: f12c16f2eaccde05

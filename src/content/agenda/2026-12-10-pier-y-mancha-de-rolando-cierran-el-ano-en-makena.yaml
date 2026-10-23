@@ -1,0 +1,19 @@
+titulo: Pier y Mancha de Rolando Cierran el Año en Makena!!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-mancha-de-rolando
+fecha: 2026-12-10
+hora: "21:00"
+venue: MAKENA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/pier-y-mancha-de-rolando-cierran-el-ano-en-makena
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "561839"
+  huella: cd9c7b7465ebe508

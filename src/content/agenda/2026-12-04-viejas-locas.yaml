@@ -1,0 +1,19 @@
+titulo: Viejas Locas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - viejas-locas
+fecha: 2026-12-04
+hora: "21:00"
+venue: SIX BAR
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-en-six-bar
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "568145"
+  huella: 3179dd4cdcc1ab9f

@@ -1,0 +1,17 @@
+titulo: Fiesta del Rock Nacional
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+fecha: 2026-11-20
+hora: "21:00"
+venue: City Bar
+ciudad: Martinez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/fiesta-del-rock-nacional-en-city-bar
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/fiesta-del-rock-nacional-en-city-bar-554590-rec.jpg
+origen:
+  fuente: passline
+  id: "554590"
+  huella: ceab21d145d71ff1

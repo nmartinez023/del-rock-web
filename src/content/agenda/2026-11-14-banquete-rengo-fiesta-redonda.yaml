@@ -1,0 +1,19 @@
+titulo: Banquete Rengo — Fiesta Redonda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - banquete-rengo
+fecha: 2026-11-14
+hora: "23:00"
+venue: SIX
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/banquete-rengo-fiesta-redonda
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/banquete-rengo-fiesta-redonda-570002-rec.jpg
+origen:
+  fuente: passline
+  id: "570002"
+  huella: 29d4cee6004666c7

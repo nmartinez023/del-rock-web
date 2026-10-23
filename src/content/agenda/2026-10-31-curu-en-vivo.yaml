@@ -1,0 +1,19 @@
+titulo: Curu en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - curu
+fecha: 2026-10-31
+hora: "21:00"
+venue: Pura Cultural
+ciudad: San Isidro
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/curu-en-vivo-en-san-isidro
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/curu-en-vivo-en-san-isidro-563876-rec.jpg
+origen:
+  fuente: passline
+  id: "563876"
+  huella: 99153253dc56f188

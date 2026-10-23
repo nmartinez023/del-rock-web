@@ -1,0 +1,19 @@
+titulo: Sobredosis de Soda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock (tributo a soda stereo)
+bandas:
+  - sobredosis-de-soda
+fecha: 2027-02-27
+hora: "20:00"
+venue: Teatro UOM
+ciudad: San Justo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/sobredosis-de-soda-san-justo-2027
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/sobredosis-de-soda-san-justo-2027-570994-rec.jpg
+origen:
+  fuente: passline
+  id: "570994"
+  huella: bf12140462a41ee2

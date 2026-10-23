@@ -1,0 +1,19 @@
+titulo: Los Guanacos y Salida de Emergencia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-guanacos
+  - salida-de-emergencia
+fecha: 2026-11-06
+hora: "23:00"
+venue: García bar
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/los-guanacos-y-salida-de-emergencia-en-garcia
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "569627"
+  huella: b0a4cb81bac1c00a

@@ -1,0 +1,19 @@
+titulo: Traslado Tan Biónica en Estadio Instituto
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - tan-bionica
+fecha: 2026-11-14
+hora: "16:00"
+venue: Estadio Instituto
+ciudad: Cordoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/traslado-tan-bionica-en-estadio-instituto
+precioDesde: 18500
+imagen: https://imagenes.passline.com/eventos/traslado-tan-bionica-en-estadio-instituto-526242-rec.jpg
+origen:
+  fuente: passline
+  id: "526242"
+  huella: a7ddace7cda9c6e2

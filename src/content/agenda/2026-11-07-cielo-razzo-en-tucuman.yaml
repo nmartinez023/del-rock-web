@@ -1,0 +1,19 @@
+titulo: Cielo Razzo en Tucumán
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cielo-razzo
+fecha: 2026-11-07
+hora: "21:00"
+venue: Teatro Puerto Libertad
+ciudad: San Miguel De Tucuman
+provincia: Tucumán
+entradas: https://www.passline.com/eventos/cielo-razzo-en-tucuman-548849
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/cielo-razzo-en-tucuman-548849-rec.jpg
+origen:
+  fuente: passline
+  id: "548849"
+  huella: 77d1b9dc6d373e5b

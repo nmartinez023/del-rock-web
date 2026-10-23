@@ -1,0 +1,19 @@
+titulo: Mala Fama
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - mala-fama
+fecha: 2026-11-06
+hora: "23:00"
+venue: Friendship bar
+ciudad: Jose Clemente Paz
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/mala-fama-en-friendship
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-812357-rec.jpg
+origen:
+  fuente: passline
+  id: "568184"
+  huella: 4cbfc9c6a0de2b8c

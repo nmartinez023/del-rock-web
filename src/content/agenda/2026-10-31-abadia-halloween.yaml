@@ -1,0 +1,19 @@
+titulo: Abadía — Halloween
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - abadia
+fecha: 2026-10-31
+hora: "19:30"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/abadia-3110-halloween-show-en-vivo
+precioDesde: 9000
+imagen: https://imagenes.passline.com/eventos/-810550-rec.jpg
+origen:
+  fuente: passline
+  id: "567063"
+  huella: 3c82e304533b8c9c

@@ -1,0 +1,19 @@
+titulo: Ariel Prat
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ariel-prat
+fecha: 2026-11-12
+hora: "22:00"
+venue: Torquato Tasso
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/ariel-prat-537514
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/ariel-prat-537514-rec.jpg
+origen:
+  fuente: passline
+  id: "537514"
+  huella: e87cacd6b6b15941

@@ -1,0 +1,19 @@
+titulo: Mercedes Blues Festival — J.C Smith
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: blues
+bandas:
+  - j-c-smith
+fecha: 2026-11-14
+hora: "21:00"
+venue: Teatro Argentino Julio C. Gioscio
+ciudad: Mercedes
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jc-smith-en-el-mercedes-blues-festival
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/jc-smith-en-el-mercedes-blues-festival-555815-rec.jpg
+origen:
+  fuente: passline
+  id: "555815"
+  huella: d8796992d9d22ece

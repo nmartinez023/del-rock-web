@@ -1,0 +1,19 @@
+titulo: C4 vuelve al Padilla de Temperley!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - c4
+fecha: 2026-11-06
+hora: "22:00"
+venue: El Padilla - Espacio Cultural
+ciudad: Lomas De Zamora
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/c4-vuelve-al-padilla-de-temperley
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/c4-vuelve-al-padilla-de-temperley-560283-rec.jpg
+origen:
+  fuente: passline
+  id: "560283"
+  huella: b33015a299b9b933

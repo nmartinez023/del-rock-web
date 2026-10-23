@@ -1,0 +1,21 @@
+titulo: Saquarema / Maya Aimaretti / Chiste Negro
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - saquarema
+  - maya-aimaretti
+  - chiste-negro
+fecha: 2026-10-24
+hora: "21:00"
+venue: QUETREN
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/saquarema-maya-aimaretti-chiste-negro
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/saquarema-maya-aimaretti-chiste-negro-557987-rec.jpg
+origen:
+  fuente: passline
+  id: "557987"
+  huella: 18abc9f2ba682e37

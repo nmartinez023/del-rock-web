@@ -1,0 +1,19 @@
+titulo: Una Obra Redonda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - una-obra-redonda
+fecha: 2026-10-29
+hora: "20:00"
+venue: Plug / Chankanab
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/una-obra-redonda-en-san-martin
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/una-obra-redonda-en-san-martin-567715-rec.jpg
+origen:
+  fuente: passline
+  id: "567715"
+  huella: 526fd2682b1f0dbb

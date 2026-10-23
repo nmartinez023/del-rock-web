@@ -1,0 +1,21 @@
+titulo: Let There Be Rock
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - vennus
+  - nana
+  - hormigueros
+fecha: 2026-10-23
+hora: "21:30"
+venue: Darby Social Club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/let-there-be-rock
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/let-there-be-rock-569388-rec.jpg
+origen:
+  fuente: passline
+  id: "569388"
+  huella: 3432cb8908bb2486

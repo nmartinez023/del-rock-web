@@ -1,0 +1,21 @@
+titulo: Tortura presenta disco nuevo + Jugo de Basura + WWW
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - tortura
+  - jugo-de-basura
+  - www
+fecha: 2026-11-06
+hora: "22:30"
+venue: Espacio Cultural Laberinto
+ciudad: Moron
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/tortura-presenta-disco-nuevo-jugo-de-basura-www
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/tortura-presenta-disco-nuevo-jugo-de-basura-www-570372-rec.jpg
+origen:
+  fuente: passline
+  id: "570372"
+  huella: cb66af1143bfa0b6

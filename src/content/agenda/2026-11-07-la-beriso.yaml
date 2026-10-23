@@ -1,0 +1,19 @@
+titulo: La Beriso
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - la-beriso
+fecha: 2026-11-07
+hora: "19:00"
+venue: Microestadio de Ferro
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-beriso-en-ferro-544434
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/-779340-rec.jpg
+origen:
+  fuente: passline
+  id: "544434"
+  huella: 5c54e8ce7eabc581

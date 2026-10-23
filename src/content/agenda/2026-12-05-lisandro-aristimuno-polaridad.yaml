@@ -1,0 +1,19 @@
+titulo: Lisandro Aristimuño — Polaridad
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - lisandro-aristimuno
+fecha: 2026-12-05
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/lisandro-aristimuno-polaridad-541451
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/-809392-rec.jpg
+origen:
+  fuente: passline
+  id: "541451"
+  huella: ba8d09eb196555fe

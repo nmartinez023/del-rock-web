@@ -1,0 +1,19 @@
+titulo: El Árbol de Diego
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-arbol-de-diego
+fecha: 2026-11-02
+hora: "20:00"
+venue: La Casa de Lolita
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/diegoenlacasa
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/el-arbol-de-diego-569728-rec.jpg
+origen:
+  fuente: passline
+  id: "569728"
+  huella: 885a9b1713daf831

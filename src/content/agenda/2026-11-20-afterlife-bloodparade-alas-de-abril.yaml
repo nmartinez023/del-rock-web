@@ -1,0 +1,21 @@
+titulo: Afterlife + Bloodparade + Alas de Abril
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - afterlife
+  - bloodparade
+  - alas-de-abril
+fecha: 2026-11-20
+hora: "20:00"
+venue: Lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/afterlife-bloodparade-alas-de-abril
+precioDesde: 13000
+imagen: https://imagenes.passline.com/eventos/afterlife-bloodparade-alas-de-abril-565857-rec.jpg
+origen:
+  fuente: passline
+  id: "565857"
+  huella: 575a8276390d1c12

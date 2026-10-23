@@ -1,0 +1,19 @@
+titulo: Descarrilados homenaje a La Renga
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - descarrilados
+fecha: 2026-11-06
+hora: "23:00"
+venue: Gier Music Club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/descarrilados-homenaje-a-la-renga
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/descarrilados-homenaje-a-la-renga-556829-rec.jpg
+origen:
+  fuente: passline
+  id: "556829"
+  huella: 7b48703959316ca1

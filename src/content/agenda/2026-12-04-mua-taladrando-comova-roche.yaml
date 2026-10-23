@@ -1,0 +1,21 @@
+titulo: MUA! + Taladrando + Comova Roche
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - mua
+  - taladrando
+  - comova-roche
+fecha: 2026-12-04
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mua-taladrando-comova-roche-en-club-conjura
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/mua-taladrando-comova-roche-en-club-conjura-569721-rec.jpg
+origen:
+  fuente: passline
+  id: "569721"
+  huella: e21705460b0d0166

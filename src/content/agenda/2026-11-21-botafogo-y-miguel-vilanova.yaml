@@ -1,0 +1,20 @@
+titulo: Botafogo y Miguel Vilanova
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - botafogo
+  - miguel-vilanova
+fecha: 2026-11-21
+hora: "21:00"
+venue: Casa Suiza
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/botafogo-miguel-vilanova
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-808041-rec.jpg
+origen:
+  fuente: passline
+  id: "565279"
+  huella: 38e8ffb9a7d9b9cc

@@ -1,0 +1,19 @@
+titulo: Stigma 25 Años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - stigma
+fecha: 2026-10-30
+hora: "21:00"
+venue: Espacio Live La Plata
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/stigma-25-anos-en-espacio-live
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/stigma-25-anos-en-espacio-live-566199-rec.jpg
+origen:
+  fuente: passline
+  id: "566199"
+  huella: d0ad180376faa73a

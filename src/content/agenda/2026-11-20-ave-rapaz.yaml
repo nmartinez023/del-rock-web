@@ -1,0 +1,19 @@
+titulo: Ave Rapaz
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - ave-rapaz
+fecha: 2026-11-20
+hora: "21:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/ave-rapaz
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/ave-rapaz-546828-rec.jpg
+origen:
+  fuente: passline
+  id: "546828"
+  huella: d1e409388de67089

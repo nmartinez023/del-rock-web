@@ -1,0 +1,19 @@
+titulo: Trukini & Los Batertofis en Merlo (Bs.As)
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - trukini
+fecha: 2026-10-31
+hora: "17:30"
+venue: Hangar 18
+ciudad: Merlo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/trukini-los-batertofis-en-merlo-bsas
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/trukini-los-batertofis-en-merlo-bsas-562094-rec.jpg
+origen:
+  fuente: passline
+  id: "562094"
+  huella: a0ff24f52b521e39

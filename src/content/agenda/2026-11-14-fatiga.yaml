@@ -1,0 +1,19 @@
+titulo: Fatiga
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - fatiga
+fecha: 2026-11-14
+hora: "22:00"
+venue: OKTUBRE BAR
+ciudad: Garin
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/fatiga-en-oktubre-bar
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/fatiga-en-oktubre-bar-565571-rec.jpg
+origen:
+  fuente: passline
+  id: "565571"
+  huella: 2f87f9db68d98208

@@ -1,0 +1,19 @@
+titulo: Viejas Locas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - viejas-locas
+fecha: 2026-11-07
+hora: "21:00"
+venue: ENCUENTRO CLUB
+ciudad: San Justo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-en-encuentro-club
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "538418"
+  huella: 9b1cd009c9c25f49

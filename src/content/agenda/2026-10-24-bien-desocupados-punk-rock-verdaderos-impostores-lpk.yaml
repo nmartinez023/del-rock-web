@@ -1,0 +1,21 @@
+titulo: Bien Desocupados Punk Rock — Verdaderos Impostores — LPK
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - bien-desocupados
+  - verdaderos-impostores
+  - lpk
+fecha: 2026-10-24
+hora: "22:00"
+venue: Salas Ciro
+ciudad: Merlo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/bien-desocupados-punk-rock-verdaderos-impostores-lpk-en-merlo
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/bien-desocupados-punk-rock-verdaderos-impostores-lpk-en-merlo-567645-rec.jpg
+origen:
+  fuente: passline
+  id: "567645"
+  huella: 6ada560b01e4773a

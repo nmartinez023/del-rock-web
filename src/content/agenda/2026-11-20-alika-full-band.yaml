@@ -1,0 +1,19 @@
+titulo: Alika Full Band
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - alika
+fecha: 2026-11-20
+hora: "21:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/alika-full-band-en-san-miguel
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-814974-rec.jpg
+origen:
+  fuente: passline
+  id: "557474"
+  huella: 0593fe99f955ceee

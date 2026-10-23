@@ -1,0 +1,19 @@
+titulo: Bahiano por Forestando Musica & Ala Norte - Forest Dan TOM
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - bahiano
+fecha: 2026-12-20
+hora: "18:00"
+venue: Forest Dan
+ciudad: Tortuguitas
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/bahiano-por-forestando-musica-ala-norte-forest-dan-tom
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-802679-rec.jpg
+origen:
+  fuente: passline
+  id: "524059"
+  huella: c6f50da28847922f

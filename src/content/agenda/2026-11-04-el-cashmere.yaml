@@ -1,0 +1,19 @@
+titulo: El Cashmere
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - el-cashmere
+fecha: 2026-11-04
+hora: "20:00"
+venue: Moby Dick
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/el-cashmere-live-en-moby-dick-0411
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/el-cashmere-live-en-moby-dick-0411-568340-rec.jpg
+origen:
+  fuente: passline
+  id: "568340"
+  huella: 8aa428363b7cbcc9

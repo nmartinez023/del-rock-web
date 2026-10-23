@@ -1,0 +1,21 @@
+titulo: Maria Volante, Hedone y Mango Blu
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock indie
+bandas:
+  - maria-volante
+  - hedone
+  - mango-blu
+fecha: 2026-10-23
+hora: "23:00"
+venue: lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/maria-volante-hedone-mango-blu
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/maria-volante-hedone-mango-blu-564137-rec.jpg
+origen:
+  fuente: passline
+  id: "564137"
+  huella: 454442b772a7aee3

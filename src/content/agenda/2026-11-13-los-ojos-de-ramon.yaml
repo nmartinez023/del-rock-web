@@ -1,0 +1,19 @@
+titulo: Los Ojos de Ramón
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-ojos-de-ramon
+fecha: 2026-11-13
+hora: "21:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/los-ojos-de-ramon-en-vivo
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/los-ojos-de-ramon-en-vivo-567624-rec.jpg
+origen:
+  fuente: passline
+  id: "567624"
+  huella: 5f5ecd828a68b628

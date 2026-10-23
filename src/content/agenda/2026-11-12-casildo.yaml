@@ -1,0 +1,19 @@
+titulo: Casildo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - casildo
+fecha: 2026-11-12
+hora: "22:00"
+venue: FERONA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/casildo-regresa-a-ferona
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/casildo-regresa-a-ferona-566705-rec.jpg
+origen:
+  fuente: passline
+  id: "566705"
+  huella: fea40745178ad448

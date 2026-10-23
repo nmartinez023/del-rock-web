@@ -1,0 +1,19 @@
+titulo: La Bomba de Tiempo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: ska rock
+bandas:
+  - la-bomba-de-tiempo
+fecha: 2026-11-07
+hora: "19:00"
+venue: Anexo Berlín
+ciudad: Tigre
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-bomba-de-tiempo-en-tigre
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-808844-rec.jpg
+origen:
+  fuente: passline
+  id: "564282"
+  huella: 35894c0409db3944

@@ -1,0 +1,19 @@
+titulo: Viejas Locas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - viejas-locas
+fecha: 2026-12-18
+hora: "21:00"
+venue: MONOCICLO CLUB DE ARTE
+ciudad: Lomas De Zamora
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-en-lomas-de-zamora
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/viejas-locas-en-lomas-de-zamora-561989-rec.jpg
+origen:
+  fuente: passline
+  id: "561989"
+  huella: 9a46dad9747287b3

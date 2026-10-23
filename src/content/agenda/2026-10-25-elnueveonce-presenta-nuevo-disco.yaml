@@ -1,0 +1,20 @@
+titulo: ElNueveOnce presenta nuevo disco
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - elnueveonce
+fecha: 2026-10-25
+hora: "21:00"
+venue: Teatro Vorterix
+direccion: Av. Federico Lacroze 3455
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/elnueveonce-presenta-nuevo-disco
+precioDesde: 25000
+imagen: https://cdn.getcrowder.com/images/241abb46-9068-4839-ad12-a7029a213caa-911-640x640.png
+origen:
+  fuente: allaccess
+  id: elnueveonce-presenta-nuevo-disco
+  huella: 8b45615f456b6f01

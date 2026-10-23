@@ -1,0 +1,19 @@
+titulo: Bestia Bebé
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - bestia-bebe
+fecha: 2026-10-31
+hora: "20:00"
+venue: CLUB TUCUMAN
+ciudad: Quilmes
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/bestia-bebe-en-quilmes-566378
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/-812576-rec.jpg
+origen:
+  fuente: passline
+  id: "566378"
+  huella: f889bce622740ffc

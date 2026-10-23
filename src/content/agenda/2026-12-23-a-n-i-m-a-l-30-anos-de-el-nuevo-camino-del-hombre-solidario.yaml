@@ -1,0 +1,21 @@
+titulo: A.N.I.M.A.L. — 30 Años de El Nuevo Camino del Hombre (Solidario)
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: hard rock
+bandas:
+  - a-n-i-m-a-l
+  - nvlo
+  - no-guerra
+fecha: 2026-12-23
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/animal-30-anos-de-el-nuevo-camino-del-hombre-solidario-segunda-fecha
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/animal-30-anos-de-el-nuevo-camino-del-hombre-solidario-segunda-fecha-567682-rec.jpg
+origen:
+  fuente: passline
+  id: "567682"
+  huella: 5594ec4ff3193a11

@@ -1,0 +1,19 @@
+titulo: "Massacre en Flores: Cierre de Año"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - massacre
+fecha: 2026-12-05
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/massacre-en-flores-cierre-de-ano-5-de-diciembre-2026
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/massacre-en-flores-cierre-de-ano-5-de-diciembre-2026-563385-rec.jpg
+origen:
+  fuente: passline
+  id: "563385"
+  huella: 5512dddd4273c370

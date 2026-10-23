@@ -1,0 +1,19 @@
+titulo: Mi Ultima Solucion
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+bandas:
+  - mi-ultima-solucion
+fecha: 2026-11-08
+hora: "18:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mi-ultima-solucion-en-groove
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/mi-ultima-solucion-en-groove-549686-rec.jpg
+origen:
+  fuente: passline
+  id: "549686"
+  huella: ff49acccdb877bb0

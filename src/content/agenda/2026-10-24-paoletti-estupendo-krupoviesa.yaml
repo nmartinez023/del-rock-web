@@ -1,0 +1,21 @@
+titulo: Paoletti, Estupendo, Krupoviesa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - paoletti
+  - estupendo
+  - krupoviesa
+fecha: 2026-10-24
+hora: "22:00"
+venue: La Pulperia
+ciudad: Monte Grande
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/paoletti-estupendo-krupoviesa-en-la-pulperia-monte-grande
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/paoletti-estupendo-krupoviesa-en-la-pulperia-monte-grande-564846-rec.jpg
+origen:
+  fuente: passline
+  id: "564846"
+  huella: 7d9aa8299e8bea45

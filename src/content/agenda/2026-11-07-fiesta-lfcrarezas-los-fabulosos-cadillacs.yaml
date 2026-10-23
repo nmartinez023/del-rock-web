@@ -1,0 +1,19 @@
+titulo: Fiesta LFCRarezas — Los Fabulosos Cadillacs
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: ska rock
+bandas:
+  - los-fabulosos-cadillacs
+fecha: 2026-11-07
+hora: "20:30"
+venue: La Quince Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/fiesta-lfcrarezas-los-fabulosos-cadillacs
+precioDesde: 16000
+imagen: https://imagenes.passline.com/eventos/fiesta-lfcrarezas-los-fabulosos-cadillacs-553168-rec.jpg
+origen:
+  fuente: passline
+  id: "553168"
+  huella: 2d948bc1a6023b74

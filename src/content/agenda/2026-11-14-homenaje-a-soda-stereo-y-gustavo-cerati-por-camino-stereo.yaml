@@ -1,0 +1,19 @@
+titulo: Homenaje a Soda Stereo y Gustavo Cerati por Camino Stereo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - camino-stereo
+fecha: 2026-11-14
+hora: "20:00"
+venue: HARD ROCK CAFE PUERTO MADERO
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/homenaje-a-soda-stereo-y-gustavo-cerati-por-camino-stereo
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-810998-rec.jpg
+origen:
+  fuente: passline
+  id: "567337"
+  huella: 23ffcd8dc214a7bf

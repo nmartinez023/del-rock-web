@@ -1,0 +1,19 @@
+titulo: Estoicos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - estoicos
+fecha: 2026-11-21
+hora: "21:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/estoicos-en-makena
+precioDesde: 45000
+imagen: https://imagenes.passline.com/eventos/estoicos-en-makena-554247-rec.jpg
+origen:
+  fuente: passline
+  id: "554247"
+  huella: fe42fdfaee619ab4

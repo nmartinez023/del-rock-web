@@ -1,0 +1,19 @@
+titulo: Nonpalidece en Vivo -
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nonpalidece
+fecha: 2026-11-13
+hora: "21:00"
+venue: COMPLEJO LA ISLA
+ciudad: Mendoza
+provincia: Mendoza
+entradas: https://www.passline.com/eventos/nonpalidece-en-vivo-complejo-la-isla
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-798937-rec.jpg
+origen:
+  fuente: passline
+  id: "556833"
+  huella: 8ca2ef29553ee22e

@@ -1,0 +1,19 @@
+titulo: Mujer Cebra
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - mujer-cebra
+fecha: 2026-10-30
+hora: "21:00"
+venue: Emily Daniels
+ciudad: Vicente Lopez
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/mujer-cebra-en-emily-daniels-vicente-lopez
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/-808425-rec.jpg
+origen:
+  fuente: passline
+  id: "565654"
+  huella: f630fb6b257d0568

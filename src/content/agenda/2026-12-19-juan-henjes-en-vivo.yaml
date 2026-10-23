@@ -1,0 +1,19 @@
+titulo: Juan Henjes en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - juan-henjes
+fecha: 2026-12-19
+hora: "21:00"
+venue: Hard Rock Café Puerto Madero
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/juan-henjes-en-vivo-en-hard-rock-puerto-madero
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/juan-henjes-en-vivo-en-hard-rock-puerto-madero-559590-rec.jpg
+origen:
+  fuente: passline
+  id: "559590"
+  huella: cbfbf855c1aba827

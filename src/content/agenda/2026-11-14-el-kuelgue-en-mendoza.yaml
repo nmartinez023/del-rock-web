@@ -1,0 +1,19 @@
+titulo: El Kuelgue en Mendoza
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-kuelgue
+fecha: 2026-11-14
+hora: "21:00"
+venue: Auditorio angel Bustelo
+ciudad: 12 De Octubre
+provincia: Mendoza
+entradas: https://www.passline.com/eventos/el-kuelgue-en-mendoza
+precioDesde: 65000
+imagen: https://imagenes.passline.com/eventos/-768178-rec.jpg
+origen:
+  fuente: passline
+  id: "537576"
+  huella: 9683f422c496a509

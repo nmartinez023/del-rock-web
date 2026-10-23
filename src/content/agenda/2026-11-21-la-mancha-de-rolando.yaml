@@ -1,0 +1,20 @@
+titulo: La Mancha de Rolando
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-mancha-de-rolando
+fecha: 2026-11-21
+hora: "20:00"
+venue: The Roxy Live
+direccion: Cnel. Niceto Vega 5542
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/la-mancha-de-rolando-en-the-roxy-live
+precioDesde: 35000
+imagen: https://cdn.getcrowder.com/images/12277729-e46d-44f4-b8eb-056ff78b041c-img-20260804-wa0014.jpg
+origen:
+  fuente: allaccess
+  id: la-mancha-de-rolando-en-the-roxy-live
+  huella: c807b303ddf32b25

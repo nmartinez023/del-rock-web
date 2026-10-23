@@ -1,0 +1,17 @@
+titulo: Fiesta del Rock Nacional
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+fecha: 2026-11-21
+hora: "22:00"
+venue: La Camencha espacio Cultural
+ciudad: Glew
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/fiesta-del-rock-nacional-en-glew
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/fiesta-del-rock-nacional-en-glew-559086-rec.jpg
+origen:
+  fuente: passline
+  id: "559086"
+  huella: dd8d24b2f08ee742

@@ -1,0 +1,20 @@
+titulo: Tarea Fina
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - tarea-fina
+  - walter-sidoti
+fecha: 2026-10-25
+hora: "21:00"
+venue: TIERRA BOMBA
+ciudad: Parana
+provincia: Otra
+entradas: https://www.passline.com/eventos/tarea-fina-la-banda-de-walter-sidoti-llega-a-parana
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/tarea-fina-la-banda-de-walter-sidoti-llega-a-parana-556549-rec.jpg
+origen:
+  fuente: passline
+  id: "556549"
+  huella: d76e0c952c97a863

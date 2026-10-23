@@ -1,0 +1,19 @@
+titulo: El Mamut — Zona Oeste
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - el-mamut
+fecha: 2026-10-24
+hora: "19:00"
+venue: Espacio Blend.
+ciudad: Castelar
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/el-mamut-zona-oeste
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/el-mamut-zona-oeste-562411-rec.jpg
+origen:
+  fuente: passline
+  id: "562411"
+  huella: 25d8b9bb44ebd26d

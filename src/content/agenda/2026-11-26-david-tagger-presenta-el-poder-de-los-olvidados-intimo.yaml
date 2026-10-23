@@ -1,0 +1,19 @@
+titulo: David Tagger presenta El poder de los olvidados (íntimo)
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock acústico
+bandas:
+  - david-tagger
+fecha: 2026-11-26
+hora: "20:00"
+venue: La Casa de Lolita
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/david-tagger-presenta-el-poder-de-los-olvidados-intimo
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/david-tagger-presenta-el-poder-de-los-olvidados-intimo-570182-rec.jpg
+origen:
+  fuente: passline
+  id: "570182"
+  huella: dea248c473ff3b42

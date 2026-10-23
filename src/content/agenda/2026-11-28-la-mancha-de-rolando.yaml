@@ -1,0 +1,19 @@
+titulo: La Mancha de Rolando
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-mancha-de-rolando
+fecha: 2026-11-28
+hora: "21:00"
+venue: Teatro Rene Favaloro
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-mancha-de-rolando-en-la-plata
+precioDesde: 25500
+imagen: https://imagenes.passline.com/eventos/la-mancha-de-rolando-en-la-plata-566769-rec.jpg
+origen:
+  fuente: passline
+  id: "566769"
+  huella: 2cf9bbfc493f0302

@@ -1,0 +1,20 @@
+titulo: De La Rose
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - de-la-rose
+fecha: 2026-12-12
+hora: "20:00"
+venue: C Art Media
+direccion: Av. Corrientes 6271
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/de-la-rose
+precioDesde: 85000
+imagen: https://cdn.getcrowder.com/images/a1db604d-eadb-46ec-8ca9-61fac04a569a-640x640.jpg
+origen:
+  fuente: allaccess
+  id: de-la-rose
+  huella: ac0aa32c30c12f7d

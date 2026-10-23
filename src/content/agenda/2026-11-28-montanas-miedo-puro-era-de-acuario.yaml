@@ -1,0 +1,21 @@
+titulo: Montañas + Miedo Puro + Era de Acuario
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - montanas
+  - miedo-puro
+  - era-de-acuario
+fecha: 2026-11-28
+hora: "19:30"
+venue: CLUB DE ARTE TEMPUJA
+ciudad: Bernal Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/montanas-miedo-puro-era-de-acuario-en-el-club-de-arte-tempuja
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/-814391-rec.jpg
+origen:
+  fuente: passline
+  id: "568672"
+  huella: 7bc864143fad814d

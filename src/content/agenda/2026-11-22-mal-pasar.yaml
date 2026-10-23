@@ -1,0 +1,19 @@
+titulo: Mal Pasar
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - mal-pasar
+fecha: 2026-11-22
+hora: "19:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/mal-pasar-en-san-miguel
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/mal-pasar-en-san-miguel-563157-rec.jpg
+origen:
+  fuente: passline
+  id: "563157"
+  huella: 0a104180574acb94

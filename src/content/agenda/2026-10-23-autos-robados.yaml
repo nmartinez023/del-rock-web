@@ -1,0 +1,19 @@
+titulo: Autos Robados
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - autos-robados
+fecha: 2026-10-23
+hora: "22:30"
+venue: Espacio Costanera
+ciudad: Zarate
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/autos-robados-en-zarate
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/autos-robados-en-zarate-556836-rec.jpg
+origen:
+  fuente: passline
+  id: "556836"
+  huella: e4eefe279c1a3a47

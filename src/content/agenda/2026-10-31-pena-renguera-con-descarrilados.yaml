@@ -1,0 +1,19 @@
+titulo: Peña Renguera con Descarrilados
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - descarrilados
+fecha: 2026-10-31
+hora: "22:00"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/pena-renguera-con-descarrilados-san-lorenzo
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/-803245-rec.jpg
+origen:
+  fuente: passline
+  id: "562170"
+  huella: 7da33784c62942c7

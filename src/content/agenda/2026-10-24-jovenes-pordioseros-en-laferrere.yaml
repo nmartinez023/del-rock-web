@@ -1,0 +1,19 @@
+titulo: Jovenes Pordioseros en Laferrere!!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-10-24
+hora: "21:00"
+venue: GUEVARA BAR
+ciudad: Gregorio De Laferrere
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jovenes-pordioseros-en-laferrere
+precioDesde: 45000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "547410"
+  huella: 9abf9a898c8e044e

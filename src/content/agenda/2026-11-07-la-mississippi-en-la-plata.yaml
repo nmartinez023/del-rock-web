@@ -1,0 +1,19 @@
+titulo: La Mississippi en La Plata
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-mississippi
+fecha: 2026-11-07
+hora: "20:00"
+venue: Teatro Favaloro
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-mississippi-en-la-plata
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/la-mississippi-en-la-plata-557505-rec.jpg
+origen:
+  fuente: passline
+  id: "557505"
+  huella: 2abcf028f5debcb6

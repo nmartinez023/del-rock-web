@@ -1,0 +1,20 @@
+titulo: Broke Carrey presenta Hijo del País
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - broke-carrey
+  - hijo-del-pais
+fecha: 2026-12-18
+hora: "21:00"
+venue: Espacio Cultural Laberinto
+ciudad: Moron
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/broke-carrey-presenta-hijo-del-pais
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/broke-carrey-presenta-hijo-del-pais-556933-rec.jpg
+origen:
+  fuente: passline
+  id: "556933"
+  huella: 6b1d72ff6d12f0ee

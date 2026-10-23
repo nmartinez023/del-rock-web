@@ -1,0 +1,19 @@
+titulo: Versatilia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - versatilia
+fecha: 2026-11-27
+hora: "21:00"
+venue: Bar Mutar
+ciudad: Avellaneda
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/versatilia-en-mutar-bar
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/versatilia-en-mutar-bar-569144-rec.jpg
+origen:
+  fuente: passline
+  id: "569144"
+  huella: b2f685a2b0c5c54f

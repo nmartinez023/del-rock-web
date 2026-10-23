@@ -1,0 +1,21 @@
+titulo: Noche Retruco
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: stoner rock y rock psicodélico
+bandas:
+  - goya
+  - apotegma
+  - requiem-fuzz
+fecha: 2026-10-31
+hora: "20:00"
+venue: Club Conjura
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/noche-retruco-goya-apotegma-requiem-fuzz-en-club-conjura
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/noche-retruco-goya-apotegma-requiem-fuzz-en-club-conjura-563863-rec.jpg
+origen:
+  fuente: passline
+  id: "563863"
+  huella: feb691d55d271800

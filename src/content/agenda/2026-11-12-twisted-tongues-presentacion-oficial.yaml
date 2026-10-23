@@ -1,0 +1,19 @@
+titulo: Twisted Tongues — Presentación oficial
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - twisted-tongues
+fecha: 2026-11-12
+hora: "21:00"
+venue: Mr Jones Pub - Ramos Mejia
+ciudad: Ramos Mejia
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/twisted-tongues-presentacion-oficial
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/twisted-tongues-presentacion-oficial-569288-rec.jpg
+origen:
+  fuente: passline
+  id: "569288"
+  huella: f930b568ca9878ad

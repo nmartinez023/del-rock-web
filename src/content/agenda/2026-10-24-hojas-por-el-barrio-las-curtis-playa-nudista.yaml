@@ -1,0 +1,21 @@
+titulo: Hojas por el Barrio + Las Curtis + Playa Nudista
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - hojas-por-el-barrio
+  - las-curtis
+  - playa-nudista
+fecha: 2026-10-24
+hora: "21:00"
+venue: Artenpie
+ciudad: Quilmes
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/hojas-por-el-barrio-las-curtis-playa-nudista-en-artenpie
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/-801039-rec.jpg
+origen:
+  fuente: passline
+  id: "559260"
+  huella: f8d772108b513719

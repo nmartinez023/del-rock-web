@@ -1,0 +1,19 @@
+titulo: Tarea Fina — Última del año
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - tarea-fina
+fecha: 2026-11-14
+hora: "22:00"
+venue: COMPLEJO BAILOTAGE
+ciudad: Bahia Blanca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/tarea-fina-en-bahia-blanca-ultima-del-ano
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/tarea-fina-en-bahia-blanca-ultima-del-ano-560881-rec.jpg
+origen:
+  fuente: passline
+  id: "560881"
+  huella: 3249025aebc2bd4c

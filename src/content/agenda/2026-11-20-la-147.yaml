@@ -1,0 +1,19 @@
+titulo: La 147
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-147
+fecha: 2026-11-20
+hora: "21:00"
+venue: Patio Sonoro
+ciudad: San Martin
+provincia: Mendoza
+entradas: https://www.passline.com/eventos/la-147-patio-sonoro-mendoza
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/-802631-rec.jpg
+origen:
+  fuente: passline
+  id: "561341"
+  huella: e02b14803acc746b

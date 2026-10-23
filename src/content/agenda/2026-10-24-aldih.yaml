@@ -1,0 +1,19 @@
+titulo: ALDIH
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - aldih
+fecha: 2026-10-24
+hora: "20:00"
+venue: Cervelar Paseo La Plaza
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/aldih
+precioDesde: 17000
+imagen: https://imagenes.passline.com/eventos/aldih-555082-rec.jpg
+origen:
+  fuente: passline
+  id: "555082"
+  huella: fa2c8da857841d3e

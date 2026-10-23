@@ -1,0 +1,20 @@
+titulo: Seneca + Seven & Seven
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - seneca
+  - seven-seven
+fecha: 2026-10-24
+hora: "21:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/seneca-seven-seven-en-makena
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/seneca-seven-seven-en-makena-565866-rec.jpg
+origen:
+  fuente: passline
+  id: "565866"
+  huella: a9e57241e5369b90

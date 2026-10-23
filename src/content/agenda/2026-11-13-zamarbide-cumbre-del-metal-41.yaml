@@ -1,0 +1,19 @@
+titulo: Zamarbide - Cumbre del Metal 41
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: metal
+bandas:
+  - zamarbide
+fecha: 2026-11-13
+hora: "19:00"
+venue: Auditorio Oeste
+ciudad: Haedo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/zamarbide-cumbre-del-metal-41-en-haedo
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/zamarbide-cumbre-del-metal-41-en-haedo-558289-rec.jpg
+origen:
+  fuente: passline
+  id: "558289"
+  huella: be4a46d62939f7d4

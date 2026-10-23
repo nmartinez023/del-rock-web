@@ -1,0 +1,19 @@
+titulo: El Cuarto Soda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - soda-stereo
+fecha: 2026-10-31
+hora: "21:00"
+venue: TEATRO SAN MARTIN (sociedad italiana Garibaldi)
+ciudad: Bigand
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/el-cuarto-soda-en-bigand
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/el-cuarto-soda-en-bigand-564252-rec.jpg
+origen:
+  fuente: passline
+  id: "564252"
+  huella: e42d7580a587a478

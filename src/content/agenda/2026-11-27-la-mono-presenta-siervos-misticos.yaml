@@ -1,0 +1,19 @@
+titulo: La Mono presenta Siervos Místicos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - siervos-misticos
+fecha: 2026-11-27
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-mono-presentacion-oficial-de-siervos-misticos
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-791164-rec.jpg
+origen:
+  fuente: passline
+  id: "552886"
+  huella: f1dadcdf200531f0

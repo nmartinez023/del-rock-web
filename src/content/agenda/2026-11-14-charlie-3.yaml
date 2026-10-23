@@ -1,0 +1,19 @@
+titulo: Charlie 3
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - charlie-3
+fecha: 2026-11-14
+hora: "21:00"
+venue: Salas Ciro
+ciudad: Merlo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/charlie-3-en-merlo-salas-ciro
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/charlie-3-en-merlo-salas-ciro-568714-rec.jpg
+origen:
+  fuente: passline
+  id: "568714"
+  huella: d5516d0c936913aa

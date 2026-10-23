@@ -1,0 +1,19 @@
+titulo: Peña Bomba con La Grecia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-grecia
+fecha: 2026-10-23
+hora: "21:00"
+venue: Tierra Bomba
+ciudad: Parana
+provincia: Otra
+entradas: https://www.passline.com/eventos/pena-bomba-con-la-grecia
+precioDesde: 17000
+imagen: https://imagenes.passline.com/eventos/pena-bomba-con-la-grecia-557584-rec.jpg
+origen:
+  fuente: passline
+  id: "557584"
+  huella: 2f3402d2d9d35de4

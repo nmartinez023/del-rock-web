@@ -1,0 +1,19 @@
+titulo: Rojobarcelo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - rojobarcelo
+fecha: 2026-10-29
+hora: "22:00"
+venue: FERONA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/rojobarcelo-en-ferona
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/rojobarcelo-en-ferona-570813-rec.jpg
+origen:
+  fuente: passline
+  id: "570813"
+  huella: 1fa2123eee336b91

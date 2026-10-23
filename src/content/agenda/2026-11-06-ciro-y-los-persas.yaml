@@ -1,0 +1,20 @@
+titulo: Ciro y Los Persas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ciro-y-los-persas
+fecha: 2026-11-06
+hora: "21:00"
+venue: Anfiteatro Municipal Rosario
+direccion: Avenida Diario La Capital
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.allaccess.com.ar/event/ciro-y-los-persas
+precioDesde: 80000
+imagen: https://cdn.getcrowder.com/images/8a709081-c69b-4170-bf4b-96d3d4758d41-640x640-ciro-rosario-nueva-funcion.jpg.jpeg
+origen:
+  fuente: allaccess
+  id: ciro-y-los-persas
+  huella: d8890293a258edd5

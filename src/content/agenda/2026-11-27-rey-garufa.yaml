@@ -1,0 +1,20 @@
+titulo: Rey Garufa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - rey-garufa
+  - indio-solari
+fecha: 2026-11-27
+hora: "22:00"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/rey-garufa-en-san-lorenzo
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/rey-garufa-en-san-lorenzo-561104-rec.jpg
+origen:
+  fuente: passline
+  id: "561104"
+  huella: 5d463853de1fc5f3

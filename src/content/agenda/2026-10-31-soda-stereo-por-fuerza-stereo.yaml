@@ -1,0 +1,20 @@
+titulo: Soda Stereo, Por Fuerza Stereo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock en español
+bandas:
+  - por-fuerza-stereo
+  - the-viaje
+fecha: 2026-10-31
+hora: "21:30"
+venue: TEATRO SOCIEDAD ITALIANA DE ADROGUÉ
+ciudad: Adrogue
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/soda-stereo-por-fuerza-stereo-555065
+precioDesde: 22000
+imagen: https://imagenes.passline.com/eventos/-793217-rec.jpg
+origen:
+  fuente: passline
+  id: "555065"
+  huella: 8567db4c9f87e2b3

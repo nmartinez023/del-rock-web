@@ -1,0 +1,19 @@
+titulo: Frenkel
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - frenkel
+fecha: 2026-11-12
+hora: "21:00"
+venue: Loco Arte
+ciudad: Adrogue
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/frenkel-1211-21hs-en-adrogue-loco-arte
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/frenkel-1211-21hs-en-adrogue-loco-arte-569335-rec.jpg
+origen:
+  fuente: passline
+  id: "569335"
+  huella: 861daf108f490ef5

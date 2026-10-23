@@ -1,0 +1,21 @@
+titulo: Noche de Rock en Morón
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+bandas:
+  - la-tropa-del-diluvio
+  - briganti
+  - los-principitos
+fecha: 2026-11-14
+hora: "21:00"
+venue: Espacio Cultural Laberinto
+ciudad: Moron
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/noche-de-rock-en-moron
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/-814737-rec.jpg
+origen:
+  fuente: passline
+  id: "568472"
+  huella: 45959fc1612b4331

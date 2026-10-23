@@ -1,0 +1,19 @@
+titulo: Zeballos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - zeballos
+fecha: 2026-11-28
+hora: "21:00"
+venue: HUB
+ciudad: Santa Fe
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/zeballos-en-santa-fe
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-781057-rec.jpg
+origen:
+  fuente: passline
+  id: "545621"
+  huella: 2c39902b0d9962a7

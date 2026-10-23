@@ -1,0 +1,19 @@
+titulo: La 147
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-147
+fecha: 2026-11-21
+hora: "22:00"
+venue: Room Bar
+ciudad: San Martin
+provincia: Mendoza
+entradas: https://www.passline.com/eventos/la-147-room-mendoza
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/la-147-room-mendoza-562095-rec.jpg
+origen:
+  fuente: passline
+  id: "562095"
+  huella: 4f44247b2019de4e

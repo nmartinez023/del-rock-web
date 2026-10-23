@@ -1,0 +1,19 @@
+titulo: Adrián Berra — Antes de Saltar
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - adrian-berra
+fecha: 2026-12-05
+hora: "20:00"
+venue: Casa de Pajaros
+ciudad: Campana
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/adrian-berra-antes-de-saltar-553722
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/adrian-berra-antes-de-saltar-553722-rec.jpg
+origen:
+  fuente: passline
+  id: "553722"
+  huella: e1e95e9f5ffdc685

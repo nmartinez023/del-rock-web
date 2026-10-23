@@ -1,0 +1,18 @@
+titulo: Hilda canta Charly
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - hilda
+fecha: 2026-10-24
+hora: "21:00"
+venue: Casa Maestro De Vicenzo
+ciudad: Berazategui
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/hilda-canta-charly-en-berazategui
+imagen: https://imagenes.passline.com/eventos/hilda-canta-charly-en-berazategui-555060-rec.jpg
+origen:
+  fuente: passline
+  id: "555060"
+  huella: 72d01a8f036fa65b

@@ -1,0 +1,21 @@
+titulo: Jueces de Mármol - Big Gun - Rose Gun
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jueces-de-marmol
+  - big-gun
+  - rose-gun
+fecha: 2026-10-23
+hora: "21:00"
+venue: Auditorio Oeste
+ciudad: Haedo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jueces-de-marmol-big-gun-rose-gun-en-auditorio-oeste
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/jueces-de-marmol-big-gun-rose-gun-en-auditorio-oeste-549957-rec.jpg
+origen:
+  fuente: passline
+  id: "549957"
+  huella: a48c81f0f39c900a

@@ -1,0 +1,20 @@
+titulo: Pulsion X Null
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - pulsion
+  - "null"
+fecha: 2026-11-21
+hora: "23:30"
+venue: Templo
+ciudad: Malvinas Argentinas
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/pulsion-x-null-en-templo
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "567370"
+  huella: ecf919634274779a

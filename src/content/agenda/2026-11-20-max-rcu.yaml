@@ -1,0 +1,19 @@
+titulo: Max RCU
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - max-rcu
+fecha: 2026-11-20
+hora: "20:00"
+venue: 10de10 Bar
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/max-rcu-en-10de10-bar
+precioDesde: 5000
+imagen: https://imagenes.passline.com/eventos/max-rcu-en-10de10-bar-569670-rec.jpg
+origen:
+  fuente: passline
+  id: "569670"
+  huella: 996c3a805301b797

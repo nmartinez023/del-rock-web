@@ -1,0 +1,19 @@
+titulo: JAF
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jaf
+fecha: 2026-11-05
+hora: "21:00"
+venue: Loco Arte
+ciudad: Adrogue
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jaf-0511-21hs-en-adrogue-loco-arte
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-813904-rec.jpg
+origen:
+  fuente: passline
+  id: "569317"
+  huella: 727319020bb1d9d0

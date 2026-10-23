@@ -1,0 +1,17 @@
+titulo: Celebramos a Charly
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+fecha: 2026-10-23
+hora: "22:00"
+venue: CULTURA WIPHALA
+ciudad: Los Polvorines
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/celebramos-a-charly
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/-813575-rec.jpg
+origen:
+  fuente: passline
+  id: "561181"
+  huella: 3db5d3e9e9f3966b

@@ -1,0 +1,19 @@
+titulo: Los Perez Garcia - 12 de Diciembre 2026
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-perez-garcia
+fecha: 2026-12-12
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/los-perez-garcia-12-de-diciembre-2026
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/los-perez-garcia-12-de-diciembre-2026-557642-rec.jpg
+origen:
+  fuente: passline
+  id: "557642"
+  huella: 7fd405fe6cd8fbaa

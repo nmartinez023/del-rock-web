@@ -1,0 +1,20 @@
+titulo: Fulanas Trio + El Engrupe
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - fulanas-trio
+  - el-engrupe
+fecha: 2026-11-07
+hora: "21:00"
+venue: Espacio Live
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/fulanas-trio-el-engrupe-en-espacio-live
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/fulanas-trio-el-engrupe-en-espacio-live-567604-rec.jpg
+origen:
+  fuente: passline
+  id: "567604"
+  huella: bbada80598376d46

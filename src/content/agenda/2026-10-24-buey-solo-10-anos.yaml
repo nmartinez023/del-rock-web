@@ -1,0 +1,18 @@
+titulo: Buey Solo — 10 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - buey-solo
+fecha: 2026-10-24
+hora: "20:00"
+venue: Panda Rojo Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/buey-solo-10-anos
+imagen: https://imagenes.passline.com/eventos/buey-solo-10-anos-553748-rec.jpg
+origen:
+  fuente: passline
+  id: "553748"
+  huella: e56d6e5ff07376b8

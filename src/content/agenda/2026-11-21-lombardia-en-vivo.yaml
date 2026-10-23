@@ -1,0 +1,19 @@
+titulo: Lombardía en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - lombardia
+fecha: 2026-11-21
+hora: "21:00"
+venue: Hard Rock Café Puerto Madero
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/lombardia-en-vivo-en-hard-rock-cafe-puerto-madero
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/-805706-rec.jpg
+origen:
+  fuente: passline
+  id: "563769"
+  huella: 6e507595603fca25

@@ -1,0 +1,19 @@
+titulo: Club Marfil
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - club-marfil
+fecha: 2026-11-13
+hora: "23:00"
+venue: Lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/club-marfil-en-teatro-lucille
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/club-marfil-en-teatro-lucille-18-556647-rec.jpg
+origen:
+  fuente: passline
+  id: "556647"
+  huella: 216d19e358c4ae21

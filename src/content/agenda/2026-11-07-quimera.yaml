@@ -1,0 +1,19 @@
+titulo: Quimera
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock progresivo / jazz fusion
+bandas:
+  - quimera
+fecha: 2026-11-07
+hora: "21:00"
+venue: Centro Cultural Lezica
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/quimera-power-trio-de-rock-progresivo-jazz-fusion
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/quimera-power-trio-de-rock-progresivo-jazz-fusion-569675-rec.jpg
+origen:
+  fuente: passline
+  id: "569675"
+  huella: f0fe3c580e47f2cc

@@ -1,0 +1,19 @@
+titulo: Cadelago — Music Please
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - cadelago
+fecha: 2026-11-08
+hora: "22:00"
+venue: Playa de la musica
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/cadelago-music-please
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-815784-rec.jpg
+origen:
+  fuente: passline
+  id: "569589"
+  huella: f6e4279d5ea0b927

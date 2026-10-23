@@ -1,0 +1,20 @@
+titulo: Arvejas Negras y Satélite Hormiga
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - arvejas-negras
+  - satelite-hormiga
+fecha: 2026-10-24
+hora: "21:00"
+venue: Mutar Bar
+ciudad: Avellaneda
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/arvejas-negras-y-satelite-hormiga
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-806832-rec.jpg
+origen:
+  fuente: passline
+  id: "550637"
+  huella: 33bbbbf070fd72cc

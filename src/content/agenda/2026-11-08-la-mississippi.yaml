@@ -1,0 +1,19 @@
+titulo: La Mississippi
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-mississippi
+fecha: 2026-11-08
+hora: "22:00"
+venue: Torquato Tasso
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-mississippi-563019
+precioDesde: 60000
+imagen: https://imagenes.passline.com/eventos/-805583-rec.jpg
+origen:
+  fuente: passline
+  id: "563019"
+  huella: b45ac7e6911a376c

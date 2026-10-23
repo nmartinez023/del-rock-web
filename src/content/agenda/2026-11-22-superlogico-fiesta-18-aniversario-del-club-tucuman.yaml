@@ -1,0 +1,19 @@
+titulo: Superlógico — Fiesta 18 Aniversario del Club Tucumán
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - superlogico
+fecha: 2026-11-22
+hora: "22:00"
+venue: CLUB TUCUMÁN de Quilmes
+ciudad: Quilmes Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/superlogico-en-fiesta-18-aniversario-del-club-tucuman-quilmes
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/superlogico-en-fiesta-18-aniversario-del-club-tucuman-quilmes-559985-rec.jpg
+origen:
+  fuente: passline
+  id: "559985"
+  huella: 2944471234aaab7a

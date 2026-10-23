@@ -1,0 +1,19 @@
+titulo: Pipo Cipolatti
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - pipo-cipolatti
+fecha: 2026-10-23
+hora: "21:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/pipo-cipolatti-en-san-miguel
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-780455-rec.jpg
+origen:
+  fuente: passline
+  id: "537174"
+  huella: 6a98cf783f0b51f1

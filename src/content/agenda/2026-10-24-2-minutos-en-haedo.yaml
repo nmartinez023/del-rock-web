@@ -1,0 +1,19 @@
+titulo: 2 Minutos en Haedo.-
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - 2-minutos
+fecha: 2026-10-24
+hora: "19:00"
+venue: Auditorio Oeste
+ciudad: Haedo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/2-minutos-en-haedo-550910
+precioDesde: 26250
+imagen: https://imagenes.passline.com/eventos/-788373-rec.jpg
+origen:
+  fuente: passline
+  id: "550910"
+  huella: 1a5279bb4d72f863

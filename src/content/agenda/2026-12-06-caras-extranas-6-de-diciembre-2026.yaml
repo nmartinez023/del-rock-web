@@ -1,0 +1,19 @@
+titulo: Caras Extrañas - 6 de Diciembre 2026
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - caras-extranas
+fecha: 2026-12-06
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/caras-extranas-6-de-diciembre-2026
+precioDesde: 28000
+imagen: https://imagenes.passline.com/eventos/caras-extranas-6-de-diciembre-2026-557614-rec.jpg
+origen:
+  fuente: passline
+  id: "557614"
+  huella: 8dcd51431d575b26

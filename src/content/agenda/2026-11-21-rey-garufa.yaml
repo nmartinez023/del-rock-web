@@ -1,0 +1,19 @@
+titulo: Rey Garufa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - rey-garufa
+fecha: 2026-11-21
+hora: "21:00"
+venue: El Galpón De Hurlingham
+ciudad: Hurlingham
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/rey-garufa-en-el-galpon-de-hurlingham
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "568120"
+  huella: 92c3dd50848937c1

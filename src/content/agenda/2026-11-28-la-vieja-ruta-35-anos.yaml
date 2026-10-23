@@ -1,0 +1,20 @@
+titulo: La Vieja Ruta — 35 Años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-vieja-ruta
+fecha: 2026-11-28
+hora: "21:00"
+venue: The Roxy Bar & Grill
+direccion: Avenida Federico Lacroze y Alvarez Thomas
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/la-vieja-ruta-35-anios
+precioDesde: 25000
+imagen: https://cdn.getcrowder.com/images/703ac770-7fb5-4c5a-b291-0c4bf4dfcf33-vieja-ruta.jpeg
+origen:
+  fuente: allaccess
+  id: la-vieja-ruta-35-anios
+  huella: 8af3f36d96ca7efe

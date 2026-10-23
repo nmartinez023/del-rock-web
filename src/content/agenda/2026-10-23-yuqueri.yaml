@@ -1,0 +1,18 @@
+titulo: Yuquerí
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - yuqueri
+fecha: 2026-10-23
+hora: "20:30"
+venue: Casa Deriva
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/yuqueri-en-casa-deriva
+imagen: https://imagenes.passline.com/eventos/yuqueri-en-casa-deriva-559459-rec.jpg
+origen:
+  fuente: passline
+  id: "559459"
+  huella: a6d24d047d5361f3

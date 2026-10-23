@@ -1,0 +1,20 @@
+titulo: DMC — Back to Rock Tour 2026
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - dmc
+fecha: 2026-12-04
+hora: "21:00"
+venue: The Roxy Bar & Grill
+direccion: Avenida Federico Lacroze y Alvarez Thomas
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/dmc-back-to-rock-tour-2026
+precioDesde: 15000
+imagen: https://cdn.getcrowder.com/images/4f5d0730-3632-4ea3-8a93-4e91f6a2c3c3-template-640x640-v2.jpg
+origen:
+  fuente: allaccess
+  id: dmc-back-to-rock-tour-2026
+  huella: 009f2e9aa6528ae9

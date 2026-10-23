@@ -1,0 +1,19 @@
+titulo: Jorge Savoretti
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - jorge-savoretti
+fecha: 2026-11-28
+hora: "23:30"
+venue: AQUA Lado B
+ciudad: Juana Koslay
+provincia: Otra
+entradas: https://www.passline.com/eventos/jorge-savoretti-aqua-lado-b
+precioDesde: 9500
+imagen: https://imagenes.passline.com/eventos/jorge-savoretti-aqua-lado-b-568530-rec.jpg
+origen:
+  fuente: passline
+  id: "568530"
+  huella: bbfeb3e1574cd4d7

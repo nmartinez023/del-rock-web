@@ -1,0 +1,20 @@
+titulo: Cool Sueca y Mariana Bianchini
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie pop
+bandas:
+  - cool-sueca
+  - mariana-bianchini
+fecha: 2026-11-22
+hora: "21:30"
+venue: FERONA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/cool-sueca-y-mariana-bianchini-en-ferona
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/-815152-rec.jpg
+origen:
+  fuente: passline
+  id: "569913"
+  huella: 6ebf599b73c42ad0

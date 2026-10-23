@@ -1,0 +1,19 @@
+titulo: 2 Minutos en Reinas Rock - Varela
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - 2-minutos
+fecha: 2026-11-07
+hora: "20:00"
+venue: Reinas Rock
+ciudad: Florencio Varela
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/2-minutos-en-reinas-rock-varela
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/-796101-rec.jpg
+origen:
+  fuente: passline
+  id: "557235"
+  huella: 4187a590d7e99f38

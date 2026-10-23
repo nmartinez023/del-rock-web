@@ -1,0 +1,20 @@
+titulo: MetalWeen
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: metal
+bandas:
+  - symetrie-inegale
+  - precaucion
+fecha: 2026-10-31
+hora: "19:30"
+venue: Club V
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/metalween
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "547276"
+  huella: b8e1ef68a97ec05e

@@ -1,0 +1,20 @@
+titulo: Yas XXI + El Menor de los Males
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - yas-xxi
+  - el-menor-de-los-males
+fecha: 2026-11-29
+hora: "20:00"
+venue: Lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/yas-xxi-el-menor-de-los-males-en-club-lucille
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/yas-xxi-el-menor-de-los-males-en-club-lucille-556592-rec.jpg
+origen:
+  fuente: passline
+  id: "556592"
+  huella: cbae2a27d9ab4c7e

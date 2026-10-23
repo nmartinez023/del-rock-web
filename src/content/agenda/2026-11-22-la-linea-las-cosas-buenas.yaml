@@ -1,0 +1,19 @@
+titulo: La Línea — Las Cosas Buenas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-linea
+fecha: 2026-11-22
+hora: "21:00"
+venue: Gregón club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-linea-presenta-las-cosas-buenas-en-gregon-club
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/la-linea-presenta-las-cosas-buenas-en-gregon-club-562226-rec.jpg
+origen:
+  fuente: passline
+  id: "562226"
+  huella: e7f83ae968179919

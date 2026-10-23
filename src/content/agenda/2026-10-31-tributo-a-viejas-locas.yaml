@@ -1,0 +1,19 @@
+titulo: Tributo a Viejas Locas
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - intoxicados
+fecha: 2026-10-31
+hora: "21:00"
+venue: Centro Cultural La Cuadra
+ciudad: San Fernando
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/tributo-a-viejas-locas-intoxicados-en-san-fernando
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/tributo-a-viejas-locas-intoxicados-en-san-fernando-e-564363-rec.jpg
+origen:
+  fuente: passline
+  id: "564363"
+  huella: 79b0a6219856a16f

@@ -1,0 +1,19 @@
+titulo: Sumo por Pettinato
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - pettinato
+fecha: 2026-10-24
+hora: "22:00"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/sumo-por-pettinato-en-san-lorenzo
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/sumo-por-pettinato-en-san-lorenzo-555978-rec.jpg
+origen:
+  fuente: passline
+  id: "555978"
+  huella: f3b5f3ebfb92b052

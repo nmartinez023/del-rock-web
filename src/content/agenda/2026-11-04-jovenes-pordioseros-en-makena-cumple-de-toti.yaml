@@ -1,0 +1,19 @@
+titulo: Jovenes Pordioseros en Makena/ Cumple de Toti!!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-11-04
+hora: "21:00"
+venue: MAKENA CANTINA CLUB
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/jovenes-pordioseros-en-makena-cumple-de-toti
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/-804730-rec.jpg
+origen:
+  fuente: passline
+  id: "558741"
+  huella: ede7244c1fee4848

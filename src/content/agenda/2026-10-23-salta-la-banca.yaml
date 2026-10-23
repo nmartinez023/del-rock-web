@@ -1,0 +1,20 @@
+titulo: Salta la Banca
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: ska rock
+bandas:
+  - salta-la-banca
+fecha: 2026-10-23
+hora: "19:00"
+venue: Teatro Vorterix
+direccion: Av. Federico Lacroze 3455
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/salta-la-banca
+precioDesde: 40000
+imagen: https://cdn.getcrowder.com/images/f2258b8f-cb74-4bdd-b1bb-f4614699b73e-slb-vorterix--640-x-640-px.png
+origen:
+  fuente: allaccess
+  id: salta-la-banca
+  huella: 29c43f04a14cd9f1

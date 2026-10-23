@@ -1,0 +1,19 @@
+titulo: Barbarie 'Hacia un nuevo horizonte' 10
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: hard rock
+bandas:
+  - barbarie
+fecha: 2026-11-14
+hora: "21:00"
+venue: Zadar club
+ciudad: Avellaneda
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/barbarie-hacia-un-nuevo-horizonte-10-anos
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/barbarie-hacia-un-nuevo-horizonte-10-anos-550055-rec.jpg
+origen:
+  fuente: passline
+  id: "550055"
+  huella: a122faf2524a031e

@@ -1,0 +1,20 @@
+titulo: "Sebastián Verón presenta: Riomar y Tresdpaez"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - riomar
+  - tresdpaez
+fecha: 2026-10-31
+hora: "20:00"
+venue: Lalalá
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/3110-sebastian-veron-presenta-riomar-y-tresdpaez
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/3110-sebastian-veron-presenta-riomar-y-tresdpaez-566608-rec.jpg
+origen:
+  fuente: passline
+  id: "566608"
+  huella: 9b8b3332807542a0

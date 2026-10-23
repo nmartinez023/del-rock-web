@@ -1,0 +1,19 @@
+titulo: Karavana — El camino nos vuelve a encontrar
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock fusión
+bandas:
+  - karavana
+fecha: 2026-12-05
+hora: "20:00"
+venue: JJ- Circuito Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/karavana-el-camino-nos-vuelve-a-encontrar
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/karavana-el-camino-nos-vuelve-a-encontrar-571056-rec.jpg
+origen:
+  fuente: passline
+  id: "571056"
+  huella: ae55b6b5a30aaaf6

@@ -1,0 +1,19 @@
+titulo: Catarsis 40
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - catarsis
+fecha: 2026-12-03
+hora: "21:00"
+venue: Lucille Bar
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/catarsis-40
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/catarsis-40-569788-rec.jpg
+origen:
+  fuente: passline
+  id: "569788"
+  huella: 873e54eedc868f42

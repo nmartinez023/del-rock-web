@@ -1,0 +1,20 @@
+titulo: H de Perra
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - h-de-perra
+fecha: 2026-11-15
+hora: "19:00"
+venue: The Roxy Live
+direccion: Cnel. Niceto Vega 5542
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/h-de-perra-en-the-roxy-live
+precioDesde: 20000
+imagen: https://cdn.getcrowder.com/images/1b2c934a-cb99-4c92-9042-b14093b12f6b-textura-hdp-roxy-640x640202607151300400000.png
+origen:
+  fuente: allaccess
+  id: h-de-perra-en-the-roxy-live
+  huella: 33e749c098f6c720

@@ -1,0 +1,19 @@
+titulo: Dosis Halloween
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - dosis
+fecha: 2026-10-31
+hora: "23:30"
+venue: ESPACIO CHN (chinito)
+ciudad: Ituzaingo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/dosis-halloween
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-807207-rec.jpg
+origen:
+  fuente: passline
+  id: "564856"
+  huella: 8802372794b7588c

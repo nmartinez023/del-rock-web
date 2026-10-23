@@ -1,0 +1,22 @@
+titulo: NPV Fest — Edición Multiverso
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock nacional
+bandas:
+  - marito-baracus
+  - trukini
+  - alejo-y-valentina
+fecha: 2026-12-26
+hora: "23:59"
+venue: Teatro Vorterix
+direccion: Av. Federico Lacroze 3455
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/marito-baracus-y-npv-fest-edicin-multiverso-con-trukini-alejo-y-valentina-y-ms
+precioDesde: 25000
+imagen: https://cdn.getcrowder.com/images/d4a08268-62c8-4eac-aa7c-52ea7b7a7ff6-640-x-640-con-info.jpg
+origen:
+  fuente: allaccess
+  id: marito-baracus-y-npv-fest-edicin-multiverso-con-trukini-alejo-y-valentina-y-ms
+  huella: bb1105e78b41478e

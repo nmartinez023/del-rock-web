@@ -1,0 +1,19 @@
+titulo: Cérticos — Fecha Debut
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - certicos
+fecha: 2026-10-23
+hora: "21:00"
+venue: Centro Cultural Lezica
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/certicos-fecha-debut
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/certicos-fecha-debut-563700-rec.jpg
+origen:
+  fuente: passline
+  id: "563700"
+  huella: c1efa60ab060de9a

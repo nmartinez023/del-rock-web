@@ -1,0 +1,21 @@
+titulo: La Chica del Cumpleaños + Felicia + Rara
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - la-chica-del-cumpleanos
+  - felicia
+  - rara
+fecha: 2026-11-21
+hora: "21:00"
+venue: DEMOS Centro Cultural y de Estudios
+ciudad: Santa Fe
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/la-chica-del-cumpleanos-felicia-rara
+precioDesde: 13000
+imagen: https://imagenes.passline.com/eventos/la-chica-del-cumpleanos-felicia-rara-570115-rec.jpg
+origen:
+  fuente: passline
+  id: "570115"
+  huella: d2730e3bf7263a51

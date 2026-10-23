@@ -1,0 +1,19 @@
+titulo: Sab 31 Oct - Ulises Bueno
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ulises-bueno
+fecha: 2026-10-31
+hora: "23:30"
+venue: Complejo Aeropuerto
+ciudad: San Andres De Giles
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/sab-31-oct-ulises-bueno
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/sab-31-oct-ulises-bueno-561107-rec.jpg
+origen:
+  fuente: passline
+  id: "561107"
+  huella: 94e78d4953db5b77

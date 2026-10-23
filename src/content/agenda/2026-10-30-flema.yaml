@@ -1,0 +1,18 @@
+titulo: Flema
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - flema
+fecha: 2026-10-30
+hora: "22:00"
+venue: Centro Cultural Cultura del Sur
+ciudad: Temperley
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/flema-temperley
+imagen: https://imagenes.passline.com/eventos/flema-temperley-571054-rec.jpg
+origen:
+  fuente: passline
+  id: "571054"
+  huella: 5a063f96fcff5bc7

@@ -1,0 +1,19 @@
+titulo: Estelares — Constelación de canciones
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - estelares
+fecha: 2026-12-27
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/estelares-constelacion-de-canciones
+precioDesde: 55000
+imagen: https://imagenes.passline.com/eventos/estelares-constelacion-de-canciones-561816-rec.jpg
+origen:
+  fuente: passline
+  id: "561816"
+  huella: 30176b7134f8a0b8

@@ -1,0 +1,19 @@
+titulo: Algarete x Goteo — Halloween Night
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - algarete
+  - goteo
+fecha: 2026-10-30
+hora: "23:30"
+venue: SANTA DIABLA
+ciudad: Don Torcuato
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/algarete-x-goteo-hallowen-night-3010-21
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "568346"
+  huella: 17851a1975031941

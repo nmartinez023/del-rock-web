@@ -1,0 +1,19 @@
+titulo: Jóvenes Pordioseros
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-10-23
+hora: "22:00"
+venue: BARRA, restobar
+ciudad: Los Polvorines
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jovenes-pordioseros-en-los-polvorines-563939
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/jovenes-pordioseros-en-los-polvorines-563939-rec.jpg
+origen:
+  fuente: passline
+  id: "563939"
+  huella: 68987713dc49fa12

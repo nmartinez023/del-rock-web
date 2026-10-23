@@ -1,0 +1,19 @@
+titulo: Paula Mattheus
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop alternativo
+bandas:
+  - paula-mattheus
+fecha: 2026-11-18
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/paula-mattheus-buenos-aires-la-trastienda
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-749763-rec.jpg
+origen:
+  fuente: passline
+  id: "524451"
+  huella: 7446efc4af1f8cff

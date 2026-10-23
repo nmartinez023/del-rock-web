@@ -1,0 +1,19 @@
+titulo: Viejas Locas — Última del año
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - viejas-locas
+fecha: 2026-12-26
+hora: "21:00"
+venue: MAKENA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/veiejas-locas-ultima-del-ano-en-makena
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "538633"
+  huella: 4bec0d45aeeffcc5

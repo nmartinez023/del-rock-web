@@ -1,0 +1,21 @@
+titulo: Riff x Humanoides
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - riff
+  - humanoides
+  - cien1000anos
+fecha: 2026-11-14
+hora: "20:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/riff-x-humanoides-en-makena
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-796386-rec.jpg
+origen:
+  fuente: passline
+  id: "557174"
+  huella: ad0391c22e1880bf

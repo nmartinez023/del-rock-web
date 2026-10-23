@@ -1,0 +1,19 @@
+titulo: Deportivo La Poronga en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - deportivo-la-poronga
+fecha: 2026-11-07
+hora: "20:00"
+venue: TINO ESTADIO
+ciudad: Cordoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/deportivo-la-poronga-en-vivo-por-primera-vez
+precioDesde: 3000
+imagen: https://imagenes.passline.com/eventos/-807004-rec.jpg
+origen:
+  fuente: passline
+  id: "558550"
+  huella: 457a5c68975fa187

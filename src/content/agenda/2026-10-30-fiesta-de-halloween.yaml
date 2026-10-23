@@ -1,0 +1,17 @@
+titulo: Fiesta de Halloween
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock indie
+fecha: 2026-10-30
+hora: "20:00"
+venue: JJ- Circuito Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/fiesta-de-halloween-luzerna-las-fiebres-polares-suite-pernocte-flores-para-rita
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/-815811-rec.jpg
+origen:
+  fuente: passline
+  id: "566244"
+  huella: 88a5542a4718ea47

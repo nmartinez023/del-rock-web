@@ -1,0 +1,20 @@
+titulo: La Alternative Fest 3
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - mauser
+  - wintergray
+fecha: 2026-10-24
+hora: "20:30"
+venue: Arte y Parte Tandil
+ciudad: Tandil
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-alternative-fest-3
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/-779857-rec.jpg
+origen:
+  fuente: passline
+  id: "545804"
+  huella: bd956c65a65c2083

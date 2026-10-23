@@ -1,0 +1,19 @@
+titulo: Fuego Fatuo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - fuego-fatuo
+fecha: 2026-11-06
+hora: "20:00"
+venue: QUETREN
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/fuego-fatuo
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/fuego-fatuo-568187-rec.jpg
+origen:
+  fuente: passline
+  id: "568187"
+  huella: 83cd98bbdb2f77ed

@@ -1,0 +1,19 @@
+titulo: Los Guarros
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-guarros
+fecha: 2026-10-24
+hora: "21:00"
+venue: Casa Suiza
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/los-guarros
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/los-guarros-559486-rec.jpg
+origen:
+  fuente: passline
+  id: "559486"
+  huella: 7483daf2bbda5c52

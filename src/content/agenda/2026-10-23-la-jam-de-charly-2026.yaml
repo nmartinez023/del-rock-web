@@ -1,0 +1,17 @@
+titulo: La JAM de Charly 2026
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+fecha: 2026-10-23
+hora: "23:30"
+venue: Beatflow
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/charly-garcia-jam
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/charly-garcia-jam-559772-rec.jpg
+origen:
+  fuente: passline
+  id: "559772"
+  huella: e479b7a6908bb3e8

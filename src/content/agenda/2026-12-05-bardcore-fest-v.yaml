@@ -1,0 +1,20 @@
+titulo: Bardcore Fest V
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: metal folk
+bandas:
+  - anubis
+  - meta
+fecha: 2026-12-05
+hora: "19:00"
+venue: Galpon B
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/bardcorefestv-5-de-diciembre
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-778966-rec.jpg
+origen:
+  fuente: passline
+  id: "527073"
+  huella: 8843b21fe5bbe49e

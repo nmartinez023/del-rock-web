@@ -1,0 +1,19 @@
+titulo: Kamada en Groove
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - kamada
+fecha: 2026-12-12
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/kamada-en-groove
+precioDesde: 28000
+imagen: https://imagenes.passline.com/eventos/-803845-rec.jpg
+origen:
+  fuente: passline
+  id: "562447"
+  huella: 531b36124ab30f17

@@ -1,0 +1,19 @@
+titulo: Vilma Palma
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - vilma-palma
+fecha: 2026-11-06
+hora: "22:00"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/vilma-palma-en-san-lorenzo
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/vilma-palma-en-san-lorenzo-555132-rec.jpg
+origen:
+  fuente: passline
+  id: "555132"
+  huella: 8eb787ad066d7290

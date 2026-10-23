@@ -1,0 +1,19 @@
+titulo: La Biblia según Vox Dei
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock cristiano
+bandas:
+  - vox-dei
+fecha: 2026-12-26
+hora: "20:00"
+venue: SIX
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-biblia-segun-vox-dei
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/la-biblia-segun-vox-dei-570366-rec.jpg
+origen:
+  fuente: passline
+  id: "570366"
+  huella: 3b5be1e6fb3eba2c

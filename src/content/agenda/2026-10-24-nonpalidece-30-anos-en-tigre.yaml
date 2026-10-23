@@ -1,0 +1,19 @@
+titulo: Nonpalidece 30 años en Tigre !!!
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nonpalidece
+fecha: 2026-10-24
+hora: "20:00"
+venue: Anexo berlin
+ciudad: Tigre
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/nonpalidece-30-anos-en-tigre
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/nonpalidece-30-anos-en-tigre-558237-rec_3.jpg
+origen:
+  fuente: passline
+  id: "558237"
+  huella: 7b3313479bdee1f7

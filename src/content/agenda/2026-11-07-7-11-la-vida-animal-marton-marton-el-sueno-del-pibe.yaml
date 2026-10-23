@@ -1,0 +1,21 @@
+titulo: 7.11 La Vida Animal + Marton Marton + El Sueño del Pibe
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - 7-11-la-vida-animal
+  - marton-marton
+  - el-sueno-del-pibe
+fecha: 2026-11-07
+hora: "22:30"
+venue: Lalalá
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/711-la-vida-animal-marton-marton-el-sueno-del-pibe
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/711-la-vida-animal-marton-marton-el-sueno-del-pibe-566623-rec.jpg
+origen:
+  fuente: passline
+  id: "566623"
+  huella: 8938515d94d6517c

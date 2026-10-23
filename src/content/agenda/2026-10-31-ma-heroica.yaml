@@ -1,0 +1,19 @@
+titulo: Ma Heroica
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - ma-heroica
+fecha: 2026-10-31
+hora: "21:00"
+venue: FERONA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/ma-heroica-en-ferona
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/ma-heroica-en-ferona-563178-rec.jpg
+origen:
+  fuente: passline
+  id: "563178"
+  huella: 6290566ece0ea69f

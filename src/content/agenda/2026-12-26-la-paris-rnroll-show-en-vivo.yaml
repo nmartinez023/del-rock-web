@@ -1,0 +1,18 @@
+titulo: La Paris RnRoll Show en Vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock and roll
+bandas:
+  - la-paris-rnroll
+fecha: 2026-12-26
+hora: "21:30"
+venue: Planta Alta
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/la-paris-rnroll-show-en-vivo-en-planta-alta
+imagen: https://imagenes.passline.com/eventos/la-paris-rnroll-show-en-vivo-en-planta-alta-570738-rec.jpg
+origen:
+  fuente: passline
+  id: "570738"
+  huella: 30638456b0b07c69

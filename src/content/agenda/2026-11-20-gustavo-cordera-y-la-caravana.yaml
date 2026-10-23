@@ -1,0 +1,19 @@
+titulo: Gustavo Cordera y la Caravana
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - gustavo-cordera
+fecha: 2026-11-20
+hora: "22:00"
+venue: Sociedad Italiana
+ciudad: San Nicolas De Los Arroyos
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/gustavo-cordera-y-la-caravana-en-san-nicolas
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/gustavo-cordera-y-la-caravana-en-san-nicolas-563866-rec.jpg
+origen:
+  fuente: passline
+  id: "563866"
+  huella: bfd439d757e2102f

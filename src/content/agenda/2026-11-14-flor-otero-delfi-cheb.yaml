@@ -1,0 +1,20 @@
+titulo: Flor Otero + Delfi Cheb
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie pop
+bandas:
+  - flor-otero
+  - delfi-cheb
+fecha: 2026-11-14
+hora: "20:00"
+venue: Casa Deriva
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/flor-otero-delfi-cheb-en-casa-deriva
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/flor-otero-delfi-cheb-en-casa-deriva-559509-rec.jpg
+origen:
+  fuente: passline
+  id: "559509"
+  huella: e2d576538bb22089

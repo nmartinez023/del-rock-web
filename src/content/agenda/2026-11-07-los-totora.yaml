@@ -1,0 +1,19 @@
+titulo: Los Totora
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-totora
+fecha: 2026-11-07
+hora: "21:30"
+venue: Siddharta Club
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/los-totora-en-siddharta
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/los-totora-en-siddharta-557937-rec.jpg
+origen:
+  fuente: passline
+  id: "557937"
+  huella: aff55f9d427a3163

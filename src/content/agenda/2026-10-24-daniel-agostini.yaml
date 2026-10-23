@@ -1,0 +1,28 @@
+titulo: Daniel Agostini
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: música tropical
+bandas:
+  - daniel-agostini
+fecha: 2026-10-24
+hora: "21:00"
+venue: Auditorio de Belgrano
+direccion: Virrey Loreto 2348
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.ticketek.com.ar/daniel-agostini/auditorio-de-belgrano
+precioDesde: 32200
+imagen: https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/dagos960.png
+descripcion: |-
+  Daniel Javier Agostini, conocido artísticamente como Daniel Agostini, es un cantautor argentino de música tropical.
+
+  En 2020 publica "Simple" un álbum de estudio, y varios singles, entre ellos el tema "Devuélveme el amor"
+
+  Ese mismo año lanza el single "Que seas muy feliz" junto a Yanina Hernández .
+
+  En 2022 retoma los conciertos en vivo y realiza shows en diversas provincias de Argentina.
+origen:
+  fuente: ticketek
+  id: AGOSTIBEL26-2026-10-24T21:00
+  huella: 89c4cc856a98c341

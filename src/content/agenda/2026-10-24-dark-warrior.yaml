@@ -1,0 +1,19 @@
+titulo: Dark Warrior
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: heavy metal
+bandas:
+  - dark-warrior
+fecha: 2026-10-24
+hora: "19:00"
+venue: Galpon B
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/dark-warrior-en-galpon-b-24-de-octubre
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/dark-warrior-en-galpon-b-24-de-octubre-554736-rec.jpg
+origen:
+  fuente: passline
+  id: "554736"
+  huella: 3735f3444461b20c

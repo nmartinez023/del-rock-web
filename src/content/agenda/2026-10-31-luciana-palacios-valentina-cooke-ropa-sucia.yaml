@@ -1,0 +1,21 @@
+titulo: Luciana Palacios & Valentina Cooke + Ropa Sucia
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - luciana-palacios
+  - valentina-cooke
+  - ropa-sucia
+fecha: 2026-10-31
+hora: "22:00"
+venue: El Zorzal
+ciudad: San Nicolas De Los Arroyos
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/luciana-palacios-valentina-coooke-ropa-sucia
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-803688-rec.jpg
+origen:
+  fuente: passline
+  id: "560974"
+  huella: 7fdfa23b8cac6286

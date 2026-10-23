@@ -1,0 +1,19 @@
+titulo: Rodrigo Manigot — Acústico
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock acústico
+bandas:
+  - rodrigo-manigot
+fecha: 2026-12-07
+hora: "20:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/rodrigo-manigot-en-san-miguel-acustico
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/rodrigo-manigot-en-san-miguel-acustico-565575-rec.jpg
+origen:
+  fuente: passline
+  id: "565575"
+  huella: 9505ac1ad4ffacc3

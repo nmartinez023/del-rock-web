@@ -1,0 +1,19 @@
+titulo: Los Mangrulleros — Tinto
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - los-mangrulleros
+fecha: 2026-10-23
+hora: "21:00"
+venue: Centro Cultural La Barbarie
+ciudad: San Fernando
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/los-mangrulleros-presentan-tinto-en-el-cc-la-barbarie
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/los-mangrulleros-presentan-563369-rec_1.jpg
+origen:
+  fuente: passline
+  id: "563369"
+  huella: a6dde804c4eb6660

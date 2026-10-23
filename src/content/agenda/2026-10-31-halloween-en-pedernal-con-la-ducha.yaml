@@ -1,0 +1,19 @@
+titulo: Halloween en Pedernal con La Ducha
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-ducha
+fecha: 2026-10-31
+hora: "20:00"
+venue: PEDERNAL Estancia de Fuegos
+ciudad: Mendiolaza
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/haloween-en-pedernal-con-la-ducha
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/haloween-en-pedernal-con-la-ducha-565799-rec.jpg
+origen:
+  fuente: passline
+  id: "565799"
+  huella: c5a76468fdcf0025

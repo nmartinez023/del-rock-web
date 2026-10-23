@@ -1,0 +1,21 @@
+titulo: Noche Ricotera
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - efimero
+  - brujos-de-merlin
+  - dejavu
+fecha: 2026-10-30
+hora: "21:00"
+venue: Pachamama CC
+ciudad: Pilar
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/noche-ricotera-efimero-brujos-de-merlin-y-dejavu-en-del-viso-3010
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/noche-ricotera-efimero-brujos-de-merlin-y-dejavu-en-del-viso-3010-566411-rec.jpg
+origen:
+  fuente: passline
+  id: "566411"
+  huella: cae0929e6935ee26

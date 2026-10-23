@@ -1,0 +1,19 @@
+titulo: Andres Calamaro | En Tucumán
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - calamaro
+fecha: 2026-10-24
+hora: "22:00"
+venue: Palacio de los Deportes
+direccion: Avenida Coronel Suárez
+ciudad: San Miguel de Tucumán
+provincia: Tucumán
+entradas: https://www.allaccess.com.ar/event/andres-calamaro-en-tucuman
+imagen: https://cdn.getcrowder.com/images/2cba4ea8-8e50-48fa-9ee2-2d43aa362be8-640x640calamaroallaccess.jpg
+origen:
+  fuente: allaccess
+  id: andres-calamaro-en-tucuman
+  huella: f60a70be316c6a4f

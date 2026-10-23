@@ -1,0 +1,17 @@
+titulo: Jam Todavía Suena
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+fecha: 2026-11-29
+hora: "21:30"
+venue: Metauro Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/jam-todavia-suena
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/jam-todavia-suena-570415-rec.jpg
+origen:
+  fuente: passline
+  id: "570415"
+  huella: 8a2ddcdd4b200efb

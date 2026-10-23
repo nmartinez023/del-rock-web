@@ -1,0 +1,19 @@
+titulo: Eruca Sativa en Tucumán
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - eruca-sativa
+fecha: 2026-12-11
+hora: "21:00"
+venue: Teatro Puerto Libertad
+ciudad: San Miguel De Tucuman
+provincia: Tucumán
+entradas: https://www.passline.com/eventos/eruca-sativa-en-tucuman-547009
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/eruca-sativa-en-tucuman-547009-rec.jpg
+origen:
+  fuente: passline
+  id: "547009"
+  huella: bfb93d7790663fdb

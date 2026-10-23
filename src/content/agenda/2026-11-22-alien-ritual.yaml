@@ -1,0 +1,20 @@
+titulo: Alien Ritual
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: stoner rock
+bandas:
+  - alien-ritual
+  - burn-in-noise
+fecha: 2026-11-22
+hora: "23:00"
+venue: The Sub Club
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/alien-ritual-2211-burn-in-noise
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-798783-rec.jpg
+origen:
+  fuente: passline
+  id: "548841"
+  huella: 2d99c602cdabfe06

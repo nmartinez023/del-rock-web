@@ -1,0 +1,19 @@
+titulo: Mocchi cierra el año en casa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - mocchi
+fecha: 2026-11-29
+hora: "19:00"
+venue: QUETREN
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mocchi-cierra-el-ano-en-casa
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-815269-rec.jpg
+origen:
+  fuente: passline
+  id: "560516"
+  huella: 995c6b2679ff9e31

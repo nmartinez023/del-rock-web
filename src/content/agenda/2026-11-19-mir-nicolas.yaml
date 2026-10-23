@@ -1,0 +1,19 @@
+titulo: Mir Nicolás
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - mir-nicolas
+fecha: 2026-11-19
+hora: "21:00"
+venue: OTTO FUSIÓN
+ciudad: Neuquen
+provincia: Neuquén
+entradas: https://www.passline.com/eventos/mir-nicolas-neuquen-capital
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "510042"
+  huella: 836d88c152fb1855

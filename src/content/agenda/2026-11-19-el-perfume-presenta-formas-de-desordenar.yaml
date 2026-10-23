@@ -1,0 +1,20 @@
+titulo: "El Perfume presenta: Formas de Desordenar"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-perfume
+  - selector-camilo
+fecha: 2026-11-19
+hora: "22:00"
+venue: Lalalá
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/1911-el-perfume-presenta-formas-de-desordenar-selector-camilo
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/1911-el-perfume-presenta-formas-de-desordenar-selector-camilo-569071-rec.jpg
+origen:
+  fuente: passline
+  id: "569071"
+  huella: bd1064aca896f1c9

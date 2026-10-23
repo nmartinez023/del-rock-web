@@ -1,0 +1,19 @@
+titulo: Winona Riders
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - winona-riders
+fecha: 2026-10-30
+hora: "19:00"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/winona-riders-en-groove-30102026
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/winona-riders-en-groove-31102026-541787-rec.jpg
+origen:
+  fuente: passline
+  id: "541787"
+  huella: f699a9d33b7bd694

@@ -1,0 +1,20 @@
+titulo: Todos Los Problemas + Yony Linyero
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - todos-los-problemas
+  - yony-linyero
+fecha: 2026-12-05
+hora: "21:00"
+venue: Makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/todos-los-problemas-yony-linyero
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/todos-los-problemas-yony-linyero-562755-rec.jpg
+origen:
+  fuente: passline
+  id: "562755"
+  huella: 816747ec786a424d

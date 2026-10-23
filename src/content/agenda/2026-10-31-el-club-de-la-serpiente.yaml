@@ -1,0 +1,18 @@
+titulo: El Club de la Serpiente
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - el-club-de-la-serpiente
+fecha: 2026-10-31
+hora: "23:30"
+venue: Palermo Groove
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/el-club-de-la-serpiente-31-de-octubre-groove-caba
+imagen: https://imagenes.passline.com/eventos/el-club-de-la-serpiente-31-de-octubre-groove-caba-565955-rec.jpg
+origen:
+  fuente: passline
+  id: "565955"
+  huella: 238649a887c2a075

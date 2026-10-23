@@ -1,0 +1,19 @@
+titulo: David Meiser — Low End
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - david-meiser
+fecha: 2026-11-27
+hora: "23:00"
+venue: Melt Underground
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/david-meiser-x-melt-underground
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/david-meiser-x-melt-underground-568943-rec.jpg
+origen:
+  fuente: passline
+  id: "568943"
+  huella: 1d5ac32ed0f4d448

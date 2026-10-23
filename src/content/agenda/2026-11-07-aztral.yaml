@@ -1,0 +1,19 @@
+titulo: Aztral
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock psicodélico
+bandas:
+  - aztral
+fecha: 2026-11-07
+hora: "20:00"
+venue: On Telmo Bar
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/aztral
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-810276-rec.jpg
+origen:
+  fuente: passline
+  id: "565744"
+  huella: f310afd64dc95e3e

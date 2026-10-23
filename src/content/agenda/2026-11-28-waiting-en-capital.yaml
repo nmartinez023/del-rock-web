@@ -1,0 +1,17 @@
+titulo: Waiting en Capital
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: indie rock
+fecha: 2026-11-28
+hora: "20:00"
+venue: Moscú Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/waiting-en-capital
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/-810518-rec.jpg
+origen:
+  fuente: passline
+  id: "559091"
+  huella: 2079faaa4c8b3c3d

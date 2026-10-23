@@ -1,0 +1,19 @@
+titulo: Nonpalidece ciclo rock san martín
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nonpalidece
+fecha: 2026-11-06
+hora: "20:00"
+venue: Plug / Chankanab
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/nonpalidece-ciclo-rock-san-martin
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/nonpalidece-ciclo-rock-san-martin-566181-rec.jpg
+origen:
+  fuente: passline
+  id: "566181"
+  huella: 65b1f124d5aa78fb

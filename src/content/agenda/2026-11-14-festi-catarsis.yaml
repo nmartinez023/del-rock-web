@@ -1,0 +1,17 @@
+titulo: Festi Catarsis
+estado: ⏳ Pendiente
+tipo: festival
+rockNacional: true
+genero: rock
+fecha: 2026-11-14
+hora: "23:00"
+venue: KUSTOM BAR
+ciudad: Villa Maria
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/festi-catarsis
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/festi-catarsis-569736-rec.jpg
+origen:
+  fuente: passline
+  id: "569736"
+  huella: bcda855bb19958a7

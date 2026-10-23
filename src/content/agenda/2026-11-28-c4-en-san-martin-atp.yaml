@@ -1,0 +1,19 @@
+titulo: C4 en San Martin (ATP)
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock instrumental
+bandas:
+  - c4
+fecha: 2026-11-28
+hora: "20:30"
+venue: Plug / Chankanab
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/c4-en-san-martin
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-801130-rec.jpg
+origen:
+  fuente: passline
+  id: "554643"
+  huella: 0c79e6d62959e235

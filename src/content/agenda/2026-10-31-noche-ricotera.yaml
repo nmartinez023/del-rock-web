@@ -1,0 +1,17 @@
+titulo: Noche Ricotera
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+fecha: 2026-10-31
+hora: "21:00"
+venue: Espacio Montana
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/noche-ricotera-en-palermo
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/noche-ricotera-en-palermo-567086-rec.jpg
+origen:
+  fuente: passline
+  id: "567086"
+  huella: 9f659553ccdef2e9

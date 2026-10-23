@@ -1,0 +1,19 @@
+titulo: Santi Aysine
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - santi-aysine
+fecha: 2026-10-31
+hora: "23:00"
+venue: After Six
+ciudad: General Las Heras
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/santi-aysine-en-after-six
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/santi-aysine-en-after-six-568356-rec.jpg
+origen:
+  fuente: passline
+  id: "568356"
+  huella: dd1f067c7e13af67

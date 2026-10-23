@@ -1,0 +1,18 @@
+titulo: Noche de Mejores Clientes
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - mejores-clientes
+fecha: 2026-10-26
+hora: ""
+venue: BAYRON - Low Cost
+ciudad: Cordoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/domingo-25-octubre-noche-de-mejores-clientes
+imagen: https://imagenes.passline.com/eventos/-816063-rec.jpg
+origen:
+  fuente: passline
+  id: "570253"
+  huella: ad2650697b05b374

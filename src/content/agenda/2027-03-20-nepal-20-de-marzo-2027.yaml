@@ -1,0 +1,19 @@
+titulo: NEPAL - 20 de marzo 2027
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nepal
+fecha: 2027-03-20
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/nepal-20-de-marzo-2027
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/nepal-20-de-marzo-2027-558810-rec.jpg
+origen:
+  fuente: passline
+  id: "558810"
+  huella: 653da729fe867083

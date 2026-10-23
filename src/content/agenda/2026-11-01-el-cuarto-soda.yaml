@@ -1,0 +1,19 @@
+titulo: El Cuarto Soda
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-cuarto-soda
+fecha: 2026-11-01
+hora: "20:00"
+venue: TEATRO CERVANTES (Asociación Española)
+ciudad: Canada De Gomez
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/el-cuarto-soda-en-canada-de-gomez
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/el-cuarto-soda-en-canada-de-gomez-564262-rec.jpg
+origen:
+  fuente: passline
+  id: "564262"
+  huella: 8ce492c519b53fd0

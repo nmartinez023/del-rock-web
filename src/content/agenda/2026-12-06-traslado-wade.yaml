@@ -1,0 +1,19 @@
+titulo: Traslado Wade
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - wade
+fecha: 2026-12-06
+hora: "16:30"
+venue: La Estación
+ciudad: Córdoba
+provincia: Córdoba
+entradas: https://www.passline.com/eventos/traslado-wade-en-la-estacion
+precioDesde: 16000
+imagen: https://imagenes.passline.com/eventos/traslado-wade-en-la-estacion-555896-rec.jpg
+origen:
+  fuente: passline
+  id: "555896"
+  huella: 920f98603bc2af0e

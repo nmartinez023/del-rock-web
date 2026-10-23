@@ -1,0 +1,19 @@
+titulo: Cementerio Club
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: post-punk
+bandas:
+  - cementerio-club
+fecha: 2026-10-30
+hora: "23:30"
+venue: CULTURA WIPHALA
+ciudad: Los Polvorines
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/cementerio-club
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/-813574-rec.jpg
+origen:
+  fuente: passline
+  id: "564948"
+  huella: 7cb5b422b17c04f9

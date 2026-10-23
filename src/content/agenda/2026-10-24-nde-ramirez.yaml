@@ -1,0 +1,21 @@
+titulo: Nde Ramírez
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - nde-ramirez
+  - licantropo
+  - walter-broide
+fecha: 2026-10-24
+hora: "21:00"
+venue: En Eso Estamos
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/nde-ramirez-inv-walter-broide-en-la-plata
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/nde-ramirez-inv-walter-broide-en-la-plata-548059-rec.jpg
+origen:
+  fuente: passline
+  id: "548059"
+  huella: a603cba296102233

@@ -1,0 +1,19 @@
+titulo: Rakkatta
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock electrónico
+bandas:
+  - rakkatta
+fecha: 2026-10-23
+hora: "23:55"
+venue: MUSEUM
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/museum-viernes-2310-rakkatta
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/museum-viernes-2310-rakkatta-rec.jpg
+origen:
+  fuente: passline
+  id: "560857"
+  huella: 577483f4f02c2482

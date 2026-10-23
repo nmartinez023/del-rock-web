@@ -1,0 +1,19 @@
+titulo: Radicäl
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - radical
+fecha: 2026-11-05
+hora: "20:00"
+venue: El Portal Teatro
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/radical-en-el-portal
+precioDesde: 8000
+imagen: https://imagenes.passline.com/eventos/radical-en-el-portal-570406-rec.jpg
+origen:
+  fuente: passline
+  id: "570406"
+  huella: 834a7e9c0ba24691

@@ -1,0 +1,19 @@
+titulo: Viejas Locas y Jóvenes Pordioseros en en Encuentro Club
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-11-22
+hora: "21:00"
+venue: Encuentro club
+ciudad: San Justo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/viejas-locas-y-jovenes-pordioseros-en-en-encuentro-club
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/fiestas.jpg
+origen:
+  fuente: passline
+  id: "568126"
+  huella: b474e013393664a3

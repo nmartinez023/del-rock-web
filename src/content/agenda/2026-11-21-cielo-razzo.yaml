@@ -1,0 +1,19 @@
+titulo: Cielo Razzo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cielo-razzo
+fecha: 2026-11-21
+hora: "22:30"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/cielo-razzo-en-san-lorenzo
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/-803325-rec.jpg
+origen:
+  fuente: passline
+  id: "558235"
+  huella: 049e886620d18f51

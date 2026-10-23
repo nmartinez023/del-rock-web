@@ -1,0 +1,19 @@
+titulo: Brutagrua
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - brutagrua
+fecha: 2026-11-28
+hora: "20:00"
+venue: CCP | LUJAN
+ciudad: Lujan
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/brutagrua-en-ccp-lujan-bs-as
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/brutagrua-en-ccp-lujan-bs-as-567159-rec.jpg
+origen:
+  fuente: passline
+  id: "567159"
+  huella: 0d3815f113e90a4a

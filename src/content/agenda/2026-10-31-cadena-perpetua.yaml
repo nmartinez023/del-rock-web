@@ -1,0 +1,19 @@
+titulo: Cadena Perpetua
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cadena-perpetua
+fecha: 2026-10-31
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/cadena-perpetua-31-octubre-2026
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/cadena-perpetura-31-octubre-2026-542420-rec.jpg
+origen:
+  fuente: passline
+  id: "542420"
+  huella: 75c589645b3f2c18

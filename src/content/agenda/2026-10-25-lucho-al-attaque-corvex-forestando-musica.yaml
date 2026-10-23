@@ -1,0 +1,19 @@
+titulo: Lucho al Attaque + Corvex - Forestando Musica
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - lucho-al-attaque
+fecha: 2026-10-25
+hora: "18:30"
+venue: FOREST DAN TOM
+ciudad: Tortuguitas
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/lucho-al-attaque-corvex-forestando-musica
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/-780871-rec.jpg
+origen:
+  fuente: passline
+  id: "545549"
+  huella: fe36f52611cda408

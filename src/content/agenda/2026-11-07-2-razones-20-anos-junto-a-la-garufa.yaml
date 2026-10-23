@@ -1,0 +1,20 @@
+titulo: 2 Razones "20 Años" junto a La Garufa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - 2-razones
+  - la-garufa
+fecha: 2026-11-07
+hora: "20:00"
+venue: CLUB TUCUMAN
+ciudad: Quilmes
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/2-razones-20-anos-junto-a-la-garufa
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/2-razones-20-anos-junto-a-la-garufa-567648-rec.jpg
+origen:
+  fuente: passline
+  id: "567648"
+  huella: fcedf1bcb3d4d54a

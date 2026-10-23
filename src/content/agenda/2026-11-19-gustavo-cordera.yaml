@@ -1,0 +1,19 @@
+titulo: Gustavo Cordera
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - gustavo-cordera
+fecha: 2026-11-19
+hora: "21:00"
+venue: House 27
+ciudad: San Lorenzo
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/gustavo-cordera-en-san-lorenzo
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-811408-rec.jpg
+origen:
+  fuente: passline
+  id: "567557"
+  huella: b01eecbe64fe8db3

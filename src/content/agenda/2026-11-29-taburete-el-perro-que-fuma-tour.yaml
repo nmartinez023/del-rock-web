@@ -1,0 +1,19 @@
+titulo: Taburete — El Perro que Fuma Tour
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - taburete
+fecha: 2026-11-29
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/taburete-regresa-a-buenos-aires-con-el-perro-que-fuma-tour
+precioDesde: 80000
+imagen: https://imagenes.passline.com/eventos/taburete-regresa-a-buenos-aires-con-el-perro-que-fuma-tour-553054-rec.jpg
+origen:
+  fuente: passline
+  id: "553054"
+  huella: e405317aa3e7ff14

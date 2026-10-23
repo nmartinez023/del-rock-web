@@ -1,0 +1,19 @@
+titulo: Eruca Sativa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - eruca-sativa
+fecha: 2026-12-12
+hora: "21:00"
+venue: El observatorio
+ciudad: Santiago Del Estero
+provincia: Otra
+entradas: https://www.passline.com/eventos/eruca-sativa-en-santiago-del-estero
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-779744-rec.jpg
+origen:
+  fuente: passline
+  id: "545557"
+  huella: 66e88b9f3ce2f80b

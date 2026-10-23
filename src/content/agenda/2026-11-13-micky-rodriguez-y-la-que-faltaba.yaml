@@ -1,0 +1,21 @@
+titulo: Micky Rodríguez y La Que Faltaba
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - micky-rodriguez
+  - la-yugular
+  - ningun-dios
+fecha: 2026-11-13
+hora: "21:00"
+venue: Paraíso Club
+ciudad: San Salvador De Jujuy
+provincia: Otra
+entradas: https://www.passline.com/eventos/micky-rodriguez-y-la-que-faltaba-en-jujuy
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/micky-rodriguez-y-la-que-faltaba-en-jujuy-563717-rec.jpg
+origen:
+  fuente: passline
+  id: "563717"
+  huella: f07523f4362d92d2

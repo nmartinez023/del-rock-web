@@ -1,0 +1,19 @@
+titulo: Don Olimpio — 10 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock nacional
+bandas:
+  - don-olimpio
+fecha: 2026-11-15
+hora: "20:00"
+venue: SALA ALEJANDRO CASONA
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/don-olimpio10-anos-nueva-fecha
+precioDesde: 30000
+imagen: https://imagenes.passline.com/eventos/don-olimpio10-anos-nueva-fecha-554921-rec.jpg
+origen:
+  fuente: passline
+  id: "554921"
+  huella: 698836fee9b35628

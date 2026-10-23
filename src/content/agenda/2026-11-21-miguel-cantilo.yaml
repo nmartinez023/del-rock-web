@@ -1,0 +1,19 @@
+titulo: Miguel Cantilo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - miguel-cantilo
+fecha: 2026-11-21
+hora: "21:00"
+venue: Centro Cultural La Cuadra
+ciudad: San Fernando
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/miguel-cantilo-en-san-fernando
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/miguel-cantilo-en-san-fernando-568919-rec.jpg
+origen:
+  fuente: passline
+  id: "568919"
+  huella: 088b449cdbfa45ea

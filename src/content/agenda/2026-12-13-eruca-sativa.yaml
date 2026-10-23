@@ -1,0 +1,19 @@
+titulo: Eruca Sativa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - eruca-sativa
+fecha: 2026-12-13
+hora: "21:00"
+venue: Complejo UTA
+ciudad: San Fdo Del Valle De Catamarca
+provincia: Otra
+entradas: https://www.passline.com/eventos/eruca-sativa-en-catamarca
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/eruca-sativa-en-catamarca-545805-rec.jpg
+origen:
+  fuente: passline
+  id: "545805"
+  huella: fffa84f2d6513556

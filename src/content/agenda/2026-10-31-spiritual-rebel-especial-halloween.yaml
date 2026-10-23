@@ -1,0 +1,19 @@
+titulo: Spiritual Rebel Especial Halloween
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - spiritual-rebel
+fecha: 2026-10-31
+hora: "23:00"
+venue: La posada de los muertos
+ciudad: Villa Constitucion
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/spiritual-rebel-especial-halloween
+precioDesde: 14000
+imagen: https://imagenes.passline.com/eventos/spiritual-rebel-especial-halloween-567288-rec.jpg
+origen:
+  fuente: passline
+  id: "567288"
+  huella: 3a3b33fb2fd0db48

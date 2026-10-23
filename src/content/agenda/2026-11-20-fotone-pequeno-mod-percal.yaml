@@ -1,0 +1,21 @@
+titulo: Fotone — Pequeño Mod — Percal
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - fotone
+  - pequeno-mod
+  - percal
+fecha: 2026-11-20
+hora: "19:00"
+venue: Espacio Cultural Laberinto
+ciudad: Moron
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/fotone-pequeno-mod-percal
+precioDesde: 6000
+imagen: https://imagenes.passline.com/eventos/fotone-pequeno-mod-percal-570111-rec.jpg
+origen:
+  fuente: passline
+  id: "570111"
+  huella: 171e40fd05079845

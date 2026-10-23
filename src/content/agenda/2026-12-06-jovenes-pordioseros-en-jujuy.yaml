@@ -1,0 +1,19 @@
+titulo: Jovenes Pordioseros en Jujuy
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-12-06
+hora: "19:00"
+venue: Florida 23
+ciudad: San Salvador De Jujuy
+provincia: Otra
+entradas: https://www.passline.com/eventos/jovenes-pordioseros-en-jujuy-568749
+precioDesde: 35000
+imagen: https://imagenes.passline.com/eventos/jovenes-pordioseros-en-jujuy-568749-rec.jpg
+origen:
+  fuente: passline
+  id: "568749"
+  huella: dce922a35d40b033

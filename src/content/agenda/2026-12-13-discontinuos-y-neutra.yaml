@@ -1,0 +1,19 @@
+titulo: Discontinuos y Neutra
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - discontinuos
+fecha: 2026-12-13
+hora: "20:00"
+venue: QUE SEA ROCK
+ciudad: Rosario
+provincia: Santa Fe
+entradas: https://www.passline.com/eventos/discontinuos-y-neutra-en-rosario
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/-808994-rec.jpg
+origen:
+  fuente: passline
+  id: "565099"
+  huella: 264321929123ee95

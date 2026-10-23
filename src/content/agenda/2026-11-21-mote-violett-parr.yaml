@@ -1,0 +1,20 @@
+titulo: Mote + Violett Parr
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - mote
+  - violett-parr
+fecha: 2026-11-21
+hora: "20:00"
+venue: CLUB V
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/mote-violett-parr
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/mote-violett-parr-568578-rec.jpg
+origen:
+  fuente: passline
+  id: "568578"
+  huella: f9a3524703924c47

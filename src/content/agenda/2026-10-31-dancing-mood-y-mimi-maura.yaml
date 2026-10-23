@@ -1,0 +1,20 @@
+titulo: Dancing Mood y Mimi Maura
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: pop rock
+bandas:
+  - dancing-mood
+  - mimi-maura
+fecha: 2026-10-31
+hora: "20:00"
+venue: Auditorio oeste
+ciudad: Haedo
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/dancing-mood-y-mimi-maura-en-auditorio-oeste
+precioDesde: 26250
+imagen: https://imagenes.passline.com/eventos/-791391-rec.jpg
+origen:
+  fuente: passline
+  id: "553002"
+  huella: 1fb480e5a60442b4

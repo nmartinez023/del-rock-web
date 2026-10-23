@@ -1,0 +1,19 @@
+titulo: Dopamind
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - dopamind
+fecha: 2026-10-24
+hora: "23:00"
+venue: makena
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/dopamind-en-make-a
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/dopamind-en-make-a-570603-rec.jpg
+origen:
+  fuente: passline
+  id: "570603"
+  huella: 6bbdb83ddefdcb27

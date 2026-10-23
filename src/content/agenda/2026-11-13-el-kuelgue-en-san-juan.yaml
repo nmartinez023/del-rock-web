@@ -1,0 +1,19 @@
+titulo: El Kuelgue en San Juan
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-kuelgue
+fecha: 2026-11-13
+hora: "21:00"
+venue: Complejo La Meseta
+ciudad: Villa Aberastain
+provincia: Otra
+entradas: https://www.passline.com/eventos/el-kuelgue-en-san-juan
+precioDesde: 65000
+imagen: https://imagenes.passline.com/eventos/-768180-rec.jpg
+origen:
+  fuente: passline
+  id: "537156"
+  huella: a184d258b1c14bbd

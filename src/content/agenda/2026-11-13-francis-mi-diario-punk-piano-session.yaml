@@ -1,0 +1,19 @@
+titulo: "Francis — Mi Diario Punk: Piano Session"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - francis
+fecha: 2026-11-13
+hora: "21:00"
+venue: PALACIO EL VICTORIAL
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/francis-presenta-mi-diario-punk-piano-session
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/francis-presenta-mi-diario-punk-piano-session-566775-rec.jpg
+origen:
+  fuente: passline
+  id: "566775"
+  huella: 6ac98fe208535db5

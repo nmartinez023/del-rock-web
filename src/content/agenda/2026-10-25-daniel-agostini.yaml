@@ -1,0 +1,19 @@
+titulo: Daniel Agostini
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - daniel-agostini
+fecha: 2026-10-25
+hora: "20:30"
+venue: CENTRO CULTURAL ROMA
+ciudad: Marcos Paz
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/daniel-agostini-marcos-paz
+precioDesde: 40000
+imagen: https://imagenes.passline.com/eventos/-775120-rec.jpg
+origen:
+  fuente: passline
+  id: "540847"
+  huella: 2b2c7d4b294235d0

@@ -1,0 +1,19 @@
+titulo: Segunda Mano — Clásicos lado B
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - segunda-mano
+fecha: 2026-11-14
+hora: "21:00"
+venue: Espacio Live
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/segunda-mano-en-espacio-live-la-plata-clasicos-lado-b
+precioDesde: 20000
+imagen: https://imagenes.passline.com/eventos/clasicos-alado-b-x-segunda-mano-567611-rec.jpg
+origen:
+  fuente: passline
+  id: "567611"
+  huella: c28cd85c4bd9d691

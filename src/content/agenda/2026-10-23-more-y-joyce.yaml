@@ -1,0 +1,19 @@
+titulo: More y Joyce
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - more
+  - joyce
+fecha: 2026-10-23
+hora: "23:30"
+venue: ONE MORE CLUB
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/viernes-2310-more-joyce-arg
+imagen: https://imagenes.passline.com/eventos/viernes-2310-more-joyce-arg-569899-rec.jpg
+origen:
+  fuente: passline
+  id: "569899"
+  huella: 2ab2cab8d72b5fc2

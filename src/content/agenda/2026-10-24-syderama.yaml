@@ -1,0 +1,20 @@
+titulo: Sydérama
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - syderama
+fecha: 2026-10-24
+hora: "20:30"
+venue: The Roxy Bar & Grill
+direccion: Avenida Federico Lacroze y Alvarez Thomas
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/syderama
+precioDesde: 20000
+imagen: https://cdn.getcrowder.com/images/9f3d6230-d9a2-4bda-b5a9-cc534b792005-640x640.png
+origen:
+  fuente: allaccess
+  id: syderama
+  huella: fe9571c26990896d

@@ -1,0 +1,20 @@
+titulo: Milo J
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - milo
+fecha: 2026-12-05
+hora: "20:00"
+venue: Mario Alberto Kempes
+direccion: Ramon carcano
+ciudad: Cordoba
+provincia: Córdoba
+entradas: https://www.allaccess.com.ar/event/milo-j
+precioDesde: 75000
+imagen: https://cdn.getcrowder.com/images/91898ef6-6770-4e01-98b0-9983e9cba768-milo-j-estadio-kempes5-de-diciembre640x640flyer-oficial.jpg
+origen:
+  fuente: allaccess
+  id: milo-j
+  huella: 6dbb1c1296cf6e18

@@ -1,0 +1,21 @@
+titulo: 107 Faunos | Fantasmagoria | Bisturí
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - 107-faunos
+  - fantasmagoria
+  - bisturi
+fecha: 2026-11-12
+hora: "21:00"
+venue: Pura Vida
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/107-faunos-fantasmagoria-bisturi-duo-set
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/107-faunos-fantasmagoria-bisturi-duo-set-569499-rec.jpg
+origen:
+  fuente: passline
+  id: "569499"
+  huella: ac9f139f78d1d679

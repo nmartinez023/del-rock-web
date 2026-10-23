@@ -1,0 +1,20 @@
+titulo: Yuli y las Dosis + Deckie
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - yuli-y-las-dosis
+  - deckie
+fecha: 2026-11-12
+hora: "21:00"
+venue: Lalalá
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/1211-yuli-y-las-dosis-deckie
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/1211-yuli-y-las-dosis-deckie-567835-rec.jpg
+origen:
+  fuente: passline
+  id: "567835"
+  huella: 5e278470cb3b4217

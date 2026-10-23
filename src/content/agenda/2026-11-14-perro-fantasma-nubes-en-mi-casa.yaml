@@ -1,0 +1,20 @@
+titulo: Perro Fantasma + Nubes en mi casa
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - perro-fantasma
+  - nubes-en-mi-casa
+fecha: 2026-11-14
+hora: "22:00"
+venue: Lalalá
+ciudad: Ca
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/perro-fantasma-nubes-en-mi-casa-en-lalala
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/perro-fantasma-nubes-en-mi-casa-en-lalala-568075-rec.jpg
+origen:
+  fuente: passline
+  id: "568075"
+  huella: 271918afb94134d0

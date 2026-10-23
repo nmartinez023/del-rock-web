@@ -1,0 +1,19 @@
+titulo: Cielo Razzo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cielo-razzo
+fecha: 2026-11-05
+hora: "21:00"
+venue: Cars Cervecería
+ciudad: La Rioja
+provincia: Otra
+entradas: https://www.passline.com/eventos/cielo-razzo-en-la-rioja
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/-783121-rec.jpg
+origen:
+  fuente: passline
+  id: "548038"
+  huella: 472064f10c03f588

@@ -1,0 +1,19 @@
+titulo: 10 años de Barbarie (La batalla Final)
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock barrial
+bandas:
+  - barbarie
+fecha: 2026-11-21
+hora: "22:00"
+venue: Centro Cultural Cultura del Sur
+ciudad: Temperley
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/10-anos-de-barbarie-la-batalla-final
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/10-anos-de-barbarie-la-batalla-final-559287-rec.jpg
+origen:
+  fuente: passline
+  id: "559287"
+  huella: 1cfe337ea741f110

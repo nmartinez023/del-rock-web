@@ -1,0 +1,20 @@
+titulo: El Reloj y Poseidótica
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock alternativo
+bandas:
+  - el-reloj
+  - poseidotica
+fecha: 2026-11-14
+hora: "19:30"
+venue: CLUB DE ARTE TEMPUJA
+ciudad: Bernal Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/el-reloj-y-poseidotica-en-el-club-tempuja
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/el-reloj-y-poseidotica-en-el-club-tempuja-566416-rec.jpg
+origen:
+  fuente: passline
+  id: "566416"
+  huella: 93b5b0f9a40610c1

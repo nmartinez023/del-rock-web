@@ -1,0 +1,19 @@
+titulo: "10 años de Corales de Aqualand: Último Concierto"
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: indie rock
+bandas:
+  - corales-de-aqualand
+fecha: 2026-10-23
+hora: "20:00"
+venue: Marquee Session Live
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/10-anos-de-corales-de-aqualand-ultimo-concierto
+precioDesde: 15000
+imagen: https://imagenes.passline.com/eventos/10-anos-de-corales-de-aqualand-ultimo-concierto-554806-rec.jpg
+origen:
+  fuente: passline
+  id: "554806"
+  huella: a1060c86b910621a

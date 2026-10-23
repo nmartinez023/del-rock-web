@@ -1,0 +1,21 @@
+titulo: Los Magos + Lucas Galiñanes y Las Realidades + Daltonica
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock indie
+bandas:
+  - los-magos
+  - lucas-galinanes-y-las-realidades
+  - daltonica
+fecha: 2026-10-31
+hora: "19:30"
+venue: CLUB DE ARTE TEMPUJA
+ciudad: Bernal Oeste
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/los-magos-daltonica-lucas-galinanes-y-las-realidades-en-club-de-arte-tempuja
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/-799168-rec.jpg
+origen:
+  fuente: passline
+  id: "548762"
+  huella: 8c815c0789d55b4f

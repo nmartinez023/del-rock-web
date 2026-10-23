@@ -1,0 +1,19 @@
+titulo: Décima — 20 años
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - decima
+fecha: 2026-10-24
+hora: "20:00"
+venue: The Roxy Live
+direccion: Cnel. Niceto Vega 5542
+ciudad: CABA
+provincia: CABA
+entradas: https://www.allaccess.com.ar/event/decima---20-aos
+imagen: https://cdn.getcrowder.com/images/983ca55e-dbf0-4e3c-bd07-ddd8f707f667-bannersdecima-640x640v2.jpg
+origen:
+  fuente: allaccess
+  id: decima---20-aos
+  huella: 53d1702cd9e42142

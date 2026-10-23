@@ -1,0 +1,19 @@
+titulo: La Reunión
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - la-reunion
+fecha: 2026-10-24
+hora: "16:00"
+venue: Galpon Cultural Mercedes Sosa
+ciudad: Avellaneda
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/la-reunion-en-avellaneda
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/la-reunion-en-avellaneda-563609-rec.jpg
+origen:
+  fuente: passline
+  id: "563609"
+  huella: 0759b1b4d9551bc6

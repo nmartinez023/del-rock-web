@@ -1,0 +1,19 @@
+titulo: A Lo Sumo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - a-lo-sumo
+fecha: 2026-10-23
+hora: "23:00"
+venue: La Casa de Luca
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/a-lo-sumo-en-la-casa-de-luca-2310
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/a-lo-sumo-en-la-casa-de-luca-2310-565907-rec.jpg
+origen:
+  fuente: passline
+  id: "565907"
+  huella: 811313c6891dc784

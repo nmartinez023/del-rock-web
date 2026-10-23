@@ -1,0 +1,21 @@
+titulo: El Supper de Huguito y Nico Lucero en vivo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-supper
+  - huguito
+  - nico-lucero
+fecha: 2026-11-06
+hora: "23:00"
+venue: Club Los Campesinos
+ciudad: La Pichana
+provincia: Mendoza
+entradas: https://www.passline.com/eventos/el-supper-de-huguito-y-nico-lucero-en-vivo
+precioDesde: 10000
+imagen: https://imagenes.passline.com/eventos/el-supper-de-huguito-y-nico-lucero-en-vivo-570858-rec.jpg
+origen:
+  fuente: passline
+  id: "570858"
+  huella: a43e8cc93d5dee67

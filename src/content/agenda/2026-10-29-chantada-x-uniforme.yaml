@@ -1,0 +1,20 @@
+titulo: Chantada x Uniforme
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: punk rock
+bandas:
+  - chantada
+  - uniforme
+fecha: 2026-10-29
+hora: "19:00"
+venue: Moscu Espacio Cultural
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/chantada-x-uniforme-en-moscu
+precioDesde: 4000
+imagen: https://imagenes.passline.com/eventos/-811459-rec.jpg
+origen:
+  fuente: passline
+  id: "567693"
+  huella: 5f515f1077f7538e

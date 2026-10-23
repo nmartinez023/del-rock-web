@@ -1,0 +1,19 @@
+titulo: Círculo del Bosque en Concierto VII
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - circulo-del-bosque
+fecha: 2026-12-06
+hora: "19:00"
+venue: Auditorio Espacio Cendas
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/circulo-del-bosque-en-concierto-vii-teatro-cendas
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/-768569-rec.jpg
+origen:
+  fuente: passline
+  id: "537789"
+  huella: 8f5a6efeb8e4b912

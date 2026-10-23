@@ -1,0 +1,19 @@
+titulo: Los Cafres despiden el año
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - los-cafres
+fecha: 2026-12-19
+hora: "21:00"
+venue: La Trastienda
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/los-cafres-despiden-el-ano
+precioDesde: 55000
+imagen: https://imagenes.passline.com/eventos/los-cafres-despiden-el-ano-562414-rec.jpg
+origen:
+  fuente: passline
+  id: "562414"
+  huella: 6efacbd17bda2642

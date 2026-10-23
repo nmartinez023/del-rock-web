@@ -1,0 +1,19 @@
+titulo: Garufas — Última del año
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - garufas
+fecha: 2026-11-28
+hora: "21:00"
+venue: Nobleza Obliga
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/garufas-ultimo-show-del-ano
+precioDesde: 12000
+imagen: https://imagenes.passline.com/eventos/garufas-ultimo-show-del-ano-568109-rec.jpg
+origen:
+  fuente: passline
+  id: "568109"
+  huella: fac0ff7bd2038b9d

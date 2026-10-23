@@ -1,0 +1,17 @@
+titulo: Un Fuego para Iorio
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+fecha: 2026-12-03
+hora: "20:00"
+venue: Casa Suiza
+ciudad: La Plata
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/un-fuego-para-iorio
+precioDesde: 18000
+imagen: https://imagenes.passline.com/eventos/un-fuego-para-iorio-566491-rec.jpg
+origen:
+  fuente: passline
+  id: "566491"
+  huella: 2e55fdbafced3acb

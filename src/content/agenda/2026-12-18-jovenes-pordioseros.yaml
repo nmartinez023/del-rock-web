@@ -1,0 +1,19 @@
+titulo: Jóvenes Pordioseros
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - jovenes-pordioseros
+fecha: 2026-12-18
+hora: "21:00"
+venue: Six Bar
+ciudad: San Miguel
+provincia: Buenos Aires
+entradas: https://www.passline.com/eventos/jovenes-pordioseros-en-san-miguel
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/jovenes-pordioseros-en-san-miguel-569444-rec.jpg
+origen:
+  fuente: passline
+  id: "569444"
+  huella: 5b9cec1c7b8a2124

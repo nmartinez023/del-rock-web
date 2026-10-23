@@ -1,0 +1,19 @@
+titulo: Cielo Razzo
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - cielo-razzo
+fecha: 2026-11-08
+hora: "21:00"
+venue: Casa de la Cultura del Bicentenario
+ciudad: Santiago Del Estero
+provincia: Otra
+entradas: https://www.passline.com/eventos/cielo-razzo-en-santiago-del-estero
+precioDesde: 50000
+imagen: https://imagenes.passline.com/eventos/cielo-razzo-en-santiago-del-estero-549409-rec.jpg
+origen:
+  fuente: passline
+  id: "549409"
+  huella: 4239a9629ddd74ca

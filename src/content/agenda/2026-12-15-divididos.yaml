@@ -1,0 +1,18 @@
+titulo: Divididos
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - divididos
+fecha: 2026-12-15
+hora: "19:00"
+venue: TEATRO FLORES
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/divididos-en-teatro-flores-15-diciembre-2026
+imagen: https://imagenes.passline.com/eventos/-758084-rec.jpg
+origen:
+  fuente: passline
+  id: "530495"
+  huella: f628b03f3198b661

@@ -1,0 +1,20 @@
+titulo: 50 años de El jardín de los presentes
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - el-diluvio
+  - los-pasajeros
+fecha: 2026-12-04
+hora: "21:00"
+venue: Lucille
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/50-anos-de-el-jardin-de-los-presentes
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/50-anos-de-el-jardin-de-los-presentes-559456-rec.jpg
+origen:
+  fuente: passline
+  id: "559456"
+  huella: b70a290fbfe50792

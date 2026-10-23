@@ -1,0 +1,19 @@
+titulo: Boanerges
+estado: ⏳ Pendiente
+tipo: show
+rockNacional: true
+genero: rock
+bandas:
+  - boanerges
+fecha: 2026-12-09
+hora: "19:30"
+venue: Marquee Session Live
+ciudad: Buenos Aires
+provincia: CABA
+entradas: https://www.passline.com/eventos/boanerges-en-caba-568897
+precioDesde: 25000
+imagen: https://imagenes.passline.com/eventos/boanerges-en-caba-568897-rec.jpg
+origen:
+  fuente: passline
+  id: "568897"
+  huella: ab707483415c817d
