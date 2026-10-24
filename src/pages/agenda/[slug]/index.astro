@@ -11,6 +11,7 @@ import {
   bandasDe, bandasVisibles, diaMes, diaYMes, fechaCompleta, imagenDeFecha, precioTexto, proximasFechas,
   slugsDeAgenda, slugTag, tituloConCiudad, type Fecha,
 } from '../../../lib/util';
+import type { DatosHistoria } from '../../../lib/historia';
 
 export async function getStaticPaths() {
   const fechas = await getCollection('agenda', (f) => f.data.estado === 'publicado' && f.data.rockNacional);
@@ -89,6 +90,20 @@ const jsonLd = {
     : {}),
 };
 const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(data.fecha)} ${url}`);
+
+// Datos para la imagen de historias de Instagram (se dibuja en el navegador, ver lib/historia.ts).
+const diaSemana = data.fecha.toLocaleDateString('es-AR', { weekday: 'long', timeZone: 'UTC' });
+const historia: DatosHistoria = {
+  partes: titulo.partes,
+  cuando: `${diaSemana.charAt(0).toUpperCase()}${diaSemana.slice(1)} ${diaYMes(data.fecha)}`,
+  hora: data.hora ? `${data.hora} h` : null,
+  venue: data.venue,
+  direccion: [data.direccion, data.ciudad].filter(Boolean).join(', '),
+  flyer: imagen?.tipo === 'local' ? (await getImage({ src: imagen.src, width: 1080, format: 'jpg' })).src : (imagen?.src ?? null),
+  dia: String(numDia),
+  mes,
+};
+const linkHistoria = data.entradas ?? url;
 ---
 
 <Base titulo={tituloPagina} descripcion={descripcionCorta} imagen={og ?? undefined} tipo="article">
@@ -198,9 +213,44 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
             <button class="redondo" type="button" data-copiar={url} aria-label="Copiar link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>
             </button>
+            {
+              !yaPaso && (
+                <button class="redondo" type="button" data-historia={JSON.stringify(historia)} aria-label="Compartir en historias de Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>
+                </button>
+              )
+            }
             <span class="copiado" role="status" aria-live="polite"></span>
           </div>
         </div>
+        {
+          !yaPaso && (
+            <dialog class="historia" aria-labelledby="historia-titulo">
+              <div class="historia-cabeza">
+                <h2 id="historia-titulo" class="d">Compartir en historias</h2>
+                <button class="redondo" type="button" data-cerrar aria-label="Cerrar">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+                </button>
+              </div>
+              <div class="historia-vista">
+                <p class="historia-estado" role="status">Armando la imagen…</p>
+                <img alt="Vista previa de la historia" hidden />
+              </div>
+              <p class="historia-ayuda">
+                Al publicarla, sumá el <strong>sticker de enlace</strong> en el espacio libre de abajo y pegá el link{' '}
+                {data.entradas ? 'de las entradas' : 'del evento'}.
+              </p>
+              <div class="historia-acciones">
+                <button class="btn" type="button" data-compartir hidden>Compartir imagen</button>
+                <a class="btn" data-descargar download={`delrock-${Astro.params.slug}.png`} hidden>Descargar imagen</a>
+                <button class="btn btn--borde" type="button" data-copiar-link={linkHistoria}>
+                  Copiar link {data.entradas ? 'de entradas' : 'del evento'}
+                </button>
+              </div>
+              <span class="historia-aviso" role="status" aria-live="polite"></span>
+            </dialog>
+          )
+        }
         {vendedor && !yaPaso && <p class="vendedor">La compra se hace en {vendedor}.</p>}
         {!yaPaso && <AvisoAgenda variante="corto" />}
       </div>
@@ -258,6 +308,69 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
       }
       setTimeout(() => aviso && (aviso.textContent = ''), 2500);
     });
+  }
+
+  // Historia de Instagram: la imagen se arma al abrir el diálogo; compartir va en otro toque
+  // porque el navegador sólo deja compartir justo después de que la persona toca algo.
+  const botonHistoria = document.querySelector<HTMLButtonElement>('[data-historia]');
+  const dialogo = document.querySelector<HTMLDialogElement>('dialog.historia');
+  if (botonHistoria && dialogo) {
+    const vista = dialogo.querySelector('img')!;
+    const estado = dialogo.querySelector<HTMLElement>('.historia-estado')!;
+    const compartir = dialogo.querySelector<HTMLButtonElement>('[data-compartir]')!;
+    const descargar = dialogo.querySelector<HTMLAnchorElement>('[data-descargar]')!;
+    const aviso = dialogo.querySelector<HTMLElement>('.historia-aviso')!;
+    let archivo: File | null = null;
+
+    const avisar = (texto: string) => {
+      aviso.textContent = texto;
+      setTimeout(() => (aviso.textContent = ''), 3000);
+    };
+
+    botonHistoria.addEventListener('click', async () => {
+      dialogo.showModal();
+      if (archivo) return;
+      try {
+        const { generarHistoria } = await import('../../../lib/historia');
+        const blob = await generarHistoria(JSON.parse(botonHistoria.dataset.historia!));
+        archivo = new File([blob], descargar.download, { type: 'image/png' });
+        const enlace = URL.createObjectURL(blob);
+        vista.src = enlace;
+        vista.hidden = false;
+        estado.hidden = true;
+        descargar.href = enlace;
+        if (navigator.canShare?.({ files: [archivo] })) compartir.hidden = false;
+        else descargar.hidden = false;
+      } catch {
+        estado.textContent = 'No se pudo armar la imagen. Probá de nuevo más tarde.';
+      }
+    });
+
+    compartir.addEventListener('click', async () => {
+      if (!archivo) return;
+      try {
+        await navigator.share({ files: [archivo] });
+      } catch (e) {
+        // Si la persona cierra el menú no es un error; si falla, queda la descarga.
+        if ((e as Error).name !== 'AbortError') {
+          descargar.hidden = false;
+          avisar('No se pudo compartir: descargá la imagen y subila a tu historia.');
+        }
+      }
+    });
+
+    dialogo.querySelector<HTMLButtonElement>('[data-copiar-link]')!.addEventListener('click', async (ev) => {
+      try {
+        await navigator.clipboard.writeText((ev.currentTarget as HTMLButtonElement).dataset.copiarLink!);
+        avisar('Link copiado');
+      } catch {
+        avisar('No se pudo copiar');
+      }
+    });
+
+    dialogo.querySelector('[data-cerrar]')!.addEventListener('click', () => dialogo.close());
+    // Tocar afuera del recuadro también cierra.
+    dialogo.addEventListener('click', (ev) => ev.target === dialogo && dialogo.close());
   }
 </script>
 
@@ -425,6 +538,86 @@ const compartirTexto = encodeURIComponent(`${titulo.texto} · ${fechaCompleta(da
   .copiado {
     font-size: 13px;
     color: var(--azul);
+  }
+  .historia {
+    width: min(440px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .historia[open] {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .historia::backdrop {
+    background: rgb(0 0 0 / 0.75);
+  }
+  .historia-cabeza {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .historia-cabeza h2 {
+    margin: 0;
+    font-size: 26px;
+  }
+  .historia-vista {
+    flex: 0 1 auto;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .historia-vista img {
+    display: block;
+    height: min(56dvh, 560px);
+    aspect-ratio: 9 / 16;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .historia-estado {
+    margin: 0;
+    height: min(56dvh, 560px);
+    aspect-ratio: 9 / 16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .historia-vista [hidden] {
+    display: none;
+  }
+  .historia-ayuda {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .historia-ayuda strong {
+    color: var(--fg);
+  }
+  .historia-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .historia-acciones [hidden] {
+    display: none;
+  }
+  .historia-aviso {
+    min-height: 1em;
+    font-size: 13px;
+    color: var(--azul);
+    text-align: center;
   }
   .vendedor {
     margin: -8px 0 0;
