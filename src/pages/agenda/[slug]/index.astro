@@ -236,10 +236,6 @@ const linkHistoria = data.entradas ?? url;
                 <p class="historia-estado" role="status">Armando la imagen…</p>
                 <img alt="Vista previa de la historia" hidden />
               </div>
-              <p class="historia-ayuda">
-                Al publicarla, sumá el <strong>sticker de enlace</strong> en el espacio libre de abajo y pegá el link{' '}
-                {data.entradas ? 'de las entradas' : 'del evento'}.
-              </p>
               <div class="historia-acciones">
                 <button class="btn" type="button" data-compartir hidden>Compartir imagen</button>
                 <a class="btn" data-descargar download={`delrock-${Astro.params.slug}.png`} hidden>Descargar imagen</a>
@@ -595,15 +591,6 @@ const linkHistoria = data.entradas ?? url;
   }
   .historia-vista [hidden] {
     display: none;
-  }
-  .historia-ayuda {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--muted);
-  }
-  .historia-ayuda strong {
-    color: var(--fg);
   }
   .historia-acciones {
     display: flex;
